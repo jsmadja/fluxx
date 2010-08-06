@@ -21,9 +21,8 @@
     </properties>
 
     <scm>
-        <connection>scm:svn:https://kaddath.googlecode.com/svn/trunk/fluxx/</connection>
-        <developerConnection>scm:svn:https://kaddath.googlecode.com/svn/trunk/fluxx/</developerConnection>
-        <url>http://code.google.com/p/kaddath/source/browse/#svn/trunk/fluxx</url>
+        <connection>scm:git://github.com/jsmadja/fluxx.git</connection>
+        <developerConnection>scm:git://github.com/jsmadja/fluxx.git</developerConnection>
     </scm>
 
     <profiles>
