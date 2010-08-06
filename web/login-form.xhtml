@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <div class="form">
+        <c:choose>
+            <c:when test="#{facesContext.externalContext.remoteUser == null}" >
+                <form method="POST" action="j_security_check">
+                    <div class="label">
+                        <label>${msgs.form_loginform_field_username} : </label>
+                        <label>${msgs.form_loginform_field_password} : </label>
+                    </div>
+                    <div class="textboxes">
+                        <input name="j_username" value="${msgs.form_field_username}" type="text" onfocus="clearText(this)" onblur="clearText(this)" class="textfield"/>
+                        <input name="j_password" value="${msgs.form_field_password}" type="password" onfocus="clearText(this)" onblur="clearText(this)" class="textfield"/>
+                    </div>
+                    <div class="cleaner_with_height"></div>
+                    <div class="login_bottom">
+                        <input type="checkbox" name="remember" class="checkbox"/>
+                        <span class="remember">${msgs.form_field_remember_me}</span>
+                        <input type="submit" name="login" value=" " class="button"/>
+                    </div>
+                </form>
+            </c:when>
+            <c:otherwise>
+                <h:outputLabel value="#{facesContext.externalContext.remoteUser}"/><br/>
+                <h:form>
+                    <h:commandLink value="${msgs.form_button_logout}">
+                        <f:actionListener type="fr.kaddath.apps.fluxx.view.listener.LogoutActionListener" />
+                    </h:commandLink>
+                </h:form>
+            </c:otherwise>
+        </c:choose>
+    </div>
+</html>

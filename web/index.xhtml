@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:body>
+        <ui:composition template="./template.xhtml">
+            <ui:define name="content_right">
+                <div class="post">
+                    <h1>Welcome to Fluxx</h1>
+
+                    <c:if test="#{facesContext.externalContext.remoteUser != null}" >
+                        <h2>${msgs.page_subtitle_your_aggregatedfeeds} <emcomp:opmlIcon href="#{facesContext.externalContext.requestContextPath}/aggregatedFeedOpml?username=#{facesContext.externalContext.remoteUser}"/></h2>
+                        <h:form>
+                            <h:dataTable id="aggregatedFeedsTable" value="#{manageAggregatedFeed.userAggregatedFeeds}" var="agg" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
+                                <h:column>
+                                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_name}"/></f:facet>
+                                    <h:outputText value="${agg.name}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_url}"/></f:facet>
+                                    <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{agg.aggregatedFeedId}" />
+                                </h:column>
+                            </h:dataTable>
+                        </h:form>
+                    </c:if>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

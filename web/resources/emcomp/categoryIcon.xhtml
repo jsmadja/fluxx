@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:composite="http://java.sun.com/jsf/composite"
+>
+
+<composite:interface>
+<composite:attribute name="category" required="true" type="fr.kaddath.apps.fluxx.domain.FeedCategory" />
+</composite:interface>
+
+<composite:implementation>
+    <a target="blank" href="#"><img alt="category" src="#{facesContext.externalContext.requestContextPath}/myimages/tag.png" />${category.name}</a>
+</composite:implementation>
+
+</html>

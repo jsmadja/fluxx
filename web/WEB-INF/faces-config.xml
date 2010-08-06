@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <application>
+        <resource-bundle>
+            <base-name>Messages</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+    </application>
+
+    <navigation-rule>
+        <from-view-id>/aggregatedfeed/manage-aggregatedfeeds.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>manage-aggregatedfeed</from-outcome>
+            <to-view-id>/aggregatedfeed/manage-aggregatedfeeds.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit-aggregatedfeed</from-outcome>
+            <to-view-id>/aggregatedfeed/edit-aggregatedfeed.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/aggregatedfeed/edit-aggregatedfeed.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>add-feed-success</from-outcome>
+            <to-view-id>/feed/edit-feed.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>add-feed-failure</from-outcome>
+            <to-view-id>/feed/add-failure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/feed/manage-feeds.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>edit-feed</from-outcome>
+            <to-view-id>/feed/edit-feed.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>manage-feeds</from-outcome>
+            <to-view-id>/feed/manage-feeds.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/feed/edit-feed.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>edit-feed</from-outcome>
+            <to-view-id>/feed/edit-feed.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/signin/signin.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/signin/signin-validation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <navigation-case>
+            <from-outcome>edit-account</from-outcome>
+            <to-view-id>/signin/edit-account.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/signin/edit-account.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>edit-account-validation</from-outcome>
+            <to-view-id>/signin/edit-account-validation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <validator>
+        <validator-id>twitterAccountAlreadyUsed</validator-id>
+        <validator-class>fr.kaddath.apps.fluxx.validator.TwitterAccountAlreadyUsedValidator</validator-class>
+    </validator>
+
+    <validator>
+        <validator-id>usernameAlreadyUsed</validator-id>
+        <validator-class>fr.kaddath.apps.fluxx.validator.UsernameAlreadyUsedValidator</validator-class>
+    </validator>
+
+    <validator>
+        <validator-id>emailAlreadyUsed</validator-id>
+        <validator-class>fr.kaddath.apps.fluxx.validator.EmailAlreadyUsedValidator</validator-class>
+    </validator>
+
+    <validator>
+        <validator-id>noTwitterAccountSupplied</validator-id>
+        <validator-class>fr.kaddath.apps.fluxx.validator.NoTwitterAccountSuppliedValidator</validator-class>
+    </validator>
+
+</faces-config>

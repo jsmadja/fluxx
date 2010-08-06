@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:body>
+        <c:if test="#{facesContext.externalContext.remoteUser == null}" >
+            <li><a href="#{facesContext.externalContext.requestContextPath}/faces/signin/signin.xhtml" title="">${msgs.page_title_signin}</a></li>
+        </c:if>
+        <c:choose>
+            <c:when test="#{facesContext.externalContext.remoteUser != null}" >
+                <li>
+                    <h:form>
+                        <h:commandLink action="#{user.edit}" value="${msgs.page_title_manage_account}" />
+                    </h:form>
+                </li>
+                <li>
+                    <a href="#{facesContext.externalContext.requestContextPath}/faces/aggregatedfeed/manage-aggregatedfeeds.xhtml">${msgs.page_title_manage_aggregatedfeeds}</a>
+                </li>
+                <li>
+                    <a href="#{facesContext.externalContext.requestContextPath}/faces/feed/import-opml.xhtml">${msgs.page_title_importopml}</a>
+                </li>
+                <li>
+                    <a href="#{facesContext.externalContext.requestContextPath}/faces/feed/manage-feeds.xhtml">${msgs.page_title_forcefeedupdate}</a>
+                </li>
+                <li>
+                    <a href="#{facesContext.externalContext.requestContextPath}/faces/configuration/manage-configuration.xhtml">${msgs.page_title_manage_configuration}</a>
+                </li>
+            </c:when>
+        </c:choose>
+    </h:body>
+</html>
