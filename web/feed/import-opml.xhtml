@@ -1,20 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
-    <h:body>
-        <ui:composition template="/template.xhtml">
-            <ui:define name="content_right">
-                <h1>${msgs.page_title_importopml}</h1>
-                <p>${msgs.form_field_opmlcontent} : </p>
-                <h:form style="width:100%">
-                    <h:panelGrid width="100%" columns="1">
-                        <h:inputTextarea id="content" value="#{opmlImporter.content}" cols="60" rows="30" />
-                        <h:commandButton id="submit" value="${msgs.form_button_import}" action="opml-importer.xhtml"/>
-                    </h:panelGrid>
-                </h:form>
-            </ui:define>
-        </ui:composition>
-    </h:body>
-</html>
+<ui:composition template="/template.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="content_right">
+        <h1>${msgs.page_title_importopml}</h1>
+        <p>${msgs.form_field_opmlcontent} : </p>
+        <h:form style="width:100%">
+            <h:panelGrid width="100%" columns="1">
+                <h:inputTextarea id="content" value="#{opmlImporter.content}" cols="60" rows="30" />
+                <h:commandButton id="submit" value="${msgs.form_button_import}" action="opml-importer.xhtml"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>

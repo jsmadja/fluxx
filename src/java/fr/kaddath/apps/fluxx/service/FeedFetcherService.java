@@ -28,6 +28,7 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
+import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -136,6 +137,7 @@ public class FeedFetcherService {
     }
 
     @Interceptors({ChronoInterceptor.class})
+    @Schedule(minute="*/10", hour="*")
     public void updateAllAsynchronously() {
         List<Future<Object[]>> couples = downloadFeeds();
         updateFeeds(couples);

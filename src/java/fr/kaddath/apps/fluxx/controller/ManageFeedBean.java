@@ -64,6 +64,7 @@ public class ManageFeedBean implements Serializable {
         Feed feed = feedsDataModel.getRowData();
         feedService.delete(feed);
         feedsDataModel = new CollectionDataModel(getAllFeeds()).getDataModel();
+        reload();
         return MANAGE_FEEDS;
     }
 

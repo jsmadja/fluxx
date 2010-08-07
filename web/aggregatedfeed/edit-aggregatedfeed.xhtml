@@ -1,123 +1,124 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:fluxx="http://fluxx.fr.cn/custom-taglib"
-      xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp">
-     
-    <h:body>
-        <ui:composition template="/template.xhtml">
-            <ui:define name="content_right">
 
-                <h1>${msgs.page_title_edit_aggregatedfeed}</h1>
+<ui:composition template="/template.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:fluxx="http://fluxx.fr.cn/custom-taglib"
+                xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp">
+    <ui:define name="content_right">
 
-                <h2>${msgs.page_subtitle_your_aggregatedfeed}</h2>
-                <h:form>
-                    <h:panelGrid columns="3" >
-                        <h:outputText value="${msgs.form_field_aggregatedfeed_name} * :"/>
-                        <h:inputText id="name" value="#{editAggregatedFeed.name}" />
-                        <h:message for="name" styleClass="error"/>
+        <h1>${msgs.page_title_edit_aggregatedfeed}</h1>
 
-                        <h:outputText value="${msgs.form_field_aggregatedfeed_numlastday} * :"/>
-                        <h:inputText id="numLastDay" required="true" maxlength="3" value="#{editAggregatedFeed.numLastDay}">
-                            <f:validateLongRange minimum="1" maximum="100" />
-                        </h:inputText>
-                        <h:message for="numLastDay" styleClass="error"/>
+        <h2>${msgs.page_subtitle_your_aggregatedfeed}</h2>
+        <h:form>
+            <h:panelGrid columns="3" >
+                <h:outputText value="${msgs.form_field_aggregatedfeed_name} * :"/>
+                <h:inputText id="name" value="#{editAggregatedFeed.name}" />
+                <h:message for="name" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_aggregatedfeed_url}  :"/>
-                        <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{editAggregatedFeed.id}" />
-                        <h:outputText />
-                        <h:commandButton  id="submit" value="${msgs.form_button_update}" action="#{editAggregatedFeed.update}"/>
-                    </h:panelGrid>
-                </h:form>
+                <h:outputText value="${msgs.form_field_aggregatedfeed_numlastday} * :"/>
+                <h:inputText id="numLastDay" required="true" maxlength="3" value="#{editAggregatedFeed.numLastDay}">
+                    <f:validateLongRange minimum="1" maximum="100" />
+                </h:inputText>
+                <h:message for="numLastDay" styleClass="error"/>
 
-                <h2>${msgs.page_subtitle_aggregated_feeds}</h2>
-                <h:form>
-                    <h:dataTable id="aggregateedFeedsTable" value="#{editAggregatedFeed.aggregatedFeeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="${msgs.form_field_feed_name}"/></f:facet>
-                            <h:commandLink action="#{editAggregatedFeed.removeFeed}">
-                                <h:outputText value="${feed.title}" />
-                            </h:commandLink>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="${msgs.form_field_feed_url}"/></f:facet>
-                            <emcomp:rssIcon href="${feed.url}" />
-                        </h:column>
-                    </h:dataTable>
-                </h:form>
+                <h:outputText value="${msgs.form_field_aggregatedfeed_url}  :"/>
+                <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{editAggregatedFeed.id}" />
+                <h:outputText />
+                <h:commandButton  id="submit" value="${msgs.form_button_update}" action="#{editAggregatedFeed.update}"/>
+            </h:panelGrid>
+        </h:form>
 
-                <h2>${msgs.page_subtitle_available_feeds}</h2>
+        <h2>${msgs.page_subtitle_aggregated_feeds}</h2>
+        <h:form>
+            <h:dataTable id="aggregateedFeedsTable" value="#{editAggregatedFeed.aggregatedFeeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <fluxx:tendency feed="#{feed}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="${msgs.form_field_feed_name}"/></f:facet>
+                    <h:commandLink action="#{editAggregatedFeed.removeFeed}">
+                        <h:outputText title="${feed.description}" value="${feed.title}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="${msgs.form_field_feed_url}"/></f:facet>
+                    <emcomp:rssIcon href="${feed.url}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
 
-                <div id="myContainer"></div>
-                <h:form>
-                    <h:inputText onfocus="clearText(this)" onblur="clearText(this)" id="myInput" value="#{editAggregatedFeed.filter}" maxlength="20" size="20" style="width:200px">ex: people</h:inputText>
-                     <h:commandButton  style="margin-left: 210px;" id="submit" value="${msgs.form_button_filter}" action="#{editAggregatedFeed.filter}"/>
-                </h:form>
-                <div id="myAutoComplete">
-                </div>
+        <div style="background-color: white; margin-top: 5px;vertical-align: middle">
+            <img alt="" src="#{facesContext.externalContext.requestContextPath}/myimages/tendency/2-green.png" /> ${msgs.daily_activity},
+            <img alt="" src="#{facesContext.externalContext.requestContextPath}/myimages/tendency/1-green.png" /> ${msgs.weekly_activity},
+            <img alt="" src="#{facesContext.externalContext.requestContextPath}/myimages/tendency/2-black.png" /> ${msgs.monthly_activity},
+            <img alt="" src="#{facesContext.externalContext.requestContextPath}/myimages/tendency/1-red.png" /> ${msgs.yearly_activity}
+        </div>
 
-<!--                <div id="myContainer"></div>
-                    <input id="myInput" type="text" />
-                    <div id="myContainer"></div>
-                </div>-->
+        <h2>${msgs.page_subtitle_available_feeds}</h2>
 
-                <script type="text/javascript">
-                 YAHOO.example.BasicRemote = function() {
-     // Use an XHRDataSource
-     var oDS = new YAHOO.util.XHRDataSource("#{facesContext.externalContext.requestContextPath}/AutoCompleteCategory");
-     // Set the responseType
-     oDS.responseType = YAHOO.util.XHRDataSource.TYPE_TEXT;
-     // Define the schema of the delimited results
-     oDS.responseSchema = {
-         recordDelim: "\n",
-         fieldDelim: "\t"
-     };
-     // Enable caching
-     oDS.maxCacheEntries = 5;
+        <div id="myContainer"></div>
+        <h:form>
+            <h:inputText onfocus="clearText(this)" onblur="clearText(this)" id="myInput" value="#{editAggregatedFeed.filter}" maxlength="20" size="20" style="width:200px">ex: people</h:inputText>
+            <h:commandButton  style="margin-left: 210px;" id="submit" value="${msgs.form_button_filter}" action="#{editAggregatedFeed.filter}"/>
+        </h:form>
+        <div id="myAutoComplete">
+        </div>
+        <script type="text/javascript">
+            YAHOO.example.BasicRemote = function() {
+                // Use an XHRDataSource
+                var oDS = new YAHOO.util.XHRDataSource("#{facesContext.externalContext.requestContextPath}/AutoCompleteCategory");
+                // Set the responseType
+                oDS.responseType = YAHOO.util.XHRDataSource.TYPE_TEXT;
+                // Define the schema of the delimited results
+                oDS.responseSchema = {
+                    recordDelim: "\n",
+                    fieldDelim: "\t"
+                };
+                // Enable caching
+                oDS.maxCacheEntries = 5;
 
-     // Instantiate the AutoComplete
-     var oAC = new YAHOO.widget.AutoComplete("j_idt32:myInput", "myContainer", oDS);
-     oAC.maxResultsDisplayed = 25;
+                // Instantiate the AutoComplete
+                var oAC = new YAHOO.widget.AutoComplete("j_idt32:myInput", "myContainer", oDS);
+                oAC.maxResultsDisplayed = 25;
 
-     return {
-         oDS: oDS,
-         oAC: oAC
-     };
- }();
-                </script>
+                return {
+                    oDS: oDS,
+                    oAC: oAC
+                };
+            }();
+        </script>
 
-                <h:form>
-                    <h:dataTable id="availableFeedsTable" value="#{editAggregatedFeed.availableFeeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="${msgs.form_field_feed_name}"/></f:facet>
-                            <h:commandLink action="#{editAggregatedFeed.addFeed}">
-                                <h:outputText value="${feed.title}" />
-                            </h:commandLink>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="${msgs.form_field_feed_tags}"/></f:facet>
-                            <fluxx:tagline feed="#{feed}" />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="${msgs.form_field_feed_url}"/></f:facet>
-                            <emcomp:rssIcon href="${feed.url}" />
-                        </h:column>
-                    </h:dataTable>
-                </h:form>
+        <h:form>
+            <h:dataTable id="availableFeedsTable" value="#{editAggregatedFeed.availableFeeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <fluxx:tendency feed="#{feed}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="${msgs.form_field_feed_name}"/></f:facet>
+                    <h:commandLink action="#{editAggregatedFeed.addFeed}">
+                        <h:outputText title="${feed.description}" value="${feed.title}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"><h:outputText value="${msgs.form_field_feed_url}"/></f:facet>
+                    <emcomp:rssIcon href="${feed.url}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
 
-                <h2>${msgs.page_subtitle_add_feed}</h2>
-                <h:form>
-                    <h:panelGrid columns="3" >
-                        <h:outputText value="${msgs.form_field_feed_url} * :"/>
-                        <h:inputText id="url" value="#{editAggregatedFeed.newFeedUrl}" />
-                        <h:message for="url" styleClass="error"/>
-                        <h:commandButton  id="submit" value="${msgs.form_button_add}" action="#{editAggregatedFeed.addNewFeed}"/>
-                    </h:panelGrid>
-                </h:form>
-            </ui:define>
-        </ui:composition>
-    </h:body>
-</html>
+        <h2>${msgs.page_subtitle_add_feed}</h2>
+        <h:form>
+            <h:panelGrid columns="3" >
+                <h:outputText value="${msgs.form_field_feed_url} * :"/>
+                <h:inputText id="url" value="#{editAggregatedFeed.newFeedUrl}" />
+                <h:message for="url" styleClass="error"/>
+                <h:commandButton  id="submit" value="${msgs.form_button_add}" action="#{editAggregatedFeed.addNewFeed}"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>

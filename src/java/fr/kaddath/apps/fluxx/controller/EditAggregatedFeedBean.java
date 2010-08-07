@@ -137,6 +137,7 @@ public class EditAggregatedFeedBean implements Serializable {
     }
 
     private void buildAvailableFeedsDataModel() {
+        LOG.info("filter:"+filter);
        buildAvailableFeedsDataModel(filter);
     }
 

@@ -1,43 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
-    <h:body>
-        <ui:composition template="/template.xhtml">
-            <ui:define name="content_right">
-                <h1>${msgs.page_title_manage_account}</h1>
-                <h:form >
-                    <h:panelGrid columns="3" >
+<ui:composition template="/template.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="content_right">
+        <h1>${msgs.page_title_manage_account}</h1>
+        <h:form >
+            <h:panelGrid columns="3" >
 
-                        <h:outputText value="${msgs.form_field_username} * :"/>
-                        <h:inputText readonly="true" required="true" id="username" value="#{user.username}" />
-                        <h:message for="username" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_username} * :"/>
+                <h:inputText readonly="true" required="true" id="username" value="#{user.username}" />
+                <h:message for="username" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_password} * :"/>
-                        <h:inputSecret required="true" id="password" value="#{user.password}" />
-                        <h:message for="password" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_password} * :"/>
+                <h:inputSecret required="true" id="password" value="#{user.password}" />
+                <h:message for="password" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_email} * :"/>
-                        <h:inputText required="true" id="email" value="#{user.email}" />
-                        <h:message for="email" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_email} * :"/>
+                <h:inputText required="true" id="email" value="#{user.email}" />
+                <h:message for="email" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_mail_notification} :"/>
-                        <h:selectBooleanCheckbox id="mailNotification" value="#{user.mailNotification}" />
-                        <h:message for="mailNotification" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_mail_notification} :"/>
+                <h:selectBooleanCheckbox id="mailNotification" value="#{user.mailNotification}" />
+                <h:message for="mailNotification" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_twitter_account} :"/>
-                        <h:inputText required="true" id="twitterAccount" value="#{user.twitterAccount}" />
-                        <h:message for="twitterAccount" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_twitter_account} :"/>
+                <h:inputText required="true" id="twitterAccount" value="#{user.twitterAccount}" />
+                <h:message for="twitterAccount" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_twitter_notification} :"/>
-                        <h:selectBooleanCheckbox id="twitterNotification" value="#{user.twitterNotification}" />
-                        <h:message for="twitterNotification" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_twitter_notification} :"/>
+                <h:selectBooleanCheckbox id="twitterNotification" value="#{user.twitterNotification}" />
+                <h:message for="twitterNotification" styleClass="error"/>
 
-                        <h:commandButton id="submit" value="${msgs.form_button_update}" action="#{user.update}"/>
-                    </h:panelGrid>
-                </h:form>
-            </ui:define>
-        </ui:composition>
-    </h:body>
-</html>
+                <h:commandButton id="submit" value="${msgs.form_button_update}" action="#{user.update}"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>

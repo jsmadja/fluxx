@@ -26,10 +26,9 @@ public class RssService {
 
     private static final String FEED_TYPE = "rss_2.0";
     private static final String DESCRIPTION_TYPE = "text/plain";
-    private static final String FEED_ENCODING = "UTF-8";
     private SyndFeed syndFeed;
 
-    @Resource(lookup="java:comp/env/fluxx/feed/encoding")
+    @Resource(lookup="fluxx/feed/encoding")
     private String feedEncoding;
 
     @EJB

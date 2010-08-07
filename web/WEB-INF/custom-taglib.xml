@@ -15,4 +15,15 @@
             <type>fr.kaddath.apps.fluxx.domain.Feed</type>
         </attribute>
     </tag>
+    <tag>
+        <tag-name>tendency</tag-name>
+        <component>
+            <component-type>tendency</component-type>
+        </component>
+        <attribute>
+            <name>feed</name>
+            <required>true</required>
+            <type>fr.kaddath.apps.fluxx.domain.Feed</type>
+        </attribute>
+    </tag>
 </facelet-taglib>

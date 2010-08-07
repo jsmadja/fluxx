@@ -1,55 +1,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
+<ui:composition template="/template.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content_right">
+        <h1>${msgs.page_title_signin}</h1>
+        <h:form >
+            <h:panelGrid columns="3" >
 
-      xmlns:f="http://java.sun.com/jsf/core">
-    <h:body>
-        <ui:composition template="/template.xhtml">
-            <ui:define name="content_right">
-                <h1>${msgs.page_title_signin}</h1>
-                <h:form >
-                    <h:panelGrid columns="3" >
+                <h:outputText value="${msgs.form_field_username} * :"/>
+                <h:inputText required="true" id="username" value="#{user.username}" requiredMessage="#{msgs.constraint_invalid_username}">
+                    <f:validator validatorId="usernameAlreadyUsed" />
+                </h:inputText>
+                <h:message for="username" styleClass="error" />
 
-                        <h:outputText value="${msgs.form_field_username} * :"/>
-                        <h:inputText required="true" id="username" value="#{user.username}" requiredMessage="#{msgs.constraint_invalid_username}">
-                             <f:validator validatorId="usernameAlreadyUsed" />
-                        </h:inputText>
-                        <h:message for="username" styleClass="error" />
+                <h:outputText value="${msgs.form_field_password} * :"/>
+                <h:inputSecret required="true" id="password" value="#{user.password}" requiredMessage="#{msgs.constraint_invalid_password}" />
+                <h:message for="password" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_password} * :"/>
-                        <h:inputSecret required="true" id="password" value="#{user.password}" requiredMessage="#{msgs.constraint_invalid_password}" />
-                        <h:message for="password" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_email} * :"/>
+                <h:inputText required="true" id="email" value="#{user.email}" requiredMessage="#{msgs.constraint_invalid_email}">
+                    <f:validateRegex pattern="[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}" for="msgs.constraint_invalid_email" />
+                    <f:validator validatorId="emailAlreadyUsed" />
+                </h:inputText>
+                <h:message for="email" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_email} * :"/>
-                        <h:inputText required="true" id="email" value="#{user.email}" requiredMessage="#{msgs.constraint_invalid_email}">
-                            <f:validateRegex pattern="[a-z0-9._-]+@[a-z0-9.-]{2,}[.][a-z]{2,3}" for="msgs.constraint_invalid_email" />
-                            <f:validator validatorId="emailAlreadyUsed" />
-                        </h:inputText>
-                        <h:message for="email" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_mail_notification} :"/>
+                <h:selectBooleanCheckbox id="mailNotification" value="#{user.mailNotification}" />
+                <h:message for="mailNotification" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_mail_notification} :"/>
-                        <h:selectBooleanCheckbox id="mailNotification" value="#{user.mailNotification}" />
-                        <h:message for="mailNotification" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_twitter_account} :"/>
+                <h:inputText id="twitterAccount" value="#{user.twitterAccount}">
+                    <f:validator validatorId="twitterAccountAlreadyUsed" />
+                </h:inputText>
+                <h:message for="twitterAccount" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_twitter_account} :"/>
-                        <h:inputText id="twitterAccount" value="#{user.twitterAccount}">
-                            <f:validator validatorId="twitterAccountAlreadyUsed" />
-                        </h:inputText>
-                        <h:message for="twitterAccount" styleClass="error"/>
+                <h:outputText value="${msgs.form_field_twitter_notification} :"/>
+                <h:selectBooleanCheckbox id="twitterNotification" value="#{user.twitterNotification}">
+                    <f:validator validatorId="noTwitterAccountSupplied" />
+                    <f:attribute name="twitterAccount" value="#{component.parent.clientId}:twitterAccount" />
+                </h:selectBooleanCheckbox>
+                <h:message for="twitterNotification" styleClass="error"/>
 
-                        <h:outputText value="${msgs.form_field_twitter_notification} :"/>
-                        <h:selectBooleanCheckbox id="twitterNotification" value="#{user.twitterNotification}">
-                            <f:validator validatorId="noTwitterAccountSupplied" />
-                            <f:attribute name="twitterAccount" value="#{component.parent.clientId}:twitterAccount" />
-                        </h:selectBooleanCheckbox>
-                        <h:message for="twitterNotification" styleClass="error"/>
-
-                        <h:commandButton id="submit" value="${msgs.form_button_submit}" action="#{user.subscribe}"/>
-                    </h:panelGrid>
-                </h:form>
-            </ui:define>
-        </ui:composition>
-    </h:body>
-</html>
+                <h:commandButton id="submit" value="${msgs.form_button_submit}" action="#{user.subscribe}"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+</ui:composition>

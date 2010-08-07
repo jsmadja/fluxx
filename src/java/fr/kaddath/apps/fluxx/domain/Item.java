@@ -1,5 +1,8 @@
 package fr.kaddath.apps.fluxx.domain;
 
+import com.google.common.base.Objects;
+import javax.persistence.NamedQuery;
+import javax.persistence.NamedQueries;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +21,7 @@ import javax.validation.constraints.NotNull;
 import static javax.persistence.CascadeType.*;
 
 @Entity
+@NamedQueries(@NamedQuery(name="findItemsByLink",query="SELECT Item FROM Item AS item WHERE item.link = :link"))
 public class Item implements Comparable<Item> {
 
     @Id
@@ -48,7 +52,7 @@ public class Item implements Comparable<Item> {
     @OneToMany(cascade = {ALL}, mappedBy="item")
     private Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
 
-    @ManyToMany(cascade = {ALL})
+    @ManyToMany(cascade = {DETACH,MERGE,PERSIST,REFRESH})
     private Set<FeedCategory> feedCategories = new HashSet<FeedCategory>();
 
     @ManyToOne
@@ -62,6 +66,12 @@ public class Item implements Comparable<Item> {
     @Override
     public int hashCode() {
         return link.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        // Google Guava
+        return Objects.toStringHelper(this).add("id", getId()).add("uri", getUri()).add("publishedDate", getPublishedDate()).add("updatedDate", getUpdatedDate()).toString();
     }
 
     public String getAuthor() {
