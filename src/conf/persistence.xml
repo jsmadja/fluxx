@@ -4,12 +4,20 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/__default</jta-data-source>
     <properties>
+<<<<<<< HEAD
       <property name="eclipselink.target-database" value="DERBY"/>
+=======
+           <property name="eclipselink.target-database" value="DERBY"/>
+>>>>>>> 37c14060e210a31d7ba41c4f7a70a2f1b911db3b
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/fluxx;create=true"/>
       <property name="javax.persistence.jdbc.user" value="sonar"/>
+<<<<<<< HEAD
       <property name="javax.persistence.jdbc.password" value="sonar"/>      
+=======
+      <property name="javax.persistence.jdbc.password" value="sonar"/>
+>>>>>>> 37c14060e210a31d7ba41c4f7a70a2f1b911db3b
     </properties>
   </persistence-unit>
 </persistence>
