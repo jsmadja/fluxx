@@ -11,7 +11,7 @@
     <properties>
         <junit-version>4.7</junit-version>
         <eclipselink-version>2.0.0</eclipselink-version>
-        <glassfish-version>3.0.1-b19</glassfish-version>
+        <glassfish-version>3.0</glassfish-version>
         <jsf-version>2.0</jsf-version>
         <rome-version>0.9</rome-version>
         <log4j-version>1.2.14</log4j-version>
