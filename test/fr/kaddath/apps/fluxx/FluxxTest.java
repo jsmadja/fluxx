@@ -8,6 +8,8 @@ package fr.kaddath.apps.fluxx;
 import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Fluxxer;
+import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
+import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -26,15 +28,16 @@ public class FluxxTest extends AbstractTest {
         user.setEmail(user.getUsername()+"@gmail.com");
         userService.persist(user);
     }
-//
-//    @Test
-//    public void addFeed() {
-//        Feed feed = new Feed();
-//        feed.setUrl("http://javahowto.blogspot.com/feeds/posts/default?alt=rss");
-//        feedService.merge(feed);
-//        feedService.updateAll();
-//        assertTrue(itemService.getNumItems()>0);
-//    }
+
+    @Test
+    public void addFeed() throws DownloadFeedException {
+        String url = "http://fluxx.fr.cr:8080/fluxx/rss?id=-2c0b434f7d6f147dc3ee40fe02703163";
+        feedFetcherService.add(url);
+        Feed feed = feedService.findFeedByUrl(url);
+        assertNotNull(feed);
+        System.out.println(feed + " "+feed.getItems().size());
+        assertTrue(itemService.getNumItems(feed)>0);
+    }
 
     @Test
     public void listUsers() {
