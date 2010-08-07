@@ -1,6 +1,5 @@
 package fr.kaddath.apps.fluxx.domain;
 
-import com.google.common.base.Objects;
 import javax.persistence.NamedQuery;
 import javax.persistence.NamedQueries;
 import java.util.Date;
@@ -18,6 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import com.google.common.base.Objects;
+
 import static javax.persistence.CascadeType.*;
 
 @Entity
@@ -71,7 +73,8 @@ public class Item implements Comparable<Item> {
     @Override
     public String toString() {
         // Google Guava
-        return Objects.toStringHelper(this).add("id", getId()).add("uri", getUri()).add("publishedDate", getPublishedDate()).add("updatedDate", getUpdatedDate()).toString();
+    	return getTitle();
+    	//return Objects.toStringHelper(this).add("id", getId()).add("uri", getUri()).add("publishedDate", getPublishedDate()).add("updatedDate", getUpdatedDate()).toString();
     }
 
     public String getAuthor() {

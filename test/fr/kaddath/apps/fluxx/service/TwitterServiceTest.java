@@ -10,7 +10,7 @@ public class TwitterServiceTest {
 
     @Test
     public void updateStatus() throws Exception {
-        Services.twitterService.updateStatus("tweet");
+        Services.twitterService.updateStatus("tweet"+Math.random());
     }
 
     @Test
@@ -22,7 +22,7 @@ public class TwitterServiceTest {
 
     @Test
     public void tweetWithAccents() throws Exception {
-        String title = "Les numériques joue avec le portable GT660 signé MSI";
+        String title = "Les numériques joue avec le portable GT660 signé MSI "+Math.random();
         Services.twitterService.updateStatus(title);
     }
 }

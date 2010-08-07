@@ -34,7 +34,7 @@ public class Services {
         props.put("mail.smtp.socketFactory.fallback", "false");
         Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("julien.smadja@gmail.com", "qr25cb485");
+                return new PasswordAuthentication("julien.smadja@gmail.com", "xedy7bsa");
             }
         });
         mailService.setSession(session);
