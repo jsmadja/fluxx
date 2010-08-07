@@ -17,7 +17,7 @@
         <log4j-version>1.2.14</log4j-version>
         <commons-lang-version>2.3</commons-lang-version>
         <hibernate-validator-version>4.0.2.GA</hibernate-validator-version>
-        <glassfish-home>/home/jsmadja/code/glassfish-3.0.1/glassfish</glassfish-home>
+        <environment-name>development</environment-name>
     </properties>
 
     <scm>
@@ -27,9 +27,15 @@
 
     <profiles>
         <profile>
-            <id>integration-continue</id>
+            <id>continuous-integration</id>
             <properties>
-                <glassfish-home>/opt/glassfishv3/glassfish</glassfish-home>
+                <environment-name>continuous-integration</environment-name>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <environment-name>production</environment-name>
             </properties>
         </profile>
     </profiles>
@@ -138,7 +144,7 @@
         <testSourceDirectory>${basedir}/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>${basedir}/src/conf</directory>
+                <directory>${basedir}/src/etc/${environment-name}/conf</directory>
                 <targetPath>META-INF</targetPath>
             </resource>
             <resource>
