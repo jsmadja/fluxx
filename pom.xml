@@ -28,15 +28,9 @@
     <profiles>
         <profile>
             <id>continuous-integration</id>
-            <properties>
-                <environment-name>continuous-integration</environment-name>
-            </properties>
         </profile>
         <profile>
             <id>production</id>
-            <properties>
-                <environment-name>production</environment-name>
-            </properties>
         </profile>
     </profiles>
 
@@ -99,13 +93,6 @@
             <version>${glassfish-version}</version>
             <scope>provided</scope>
         </dependency>
-<!--        <dependency>
-            <groupId>org.glassfish.extras</groupId>
-            <artifactId>glassfish-embedded-static-shell</artifactId>
-            <version>${glassfish-version}</version>
-            <scope>test</scope>
-        </dependency>
-        -->
         <dependency>
             <groupId>org.glassfish.extras</groupId>
             <artifactId>glassfish-embedded-all</artifactId>
