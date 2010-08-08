@@ -16,7 +16,7 @@ public class FeedCategoryService {
 
     public List<String[]> findNumItemFeedsByCategory() {
         List<String[]> numItemFeedsByCategory = new ArrayList<String[]>();
-        Query q = em.createNativeQuery("SELECT fc.NAME, count( ifc.ITEM_ID) FROM feedcategory fc, item_feedcategory ifc WHERE fc.name = ifc.FEEDCATEGORIES_NAME GROUP BY fc.name");
+        Query q = em.createNativeQuery("SELECT fc.NAME, count(ifc.ITEM_ID) FROM feedcategory fc, item_feedcategory ifc WHERE fc.name = ifc.FEEDCATEGORIES_NAME GROUP BY fc.name");
         for (Object o : q.getResultList()) {
             Object[] couple = (Object[]) o;
             numItemFeedsByCategory.add(new String[]{(String) couple[0], couple[1].toString()});
@@ -51,10 +51,11 @@ public class FeedCategoryService {
         return q.getResultList();
     }
 
-    public void create(String categoryName) {
+    public FeedCategory create(String categoryName) {
         FeedCategory category = new FeedCategory();
         category.setName(categoryName);
         em.persist(category);
         em.flush();
+        return category;
     }
 }
