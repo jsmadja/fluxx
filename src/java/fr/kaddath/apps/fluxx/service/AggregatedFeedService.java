@@ -108,4 +108,12 @@ public class AggregatedFeedService {
         return "http://"+server+":"+port+contextRoot+"/rss?id="+feed.getAggregatedFeedId();
     }
 
+    public AggregatedFeed addFeedToAggregatedFeed(Feed feed, AggregatedFeed aggregatedFeed) {
+        if (aggregatedFeed.getFeeds() == null) {
+            aggregatedFeed.setFeeds(new ArrayList<Feed>());
+        }
+        aggregatedFeed.getFeeds().add(feed);
+        aggregatedFeed = merge(aggregatedFeed);
+        return aggregatedFeed;
+    }
 }

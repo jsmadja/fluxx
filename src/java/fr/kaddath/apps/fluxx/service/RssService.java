@@ -1,5 +1,8 @@
 package fr.kaddath.apps.fluxx.service;
 
+import com.sun.syndication.feed.synd.SyndCategory;
+import com.sun.syndication.feed.synd.SyndCategoryImpl;
+import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.text.ParseException;
@@ -8,6 +11,8 @@ import java.util.List;
 
 import com.sun.syndication.feed.synd.SyndContent;
 import com.sun.syndication.feed.synd.SyndContentImpl;
+import com.sun.syndication.feed.synd.SyndEnclosure;
+import com.sun.syndication.feed.synd.SyndEnclosureImpl;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndEntryImpl;
 import com.sun.syndication.feed.synd.SyndFeed;
@@ -18,6 +23,8 @@ import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.Feed;
+import fr.kaddath.apps.fluxx.domain.FeedCategory;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -91,6 +98,25 @@ public class RssService {
 
     private SyndEntry createEntry(Item item) throws ParseException {
         SyndEntry entry = new SyndEntryImpl();
+        addEntryInformations(entry, item);
+        addEnclosures(item, entry);
+        addCategories(item, entry);
+        return entry;
+    }
+
+    private void addCategories(Item item, SyndEntry entry) {
+        if (!item.getFeedCategories().isEmpty()) {
+            createCategories(item, entry);
+        }
+    }
+
+    private void addEnclosures(Item item, SyndEntry entry) {
+        if (!item.getDownloadableItems().isEmpty()) {
+            createEnclosures(item, entry);
+        }
+    }
+
+    private void addEntryInformations(SyndEntry entry, Item item) {
         SyndContent description = new SyndContentImpl();
         entry.setTitle(item.getTitle());
         entry.setLink(item.getLink());
@@ -98,7 +124,30 @@ public class RssService {
         description.setType(DESCRIPTION_TYPE);
         description.setValue(item.getDescription());
         entry.setDescription(description);
-        return entry;
+    }
+
+    private void createEnclosures(Item item, SyndEntry entry) {
+        Set<DownloadableItem> downloadableItems = item.getDownloadableItems();
+        List<SyndEnclosure> enclosures = new ArrayList<SyndEnclosure>();
+        for (DownloadableItem di:downloadableItems) {
+            SyndEnclosure enclosure = new SyndEnclosureImpl();
+            enclosure.setLength(di.getFileLength());
+            enclosure.setType(di.getType());
+            enclosure.setUrl(di.getUrl());
+            enclosures.add(enclosure);
+        }
+        entry.setEnclosures(enclosures);
+    }
+
+    private void createCategories(Item item, SyndEntry entry) {
+        Set<FeedCategory> feedCategories = item.getFeedCategories();
+        List<SyndCategory> categories = new ArrayList<SyndCategory>();
+        for (FeedCategory fc:feedCategories) {
+            SyndCategory category = new SyndCategoryImpl();
+            category.setName(fc.getName());
+            categories.add(category);
+        }
+        entry.setCategories(categories);
     }
 
     public String getRssFeedById(String aggregatedFeedId, HttpServletRequest request) {
