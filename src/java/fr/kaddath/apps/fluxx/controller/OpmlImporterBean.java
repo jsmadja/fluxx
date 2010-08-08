@@ -7,10 +7,10 @@ import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.OpmlService;
 import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.apache.log4j.Logger;
 
 @Named(value = "opmlImporter")
 @ApplicationScoped
@@ -24,7 +24,7 @@ public class OpmlImporterBean {
     @Inject
     private FeedFetcherService feedFetcherService;
 
-    private static final Logger LOG = Logger.getLogger("fluxx");
+    private static final Logger LOG = Logger.getLogger(OpmlImporterBean.class.getName());
 
     public String getImportOpml() {
         List<Feed> feeds = opmlService.loadOpml(getContent().getBytes());

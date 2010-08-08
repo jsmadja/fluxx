@@ -15,6 +15,7 @@ import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.feed.synd.SyndPerson;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
+import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import fr.kaddath.apps.fluxx.domain.Feed;
@@ -32,6 +33,7 @@ import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.inject.Inject;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -62,6 +64,9 @@ public class FeedFetcherService {
 
     @PersistenceContext
     EntityManager em;
+
+    @Inject
+    RssFeedCache feedCache;
 
     public Feed add(String feedUrl) throws DownloadFeedException {
         Feed feed = new Feed();
@@ -144,6 +149,7 @@ public class FeedFetcherService {
     @Interceptors({ChronoInterceptor.class})
     @Schedule(minute="*/10", hour="*")
     public void updateAllAsynchronously() {
+        feedCache.clear();
         List<Future<Object[]>> couples = downloadFeeds();
         updateFeeds(couples);
     }

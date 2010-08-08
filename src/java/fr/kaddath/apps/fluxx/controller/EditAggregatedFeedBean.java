@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
@@ -18,7 +19,6 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.log4j.Logger;
 
 @Named(value = "editAggregatedFeed")
 @ManagedBean
@@ -52,7 +52,7 @@ public class EditAggregatedFeedBean implements Serializable {
     private List<Feed> availableListFeeds;
     private AggregatedFeed currentAggregatedFeed;
 
-    private static final Logger LOG = Logger.getLogger("fluxx");
+    private static final Logger LOG = Logger.getLogger(EditAggregatedFeedBean.class.getName());
 
     public String edit() {
         currentAggregatedFeed = aggregatedFeedBean.getUserAggregatedFeeds().getRowData();

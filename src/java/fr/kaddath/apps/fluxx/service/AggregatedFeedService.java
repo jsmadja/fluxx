@@ -1,5 +1,6 @@
 package fr.kaddath.apps.fluxx.service;
 
+import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.metamodel.AggregatedFeed_;
 import fr.kaddath.apps.fluxx.domain.Feed;
@@ -13,6 +14,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -32,6 +34,9 @@ public class AggregatedFeedService {
 
     private CriteriaBuilder cb;
 
+    @Inject
+    RssFeedCache feedCache;
+
     @PostConstruct
     private void init() {
         cb = em.getCriteriaBuilder();
@@ -42,8 +47,12 @@ public class AggregatedFeedService {
         Root<AggregatedFeed> feed = cq.from(AggregatedFeed.class);
         cq.where(cb.equal(feed.get(AggregatedFeed_.aggregatedFeedId), id));
         cq.select(feed);
-        return (AggregatedFeed) em.createQuery(cq).getSingleResult();
-        
+        List<AggregatedFeed> list = em.createQuery(cq).getResultList();
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
     }
 
     public List<Item> findItemsByAggregatedFeed(AggregatedFeed feed) {
@@ -76,12 +85,10 @@ public class AggregatedFeedService {
         return em.merge(fluxxer);
     }
 
-    public void persist(AggregatedFeed aggregatedFeed) {
-        em.persist(aggregatedFeed);
-    }
-
     public AggregatedFeed merge(AggregatedFeed aggregatedFeed) {
-        return em.merge(aggregatedFeed);
+        AggregatedFeed af = em.merge(aggregatedFeed);
+        feedCache.remove(af.getAggregatedFeedId());
+        return af;
     }
 
     public void delete(AggregatedFeed aggregatedFeed) {
@@ -99,4 +106,5 @@ public class AggregatedFeedService {
         String contextRoot = request.getContextPath();
         return "http://"+server+":"+port+contextRoot+"/rss?id="+feed.getAggregatedFeedId();
     }
+
 }

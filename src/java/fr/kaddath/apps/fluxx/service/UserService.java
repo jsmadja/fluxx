@@ -12,13 +12,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
-import org.apache.log4j.Logger;
 
 @Stateless
 @LocalBean
 public class UserService {
-
-    private static final Logger LOG = Logger.getLogger("fluxx");
 
     @PersistenceContext
     EntityManager em;

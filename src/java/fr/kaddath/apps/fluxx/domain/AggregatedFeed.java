@@ -10,10 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="AGGREGATEDFEED",uniqueConstraints=@UniqueConstraint(columnNames={"AGGREGATEDFEEDID"}))
 public class AggregatedFeed implements Serializable {
 
     private static final long serialVersionUID = 1L;

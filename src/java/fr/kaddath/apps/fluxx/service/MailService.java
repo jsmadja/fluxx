@@ -4,6 +4,7 @@ import fr.kaddath.apps.fluxx.domain.Fluxxer;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.model.NotificationItemMail;
 import java.util.Properties;
+import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
@@ -12,7 +13,6 @@ import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
-import org.apache.log4j.Logger;
 
 @Stateless
 public class MailService {
@@ -40,7 +40,7 @@ public class MailService {
         props.put("mail.smtp.socketFactory.port", "465");
         props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
-        LOG.debug("Try to create gmail session with couple "+username+"/"+password);
+        LOG.finest("Try to create gmail session with couple "+username+"/"+password);
         try {
         session =  Session.getDefaultInstance(props, new Authenticator() {
             @Override
@@ -49,7 +49,7 @@ public class MailService {
             }
         });
         } catch(SecurityException e) {
-            LOG.warn("Envoi de mail désactivé : "+e.getMessage());
+            LOG.warning("Envoi de mail désactivé : "+e.getMessage());
         }
     }
 

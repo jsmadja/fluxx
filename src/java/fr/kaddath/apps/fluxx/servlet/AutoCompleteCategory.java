@@ -43,7 +43,7 @@ public class AutoCompleteCategory extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String query = request.getParameter("query");
-            List<String> categories = categoryService.findCategoryByNameWithLike(query, numCategories);
+            List<String> categories = categoryService.findCategoryNamesInLowerCaseWithLike(query, numCategories);
             for (String categorie:categories) {
                 out.println(categorie);
             }

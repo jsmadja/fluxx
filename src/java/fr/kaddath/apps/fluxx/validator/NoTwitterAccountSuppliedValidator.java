@@ -8,11 +8,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 public class NoTwitterAccountSuppliedValidator implements Validator {
-
-    private static final Logger LOG = Logger.getLogger("fluxx");
 
     @Override
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
@@ -20,10 +17,6 @@ public class NoTwitterAccountSuppliedValidator implements Validator {
         String twitterAccountId = (String) component.getAttributes().get("twitterAccount");
         UIInput twitterAccountField = (UIInput) context.getViewRoot().findComponent(twitterAccountId);
         String twitterAccount = twitterAccountField.getValue().toString();
-
-        if (LOG.isDebugEnabled()) {
-            LOG.debug("Try to validate twitter checkbox : " + checkBoxValue+ " for twitter account : "+twitterAccount);
-        }
 
         if (checkBoxValue && StringUtils.isBlank(twitterAccount)) {
             throw new ValidatorException(new FacesMessage(FluxxMessage.m("constraint_invalid_twitter_notification_notwitteraccount")));

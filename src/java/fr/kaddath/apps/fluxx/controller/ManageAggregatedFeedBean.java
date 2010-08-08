@@ -11,7 +11,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
-import org.apache.log4j.Logger;
 
 @ManagedBean
 @Named(value = "manageAggregatedFeed")
@@ -20,8 +19,6 @@ public class ManageAggregatedFeedBean extends ConnectedFluxxerBean implements Se
 
     private static final String EDIT_AGGREGATEDFEED = "edit-aggregatedfeed";
     private static final String MANAGE_AGGREGATEDFEED = "manage-aggregatedfeed";
-
-    private static final Logger LOG = Logger.getLogger("fluxxer");
 
     private String name;
     private int numLastDay = 3;

@@ -7,14 +7,11 @@ import java.util.Date;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
-import org.apache.log4j.Logger;
 
 @Named(value="user")
 @SessionScoped
 @ManagedBean
 public class UserBean extends ConnectedFluxxerBean implements Serializable {
-
-    private static final Logger LOG = Logger.getLogger("fluxx");
 
     private String EDIT_ACCOUNT = "edit-account";
     private String EDIT_ACCOUNT_VALIDATION = "edit-account-validation";

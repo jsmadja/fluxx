@@ -14,12 +14,17 @@ import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
+import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.Feed;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 @Stateful
 public class RssService {
@@ -28,13 +33,16 @@ public class RssService {
     private static final String DESCRIPTION_TYPE = "text/plain";
     private SyndFeed syndFeed;
 
+    @Inject
+    private RssFeedCache feedCache;
+
     @Resource(lookup="fluxx/feed/encoding")
     private String feedEncoding;
 
     @EJB
     private AggregatedFeedService aggregatedFeedService;
 
-    public String createRssFeed(AggregatedFeed aggregatedFeed, String host) throws ParseException, IOException, FeedException {
+    private String createRssFeed(AggregatedFeed aggregatedFeed, String host) throws ParseException, IOException, FeedException {
         syndFeed = new SyndFeedImpl();
         Feed feed = createFeed(aggregatedFeed, host);
         addFeedInformations(feed);
@@ -92,6 +100,26 @@ public class RssService {
         description.setValue(item.getDescription());
         entry.setDescription(description);
         return entry;
+    }
+
+    public String getRssFeedById(String aggregatedFeedId, HttpServletRequest request) {
+        AggregatedFeed feed = aggregatedFeedService.findByAggregatedFeedId(aggregatedFeedId);
+        if (feed != null) {
+            if (feedCache.contains(aggregatedFeedId)) {
+                return feedCache.get(aggregatedFeedId);
+            } else {
+                String url = aggregatedFeedService.createUrl(request, feed);
+                try {
+                    feedCache.put(aggregatedFeedId, createRssFeed(feed, url));
+                    return feedCache.get(aggregatedFeedId);
+                } catch (Exception ex) {
+                    Logger.getLogger(RssService.class.getName()).log(Level.SEVERE, null, ex);
+                    return "";
+                }
+            }
+        } else {
+            return "";
+        }
     }
 
     public String getFeedEncoding() {

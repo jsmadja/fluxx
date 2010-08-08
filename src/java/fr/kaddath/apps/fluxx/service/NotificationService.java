@@ -4,15 +4,15 @@ import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Fluxxer;
 import fr.kaddath.apps.fluxx.domain.Item;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.mail.MessagingException;
-import org.apache.log4j.Logger;
 
 @Stateless
 public class NotificationService {
 
-    private static final Logger LOG = Logger.getLogger("fluxx");
+    private static final Logger LOG = Logger.getLogger(NotificationService.class.getName());
     private static final Logger STACK = Logger.getLogger("fluxx.stack");
 
     @EJB
@@ -40,8 +40,8 @@ public class NotificationService {
             try {
                 notifyTwitter(fluxxer, item);
             } catch (Exception ex) {
-               LOG.error("Can't send tweet of item ["+item.getLink()+"] to fluxxer "+fluxxer.getUsername());
-               STACK.error(ex.getMessage(), ex);
+               LOG.severe("Can't send tweet of item ["+item.getLink()+"] to fluxxer "+fluxxer.getUsername());
+               STACK.throwing(NotificationService.class.getName(), "notifyTwitter", ex);
             }
         }
 
@@ -49,8 +49,8 @@ public class NotificationService {
             try {
                 notifyMail(fluxxer, item);
             } catch (MessagingException ex) {
-                LOG.error("Can't send mail of item ["+item.getLink()+"] to fluxxer "+fluxxer.getUsername(), ex);
-                STACK.error(ex.getMessage(), ex);
+                LOG.severe("Can't send mail of item ["+item.getLink()+"] to fluxxer "+fluxxer.getUsername());
+                STACK.throwing(NotificationService.class.getName(), "notifyMail", ex);
             }
         }
     }

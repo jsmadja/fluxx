@@ -3,7 +3,6 @@ package fr.kaddath.apps.fluxx.customtag;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.Services;
-import fr.kaddath.apps.fluxx.util.StringUtils;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -11,12 +10,9 @@ import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
-import org.apache.log4j.Logger;
 
 @FacesComponent(value = "tagline")
 public class TagLine extends UIComponentBase {
-
-    private static final Logger LOG = Logger.getLogger("fluxx");
 
     private FeedService feedService;
 

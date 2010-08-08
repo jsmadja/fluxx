@@ -7,7 +7,6 @@ import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import java.net.URL;
 import java.util.concurrent.Future;
-import java.util.logging.Logger;
 import javax.ejb.AsyncResult;
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
