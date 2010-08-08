@@ -41,20 +41,25 @@ public class FeedFetcherService {
 
     private static final Logger LOG = Logger.getLogger("fluxx");
     private static final Logger STACK = Logger.getLogger("fluxx.stack");
+
     @EJB
     AsynchronousFeedDownloaderService downloaderService;
+
     @EJB
     ItemService itemService;
+
     @EJB
     FeedCategoryService feedCategoryService;
+
     @EJB
     DownloadableItemService downloadableItemService;
+
     @EJB
     NotificationService notificationService;
+
     @EJB
     private FeedService feedService;
-    @EJB
-    private FeedFetcherService feedFetcherService;
+
     @PersistenceContext
     EntityManager em;
 

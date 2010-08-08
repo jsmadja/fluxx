@@ -9,7 +9,6 @@ import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Fluxxer;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
-import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -32,11 +31,12 @@ public class FluxxTest extends AbstractTest {
     @Test
     public void addFeed() throws DownloadFeedException {
         String url = "http://fluxx.fr.cr:8080/fluxx/rss?id=-2c0b434f7d6f147dc3ee40fe02703163";
-        feedFetcherService.add(url);
         Feed feed = feedService.findFeedByUrl(url);
+        if (feed != null) {
+            feedService.delete(feed);
+        }
+        feed = feedFetcherService.add(url);
         assertNotNull(feed);
-        System.out.println(feed + " "+feed.getItems().size());
-        assertTrue(itemService.getNumItems(feed)>0);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class FluxxTest extends AbstractTest {
         List<Fluxxer> users = userService.findAll();
         assertNotNull(users);
         assertTrue(users.size()>0);
-    }    
+    }
 
     @Test
     public void addAggregatedFeed() {

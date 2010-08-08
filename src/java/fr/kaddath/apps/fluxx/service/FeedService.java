@@ -152,6 +152,7 @@ public class FeedService {
     public void delete(Feed feed) {
         Feed feedToRemove = em.find(Feed.class, feed.getId());
         em.remove(feedToRemove);
+        em.flush();
     }
 
     public Feed findFeedByUrl(String url) {
