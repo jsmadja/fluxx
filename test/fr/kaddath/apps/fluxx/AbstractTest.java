@@ -1,6 +1,7 @@
 package fr.kaddath.apps.fluxx;
 
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
+import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.IFeedService;
 import fr.kaddath.apps.fluxx.service.ItemService;
 import fr.kaddath.apps.fluxx.service.OpmlService;
@@ -27,11 +28,15 @@ public class AbstractTest {
     public void test() {}
 
     private static Object lookup(String key) throws NamingException {
+        return namingContext.lookup("java:global/classes/" + key);
+    }
+
+    private static Object lookup(Class impl, Class inter) throws NamingException {
         Object o;
         try {
-            o = namingContext.lookup("java:global/classes/" + key);
+            o = lookup(impl.getSimpleName());
         } catch (NamingException ex) {
-                o = namingContext.lookup("java:global/cobertura/" + key);
+            o = namingContext.lookup("java:global/cobertura/"+impl.getClass().getSimpleName()+"!"+inter.getClass().getName());
         }
         return o;
     }
@@ -40,7 +45,7 @@ public class AbstractTest {
         try {
             container = EJBContainer.createEJBContainer();
             namingContext = container.getContext();
-            feedService = (IFeedService) lookup("FeedService");
+            feedService = (IFeedService) lookup(FeedService.class,IFeedService.class);
             userService = (UserService) lookup("UserService");
             rssService = (RssService) lookup("RssService");
             itemService = (ItemService) lookup("ItemService");
