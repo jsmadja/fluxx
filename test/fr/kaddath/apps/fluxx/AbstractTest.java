@@ -1,7 +1,6 @@
 package fr.kaddath.apps.fluxx;
 
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
-import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.IFeedService;
 import fr.kaddath.apps.fluxx.service.ItemService;
 import fr.kaddath.apps.fluxx.service.OpmlService;

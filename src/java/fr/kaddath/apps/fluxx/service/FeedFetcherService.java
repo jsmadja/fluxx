@@ -58,7 +58,7 @@ public class FeedFetcherService {
     NotificationService notificationService;
 
     @EJB
-    private FeedService feedService;
+    IFeedService feedService;
 
     @PersistenceContext
     EntityManager em;
