@@ -29,6 +29,7 @@ public class UserService {
 
     public void persist(Fluxxer user) {
         em.persist(user);
+        em.flush();
     }
 
     public List<Fluxxer> findAll() {

@@ -14,7 +14,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -34,7 +33,7 @@ public class AggregatedFeedService {
 
     private CriteriaBuilder cb;
 
-    @Inject
+    @EJB
     RssFeedCache feedCache;
 
     @PostConstruct
@@ -82,7 +81,9 @@ public class AggregatedFeedService {
         aggregatedFeed.setFluxxer(fluxxer);
         aggregatedFeed.setNumLastDay(numLastDay);
         fluxxer.getAggregatedFeeds().add(aggregatedFeed);
-        return em.merge(fluxxer);
+        fluxxer = em.merge(fluxxer);
+        em.flush();
+        return fluxxer;
     }
 
     public AggregatedFeed merge(AggregatedFeed aggregatedFeed) {

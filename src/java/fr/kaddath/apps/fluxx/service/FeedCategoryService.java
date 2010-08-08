@@ -50,4 +50,11 @@ public class FeedCategoryService {
         q.setMaxResults(numCategories);
         return q.getResultList();
     }
+
+    public void create(String categoryName) {
+        FeedCategory category = new FeedCategory();
+        category.setName(categoryName);
+        em.persist(category);
+        em.flush();
+    }
 }

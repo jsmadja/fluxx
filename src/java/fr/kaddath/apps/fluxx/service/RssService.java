@@ -23,7 +23,6 @@ import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 @Stateful
@@ -33,7 +32,7 @@ public class RssService {
     private static final String DESCRIPTION_TYPE = "text/plain";
     private SyndFeed syndFeed;
 
-    @Inject
+    @EJB
     private RssFeedCache feedCache;
 
     @Resource(lookup="fluxx/feed/encoding")

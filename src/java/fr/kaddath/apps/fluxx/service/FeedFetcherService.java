@@ -72,7 +72,9 @@ public class FeedFetcherService {
         Feed feed = new Feed();
         feed.setUrl(feedUrl);
         fetch(feed);
-        return em.merge(feed);
+        feed = em.merge(feed);
+        em.flush();
+        return feed;
     }
 
     public void fetch(Feed feed) throws DownloadFeedException {
