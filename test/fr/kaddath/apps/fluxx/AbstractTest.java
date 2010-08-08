@@ -35,6 +35,8 @@ public class AbstractTest {
             itemService = (ItemService) namingContext.lookup("java:global/classes/ItemService");
             opmlService = (OpmlService) namingContext.lookup("java:global/classes/OpmlService");
             feedFetcherService = (FeedFetcherService) namingContext.lookup("java:global/classes/FeedFetcherService");
+
+            rssService.setFeedEncoding("UTF-8");
         } catch(Exception e) {
             e.printStackTrace();
         }

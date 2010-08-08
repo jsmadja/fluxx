@@ -93,4 +93,13 @@ public class RssService {
         entry.setDescription(description);
         return entry;
     }
+
+    public String getFeedEncoding() {
+        return feedEncoding;
+    }
+
+    public void setFeedEncoding(String feedEncoding) {
+        this.feedEncoding = feedEncoding;
+    }
+
 }
