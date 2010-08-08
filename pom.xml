@@ -12,6 +12,7 @@
         <junit-version>4.7</junit-version>
         <eclipselink-version>2.0.0</eclipselink-version>
         <glassfish-version>3.0</glassfish-version>
+        <sl4j-version>1.5.6</sl4j-version>
         <jsf-version>2.0</jsf-version>
         <rome-version>0.9</rome-version>
         <log4j-version>1.2.14</log4j-version>
@@ -130,12 +131,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.1</version>
+            <version>${sl4j-version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.6.1</version>
+            <version>${sl4j-version}</version>
         </dependency>
     </dependencies>
     <build>
