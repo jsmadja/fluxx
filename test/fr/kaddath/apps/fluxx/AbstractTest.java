@@ -31,12 +31,12 @@ public class AbstractTest {
         return namingContext.lookup("java:global/classes/" + key);
     }
 
-    private static Object lookup(Class impl, Class inter) throws NamingException {
+    private static Object lookup(String impl, String inter) throws NamingException {
         Object o;
         try {
-            o = lookup(impl.getSimpleName());
+            o = lookup(impl);
         } catch (NamingException ex) {
-            o = namingContext.lookup("java:global/cobertura/"+impl.getClass().getSimpleName()+"!"+inter.getClass().getName());
+            o = namingContext.lookup("java:global/cobertura/"+impl+"!fr.kaddath.apps.fluxx.service."+inter);
         }
         return o;
     }
@@ -45,7 +45,7 @@ public class AbstractTest {
         try {
             container = EJBContainer.createEJBContainer();
             namingContext = container.getContext();
-            feedService = (IFeedService) lookup(FeedService.class,IFeedService.class);
+            feedService = (IFeedService) lookup("FeedService","IFeedService");
             userService = (UserService) lookup("UserService");
             rssService = (RssService) lookup("RssService");
             itemService = (ItemService) lookup("ItemService");
