@@ -288,4 +288,13 @@ public class FeedFetcherService {
         }
         return itemService.findItemsByLink(syndEntryImpl.getLink()) == null;
     }
+
+    public IFeedService getFeedService() {
+        return feedService;
+    }
+
+    public void setFeedService(IFeedService feedService) {
+        this.feedService = feedService;
+    }
+
 }
