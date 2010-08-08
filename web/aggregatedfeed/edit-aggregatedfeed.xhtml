@@ -2,6 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <ui:composition template="/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
@@ -61,8 +62,8 @@
         <h2>${msgs.page_subtitle_available_feeds}</h2>
 
         <div id="myContainer"></div>
-        <h:form>
-            <h:inputText onfocus="clearText(this)" onblur="clearText(this)" id="myInput" value="#{editAggregatedFeed.filter}" maxlength="20" size="20" style="width:200px">ex: people</h:inputText>
+        <h:form id="completion">
+            <h:inputText onfocus="clearText(this)" onblur="clearText(this)"  id="myInput" value="#{editAggregatedFeed.filter}" maxlength="20" size="20" style="width:200px">ex: people</h:inputText>
             <h:commandButton  style="margin-left: 210px;" id="submit" value="${msgs.form_button_filter}" action="#{editAggregatedFeed.filter}"/>
         </h:form>
         <div id="myAutoComplete">
@@ -82,7 +83,7 @@
                 oDS.maxCacheEntries = 5;
 
                 // Instantiate the AutoComplete
-                var oAC = new YAHOO.widget.AutoComplete("j_idt32:myInput", "myContainer", oDS);
+                var oAC = new YAHOO.widget.AutoComplete('completion:myInput', "myContainer", oDS);
                 oAC.maxResultsDisplayed = 25;
 
                 return {
