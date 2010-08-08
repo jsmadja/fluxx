@@ -58,7 +58,7 @@ public class FeedFetcherService {
     NotificationService notificationService;
 
     @EJB
-    IFeedService feedService;
+    FeedService feedService;
 
     @PersistenceContext
     EntityManager em;
@@ -287,14 +287,6 @@ public class FeedFetcherService {
             return true;
         }
         return itemService.findItemsByLink(syndEntryImpl.getLink()) == null;
-    }
-
-    public IFeedService getFeedService() {
-        return feedService;
-    }
-
-    public void setFeedService(IFeedService feedService) {
-        this.feedService = feedService;
     }
 
 }
