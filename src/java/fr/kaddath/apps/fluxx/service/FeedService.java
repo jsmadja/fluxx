@@ -20,7 +20,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 @Stateless
-public class FeedService {
+public class FeedService implements IFeedService {
 
     private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
     private static final int MAX_FEEDS_TO_RETRIEVE = 25;
