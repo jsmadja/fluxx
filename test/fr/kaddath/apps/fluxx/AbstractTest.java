@@ -6,8 +6,11 @@ import fr.kaddath.apps.fluxx.service.ItemService;
 import fr.kaddath.apps.fluxx.service.OpmlService;
 import fr.kaddath.apps.fluxx.service.RssService;
 import fr.kaddath.apps.fluxx.service.UserService;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
+import javax.naming.NamingException;
 import org.junit.Test;
 
 public class AbstractTest {
@@ -25,16 +28,26 @@ public class AbstractTest {
     @Test
     public void test() {}
 
+    private static Object lookup(String key) throws NamingException {
+        Object o;
+        try {
+            o = namingContext.lookup("java:global/classes/" + key);
+        } catch (NamingException ex) {
+                o = namingContext.lookup("java:global/cobertura/" + key);
+        }
+        return o;
+    }
+
     static {
         try {
             container = EJBContainer.createEJBContainer();
             namingContext = container.getContext();
-            feedService = (FeedService) namingContext.lookup("java:global/classes/FeedService");
-            userService = (UserService) namingContext.lookup("java:global/classes/UserService");
-            rssService = (RssService) namingContext.lookup("java:global/classes/RssService");
-            itemService = (ItemService) namingContext.lookup("java:global/classes/ItemService");
-            opmlService = (OpmlService) namingContext.lookup("java:global/classes/OpmlService");
-            feedFetcherService = (FeedFetcherService) namingContext.lookup("java:global/classes/FeedFetcherService");
+            feedService = (FeedService) lookup("FeedService");
+            userService = (UserService) lookup("UserService");
+            rssService = (RssService) lookup("RssService");
+            itemService = (ItemService) lookup("ItemService");
+            opmlService = (OpmlService) lookup("OpmlService");
+            feedFetcherService = (FeedFetcherService) lookup("FeedFetcherService");
 
             rssService.setFeedEncoding("UTF-8");
         } catch(Exception e) {
