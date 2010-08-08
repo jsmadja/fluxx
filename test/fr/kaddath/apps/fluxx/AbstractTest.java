@@ -1,5 +1,6 @@
 package fr.kaddath.apps.fluxx;
 
+import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.FeedCategory;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.cache.RssFeedCache;
@@ -18,10 +19,9 @@ import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
-import org.junit.Test;
 import static org.mockito.Mockito.*;
 
-public class AbstractTest {
+public abstract class AbstractTest {
 
     protected static EJBContainer container;
     protected static Context namingContext;
@@ -76,9 +76,6 @@ public class AbstractTest {
         }
     }
 
-    @Test
-    public void test() {}
-    
     protected static Fluxxer createFluxxer() {
         Fluxxer user = new Fluxxer();
         user.setUsername(createRandomString());
@@ -113,5 +110,16 @@ public class AbstractTest {
 
     protected static FeedCategory createCategory() {
         return feedCategoryService.create(createRandomString());
+    }
+
+    protected static AggregatedFeed createAggregatedFeedWithFeed(String url) throws DownloadFeedException {
+        String aggregatedFeedName = url;
+        int numDays = 120;
+        Fluxxer fluxxer = createFluxxer();
+        fluxxer = aggregatedFeedService.addAggregatedFeed(fluxxer, aggregatedFeedName, numDays);
+        AggregatedFeed aggregatedFeed = fluxxer.getAggregatedFeeds().get(0);
+        Feed feed = feedFetcherService.add(url);
+        aggregatedFeed = aggregatedFeedService.addFeedToAggregatedFeed(feed, aggregatedFeed);
+        return aggregatedFeed;
     }
 }
