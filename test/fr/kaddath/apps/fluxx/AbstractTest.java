@@ -1,5 +1,6 @@
 package fr.kaddath.apps.fluxx;
 
+import fr.kaddath.apps.fluxx.domain.FeedCategory;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.Fluxxer;
@@ -89,10 +90,10 @@ public class AbstractTest {
 
     protected static Feed createFeed() {
         try {
-            String url = "http://fluxx:8080/fluxx/rss?id=-444c6b0fbfc589b30185fa159f3dfac6";
+            String url = "http://feeds2.feedburner.com/Frandroid";
             Feed feed = feedService.findFeedByUrl(url);
             if (feed != null) {
-                feedService.delete(feed);
+                return feed;
             }
             feed = feedFetcherService.add(url);
             return feed;
@@ -108,5 +109,9 @@ public class AbstractTest {
 
     protected static Fluxxer addRandomAggregatedFeed(Fluxxer fluxxer) {
         return aggregatedFeedService.addAggregatedFeed(fluxxer, createRandomString(), 7);
+    }
+
+    protected static FeedCategory createCategory() {
+        return feedCategoryService.create(createRandomString());
     }
 }
