@@ -1,9 +1,9 @@
 package fr.kaddath.apps.fluxx;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.Fluxxer;
+import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.service.AggregatedFeedService;
 import fr.kaddath.apps.fluxx.service.FeedCategoryService;
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
@@ -16,7 +16,6 @@ import java.util.UUID;
 import javax.ejb.embeddable.EJBContainer;
 import javax.naming.Context;
 import javax.naming.NamingException;
-import javax.persistence.EntityManager;
 import javax.servlet.http.HttpServletRequest;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
@@ -44,11 +43,6 @@ public class AbstractTest {
     protected static String serverName = "fluxx.fr.cr";
     protected static String contextPath = "/fluxx";
 
-    protected static EntityManager em;
-
-    @Test
-    public void test() {}
-
     private static Object lookup(String key) throws NamingException {
         return namingContext.lookup("java:global/classes/" + key);
     }
@@ -57,6 +51,9 @@ public class AbstractTest {
         try {
             container = EJBContainer.createEJBContainer();
             namingContext = container.getContext();
+
+            cache = (RssFeedCache) lookup("RssFeedCache");
+
             feedService = (FeedService) lookup("FeedService");
             userService = (UserService) lookup("UserService");
             rssService = (RssService) lookup("RssService");
@@ -73,17 +70,43 @@ public class AbstractTest {
             when(request.getServerName()).thenReturn(serverName);
             when(request.getContextPath()).thenReturn(contextPath);
 
-            cache = (RssFeedCache) lookup("RssFeedCache");
-
-            EntityManagerFactory emFactory = Persistence.createEntityManagerFactory("fluxxPU");
-            em = emFactory.createEntityManager();
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void test() {}
     
-    protected Fluxxer giveMeOneFluxxer() {
-        Fluxxer user = userService.findAll().get(0);
+    protected static Fluxxer createFluxxer() {
+        Fluxxer user = new Fluxxer();
+        user.setUsername(createRandomString());
+        user.setPassword(createRandomString());
+        user.setEmail(user.getUsername()+"@gmail.com");
+        userService.persist(user);
         return user;
+    }
+
+    protected static Feed createFeed() {
+        try {
+            String url = "http://fluxx:8080/fluxx/rss?id=-444c6b0fbfc589b30185fa159f3dfac6";
+            Feed feed = feedService.findFeedByUrl(url);
+            if (feed != null) {
+                feedService.delete(feed);
+            }
+            feed = feedFetcherService.add(url);
+            return feed;
+        } catch (DownloadFeedException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    protected static String createRandomString() {
+        return UUID.randomUUID().toString().substring(0, 8);
+    }
+
+
+    protected static Fluxxer addRandomAggregatedFeed(Fluxxer fluxxer) {
+        return aggregatedFeedService.addAggregatedFeed(fluxxer, createRandomString(), 7);
     }
 }
