@@ -3,8 +3,11 @@ package fr.kaddath.apps.fluxx.service;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.metamodel.Item_;
+import java.util.Calendar;
+import static java.util.Calendar.*;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
@@ -100,6 +103,48 @@ public class ItemService {
     public Item findFirstItem(Feed feed) {
         Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate asc");
         query.setParameter("feed", feed);
+        return getUniqueResult(query);
+    }
+
+    public long getNumItemsByDay(Date date) {
+
+        Calendar calendar = getInstance();
+        calendar.setTime(date);
+
+        Calendar beginCalendar = getInstance();
+        beginCalendar.set(DAY_OF_YEAR, calendar.get(DAY_OF_YEAR));
+        beginCalendar.set(MONTH, calendar.get(MONTH));
+        beginCalendar.set(YEAR, calendar.get(YEAR));
+        beginCalendar.set(HOUR, 0);
+        beginCalendar.set(MINUTE, 0);
+        beginCalendar.set(SECOND, 0);
+
+        Calendar endCalendar = getInstance();
+        endCalendar.setTime(beginCalendar.getTime());
+        endCalendar.add(DAY_OF_YEAR, 1);
+
+        CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        Root<Item> item = cq.from(Item.class);
+        cq.select(cb.count(item));
+        Predicate beginDateClause = cb.greaterThanOrEqualTo(item.get(Item_.publishedDate), beginCalendar.getTime());
+        Predicate endDateClause = cb.lessThan(item.get(Item_.publishedDate), endCalendar.getTime());
+        Predicate whereClauses = cb.and(beginDateClause, endDateClause);
+        cq.where(whereClauses);
+        Query query = em.createQuery(cq);
+        Long count = (Long) query.getSingleResult();
+        LOG.log(Level.INFO, "{0} items between {1} and {2}", new Object[]{count, beginCalendar.getTime(), endCalendar.getTime()});
+        return count;
+    }
+
+    public Item getFirstItem() {
+        Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate ASC");
+        query.setMaxResults(1);
+        return getUniqueResult(query);
+    }
+
+    public Item getLastItem() {
+        Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate DESC");
+        query.setMaxResults(1);
         return getUniqueResult(query);
     }
 }

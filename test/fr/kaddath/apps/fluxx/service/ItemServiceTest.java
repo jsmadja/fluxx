@@ -1,5 +1,6 @@
 package fr.kaddath.apps.fluxx.service;
 
+import java.util.Date;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.AbstractTest;
@@ -52,11 +53,7 @@ public class ItemServiceTest extends AbstractTest {
         Item item = itemService.findLastItem(feed);
         List<Item> items = itemService.findItemsByFeed(feed);
         assertFalse(items.isEmpty());
-        for (Item i:items) {
-            if (!i.equals(item)) {
-                assertTrue(item.getPublishedDate().after(i.getPublishedDate()));
-            }
-        }
+        isLast(items, item);
     }
 
     @Test
@@ -65,10 +62,56 @@ public class ItemServiceTest extends AbstractTest {
         Item item = itemService.findFirstItem(feed);
         List<Item> items = itemService.findItemsByFeed(feed);
         assertFalse(items.isEmpty());
-        for (Item i:items) {
+        isFirst(items, item);
+    }
+
+    @Test
+    public void testGetNumItemsByDay() throws Exception {
+        Feed feed = createFeed();
+        List<Item> items = itemService.findItemsByFeed(feed);
+        for (Item item:items) {
+            Date date = item.getPublishedDate();
+            Long numItems = itemService.getNumItemsByDay(date);
+            assertTrue(numItems>0);
+        }
+    }
+
+    @Test
+    public void testGetFirstItem() throws Exception {
+        Feed feed = createFeed();
+        Item item = itemService.getFirstItem();
+        assertNotNull(item);
+        List<Item> items = itemService.findItemsByFeed(feed);
+        assertFalse(items.isEmpty());
+        isFirst(items, item);
+    }
+
+    @Test
+    public void testGetLastItem() throws Exception {
+        Feed feed = createFeed();
+        Item item = itemService.getLastItem();
+        assertNotNull(item);
+        List<Item> items = itemService.findItemsByFeed(feed);
+        assertFalse(items.isEmpty());
+        isLast(items, item);
+    }
+    
+    private void isFirst(List<Item> items, Item item) {
+        for (Item i : items) {
             if (!i.equals(item)) {
                 assertTrue(item.getPublishedDate().before(i.getPublishedDate()));
             }
         }
     }
+
+    private void isLast(List<Item> items, Item item) {
+        for (Item i : items) {
+            if (!i.equals(item)) {
+                if (item.getPublishedDate() != null) {
+                    assertTrue(item.getPublishedDate().after(i.getPublishedDate()));
+                }
+            }
+        }
+    }
+
 }

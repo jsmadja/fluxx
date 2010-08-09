@@ -10,14 +10,17 @@
         <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/mootools-core.js"></script>
         <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/mootools-more.js"></script>
         <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/byzoomer-0.9.js"></script>
+        
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/myjs/protovis-r3.2.js"></script>
+
         <script language="javascript" type="text/javascript">
-        function clearText(field){
-        if (field.defaultValue == field.value) field.value = '';
-        else if (field.value == '') field.value = field.defaultValue;
-        }
-        window.addEvent('load', function(){
-        new ByZoomer();
-        });
+            function clearText(field){
+                if (field.defaultValue == field.value) field.value = '';
+                else if (field.value == '') field.value = field.defaultValue;
+            }
+            window.addEvent('load', function(){
+                new ByZoomer();
+            });
         </script>
         <!--[if lt IE 7]>
         <style type="text/css">
@@ -38,6 +41,7 @@
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/animation/animation-min.js"></script>
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/datasource/datasource-min.js"></script>
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/autocomplete/autocomplete-min.js"></script>
+
 
     </h:head>
     <h:body styleClass="yui-skin-sam">
