@@ -206,7 +206,7 @@ public class FeedFetcherService {
             for (Object o : syndFeed.getEntries()) {
                 SyndEntryImpl syndEntryImpl = (SyndEntryImpl) o;
                 String link = syndEntryImpl.getLink();
-                Item feedItem = itemService.findItemsByLink(link);
+                Item feedItem = itemService.findItemByLink(link);
                 if (feedItem == null) {
                     LOG.log(Level.INFO, "New item found : {0}", link);
                     Item item = createItemFromSyndEntry(syndEntryImpl);
@@ -294,7 +294,7 @@ public class FeedFetcherService {
         if (publishedDate == null) {
             return true;
         }
-        return itemService.findItemsByLink(syndEntryImpl.getLink()) == null;
+        return itemService.findItemByLink(syndEntryImpl.getLink()) == null;
     }
 
 }

@@ -42,7 +42,7 @@ public class ItemService {
         cb = em.getCriteriaBuilder();
     }
 
-    public Item findItemsByLink(String link) {
+    public Item findItemByLink(String link) {
         Query query = em.createNamedQuery("findItemsByLink");
         query.setParameter("link", link);
         return getUniqueResult(query);
