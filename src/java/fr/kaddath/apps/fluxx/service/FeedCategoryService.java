@@ -16,7 +16,7 @@ public class FeedCategoryService {
 
     public List<String[]> findNumItemFeedsByCategory() {
         List<String[]> numItemFeedsByCategory = new ArrayList<String[]>();
-        Query q = em.createNativeQuery("SELECT fc.NAME, count(ifc.ITEM_ID) FROM feedcategory fc, item_feedcategory ifc WHERE fc.name = ifc.FEEDCATEGORIES_NAME GROUP BY fc.name");
+        Query q = em.createNativeQuery("SELECT fc.NAME, count(ifc.ITEM_ID) FROM FEEDCATEGORY fc, item_feedcategory ifc WHERE fc.name = ifc.FEEDCATEGORIES_NAME GROUP BY fc.name");
         for (Object o : q.getResultList()) {
             Object[] couple = (Object[]) o;
             numItemFeedsByCategory.add(new String[]{(String) couple[0], couple[1].toString()});
@@ -40,13 +40,13 @@ public class FeedCategoryService {
     }
 
     public List<String> findCategoryNamesInLowerCaseWithLike(String name, Integer numCategories) {
-        Query q = em.createNativeQuery("SELECT distinct(lower(name)) FROM FeedCategory WHERE lower(name) like '%"+name+"%' order by lower(name)");
+        Query q = em.createNativeQuery("SELECT distinct(lower(name)) FROM FEEDCATEGORY WHERE lower(name) like '%"+name+"%' order by lower(name)");
         q.setMaxResults(numCategories);
         return q.getResultList();
     }
 
     public List<String> findCategoryNamesWithLike(String name, Integer numCategories) {
-        Query q = em.createNativeQuery("SELECT name FROM FeedCategory WHERE lower(name) like '%"+name+"%' order by lower(name)");
+        Query q = em.createNativeQuery("SELECT name FROM FEEDCATEGORY WHERE lower(name) like '%"+name+"%' order by lower(name)");
         q.setMaxResults(numCategories);
         return q.getResultList();
     }

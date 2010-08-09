@@ -1,62 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:composition template="/template.xhtml"
-                xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
-    <ui:define name="content_right">
+<ui:composition
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
+>
+    <h1>${msgs.page_title_manage_aggregatedfeeds}</h1>
 
-        <h1>${msgs.page_title_manage_aggregatedfeeds}</h1>
+    <h2>${msgs.page_subtitle_create_aggregatedfeed}</h2>
+    <h:form>
+        <h:panelGrid columns="3" >
+            <h:outputText value="${msgs.form_field_aggregatedfeed_name} * :"/>
+            <h:inputText id="name" value="#{manageAggregatedFeed.name}" />
+            <h:message for="name" styleClass="error"/>
 
-        <h2>${msgs.page_subtitle_your_aggregatedfeeds}</h2>
-        <h:form>
-            <h:dataTable id="aggregatedFeedsTable" value="#{manageAggregatedFeed.userAggregatedFeeds}" var="agg" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
-                <h:column>
-                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_name}"/></f:facet>
-                    <h:commandLink action="#{editAggregatedFeed.edit}">
-                        <h:outputText value="${agg.name}"/>
-                    </h:commandLink>
-                </h:column>
-                <h:column>
-                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_numfeeds}"/></f:facet>
-                    <h:outputText value="${fn:length(agg.feeds)}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_numlastday}"/></f:facet>
-                    <h:outputText value="${agg.numLastDay}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_url}"/></f:facet>
-                    <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{agg.aggregatedFeedId}" />
-                </h:column>
-                <h:column>
-                    <f:facet name="header"></f:facet>
-                    <h:commandLink action="#{manageAggregatedFeed.delete}">
-                        <h:outputText value="${msgs.form_button_delete}"/>
-                    </h:commandLink>
-                </h:column>
-            </h:dataTable>
-        </h:form>
+            <h:outputText value="${msgs.form_field_aggregatedfeed_numlastday} * :"/>
+            <h:inputText id="numLastDay" required="true" maxlength="3" value="#{manageAggregatedFeed.numLastDay}">
+                <f:validateLongRange minimum="1" maximum="100" />
+            </h:inputText>
+            <h:message for="numLastDay" styleClass="error"/>
 
-        <h2>${msgs.page_subtitle_create_aggregatedfeed}</h2>
-        <h:form>
-            <h:panelGrid columns="3" >
-                <h:outputText value="${msgs.form_field_aggregatedfeed_name} * :"/>
-                <h:inputText id="name" value="#{manageAggregatedFeed.name}" />
-                <h:message for="name" styleClass="error"/>
+            <h:commandButton id="submit" value="${msgs.form_button_submit}" action="#{manageAggregatedFeed.add}"/>
+        </h:panelGrid>
+    </h:form>
 
-                <h:outputText value="${msgs.form_field_aggregatedfeed_numlastday} * :"/>
-                <h:inputText id="numLastDay" required="true" maxlength="3" value="#{manageAggregatedFeed.numLastDay}">
-                    <f:validateLongRange minimum="1" maximum="100" />
-                </h:inputText>
-                <h:message for="numLastDay" styleClass="error"/>
-
-                <h:commandButton id="submit" value="${msgs.form_button_submit}" action="#{manageAggregatedFeed.add}"/>
-            </h:panelGrid>
-        </h:form>
-
-    </ui:define>
+    <h2>${msgs.page_subtitle_your_aggregatedfeeds}</h2>
+    <h:form>
+        <h:dataTable id="aggregatedFeedsTable" value="#{manageAggregatedFeed.userAggregatedFeeds}" var="agg" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
+            <h:column>
+                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_name}"/></f:facet>
+                <h:commandLink action="#{editAggregatedFeed.edit}">
+                    <h:outputText value="${agg.name}"/>
+                </h:commandLink>
+            </h:column>
+            <h:column>
+                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_numfeeds}"/></f:facet>
+                <h:outputText value="${fn:length(agg.feeds)}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_numlastday}"/></f:facet>
+                <h:outputText value="${agg.numLastDay}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_url}"/></f:facet>
+                <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{agg.aggregatedFeedId}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"></f:facet>
+                <h:commandLink action="#{manageAggregatedFeed.delete}">
+                    <h:outputText value="${msgs.form_button_delete}"/>
+                </h:commandLink>
+            </h:column>
+        </h:dataTable>
+    </h:form>
 </ui:composition>

@@ -15,6 +15,14 @@
     </application>
 
     <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>manage-aggregatedfeed</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
         <from-view-id>/aggregatedfeed/manage-aggregatedfeeds.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>manage-aggregatedfeed</from-outcome>

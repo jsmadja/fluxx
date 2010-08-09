@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.OrderBy;
-import javax.persistence.CascadeType;
+import static javax.persistence.CascadeType.ALL;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.GeneratedValue;
@@ -31,7 +31,7 @@ public class Feed implements Serializable {
     private Boolean complete = false;
 
     @OrderBy("publishedDate DESC")
-    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy="feed")
+    @OneToMany(cascade = {ALL}, mappedBy="feed")
     private List<Item> items = new ArrayList<Item>();
 
     private String author;

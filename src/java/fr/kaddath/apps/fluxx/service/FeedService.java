@@ -5,6 +5,7 @@ import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import java.util.List;
 
 import fr.kaddath.apps.fluxx.domain.Feed;
+import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.metamodel.Feed_;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -164,5 +165,11 @@ public class FeedService {
         } else {
             return feeds.get(0);
         }
+    }
+
+    public Feed update(Feed feed) {
+        feed = em.merge(feed);
+        em.flush();
+        return feed;
     }
 }

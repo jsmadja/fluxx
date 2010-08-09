@@ -10,22 +10,11 @@
     <ui:define name="content_right">
         <f:view>
             <div class="post">
-                <h1>Welcome to Fluxx</h1>
-
                 <c:if test="#{facesContext.externalContext.remoteUser != null}" >
-                    <h2>${msgs.page_subtitle_your_aggregatedfeeds} <emcomp:opmlIcon href="#{facesContext.externalContext.requestContextPath}/aggregatedFeedOpml?username=#{facesContext.externalContext.remoteUser}"/></h2>
-                    <h:form>
-                        <h:dataTable id="aggregatedFeedsTable" value="#{manageAggregatedFeed.userAggregatedFeeds}" var="agg" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
-                            <h:column>
-                                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_name}"/></f:facet>
-                                <h:outputText value="${agg.name}"/>
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header"><h:outputText value="${msgs.form_field_aggregatedfeed_url}"/></f:facet>
-                                <emcomp:rssIcon href="#{facesContext.externalContext.requestContextPath}/rss?id=#{agg.aggregatedFeedId}" />
-                            </h:column>
-                        </h:dataTable>
-                    </h:form>
+                    <ui:include src="/aggregatedfeed/manage-aggregatedfeeds.xhtml" />
+                </c:if>
+                <c:if test="#{facesContext.externalContext.remoteUser == null}" >
+                    <h1>Welcome to Fluxx</h1>
                 </c:if>
             </div>
         </f:view>
