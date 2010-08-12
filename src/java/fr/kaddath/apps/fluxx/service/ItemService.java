@@ -6,6 +6,7 @@ import fr.kaddath.apps.fluxx.domain.metamodel.Item_;
 import java.util.Calendar;
 import static java.util.Calendar.*;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,6 +30,20 @@ public class ItemService {
     EntityManager em;
 
     private CriteriaBuilder cb;
+
+    private long getNumItemsBetween(Calendar beginCalendar, Calendar endCalendar) {
+        CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        Root<Item> item = cq.from(Item.class);
+        cq.select(cb.count(item));
+        Predicate beginDateClause = cb.greaterThanOrEqualTo(item.get(Item_.publishedDate), beginCalendar.getTime());
+        Predicate endDateClause = cb.lessThan(item.get(Item_.publishedDate), endCalendar.getTime());
+        Predicate whereClauses = cb.and(beginDateClause, endDateClause);
+        cq.where(whereClauses);
+        Query query = em.createQuery(cq);
+        Long count = (Long) query.getSingleResult();
+        LOG.log(Level.INFO, "{0} items between {1} and {2}", new Object[]{count, beginCalendar.getTime(), endCalendar.getTime()});
+        return count;
+    }
 
     private Item getUniqueResult(Query query) {
         query.setMaxResults(1);
@@ -111,29 +126,12 @@ public class ItemService {
         Calendar calendar = getInstance();
         calendar.setTime(date);
 
-        Calendar beginCalendar = getInstance();
-        beginCalendar.set(DAY_OF_YEAR, calendar.get(DAY_OF_YEAR));
-        beginCalendar.set(MONTH, calendar.get(MONTH));
-        beginCalendar.set(YEAR, calendar.get(YEAR));
-        beginCalendar.set(HOUR, 0);
-        beginCalendar.set(MINUTE, 0);
-        beginCalendar.set(SECOND, 0);
-
+        Calendar beginCalendar = new GregorianCalendar(calendar.get(YEAR), calendar.get(MONTH), calendar.get(DAY_OF_MONTH));
         Calendar endCalendar = getInstance();
         endCalendar.setTime(beginCalendar.getTime());
         endCalendar.add(DAY_OF_YEAR, 1);
 
-        CriteriaQuery<Long> cq = cb.createQuery(Long.class);
-        Root<Item> item = cq.from(Item.class);
-        cq.select(cb.count(item));
-        Predicate beginDateClause = cb.greaterThanOrEqualTo(item.get(Item_.publishedDate), beginCalendar.getTime());
-        Predicate endDateClause = cb.lessThan(item.get(Item_.publishedDate), endCalendar.getTime());
-        Predicate whereClauses = cb.and(beginDateClause, endDateClause);
-        cq.where(whereClauses);
-        Query query = em.createQuery(cq);
-        Long count = (Long) query.getSingleResult();
-        LOG.log(Level.INFO, "{0} items between {1} and {2}", new Object[]{count, beginCalendar.getTime(), endCalendar.getTime()});
-        return count;
+        return getNumItemsBetween(beginCalendar, endCalendar);
     }
 
     public Item getFirstItem() {
@@ -146,5 +144,18 @@ public class ItemService {
         Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate DESC");
         query.setMaxResults(1);
         return getUniqueResult(query);
+    }
+
+    public long getNumItemsByHour(Date date) {
+        Calendar calendar = getInstance();
+        calendar.setTime(date);
+
+        Calendar beginCalendar = new GregorianCalendar(calendar.get(YEAR), calendar.get(MONTH), calendar.get(DAY_OF_MONTH), calendar.get(HOUR),0,0);
+
+        Calendar endCalendar = getInstance();
+        endCalendar.setTime(beginCalendar.getTime());
+        endCalendar.add(HOUR_OF_DAY, 1);
+
+        return getNumItemsBetween(beginCalendar, endCalendar);
     }
 }

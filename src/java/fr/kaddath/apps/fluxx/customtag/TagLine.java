@@ -18,7 +18,7 @@ public class TagLine extends UIComponentBase {
 
     public TagLine() {
         super();
-        feedService = Services.feedService;
+        feedService = Services.getFeedService();
     }
 
     @Override

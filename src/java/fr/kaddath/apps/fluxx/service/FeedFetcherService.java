@@ -149,7 +149,7 @@ public class FeedFetcherService {
     }
 
     @Interceptors({ChronoInterceptor.class})
-    @Schedule(minute="*/10", hour="*")
+    @Schedule(minute="*/15", hour="*")
     public void updateAllAsynchronously() {
         feedCache.clear();
         List<Future<Object[]>> couples = downloadFeeds();

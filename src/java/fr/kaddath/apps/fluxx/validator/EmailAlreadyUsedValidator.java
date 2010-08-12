@@ -17,7 +17,7 @@ public class EmailAlreadyUsedValidator implements Validator {
         String mailAccount = (String) value;
         if (StringUtils.isNotBlank(mailAccount)) {
             try {
-                Services.userService.findByMailAccount(mailAccount);
+                Services.getUserService().findByMailAccount(mailAccount);
                 throw new ValidatorException(new FacesMessage(FluxxMessage.m("constraint_invalid_email_alreadyused")));
             } catch (FluxxerNotFoundException ex) {}
         }

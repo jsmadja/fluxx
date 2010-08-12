@@ -25,8 +25,8 @@ public class FeedService {
 
     private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
     private static final int MAX_FEEDS_TO_RETRIEVE = 25;
-    private static final Logger LOG = Logger.getLogger("fluxx");
-    private static final Logger STACK = Logger.getLogger("fluxx.stack");
+    private static final Logger LOG = Logger.getLogger(FeedService.class.getName());
+
     @PersistenceContext
     EntityManager em;
 
@@ -38,6 +38,15 @@ public class FeedService {
             feeds.add(findFeedById(id));
         }
         return feeds;
+    }
+
+    private Feed getSingleResult(Query query) {
+        List<Feed> feeds = query.getResultList();
+        if (feeds.isEmpty()) {
+            return null;
+        } else {
+            return feeds.get(0);
+        }
     }
 
     @PostConstruct
@@ -159,17 +168,17 @@ public class FeedService {
     public Feed findFeedByUrl(String url) {
         Query query = em.createQuery("select f from Feed f where f.url = :url");
         query.setParameter("url", url);
-        List<Feed> feeds = query.getResultList();
-        if (feeds.isEmpty()) {
-            return null;
-        } else {
-            return feeds.get(0);
-        }
+        return getSingleResult(query);
     }
 
     public Feed update(Feed feed) {
         feed = em.merge(feed);
         em.flush();
         return feed;
+    }
+
+    public Feed findLastUpdatedFeed() {
+        Query query = em.createQuery("select f from Feed f order by f.lastUpdate DESC");
+        return getSingleResult(query);
     }
 }

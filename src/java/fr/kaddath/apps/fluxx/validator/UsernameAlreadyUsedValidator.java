@@ -15,7 +15,7 @@ public class UsernameAlreadyUsedValidator implements Validator {
     public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
         String username = (String) value;        
         if (StringUtils.isNotBlank(username)) {
-            if(Services.userService.findByUsername(username) != null) {
+            if(Services.getUserService().findByUsername(username) != null) {
                 throw new ValidatorException(new FacesMessage(FluxxMessage.m("constraint_invalid_username_alreadyused")));
             }
         }

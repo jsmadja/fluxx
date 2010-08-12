@@ -17,7 +17,7 @@ public class TwitterAccountAlreadyUsedValidator implements Validator {
         String twitterAccount = (String) value;
         if (StringUtils.isNotBlank(twitterAccount)) {
             try {
-                Services.userService.findByTwitterAccount(twitterAccount);
+                Services.getUserService().findByTwitterAccount(twitterAccount);
                 throw new ValidatorException(new FacesMessage(FluxxMessage.m("constraint_invalid_twitteraccount")));
             } catch (FluxxerNotFoundException ex) {
             }

@@ -25,7 +25,7 @@ public class Tendency extends UIComponentBase {
 
     public Tendency() {
         super();
-        itemService = Services.itemService;
+        itemService = Services.getItemService();
     }
 
     @Override
@@ -65,6 +65,8 @@ public class Tendency extends UIComponentBase {
         } else if (itemsPerYear >= 1) {
             tendency = FluxxMessage.m("publication_per_year", itemsPerMonth);
             img = "1-red.png";
+        } else {
+            img = ""+itemsPerDay;
         }
 
         responseWriter.startElement("img", this);

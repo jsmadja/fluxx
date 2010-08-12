@@ -18,12 +18,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import com.google.common.base.Objects;
 
 import static javax.persistence.CascadeType.*;
 
 @Entity
-@NamedQueries(@NamedQuery(name="findItemsByLink",query="SELECT Item FROM Item AS item WHERE item.link = :link"))
+@NamedQueries(@NamedQuery(name="findItemsByLink",query="SELECT item FROM Item item WHERE item.link = :link"))
 public class Item implements Comparable<Item> {
 
     @Id
@@ -31,7 +30,7 @@ public class Item implements Comparable<Item> {
     private Long id;
 
     @NotNull
-    @Column(length=512)
+    @Column(length=20480)
     private String link;
 
     private String author;

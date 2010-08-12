@@ -7,19 +7,37 @@ import javax.naming.NamingException;
 
 public class Services {
 
-    public static UserService userService;
-    public static FeedService feedService;
-    public static ItemService itemService;
+    private static UserService userService;
+    private static FeedService feedService;
+    private static ItemService itemService;
 
-    static {
+    public static UserService getUserService() {
+        if (userService == null) {
+            userService = (UserService) lookup(UserService.class.getSimpleName());
+        }
+        return userService;
+    }
+
+    public static FeedService getFeedService() {
+        if (feedService == null) {
+            feedService = (FeedService) lookup(FeedService.class.getSimpleName());
+        }
+        return feedService;
+    }
+    
+    public static ItemService getItemService() {
+        if (itemService == null) {
+            itemService = (ItemService) lookup(ItemService.class.getSimpleName());
+        }
+        return itemService;
+    }
+
+    private static Object lookup(String service) {
         try {
-            InitialContext context = new InitialContext();
-            userService = (UserService) context.lookup("java:global/fluxx/UserService");
-            feedService = (FeedService) context.lookup("java:global/fluxx/FeedService");
-            itemService = (ItemService) context.lookup("java:global/fluxx/ItemService");
+            return new InitialContext().lookup("java:global/fluxx/" + service);
         } catch (NamingException ex) {
             Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex);
-        }        
+        }
     }
 }
