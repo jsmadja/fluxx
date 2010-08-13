@@ -112,7 +112,7 @@ public class StatisticView {
 
         for (int i=0; i<24; i++) {
             long numItemsByHour = itemService.getNumItemsByHour(beginDate.getTime());
-            beginDate.setTimeInMillis(beginDate.getTimeInMillis() + (1000*60*60));
+            beginDate.add(HOUR_OF_DAY,1);
             sb.append(numItemsByHour).append(",");
         }
         sb.setCharAt(sb.length() - 1, ']');
@@ -132,7 +132,7 @@ public class StatisticView {
         do {
             long numItemsByDay = itemService.getNumItemsByDay(beginDate.getTime());
             max = Math.max(max, numItemsByDay);
-            beginDate.add(Calendar.DAY_OF_YEAR, 1);
+            beginDate.add(DAY_OF_YEAR, 1);
         } while (beginDate.before(endDate));
         return max;
     }
@@ -140,14 +140,14 @@ public class StatisticView {
 
     private Calendar firstDayOfLastMonth() {
         Calendar date = Calendar.getInstance();
-        date.add(Calendar.MONTH, -1);
-        date.set(Calendar.DAY_OF_MONTH, 1);
+        date.add(MONTH, -1);
+        date.set(DAY_OF_MONTH, 1);
         return date;
     }
 
     private Calendar firstDayOfCurrentMonth() {
         Calendar date = Calendar.getInstance();
-        date.set(Calendar.DAY_OF_MONTH, 1);
+        date.set(DAY_OF_MONTH, 1);
         return date;
     }
 }
