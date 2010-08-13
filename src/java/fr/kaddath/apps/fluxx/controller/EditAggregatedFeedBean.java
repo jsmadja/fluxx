@@ -69,6 +69,7 @@ public class EditAggregatedFeedBean implements Serializable {
     private String addFeed(Feed feed) {
         currentAggregatedFeed = aggregatedFeedService.addFeedToAggregatedFeed(feed, currentAggregatedFeed);
         reload();
+        aggregatedFeedBean.buildUserAggregatedFeedsModel();
         return EDIT_AGGREGATEDFEED;
     }
 
