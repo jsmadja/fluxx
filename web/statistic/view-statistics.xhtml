@@ -8,6 +8,9 @@
     <ui:define name="content_right">
         <h1>${msgs.page_title_view_statistics}</h1>
 
+        <h2>${msgs.page_subtitle_current_day}</h2>
+        <emcomp:statisticsItemsByDay data="#{statisticView.numItemsByHourOfCurrentDay}" maxItems="#{statisticView.maxNumItemsOfCurrentDay}" />
+
         <h2>${msgs.page_subtitle_current_month}</h2>
         <emcomp:statisticsItemsByDay data="#{statisticView.numItemsByDayOfCurrentMonth}" maxItems="#{statisticView.maxNumItemsOfCurrentMonth}" />
 
