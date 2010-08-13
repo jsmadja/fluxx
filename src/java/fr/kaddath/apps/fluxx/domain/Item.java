@@ -40,6 +40,7 @@ public class Item implements Comparable<Item> {
 
     private String descriptionType;
 
+    @Lob
     private String uri;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -71,9 +72,7 @@ public class Item implements Comparable<Item> {
 
     @Override
     public String toString() {
-        // Google Guava
     	return getTitle();
-    	//return Objects.toStringHelper(this).add("id", getId()).add("uri", getUri()).add("publishedDate", getPublishedDate()).add("updatedDate", getUpdatedDate()).toString();
     }
 
     public String getAuthor() {
@@ -176,7 +175,4 @@ public class Item implements Comparable<Item> {
     public void setId(Long id) {
         this.id = id;
     }
-
-    
-
 }
