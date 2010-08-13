@@ -60,7 +60,7 @@ public class ManageAggregatedFeedBean extends ConnectedFluxxerBean implements Se
         return userAggregatedFeedsDataModel.getDataModel();
     }
 
-    private void buildUserAggregatedFeedsModel() {
+    public void buildUserAggregatedFeedsModel() {
         userAggregatedFeedsDataModel = new CollectionDataModel(getAggregatedFeeds());
     }
 
