@@ -10,6 +10,7 @@ public class Services {
     private static UserService userService;
     private static FeedService feedService;
     private static ItemService itemService;
+    private static RssService rssService;
 
     public static UserService getUserService() {
         if (userService == null) {
@@ -30,6 +31,13 @@ public class Services {
             itemService = (ItemService) lookup(ItemService.class.getSimpleName());
         }
         return itemService;
+    }
+
+    public static RssService getRssService() {
+        if (rssService == null) {
+            rssService = (RssService) lookup(RssService.class.getSimpleName());
+        }
+        return rssService;
     }
 
     private static Object lookup(String service) {

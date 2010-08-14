@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 
-public class ConnectedFluxxerBean {
+public abstract class ConnectedFluxxerBean {
     
     public static final String USERNAME_COOKIE = "username";
     public static final String PASSWORD_COOKIE = "password";

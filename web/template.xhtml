@@ -32,7 +32,7 @@
 
         <c:if test="#{facesContext.externalContext.remoteUser != null}" >
             <c:forEach var="aggFeed" items="#{manageAggregatedFeed.userAggregatedFeeds.wrappedData}">
-                <link rel="alternate" type="application/rss+xml" title="${aggFeed.name}" href="#{facesContext.externalContext.requestContextPath}/rss?id=#{aggFeed.aggregatedFeedId}" />
+                <link rel="alternate" type="application/rss+xml" title="${aggFeed.name}" href="#{facesContext.externalContext.requestContextPath}/resources/rss/#{aggFeed.fluxxer.username}/#{aggFeed.name}" />
             </c:forEach>
         </c:if>
         <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.1/build/autocomplete/assets/skins/sam/autocomplete.css" />
