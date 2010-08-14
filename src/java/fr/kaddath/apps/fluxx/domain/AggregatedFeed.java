@@ -3,10 +3,14 @@ package fr.kaddath.apps.fluxx.domain;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
@@ -28,7 +32,11 @@ public class AggregatedFeed implements Serializable {
     @NotNull
     private String aggregatedFeedId;
 
-    @OneToMany
+  @ManyToMany
+  @JoinTable(
+      name="AGGREGATEDFEED_FEED",
+      joinColumns={@JoinColumn(name="AGGREGATEDFEED_ID", referencedColumnName="ID")},
+      inverseJoinColumns={@JoinColumn(name="FEED_ID", referencedColumnName="ID")})
     @OrderBy("title ASC")
     private List<Feed> feeds;
 

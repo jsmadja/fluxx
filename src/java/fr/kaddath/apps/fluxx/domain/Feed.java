@@ -5,15 +5,12 @@ import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.OrderBy;
-import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.*;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -38,10 +35,7 @@ public class Feed implements Serializable {
     @OneToMany(cascade = {ALL}, mappedBy="feed")
     private List<Item> items = new ArrayList<Item>();
 
-    @ManyToMany(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinTable(name="AGGREGATEDFEED_FEED",
-      joinColumns=@JoinColumn(name="FEEDS_ID"),
-      inverseJoinColumns=@JoinColumn(name="AGGREGATEDFEED_ID"))
+    @ManyToMany(mappedBy="feeds", cascade={DETACH,REFRESH})
     private List<AggregatedFeed> aggregatedFeeds;
 
     private String author;

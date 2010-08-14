@@ -46,7 +46,7 @@ public class UserService {
 
     public List<Fluxxer> findByFeed(Feed feed) {
         List<Fluxxer> fluxxers = new ArrayList<Fluxxer>();
-        String strQuery = "select * from AGGREGATEDFEED_FEED, FLUXXER, AGGREGATEDFEED where FLUXXER.USERNAME = AGGREGATEDFEED.FLUXXER_USERNAME and AGGREGATEDFEED_FEED.AGGREGATEDFEED_ID = AGGREGATEDFEED.ID and AGGREGATEDFEED_FEED.FEEDS_ID ="+feed.getId();
+        String strQuery = "select * from AGGREGATEDFEED_FEED, FLUXXER, AGGREGATEDFEED where FLUXXER.USERNAME = AGGREGATEDFEED.FLUXXER_USERNAME and AGGREGATEDFEED_FEED.AGGREGATEDFEED_ID = AGGREGATEDFEED.ID and AGGREGATEDFEED_FEED.FEED_ID ="+feed.getId();
         Query query = em.createNativeQuery(strQuery, Fluxxer.class);
         List result = query.getResultList();
         if (result != null) {
