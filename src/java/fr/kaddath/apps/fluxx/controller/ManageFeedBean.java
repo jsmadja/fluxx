@@ -25,8 +25,6 @@ public class ManageFeedBean implements Serializable {
     private transient DataModel<Feed> feedsDataModel;
     private transient DataModel<Feed> feedsInErrorDataModel;
 
-    private static final Logger LOG = Logger.getLogger("fluxx");
-
     @Inject
     private FeedService feedService;
     @Inject
@@ -38,11 +36,8 @@ public class ManageFeedBean implements Serializable {
         return MANAGE_FEEDS;
     }
 
-
     public DataModel<Feed> getFeeds() {
-        if (feedsDataModel == null) {
-            feedsDataModel = new CollectionDataModel(getAllFeeds()).getDataModel();
-        }
+        feedsDataModel = new CollectionDataModel(getAllFeeds()).getDataModel();
         return feedsDataModel;
     }
 

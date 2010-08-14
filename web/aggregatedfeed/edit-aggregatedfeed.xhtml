@@ -116,7 +116,7 @@
         <h:form>
             <h:panelGrid columns="3" >
                 <h:outputText value="${msgs.form_field_feed_url} * :"/>
-                <h:inputText id="url" value="#{editAggregatedFeed.newFeedUrl}" />
+                <h:inputText id="url" value="#{editAggregatedFeed.newFeedUrl}" size="50" />
                 <h:message for="url" styleClass="error"/>
                 <h:commandButton  id="submit" value="${msgs.form_button_add}" action="#{editAggregatedFeed.addNewFeed}"/>
             </h:panelGrid>

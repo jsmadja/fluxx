@@ -161,6 +161,10 @@ public class FeedService {
 
     public void delete(Feed feed) {
         Feed feedToRemove = em.find(Feed.class, feed.getId());
+        List<AggregatedFeed> aggregatedFeeds = feedToRemove.getAggregatedFeeds();
+        for (AggregatedFeed af:aggregatedFeeds) {
+            af.getFeeds().remove(feedToRemove);
+        }
         em.remove(feedToRemove);
         em.flush();
     }

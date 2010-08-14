@@ -8,9 +8,13 @@ import javax.persistence.OrderBy;
 import static javax.persistence.CascadeType.ALL;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,6 +37,12 @@ public class Feed implements Serializable {
     @OrderBy("publishedDate DESC")
     @OneToMany(cascade = {ALL}, mappedBy="feed")
     private List<Item> items = new ArrayList<Item>();
+
+    @ManyToMany(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinTable(name="AGGREGATEDFEED_FEED",
+      joinColumns=@JoinColumn(name="FEEDS_ID"),
+      inverseJoinColumns=@JoinColumn(name="AGGREGATEDFEED_ID"))
+    private List<AggregatedFeed> aggregatedFeeds;
 
     private String author;
 
@@ -163,6 +173,14 @@ public class Feed implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<AggregatedFeed> getAggregatedFeeds() {
+        return aggregatedFeeds;
+    }
+
+    public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
+        this.aggregatedFeeds = aggregatedFeeds;
     }
 
 }

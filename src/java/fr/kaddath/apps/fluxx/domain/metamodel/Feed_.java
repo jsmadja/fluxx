@@ -14,6 +14,7 @@ public class Feed_ {
     public static volatile SingularAttribute<Feed, String> url;
     public static volatile SingularAttribute<Feed, Boolean> complete;
     public static volatile ListAttribute<Feed, Item> items;
+    public static volatile ListAttribute<Feed, AggregatedFeed_> aggregatedFeeds;
     public static volatile SingularAttribute<Feed, String> author;
     public static volatile SingularAttribute<Feed, String> description;
     public static volatile SingularAttribute<Feed, String> encoding;

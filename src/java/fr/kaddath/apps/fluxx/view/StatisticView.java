@@ -102,7 +102,7 @@ public class StatisticView {
         for (int i=0; i<24; i++) {
             long numItemsByHour = itemService.getNumItemsByHour(beginDate.getTime());
             max = Math.max(max, numItemsByHour);
-            beginDate.setTimeInMillis(beginDate.getTimeInMillis() + (1000*60*60));
+            beginDate.add(HOUR,1);
         }
         return max;
     }
@@ -112,7 +112,7 @@ public class StatisticView {
 
         for (int i=0; i<24; i++) {
             long numItemsByHour = itemService.getNumItemsByHour(beginDate.getTime());
-            beginDate.add(HOUR_OF_DAY,1);
+            beginDate.add(HOUR,1);
             sb.append(numItemsByHour).append(",");
         }
         sb.setCharAt(sb.length() - 1, ']');

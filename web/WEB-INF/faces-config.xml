@@ -20,6 +20,10 @@
             <from-outcome>manage-aggregatedfeed</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>edit-aggregatedfeed</from-outcome>
+            <to-view-id>/aggregatedfeed/edit-aggregatedfeed.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
     <navigation-rule>
@@ -27,10 +31,6 @@
         <navigation-case>
             <from-outcome>manage-aggregatedfeed</from-outcome>
             <to-view-id>/aggregatedfeed/manage-aggregatedfeeds.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>edit-aggregatedfeed</from-outcome>
-            <to-view-id>/aggregatedfeed/edit-aggregatedfeed.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

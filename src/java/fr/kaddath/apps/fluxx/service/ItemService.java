@@ -154,7 +154,7 @@ public class ItemService {
 
         Calendar endCalendar = getInstance();
         endCalendar.setTime(beginCalendar.getTime());
-        endCalendar.add(HOUR_OF_DAY, 1);
+        endCalendar.add(HOUR, 1);
 
         return getNumItemsBetween(beginCalendar, endCalendar);
     }

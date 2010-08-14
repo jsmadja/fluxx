@@ -24,6 +24,7 @@ import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.FeedCategory;
+import fr.kaddath.apps.fluxx.resource.FluxxMessage;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,7 +58,7 @@ public class RssService {
     }
 
     private Feed createFeed(AggregatedFeed aggregatedFeed, String host) {
-        String titre = aggregatedFeed.getName() + " - Flux aggrégés depuis les " + aggregatedFeed.getNumLastDay() + " derniers jours.";
+        String titre = FluxxMessage.m("feed_title", aggregatedFeed.getName(), aggregatedFeed.getNumLastDay());
         String description = "";
         for (Feed f : aggregatedFeed.getFeeds()) {
             description += f.getTitle() + " / ";

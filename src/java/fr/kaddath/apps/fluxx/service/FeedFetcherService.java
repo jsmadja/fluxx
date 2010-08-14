@@ -119,7 +119,7 @@ public class FeedFetcherService {
                 try {
                     Feed feed = (Feed) couple.get()[0];
                     SyndFeed syndFeed = (SyndFeed) couple.get()[1];
-                    LOG.log(Level.INFO, "[{0}%] Update feed : {1}", new Object[]{getInPercent(i, couples.size()), feed.getTitle()});
+                    LOG.log(Level.INFO, "[{0}%] Update feed : {1}", new Object[]{getInPercent(i+1, couples.size()), feed.getTitle()});
                     update(feed, syndFeed);
                 } catch (Exception ex) {
                     Logger.getLogger(FeedService.class.getName()).log(Level.SEVERE, null, ex);

@@ -10,9 +10,9 @@
         <h:form>
             <h1>${page_title_forcefeedupdate}</h1>
 
-            <h2>${msgs.page_subtitle_feeds_inerror}</h2>
+            <h2><h:outputText value="${msgs.page_subtitle_feeds_inerror}" rendered="#{manageFeedBean.feedsInError.rowCount > 0}"/> </h2>
 
-            <h:dataTable  id="feedsInErrorTable" value="#{manageFeedBean.feedsInError}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
+            <h:dataTable  id="feedsInErrorTable" value="#{manageFeedBean.feedsInError}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" rendered="#{manageFeedBean.feedsInError.rowCount > 0}">
                 <h:column>
                     <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
                     <h:commandLink action="#{editFeed.edit}">
@@ -39,6 +39,10 @@
 
             <h2>${msgs.page_subtitle_available_feeds}</h2>
 
+            <p>
+            <h:commandLink value="${msgs.form_button_update}" action="#{manageFeedBean.updateAll}" />
+            </p>
+            
             <h:dataTable  id="feedsTable" value="#{manageFeedBean.feeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" >
                 <h:column>
                     <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
@@ -70,9 +74,9 @@
                     </h:commandLink>
                 </h:column>
             </h:dataTable>
-
-            <h:commandLink value="${msgs.form_button_update}" action="#{manageFeedBean.updateAll}" />
+            
             <emcomp:opmlIcon href="#{facesContext.externalContext.requestContextPath}/feedsOpml"/>
+
         </h:form>
     </ui:define>
 </ui:composition>
