@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="#{facesContext.externalContext.requestContextPath}/style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/mootools-core.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/mootools-more.js"></script>
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/js/byzoomer-0.9.js"></script>
+        
+        <script type="text/javascript" src="#{facesContext.externalContext.requestContextPath}/myjs/protovis-r3.2.js"></script>
+
+        <script language="javascript" type="text/javascript">
+            function clearText(field){
+                if (field.defaultValue == field.value) field.value = '';
+                else if (field.value == '') field.value = field.defaultValue;
+            }
+            window.addEvent('load', function(){
+                new ByZoomer();
+            });
+        </script>
+        <!--[if lt IE 7]>
+        <style type="text/css">
+        #header_bottom { behavior: url(iepngfix.htc); }
+        </style>
+        <![endif]-->
+        <link href="#{facesContext.externalContext.requestContextPath}/mystyle.css" rel="stylesheet" type="text/css" />
+        <title>${msgs.text_fluxx_title}</title>
+
+        <c:if test="#{facesContext.externalContext.remoteUser != null}" >
+            <c:forEach var="aggFeed" items="#{manageAggregatedFeed.userAggregatedFeeds.wrappedData}">
+                <link rel="alternate" type="application/rss+xml" title="${aggFeed.name}" href="#{facesContext.externalContext.requestContextPath}/resources/rss/#{aggFeed.fluxxer.username}/#{aggFeed.name}" />
+            </c:forEach>
+        </c:if>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.8.1/build/autocomplete/assets/skins/sam/autocomplete.css" />
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/connection/connection-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/animation/animation-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/datasource/datasource-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/autocomplete/autocomplete-min.js"></script>
+
+
+    </h:head>
+    <h:body styleClass="yui-skin-sam">
+        <div id="top_bg">
+            <div class="container">
+                <div id="header">
+                    <div id="logo">${msgs.text_fluxx_title}</div>
+                    <div id="header_bottom">
+                        <div id="menu">
+                            <ul>
+                                <li class="current"><a href="#{facesContext.externalContext.requestContextPath}"><b>${msgs.page_title_home}</b></a></li>
+                                <c:if test="#{facesContext.externalContext.remoteUser == null}" >
+                                    <li><b><a href="#{facesContext.externalContext.requestContextPath}/faces/signin/signin.xhtml" title="">${msgs.page_title_signin}</a></b></li>
+                                </c:if>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Of Header -->
+                <div id="content">
+                    <div id="content_left">
+                        <div class="post">
+                            <ui:insert name="content_right" />
+                        </div>
+                    </div>
+                    <!-- End Of Content Left-->
+                    <div id="content_right">
+                        <div class="section">
+                            <div class="section_1_top">${msgs.text_member_login}</div>
+                            <div class="section_1_mid">
+                                <ui:include src="login-form.xhtml" />
+                                <div class="cleaner_with_height"></div>
+                            </div>
+                            <div class="section_1_bottom"></div>
+                        </div>
+                        <div class="section">
+                            <div class="section_2_top"> Menu </div>
+                            <div class="section_2_mid">
+                                <ul>
+                                    <ui:include src="/menu.xhtml"/>
+                                </ul>
+                            </div>
+                            <div class="section_2_bottom"> </div>
+                        </div>
+                        <div class="section">
+                            <div class="section_2_top">Statistiques</div>
+                            <div class="section_2_mid">
+                                <ul>
+                                    <ui:include src="/stats.xhtml"/>
+                                </ul>
+                            </div>
+                            <div class="section_2_bottom"> </div>
+                        </div>
+
+                    </div>
+                    <!-- End Of right -->
+                    <div class="cleaner_with_height"></div>
+                </div>
+                <!-- End Of Content -->
+                <div class="cleaner_with_height"></div>
+            </div>
+            <!-- End Of Container -->
+        </div>
+        <!-- End Of bottom bg -->
+        <div id="footer"> Copyright &copy; 2010 <a href="http://www.free-css.com/">Fluxx</a> | Designed by <a href="http://www.templatemo.com">Free CSS Templates</a> </div>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-942617-8']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+    </h:body>
+
+</html>

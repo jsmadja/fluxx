@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="content_right">
+        <h1>${msgs.page_title_manage_configuration}</h1>
+        <h:panelGrid columns="2" >
+            <h:outputText value="Bitly Account :"/>
+            <h:outputText value="${configuration.notificationService.bitlyService.userAccount}" />
+
+            <h:outputText value="Bitly API Key :"/>
+            <h:outputText value="${configuration.notificationService.bitlyService.apiKey}" />
+
+            <h:outputText value="Twitter Account :"/>
+            <h:outputText value="${configuration.notificationService.twitterService.usernameAccount}" />
+
+            <h:outputText value="Twitter Password :"/>
+            <h:outputText value="${configuration.notificationService.twitterService.passwordAccount}" />
+
+            <h:outputText value="Response Address :"/>
+            <h:outputText value="${configuration.notificationService.mailService.responseAddress}" />
+
+            <h:outputText value="Gmail Username :"/>
+            <h:outputText value="${configuration.notificationService.mailService.username}" />
+
+            <h:outputText value="Gmail Password :"/>
+            <h:outputText value="${configuration.notificationService.mailService.password}" />
+
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
