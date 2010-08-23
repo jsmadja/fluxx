@@ -133,9 +133,9 @@ public class StatisticView {
     public Map<String, Float> getFeedTypesRepartition() {
 
         float sum = 0;
-        Map<String, Integer> map = feedService.getNumFeedType();
-        Collection<Integer> numFeeds = map.values();
-        for (Integer i:numFeeds) {
+        Map<String, Long> map = feedService.getNumFeedType();
+        Collection<Long> numFeeds = map.values();
+        for (Long i:numFeeds) {
             sum+=i;
         }
 
