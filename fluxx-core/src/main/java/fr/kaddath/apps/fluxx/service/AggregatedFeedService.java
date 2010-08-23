@@ -39,7 +39,7 @@ public class AggregatedFeedService {
     RssFeedCache feedCache;
 
     @PostConstruct
-    private void init() {
+    public void init() {
         cb = em.getCriteriaBuilder();
     }
 

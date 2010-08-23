@@ -49,7 +49,7 @@ public class FeedService {
     }
 
     @PostConstruct
-    private void init() {
+    public void init() {
         cb = em.getCriteriaBuilder();
     }
 
@@ -185,13 +185,21 @@ public class FeedService {
         return getSingleResult(query);
     }
 
-    public Map<String, Integer> getNumFeedType() {
-        Map<String, Integer> maps = new HashMap<String, Integer>();
+    @SuppressWarnings("rawtypes")
+	public Map<String, Long> getNumFeedType() {
+        Map<String, Long> maps = new HashMap<String, Long>();
         Query query = em.createNativeQuery("select FEEDTYPE, count(*) from FEED group by FEEDTYPE order by FEEDTYPE ASC");
         List list = query.getResultList();
         for (int i = 0; i< list.size(); i++) {
             Object[] value = (Object[]) list.get(i);
-            maps.put( (String)value[0], (Integer) value[1]);
+            String feedType = (String)value[0];
+            Long count;
+            if (value[1] instanceof Long) {
+            	count = (Long) value[1];
+            } else {
+            	count = ((Integer)value[1]).longValue();
+            }
+            maps.put(feedType , count);
         }
         return maps;
     }

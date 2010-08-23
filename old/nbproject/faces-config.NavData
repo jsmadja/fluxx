@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="resources/emcomp/categoryIcon.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="configuration/manage-configuration.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="template.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="feed/manage-feeds.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="feed/add-failure.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="feed/edit-feed.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="resources/emcomp/opmlIcon.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="error.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="signin/signin.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="aggregatedfeed/manage-aggregatedfeeds.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="signin/edit-account.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="stats.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="resources/emcomp/statisticsItemsByDay.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="feed/import-opml.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="*" x="1400" y="150" zoom="true"/>
+        <Node id="feed/opml-importer.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="resources/emcomp/feedTable.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="login-form.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="resources/emcomp/rssIcon.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="aggregatedfeed/edit-aggregatedfeed.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="679" y="333" zoom="false"/>
+        <Node id="menu.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="statistic/view-statistics.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="signin/signin-validation.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="signin/edit-account-validation.xhtml" x="150" y="900" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content_right">
+        <f:view>
+            <div class="post">
+                <c:if test="#{facesContext.externalContext.remoteUser != null}" >
+                    <ui:include src="/aggregatedfeed/manage-aggregatedfeeds.xhtml" />
+                </c:if>
+                <c:if test="#{facesContext.externalContext.remoteUser == null}" >
+                    <h1>Welcome to Fluxx</h1>
+                </c:if>
+            </div>
+        </f:view>
+    </ui:define>
+</ui:composition>

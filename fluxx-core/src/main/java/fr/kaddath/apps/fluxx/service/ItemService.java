@@ -61,7 +61,7 @@ public class ItemService {
     }
 
     @PostConstruct
-    private void init() {
+    public void init() {
         cb = em.getCriteriaBuilder();
     }
 

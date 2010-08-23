@@ -1,0 +1,32 @@
+<div class="form"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core">
+        <c:choose>
+            <c:when test="#{facesContext.externalContext.remoteUser == null}" >
+                <form method="POST" action="j_security_check">
+                    <div class="label">
+                        <label>${msgs.form_loginform_field_username} : </label>
+                        <label>${msgs.form_loginform_field_password} : </label>
+                    </div>
+                    <div class="textboxes">
+                        <input name="j_username" value="${msgs.form_field_username}" type="text" onfocus="clearText(this)" onblur="clearText(this)" class="textfield"/>
+                        <input name="j_password" value="${msgs.form_field_password}" type="password" onfocus="clearText(this)" onblur="clearText(this)" class="textfield"/>
+                    </div>
+                    <div class="cleaner_with_height"></div>
+                    <div class="login_bottom">
+                        <input type="submit" name="login" value=" " class="button"/>
+                    </div>
+                </form>
+            </c:when>
+            <c:otherwise>
+                <h:outputLabel value="#{facesContext.externalContext.remoteUser}"/><br/>
+                <h:form>
+                    <h:commandLink value="${msgs.form_button_logout}">
+                        <f:actionListener type="fr.kaddath.apps.fluxx.view.listener.LogoutActionListener" />
+                    </h:commandLink>
+                </h:form>
+            </c:otherwise>
+        </c:choose>
+    </div>

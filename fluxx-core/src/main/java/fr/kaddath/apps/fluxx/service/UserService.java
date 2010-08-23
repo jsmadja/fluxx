@@ -25,7 +25,7 @@ public class UserService {
     private CriteriaBuilder cb;
 
     @PostConstruct
-    private void init() {
+    public void init() {
         cb = em.getCriteriaBuilder();
     }
 

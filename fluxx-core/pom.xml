@@ -8,22 +8,12 @@
     <name>fluxx-core</name>
     <url>http://fluxx.fr.cn/</url>
     
-    <properties>
-        <junit-version>4.7</junit-version>
-        <eclipselink-version>2.0.0</eclipselink-version>
-        <glassfish-version>3.0</glassfish-version>
-        <sl4j-version>1.5.6</sl4j-version>
-        <jsf-version>2.0</jsf-version>
-        <rome-version>0.9</rome-version>
-        <commons-lang-version>2.3</commons-lang-version>
-        <eh-cache-version>2.2.0</eh-cache-version>
-        <hibernate-validator-version>4.0.2.GA</hibernate-validator-version>
-        <javaee-version>6.0</javaee-version>
-        <jdom-version>1.0</jdom-version>
-        <mockito-version>1.8.5</mockito-version>
-        <environment-name>development</environment-name>
-    </properties>
-
+    <parent>
+    	<groupId>fr.kaddath.apps.fluxx</groupId>
+    	<artifactId>fluxx</artifactId>
+    	<version>1.0</version>
+    </parent>
+    
     <scm>
         <connection>scm:git://github.com/jsmadja/fluxx.git/fluxx-core</connection>
         <developerConnection>scm:git://github.com/jsmadja/fluxx.git/fluxx-core</developerConnection>
@@ -126,62 +116,6 @@
                 <targetPath>META-INF</targetPath>
             </resource>
         </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <inherited>true</inherited>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <version>2.3.1</version>
-                    <compilerArgument>-Djava.endorsed.dirs=${glassfish-home}/modules/endorsed</compilerArgument>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>glassfish-maven-repository.dev.java.net</id>
-            <name>GlassFish Maven Repository</name>
-            <url>http://download.java.net/maven/glassfish</url>
-        </repository>
-        <repository>
-            <id>EclipseLink Repo</id>
-            <name>Eclipse maven repository http://eclipse.ialto.org/rt/eclipselink/maven.repo/</name>
-            <url>http://mirror.csclub.uwaterloo.ca/eclipse/rt/eclipselink/maven.repo/</url>
-        </repository>
-        <repository>
-            <id>Maven2</id>
-            <url>http://repo1.maven.org/maven2</url>
-            <name>Maven2</name>
-        </repository>
-        <repository>
-            <id>Maven2 Repo 2</id>
-            <url>http://repo2.maven.org/maven2</url>
-            <name>Maven2 Repo 2</name>
-        </repository>
-        <repository>
-            <id>JBoss</id>
-            <url>http://repository.jboss.com/maven2</url>
-            <name>JBoss</name>
-        </repository>
-        <repository>
-            <id>Java</id>
-            <url>http://download.java.net/maven/2/</url>
-            <name>Java</name>
-        </repository>
-        <repository>
-            <id>sourceforge</id>
-            <url>http://oss.sonatype.org/content/groups/sourceforge/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-
-    </repositories>
-</project>
+ </project>

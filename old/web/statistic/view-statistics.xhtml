@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="content_right">
+        <h1>${msgs.page_title_view_statistics}</h1>
+
+        <h2>${msgs.page_subtitle_current_day}</h2>
+        <emcomp:statisticsItemsByDay data="#{statisticView.numItemsByHourOfCurrentDay}" maxItems="#{statisticView.maxNumItemsOfCurrentDay}" />
+
+        <h2>${msgs.page_subtitle_current_month}</h2>
+        <emcomp:statisticsItemsByDay data="#{statisticView.numItemsByDayOfCurrentMonth}" maxItems="#{statisticView.maxNumItemsOfCurrentMonth}" />
+
+        <h2>${msgs.page_subtitle_last_month}</h2>
+        <emcomp:statisticsItemsByDay data="#{statisticView.numItemsByDayOfLastMonth}" maxItems="#{statisticView.maxNumItemsOfLastMonth}"/>
+
+        <h2>${msgs.page_subtitle_feed_types}</h2>
+        <h:dataTable id="feedTypesTable" value="#{statisticView.feedTypesRepartition.entrySet}" var="pair" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" >
+
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_type}</f:facet>
+                <h:outputText value="#{pair.key}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_type_percentage}</f:facet>
+                <h:outputText value="#{pair.value}" />
+            </h:column>
+        </h:dataTable>
+
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:component xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite"
+              xmlns:h="http://java.sun.com/jsf/html"
+              xmlns:f="http://java.sun.com/jsf/core"
+              xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp">
+
+    <composite:interface>
+        <composite:attribute name="feeds" required="true" />
+    </composite:interface>
+
+    <composite:implementation>
+        <h:dataTable  id="feedsTable" value="#{cc.attrs.feeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" >
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
+                <h:outputText value="${feed.title}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_url}</f:facet>
+                <emcomp:rssIcon href="${feed.url}" />
+            </h:column>
+        </h:dataTable>
+    </composite:implementation>
+
+</ui:component>
