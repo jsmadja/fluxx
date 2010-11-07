@@ -72,9 +72,13 @@ public class FeedService {
     public List<Feed> findAllFeedsNotInError() {
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         Root<Feed> feed = cq.from(Feed.class);
+ 
         cq.select(feed);
+        
         cq.where(cb.isFalse(feed.get(Feed_.inError)));
+        
         cq.orderBy(cb.asc(feed.get(Feed_.title)));
+        
         return em.createQuery(cq).getResultList();
     }
 
