@@ -1,1 +1,1 @@
-mvn clean test -Dglassfish-home="C:\Program Files\glassfish-3.0.1\glassfish" -Denvironment-name=development
+mvn clean test -Dglassfish-home="/Users/juliensmadja/Developpement/projets/fluxx/glassfish/glassfish" -Denvironment-name=development
