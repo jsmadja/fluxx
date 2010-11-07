@@ -4,7 +4,7 @@
     <groupId>fr.kaddath.apps</groupId>
     <artifactId>fluxx-core</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <name>fluxx-core</name>
     <url>http://fluxx.fr.cn/</url>
     
@@ -15,8 +15,8 @@
     </parent>
     
     <scm>
-        <connection>scm:git://github.com/jsmadja/fluxx.git/fluxx-core</connection>
-        <developerConnection>scm:git://github.com/jsmadja/fluxx.git/fluxx-core</developerConnection>
+        <connection>scm:git:git://github.com/jsmadja/fluxx.git</connection>
+        <developerConnection>scm:git:git://github.com/jsmadja/fluxx.git</developerConnection>
     </scm>
 
     <profiles>
