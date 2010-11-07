@@ -126,4 +126,17 @@
 
     </build>
 
+<distributionManagement>
+	    <repository>
+		<name>repo</name>
+	        <id>repo</id>
+	        <url>http://github.com/jsmadja/maven/repository/releases</url>
+	    </repository>
+	    <snapshotRepository>
+		<name>snapshot-repo</name>
+	        <id>snapshot-repo</id>
+	        <url>http://github.com/jsmadja/maven/repository/snapshots</url>
+	    </snapshotRepository>
+	</distributionManagement>
+
  </project>
