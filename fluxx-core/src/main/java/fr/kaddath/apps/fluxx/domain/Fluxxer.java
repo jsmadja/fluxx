@@ -15,117 +15,118 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="FLUXXER")
+@Table(name = "FLUXXER")
 public class Fluxxer implements Serializable {
 
-    @Id
-    private String username;
+	private static final long serialVersionUID = 1L;
 
-    @NotNull
-    private String password;
+	@Id
+	private String username;
 
-    @NotNull
-    private String email;
+	@NotNull
+	private String password;
 
-    private String twitterAccount;
+	@NotNull
+	private String email;
 
-    private Boolean twitterNotification;
+	private String twitterAccount;
 
-    private Boolean mailNotification;
+	private Boolean twitterNotification;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastLoginDate;
+	private Boolean mailNotification;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date signinDate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastLoginDate;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="fluxxer")
-    @OrderBy("name")
-    private List<AggregatedFeed> aggregatedFeeds;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date signinDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @OrderBy("name")
-    private List<FeedCategory> favoriteCategories;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "fluxxer")
+	@OrderBy("name")
+	private List<AggregatedFeed> aggregatedFeeds;
 
-    public List<FeedCategory> getFavoriteCategories() {
-        return favoriteCategories;
-    }
+	@OneToMany(cascade = CascadeType.ALL)
+	@OrderBy("name")
+	private List<FeedCategory> favoriteCategories;
 
-    public void setFavoriteCategories(List<FeedCategory> favoriteCategories) {
-        this.favoriteCategories = favoriteCategories;
-    }
+	public List<FeedCategory> getFavoriteCategories() {
+		return favoriteCategories;
+	}
 
-    public List<AggregatedFeed> getAggregatedFeeds() {
-        return aggregatedFeeds;
-    }
+	public void setFavoriteCategories(List<FeedCategory> favoriteCategories) {
+		this.favoriteCategories = favoriteCategories;
+	}
 
-    public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
-        this.aggregatedFeeds = aggregatedFeeds;
-    }
+	public List<AggregatedFeed> getAggregatedFeeds() {
+		return aggregatedFeeds;
+	}
 
+	public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
+		this.aggregatedFeeds = aggregatedFeeds;
+	}
 
-    public Date getLastLoginDate() {
-        return lastLoginDate;
-    }
+	public Date getLastLoginDate() {
+		return lastLoginDate;
+	}
 
-    public void setLastLoginDate(Date lastLoginDate) {
-        this.lastLoginDate = lastLoginDate;
-    }
+	public void setLastLoginDate(Date lastLoginDate) {
+		this.lastLoginDate = lastLoginDate;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public Date getSigninDate() {
-        return signinDate;
-    }
+	public Date getSigninDate() {
+		return signinDate;
+	}
 
-    public void setSigninDate(Date signinDate) {
-        this.signinDate = signinDate;
-    }
+	public void setSigninDate(Date signinDate) {
+		this.signinDate = signinDate;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public String getUsername() {
+		return username;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getTwitterAccount() {
-        return twitterAccount;
-    }
+	public String getTwitterAccount() {
+		return twitterAccount;
+	}
 
-    public void setTwitterAccount(String twitterAccount) {
-        this.twitterAccount = twitterAccount;
-    }
+	public void setTwitterAccount(String twitterAccount) {
+		this.twitterAccount = twitterAccount;
+	}
 
-    public Boolean getMailNotification() {
-        return mailNotification;
-    }
+	public Boolean getMailNotification() {
+		return mailNotification;
+	}
 
-    public void setMailNotification(Boolean mailNotification) {
-        this.mailNotification = mailNotification;
-    }
+	public void setMailNotification(Boolean mailNotification) {
+		this.mailNotification = mailNotification;
+	}
 
-    public Boolean getTwitterNotification() {
-        return twitterNotification;
-    }
+	public Boolean getTwitterNotification() {
+		return twitterNotification;
+	}
 
-    public void setTwitterNotification(Boolean twitterNotification) {
-        this.twitterNotification = twitterNotification;
-    }
+	public void setTwitterNotification(Boolean twitterNotification) {
+		this.twitterNotification = twitterNotification;
+	}
 
 }

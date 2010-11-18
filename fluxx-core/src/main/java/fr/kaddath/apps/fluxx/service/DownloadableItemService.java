@@ -12,21 +12,22 @@ import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 @Stateless
 public class DownloadableItemService {
 
-    @PersistenceContext
-    EntityManager em;
+	@PersistenceContext
+	EntityManager em;
 
-    public DownloadableItem findByUrl(String url) {
-        if (url == null || url.length() == 0) {
-            throw new IllegalArgumentException("The url argument is required");
-        }
-        Query q = em.createQuery("SELECT d FROM DownloadableItem d WHERE d.url = :url");
-        q.setParameter("url", url);
-        q.setMaxResults(1);
-        List<DownloadableItem> list = q.getResultList();
-        if (list.isEmpty()) {
-            return null;
-        } else {
-            return list.get(0);
-        }
-    }
+	@SuppressWarnings("unchecked")
+	public DownloadableItem findByUrl(String url) {
+		if (url == null || url.length() == 0) {
+			throw new IllegalArgumentException("The url argument is required");
+		}
+		Query q = em.createQuery("SELECT d FROM DownloadableItem d WHERE d.url = :url");
+		q.setParameter("url", url);
+		q.setMaxResults(1);
+		List<DownloadableItem> list = q.getResultList();
+		if (list.isEmpty()) {
+			return null;
+		} else {
+			return list.get(0);
+		}
+	}
 }

@@ -2,8 +2,10 @@ package fr.kaddath.apps.fluxx.exception;
 
 public class FluxxerNotFoundException extends Exception {
 
-    public FluxxerNotFoundException(String message) {
-        super(message);
-    }
+	private static final long serialVersionUID = 4247420446349524654L;
+
+	public FluxxerNotFoundException(String message) {
+		super(message);
+	}
 
 }

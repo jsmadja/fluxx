@@ -12,20 +12,19 @@ import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
 import fr.kaddath.apps.fluxx.domain.Feed;
-import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 
 @Stateless
 public class AsynchronousFeedDownloaderService {
 
-    @Asynchronous
-    public Future<Object[]> downloadFeedContent(Feed feed) throws DownloadFeedException {
-        try {
-            URL feedUrl = new URL(feed.getUrl());
-            SyndFeedInput syndFeedInput = new SyndFeedInput();
-            SyndFeed syndFeed = syndFeedInput.build(new XmlReader(feedUrl));
-            return new AsyncResult<Object[]>(new Object[]{feed, syndFeed});
-        } catch (Throwable ex) {
-            throw new DownloadFeedException(ex.getMessage());
-        }
-    } 
+	@Asynchronous
+	public Future<Object[]> downloadFeedContent(Feed feed) {
+		try {
+			URL feedUrl = new URL(feed.getUrl());
+			SyndFeedInput syndFeedInput = new SyndFeedInput();
+			SyndFeed syndFeed = syndFeedInput.build(new XmlReader(feedUrl));
+			return new AsyncResult<Object[]>(new Object[] { feed, syndFeed });
+		} catch (Throwable ex) {
+		}
+		return null;
+	}
 }
