@@ -13,6 +13,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -26,6 +27,7 @@ import org.apache.commons.lang.time.DateUtils;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.domain.metamodel.Item_;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 @SuppressWarnings("unchecked")
@@ -66,6 +68,7 @@ public class ItemService {
 		cb = em.getCriteriaBuilder();
 	}
 
+	@Interceptors({ ChronoInterceptor.class })
 	public Item findItemByLink(String link) {
 		Query query = em.createNamedQuery("findItemsByLink");
 		query.setParameter("link", link);
@@ -162,5 +165,12 @@ public class ItemService {
 		to = DateUtils.addHours(to, 1);
 
 		return getNumItemsBetween(from, to);
+	}
+
+	public Item findItemByLink(String link, Feed feed) {
+		Query query = em.createNamedQuery("findItemsByLinkWithFeed");
+		query.setParameter("link", link);
+		query.setParameter("feed", feed);
+		return getUniqueResult(query);
 	}
 }
