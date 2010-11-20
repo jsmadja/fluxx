@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,6 +20,7 @@ import javax.persistence.criteria.Root;
 import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.metamodel.Feed_;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 @SuppressWarnings({ "unchecked", "rawtypes" })
@@ -70,6 +72,7 @@ public class FeedService {
 		return em.createQuery(cq).getResultList();
 	}
 
+	@Interceptors({ ChronoInterceptor.class })
 	public List<Feed> findAllFeedsNotInError() {
 		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
 		Root<Feed> feed = cq.from(Feed.class);

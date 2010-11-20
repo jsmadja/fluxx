@@ -7,3 +7,5 @@ export
 gfembed*
 sonar
 sun-appserv-samples
+.externalToolBuilders
+maven-eclipse.xml

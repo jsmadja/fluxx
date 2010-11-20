@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,7 +12,6 @@ import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.inject.Inject;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -53,11 +51,50 @@ public class FeedFetcherService {
 	@PersistenceContext
 	EntityManager em;
 
-	@Inject
+	@EJB
 	RssFeedCache feedCache;
 
-	@Inject
+	@EJB
 	RssItemCache lastItemCache;
+
+	@Interceptors({ ChronoInterceptor.class })
+	@Schedule(minute = "*/15", hour = "*")
+	public void updateAll() {
+		LOG.info("Full update is starting ...");
+		feedCache.clear();
+		updateFeeds(downloadFeeds());
+		LOG.info("Full update is finished");
+	}
+
+	@Interceptors({ ChronoInterceptor.class })
+	private List<Object[]> downloadFeeds() {
+		List<Object[]> couples = new ArrayList<Object[]>();
+		List<Feed> feeds = feedService.findAllFeedsNotInError();
+		for (int i = 0; i < feeds.size(); i++) {
+			try {
+				Object[] feed = downloaderService.downloadFeedContent(feeds.get(i));
+				couples.add(feed);
+			} catch (DownloadFeedException e) {
+				LOG.warning(e.getMessage());
+			}
+		}
+		return couples;
+	}
+
+	private void updateFeeds(List<Object[]> couples) {
+		for (int i = 0; i < couples.size();) {
+			Object[] couple = couples.get(i);
+			Feed feed = (Feed) couple[0];
+			SyndFeed syndFeed = (SyndFeed) couple[1];
+			if (mustBeUpdated(syndFeed)) {
+				update(feed, syndFeed);
+				lastItemCache.put(findLastEntry(syndFeed));
+				LOG.log(Level.INFO, "[{0}%] Update feed : {1} ... updated successfully",
+						new Object[] { getInPercent(i + 1, couples.size()), feed.getTitle() });
+			}
+			i++;
+		}
+	}
 
 	public Feed add(String feedUrl) throws DownloadFeedException {
 		Feed feed = new Feed();
@@ -79,7 +116,7 @@ public class FeedFetcherService {
 		}
 	}
 
-	public void update(Feed feed, SyndFeed syndFeed) throws DownloadFeedException {
+	public void update(Feed feed, SyndFeed syndFeed) {
 		updateFeedInformations(feed, syndFeed);
 		if (feed.getId() == null) {
 			em.persist(feed);
@@ -90,68 +127,17 @@ public class FeedFetcherService {
 		updateFeedItems(feed, syndFeed);
 	}
 
-	private List<Future<Object[]>> downloadFeeds() {
-		List<Future<Object[]>> couples = new ArrayList<Future<Object[]>>();
-		List<Feed> feeds = feedService.findAllFeedsNotInError();
-		for (int i = 0; i < feeds.size(); i++) {
-			Future<Object[]> couple = downloaderService.downloadFeedContent(feeds.get(i));
-			try {
-				if (couple != null && couple.get() != null) {
-					couples.add(couple);
-				}
-			} catch (Exception e) {
-				LOG.severe(e.getMessage());
-			}
-		}
-		return couples;
-	}
-
-	private void updateFeeds(List<Future<Object[]>> couples) {
-		for (int i = 0; i < couples.size();) {
-			Future<Object[]> couple = couples.get(i);
-			if (couple.isDone()) {
-				try {
-					Feed feed = (Feed) couple.get()[0];
-					SyndFeed syndFeed = (SyndFeed) couple.get()[1];
-					if (mustBeUpdated(syndFeed)) {
-						update(feed, syndFeed);
-						lastItemCache.put(findLastEntry(syndFeed));
-						LOG.log(Level.INFO, "[{0}%] Update feed : {1} ... updated successfully", new Object[] {
-								getInPercent(i + 1, couples.size()), feed.getTitle() });
-					}
-				} catch (Exception ex) {
-					Logger.getLogger(FeedService.class.getName()).log(Level.SEVERE, null, ex);
-				}
-				i++;
-			} else {
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException ex) {
-					Logger.getLogger(FeedService.class.getName()).log(Level.SEVERE, null, ex);
-				}
-			}
-		}
-	}
-
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	private void updateWithFeedContent(Feed feed, SyndFeed syndFeed) {
 		try {
 			feed.setInError(false);
 			update(feed, syndFeed);
 			em.merge(feed);
-		} catch (Throwable e) {
+		} catch (Exception e) {
 			LOG.warning(e.getMessage());
 			feed.setInError(true);
 			em.merge(feed);
 		}
-	}
-
-	@Interceptors({ ChronoInterceptor.class })
-	@Schedule(minute = "*/15", hour = "*")
-	public void updateAllAsynchronously() {
-		feedCache.clear();
-		List<Future<Object[]>> couples = downloadFeeds();
-		updateFeeds(couples);
 	}
 
 	private int getInPercent(int counter, float numFeeds) {
@@ -195,8 +181,6 @@ public class FeedFetcherService {
 			if (link != null) {
 				Item feedItem = itemService.findItemByLink(link, feed);
 				if (feedItem == null) {
-					LOG.log(Level.INFO, "New item found : {0} with date : {1}",
-							new Object[] { link, syndEntryImpl.getPublishedDate() });
 					Item item = itemBuilderService.createItemFromSyndEntry(syndEntryImpl);
 					item.setFeed(feed);
 					em.persist(item);
