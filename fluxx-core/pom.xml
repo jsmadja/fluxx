@@ -107,7 +107,12 @@
         </dependency>
     </dependencies>
     <build>
-        <resources>
+    	<testResources>
+    		<testResource>
+    			<directory>${project.basedir}/src/test/resources</directory>
+    		</testResource>
+    	</testResources>
+    	<resources>
             <resource>
                 <directory>${project.basedir}/src/main/resources</directory>
             </resource>

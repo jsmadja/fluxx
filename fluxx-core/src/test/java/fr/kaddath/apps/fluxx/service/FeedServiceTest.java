@@ -18,7 +18,7 @@ import fr.kaddath.apps.fluxx.domain.Feed;
 public class FeedServiceTest extends AbstractTest {
 
 	@Test
-	public void testFindFeedsByInError() throws Exception {
+	public void should_return_feeds_in_error() throws Exception {
 		Feed feed = createFeed(FEED_CASTCODEURS);
 		feed.setInError(true);
 		feedService.update(feed);
@@ -148,4 +148,5 @@ public class FeedServiceTest extends AbstractTest {
 		assertFalse(feedType.isEmpty());
 
 	}
+
 }
