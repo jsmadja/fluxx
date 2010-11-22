@@ -23,162 +23,155 @@ import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.service.AggregatedFeedService;
 import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.ItemService;
-import fr.kaddath.apps.fluxx.service.UserService;
 
-@Named(value="statisticView")
+@Named(value = "statisticView")
 @ApplicationScoped
 public class StatisticView {
 
-    @Inject
-    FeedService feedService;
+	@Inject
+	FeedService feedService;
 
-    @Inject
-    ItemService itemService;
+	@Inject
+	ItemService itemService;
 
-    @Inject
-    UserService userService;
+	@Inject
+	AggregatedFeedService aggregatedFeedService;
 
-    @Inject
-    AggregatedFeedService aggregatedFeedService;
+	public long getNumFeeds() {
+		return feedService.getNumFeeds();
+	}
 
-    public long getNumFeeds() {
-        return feedService.getNumFeeds();
-    }
+	public long getNumItems() {
+		return itemService.getNumItems();
+	}
 
-    public long getNumItems() {
-        return itemService.getNumItems();
-    }
+	public long getNumAggregatedFeeds() {
+		return aggregatedFeedService.getNumAggregatedFeeds();
+	}
 
-    public long getNumFluxxers() {
-        return userService.getNumFluxxers();
-    }
+	public String getNumItemsByDayOfLastMonth() {
+		return getNumItemsBetween(firstDayOfLastMonth(), firstDayOfCurrentMonth());
+	}
 
-    public long getNumAggregatedFeeds() {
-        return aggregatedFeedService.getNumAggregatedFeeds();
-    }
+	public String getNumItemsByDayOfCurrentMonth() {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 1);
+		return getNumItemsBetween(firstDayOfCurrentMonth(), cal);
+	}
 
-    public String getNumItemsByDayOfLastMonth() {
-        return getNumItemsBetween(firstDayOfLastMonth(), firstDayOfCurrentMonth());
-    }
+	public long getMaxNumItemsOfLastMonth() {
+		return getMaxNumItemsBetween(firstDayOfLastMonth(), firstDayOfCurrentMonth());
+	}
 
-    public String getNumItemsByDayOfCurrentMonth() {
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH,1);
-        return getNumItemsBetween(firstDayOfCurrentMonth(), cal);
-    }
+	public long getMaxNumItemsOfCurrentMonth() {
+		Calendar cal = getInstance();
+		cal.add(DAY_OF_MONTH, 1);
+		return getMaxNumItemsBetween(firstDayOfCurrentMonth(), cal);
+	}
 
-    public long getMaxNumItemsOfLastMonth() {
-        return getMaxNumItemsBetween(firstDayOfLastMonth(), firstDayOfCurrentMonth());
-    }
+	public Date getLastUpdate() {
+		Feed feed = feedService.findLastUpdatedFeed();
+		if (feed != null) {
+			return feed.getLastUpdate();
+		}
+		return Calendar.getInstance().getTime();
+	}
 
-    public long getMaxNumItemsOfCurrentMonth() {
-        Calendar cal = getInstance();
-        cal.add(DAY_OF_MONTH,1);
-        return getMaxNumItemsBetween(firstDayOfCurrentMonth(), cal);
-    }
+	/**
+	 * [1, 1.2, 1.7, 1.5, .7, .3]
+	 * 
+	 * @return
+	 */
+	private String getNumItemsBetween(Calendar from, Calendar to) {
+		StringBuilder sb = new StringBuilder("[");
+		do {
+			long numItemsByDay = itemService.getNumItemsByDay(from.getTime());
+			sb.append(numItemsByDay).append(",");
+			from.add(DAY_OF_MONTH, 1);
+		} while (from.before(to));
+		sb.setCharAt(sb.length() - 1, ']');
+		return sb.toString();
+	}
 
-    public Date getLastUpdate() {
-        Feed feed = feedService.findLastUpdatedFeed();
-        if (feed != null) {
-            return feed.getLastUpdate();
-        }
-        return Calendar.getInstance().getTime();
-    }
+	// --
+	public String getNumItemsByHourOfCurrentDay() {
+		Calendar cal = getThisMorning();
+		return getNumItemsByHourSince(cal);
+	}
 
-    /**
-     * [1, 1.2, 1.7, 1.5, .7, .3]
-     * @return
-     */
-    private String getNumItemsBetween(Calendar from, Calendar to) {
-        StringBuilder sb = new StringBuilder("[");
-        do {
-            long numItemsByDay = itemService.getNumItemsByDay(from.getTime());
-            sb.append(numItemsByDay).append(",");
-            from.add(DAY_OF_MONTH, 1);
-        } while (from.before(to));
-        sb.setCharAt(sb.length() - 1, ']');
-        return sb.toString();
-    }
+	public long getMaxNumItemsOfCurrentDay() {
+		Calendar now = getThisMorning();
+		Date date = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH)).getTime();
+		long max = 0;
+		for (int i = 0; i < 24; i++) {
+			long numItemsByHour = itemService.getNumItemsByHour(date);
+			max = Math.max(max, numItemsByHour);
+			date = DateUtils.addHours(date, 1);
+		}
+		return max;
+	}
 
-    // --
-    public String getNumItemsByHourOfCurrentDay() {
-        Calendar cal = getThisMorning();
-        return getNumItemsByHourSince(cal);
-    }
+	private String getNumItemsByHourSince(Calendar now) {
+		StringBuilder sb = new StringBuilder("[");
+		Date beginDate = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH)).getTime();
 
-    public long getMaxNumItemsOfCurrentDay() {
-        Calendar now = getThisMorning();
-        Date date = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH)).getTime();
-        long max = 0;
-        for (int i=0; i<24; i++) {
-            long numItemsByHour = itemService.getNumItemsByHour(date);
-            max = Math.max(max, numItemsByHour);
-            date = DateUtils.addHours(date, 1);
-        }
-        return max;
-    }
-    private String getNumItemsByHourSince(Calendar now) {
-        StringBuilder sb = new StringBuilder("[");
-        Date beginDate = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH)).getTime();
+		for (int i = 0; i < 24; i++) {
+			long numItemsByHour = itemService.getNumItemsByHour(beginDate);
+			beginDate = DateUtils.addHours(beginDate, 1);
+			sb.append(numItemsByHour).append(",");
+		}
+		sb.setCharAt(sb.length() - 1, ']');
+		return sb.toString();
+	}
 
-        for (int i=0; i<24; i++) {
-            long numItemsByHour = itemService.getNumItemsByHour(beginDate);
-            beginDate = DateUtils.addHours(beginDate, 1);
-            sb.append(numItemsByHour).append(",");
-        }
-        sb.setCharAt(sb.length() - 1, ']');
-        return sb.toString();
-    }
+	public Map<String, Float> getFeedTypesRepartition() {
 
-    public Map<String, Float> getFeedTypesRepartition() {
+		float sum = 0;
+		Map<String, Long> map = feedService.getNumFeedType();
+		Collection<Long> numFeeds = map.values();
+		for (Long i : numFeeds) {
+			sum += i;
+		}
 
-        float sum = 0;
-        Map<String, Long> map = feedService.getNumFeedType();
-        Collection<Long> numFeeds = map.values();
-        for (Long i:numFeeds) {
-            sum+=i;
-        }
+		Map<String, Float> percentages = new HashMap<String, Float>();
 
-        Map<String, Float> percentages = new HashMap<String, Float>();
+		for (String key : map.keySet()) {
+			Float value = (map.get(key) * 100) / sum;
+			System.out.println(key + " : " + value);
+			percentages.put(key, value);
+		}
 
-        for (String key:map.keySet()) {
-            Float value = (map.get(key)*100) / sum;
-            System.out.println(key+" : "+value);
-            percentages.put(key, value);
-        }
+		return percentages;
+	}
 
-        return percentages;
-    }
+	private Calendar getThisMorning() {
+		Calendar now = Calendar.getInstance();
+		Calendar cal = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH));
+		return cal;
+	}
 
-    private Calendar getThisMorning() {
-        Calendar now = Calendar.getInstance();
-        Calendar cal = new GregorianCalendar(now.get(YEAR), now.get(MONTH), now.get(DAY_OF_MONTH));
-        return cal;
-    }
+	// --
 
-    // --
+	private long getMaxNumItemsBetween(Calendar from, Calendar to) {
+		long max = 0;
+		do {
+			long numItemsByDay = itemService.getNumItemsByDay(from.getTime());
+			max = Math.max(max, numItemsByDay);
+			from.add(DAY_OF_YEAR, 1);
+		} while (from.before(to));
+		return max;
+	}
 
-    private long getMaxNumItemsBetween(Calendar from, Calendar to) {
-        long max = 0;
-        do {
-            long numItemsByDay = itemService.getNumItemsByDay(from.getTime());
-            max = Math.max(max, numItemsByDay);
-            from.add(DAY_OF_YEAR, 1);
-        } while (from.before(to));
-        return max;
-    }
+	private Calendar firstDayOfLastMonth() {
+		Calendar date = Calendar.getInstance();
+		date.add(MONTH, -1);
+		date.set(DAY_OF_MONTH, 1);
+		return date;
+	}
 
-
-    private Calendar firstDayOfLastMonth() {
-        Calendar date = Calendar.getInstance();
-        date.add(MONTH, -1);
-        date.set(DAY_OF_MONTH, 1);
-        return date;
-    }
-
-    private Calendar firstDayOfCurrentMonth() {
-        Calendar date = Calendar.getInstance();
-        date.set(DAY_OF_MONTH, 1);
-        return date;
-    }
+	private Calendar firstDayOfCurrentMonth() {
+		Calendar date = Calendar.getInstance();
+		date.set(DAY_OF_MONTH, 1);
+		return date;
+	}
 }
