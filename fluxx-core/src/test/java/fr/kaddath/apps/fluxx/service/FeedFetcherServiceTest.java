@@ -18,7 +18,7 @@ public class FeedFetcherServiceTest extends AbstractTest {
 	}
 
 	private void createFeeds() throws FileNotFoundException {
-		int maxFeeds = 20;
+		int maxFeeds = 5;
 		Scanner sc = new Scanner(new File("src/test/resources/feeds.urls"));
 		int i = 0;
 		while (sc.hasNextLine() && i < maxFeeds) {

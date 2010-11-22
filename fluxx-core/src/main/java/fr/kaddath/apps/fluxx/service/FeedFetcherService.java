@@ -1,9 +1,12 @@
 package fr.kaddath.apps.fluxx.service;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,7 +28,6 @@ import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
 import fr.kaddath.apps.fluxx.cache.RssFeedCache;
-import fr.kaddath.apps.fluxx.cache.RssItemCache;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
@@ -54,16 +56,38 @@ public class FeedFetcherService {
 	@EJB
 	RssFeedCache feedCache;
 
-	@EJB
-	RssItemCache lastItemCache;
+	private static final int ONE_MEGABYTE = 1048576;
+
+	private static final Map<Feed, Integer> feedSizes = new HashMap<Feed, Integer>();
+
+	private static int analyzeSize = 0;
 
 	@Interceptors({ ChronoInterceptor.class })
-	@Schedule(minute = "*/15", hour = "*")
+	@Schedule(minute = "*/15", hour = "*", persistent = true)
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
+		analyzeSize = 0;
 		feedCache.clear();
-		updateFeeds(downloadFeeds());
-		LOG.info("Full update is finished");
+		List<Object[]> couples = downloadFeeds();
+		int downloadSize = computeDownloadSize(couples);
+		updateFeeds(couples);
+		LOG.info("Full update is finished (" + convertInMegaBytes(downloadSize) + " MB downloaded, "
+				+ convertInMegaBytes(analyzeSize) + " MB analyzed)");
+	}
+
+	private int computeDownloadSize(List<Object[]> couples) {
+		int size = 0;
+		for (Object[] couple : couples) {
+			Feed feed = (Feed) couple[0];
+			size += feed.getSize();
+		}
+		return size;
+	}
+
+	private String convertInMegaBytes(int size) {
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumFractionDigits(3);
+		return df.format((double) size / ONE_MEGABYTE);
 	}
 
 	@Interceptors({ ChronoInterceptor.class })
@@ -71,11 +95,14 @@ public class FeedFetcherService {
 		List<Object[]> couples = new ArrayList<Object[]>();
 		List<Feed> feeds = feedService.findAllFeedsNotInError();
 		for (int i = 0; i < feeds.size(); i++) {
+			Feed feed = feeds.get(i);
 			try {
-				Object[] feed = downloaderService.downloadFeedContent(feeds.get(i));
-				couples.add(feed);
+				Object[] couple = downloaderService.downloadFeedContent(feed);
+				couples.add(couple);
 			} catch (DownloadFeedException e) {
-				LOG.warning(e.getMessage());
+				feed.setInError(true);
+				em.merge(feed);
+				LOG.warning("Download failed for " + feed.getUrl() + " cause : " + e.getMessage());
 			}
 		}
 		return couples;
@@ -86,12 +113,16 @@ public class FeedFetcherService {
 			Object[] couple = couples.get(i);
 			Feed feed = (Feed) couple[0];
 			SyndFeed syndFeed = (SyndFeed) couple[1];
-			if (mustBeUpdated(syndFeed)) {
+			if (mustBeUpdated(feed)) {
+				analyzeSize += feed.getSize();
 				update(feed, syndFeed);
-				lastItemCache.put(findLastEntry(syndFeed));
 				LOG.log(Level.INFO, "[{0}%] Update feed : {1} ... updated successfully",
 						new Object[] { getInPercent(i + 1, couples.size()), feed.getTitle() });
+			} else {
+				// LOG.log(Level.INFO, "[{0}%] Skip feed : {1}",
+				// new Object[] { getInPercent(i + 1, couples.size()), feed.getTitle() });
 			}
+			feedSizes.put(feed, feed.getSize());
 			i++;
 		}
 	}
@@ -192,13 +223,9 @@ public class FeedFetcherService {
 		}
 	}
 
-	private boolean mustBeUpdated(SyndFeed syndFeed) {
-		SyndEntryImpl syndEntryImpl = findLastEntry(syndFeed);
-		return !lastItemCache.contains(syndEntryImpl.getLink());
-	}
-
-	private SyndEntryImpl findLastEntry(SyndFeed syndFeed) {
-		return (SyndEntryImpl) syndFeed.getEntries().get(0);
+	private boolean mustBeUpdated(Feed feed) {
+		Integer oldSize = feedSizes.get(feed);
+		return oldSize == null || feed.getSize() != oldSize;
 	}
 
 }

@@ -19,166 +19,178 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Feed implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @NotNull
-    private String url;
+	@NotNull
+	private String url;
 
-    private Boolean complete = false;
+	private Boolean complete = false;
 
-    @OrderBy("publishedDate DESC")
-    @OneToMany(cascade = {ALL}, mappedBy="feed")
-    private List<Item> items = new ArrayList<Item>();
+	@OrderBy("publishedDate DESC")
+	@OneToMany(cascade = { ALL }, mappedBy = "feed")
+	private List<Item> items = new ArrayList<Item>();
 
-    @ManyToMany(mappedBy="feeds", cascade={DETACH,REFRESH})
-    private List<AggregatedFeed> aggregatedFeeds;
+	@ManyToMany(mappedBy = "feeds", cascade = { DETACH, REFRESH })
+	private List<AggregatedFeed> aggregatedFeeds;
 
-    private String author;
+	private String author;
 
-    @Lob
-    private String description;
+	@Lob
+	private String description;
 
-    private String encoding;
+	private String encoding;
 
-    private String feedType;
+	private String feedType;
 
-    private Boolean inError = false;
+	private Boolean inError = false;
 
-    @NotNull
-    private String title;
+	@NotNull
+	private String title;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date lastUpdate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date lastUpdate;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date publishedDate;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date publishedDate;
 
-    @Override
-    public String toString() {
-        return "title:"+title+" url:"+url;
-    }
+	@Transient
+	private int size;
 
-    @Override
-    public boolean equals(Object o) {
-        return url.equals(((Feed)o).url);
-    }
+	@Override
+	public String toString() {
+		return "title:" + title + " url:" + url;
+	}
 
-    @Override
-    public int hashCode() {
-        return url.hashCode();
-    }
-    
-    public String getAuthor() {
-        return author;
-    }
+	@Override
+	public boolean equals(Object o) {
+		return url.equals(((Feed) o).url);
+	}
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+	@Override
+	public int hashCode() {
+		return url.hashCode();
+	}
 
-    public Boolean getComplete() {
-        return complete;
-    }
+	public String getAuthor() {
+		return author;
+	}
 
-    public void setComplete(Boolean complete) {
-        this.complete = complete;
-    }
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public Boolean getComplete() {
+		return complete;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setComplete(Boolean complete) {
+		this.complete = complete;
+	}
 
-    public String getEncoding() {
-        return encoding;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setEncoding(String encoding) {
-        this.encoding = encoding;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getFeedType() {
-        return feedType;
-    }
+	public String getEncoding() {
+		return encoding;
+	}
 
-    public void setFeedType(String feedType) {
-        this.feedType = feedType;
-    }
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
+	}
 
-    public Boolean getInError() {
-        return inError;
-    }
+	public String getFeedType() {
+		return feedType;
+	}
 
-    public void setInError(Boolean inError) {
-        this.inError = inError;
-    }
+	public void setFeedType(String feedType) {
+		this.feedType = feedType;
+	}
 
-    public List<Item> getItems() {
-        return items;
-    }
+	public Boolean getInError() {
+		return inError;
+	}
 
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
+	public void setInError(Boolean inError) {
+		this.inError = inError;
+	}
 
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
+	public List<Item> getItems() {
+		return items;
+	}
 
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
 
-    public Date getPublishedDate() {
-        return publishedDate;
-    }
+	public Date getLastUpdate() {
+		return lastUpdate;
+	}
 
-    public void setPublishedDate(Date publishedDate) {
-        this.publishedDate = publishedDate;
-    }
+	public void setLastUpdate(Date lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public Date getPublishedDate() {
+		return publishedDate;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public void setPublishedDate(Date publishedDate) {
+		this.publishedDate = publishedDate;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public List<AggregatedFeed> getAggregatedFeeds() {
-        return aggregatedFeeds;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
-        this.aggregatedFeeds = aggregatedFeeds;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<AggregatedFeed> getAggregatedFeeds() {
+		return aggregatedFeeds;
+	}
+
+	public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
+		this.aggregatedFeeds = aggregatedFeeds;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public int getSize() {
+		return size;
+	}
 
 }
