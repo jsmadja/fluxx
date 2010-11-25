@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.interceptor.Interceptors;
 import javax.servlet.http.HttpServletRequest;
 
 import com.sun.syndication.feed.synd.SyndCategory;
@@ -27,14 +28,16 @@ import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
 
 import fr.kaddath.apps.fluxx.cache.RssFeedCache;
-import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
+import fr.kaddath.apps.fluxx.domain.Category;
+import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import fr.kaddath.apps.fluxx.domain.Feed;
-import fr.kaddath.apps.fluxx.domain.FeedCategory;
 import fr.kaddath.apps.fluxx.domain.Item;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 import fr.kaddath.apps.fluxx.resource.FluxxMessage;
 
 @Stateful
+@Interceptors({ ChronoInterceptor.class })
 public class RssService {
 
 	private static final String FEED_TYPE = "rss_2.0";
@@ -45,9 +48,9 @@ public class RssService {
 	private RssFeedCache feedCache;
 
 	@EJB
-	private AggregatedFeedService aggregatedFeedService;
+	private CustomFeedService aggregatedFeedService;
 
-	private String createRssFeed(AggregatedFeed aggregatedFeed, String host, String encoding) throws ParseException,
+	private String createRssFeed(CustomFeed aggregatedFeed, String host, String encoding) throws ParseException,
 			IOException, FeedException {
 		syndFeed = new SyndFeedImpl();
 		Feed feed = createFeed(aggregatedFeed, host);
@@ -56,14 +59,14 @@ public class RssService {
 		return buildXmlContent(encoding);
 	}
 
-	private Feed createFeed(AggregatedFeed aggregatedFeed, String host) {
+	private Feed createFeed(CustomFeed aggregatedFeed, String host) {
 		String titre = FluxxMessage.m("feed_title", aggregatedFeed.getTheme(), aggregatedFeed.getNumLastDay());
 		String description = "";
 		for (Feed f : aggregatedFeed.getFeeds()) {
 			description += f.getTitle() + " / ";
 		}
 		Feed feed = new Feed();
-		List<Item> items = aggregatedFeedService.findItemsByAggregatedFeed(aggregatedFeed);
+		List<Item> items = aggregatedFeedService.findItemsByCustomFeed(aggregatedFeed);
 		feed.setItems(items);
 		feed.setUrl(host);
 		feed.setTitle(titre);
@@ -105,7 +108,7 @@ public class RssService {
 	}
 
 	private void addCategories(Item item, SyndEntry entry) {
-		if (!item.getFeedCategories().isEmpty()) {
+		if (!item.getCategories().isEmpty()) {
 			createCategories(item, entry);
 		}
 	}
@@ -140,9 +143,9 @@ public class RssService {
 	}
 
 	private void createCategories(Item item, SyndEntry entry) {
-		Set<FeedCategory> feedCategories = item.getFeedCategories();
+		Set<Category> feedCategories = item.getCategories();
 		List<SyndCategory> categories = new ArrayList<SyndCategory>();
-		for (FeedCategory fc : feedCategories) {
+		for (Category fc : feedCategories) {
 			SyndCategory category = new SyndCategoryImpl();
 			category.setName(fc.getName());
 			categories.add(category);
@@ -151,7 +154,7 @@ public class RssService {
 	}
 
 	public String getRssFeedById(Long id, HttpServletRequest request, String encoding) {
-		AggregatedFeed feed = aggregatedFeedService.findById(id);
+		CustomFeed feed = aggregatedFeedService.findById(id);
 		if (feed != null) {
 			if (feedCache.contains(id.toString())) {
 				return feedCache.get(id.toString());

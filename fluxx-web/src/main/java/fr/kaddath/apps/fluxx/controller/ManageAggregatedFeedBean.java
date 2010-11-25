@@ -7,7 +7,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import fr.kaddath.apps.fluxx.service.AggregatedFeedService;
+import fr.kaddath.apps.fluxx.service.CustomFeedService;
 
 @ManagedBean
 @Named(value = "manageAggregatedFeed")
@@ -22,10 +22,10 @@ public class ManageAggregatedFeedBean implements Serializable {
 	private int numLastDay = 3;
 
 	@Inject
-	private AggregatedFeedService aggregatedFeedService;
+	private CustomFeedService aggregatedFeedService;
 
 	public String add() {
-		aggregatedFeedService.addAggregatedFeed(username, theme, numLastDay);
+		aggregatedFeedService.addCustomFeed(username, theme, numLastDay);
 		return MANAGE_AGGREGATEDFEED;
 	}
 

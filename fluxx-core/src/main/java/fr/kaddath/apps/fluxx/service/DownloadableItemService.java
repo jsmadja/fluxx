@@ -3,13 +3,16 @@ package fr.kaddath.apps.fluxx.service;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
+@Interceptors({ ChronoInterceptor.class })
 public class DownloadableItemService {
 
 	@PersistenceContext

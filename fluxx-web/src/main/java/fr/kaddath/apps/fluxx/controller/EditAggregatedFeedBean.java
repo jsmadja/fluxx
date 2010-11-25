@@ -14,10 +14,10 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
 import fr.kaddath.apps.fluxx.comparator.FeedsComparator;
-import fr.kaddath.apps.fluxx.domain.AggregatedFeed;
+import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.model.CollectionDataModel;
-import fr.kaddath.apps.fluxx.service.AggregatedFeedService;
+import fr.kaddath.apps.fluxx.service.CustomFeedService;
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import fr.kaddath.apps.fluxx.service.FeedService;
 
@@ -35,7 +35,7 @@ public class EditAggregatedFeedBean implements Serializable {
 	private FeedFetcherService feedFetcherService;
 
 	@Inject
-	private AggregatedFeedService aggregatedFeedService;
+	private CustomFeedService aggregatedFeedService;
 
 	private static final String EDIT_AGGREGATEDFEED = "edit-aggregatedfeed";
 
@@ -49,7 +49,7 @@ public class EditAggregatedFeedBean implements Serializable {
 	private transient CollectionDataModel availableFeedsDataModel;
 	private transient CollectionDataModel aggregatedFeedsDataModel;
 	private List<Feed> availableListFeeds;
-	private AggregatedFeed currentAggregatedFeed;
+	private CustomFeed currentAggregatedFeed;
 
 	private static final Logger LOG = Logger.getLogger(EditAggregatedFeedBean.class.getName());
 
@@ -66,20 +66,20 @@ public class EditAggregatedFeedBean implements Serializable {
 	}
 
 	private String addFeed(Feed feed) {
-		currentAggregatedFeed = aggregatedFeedService.addFeedToAggregatedFeed(feed, currentAggregatedFeed);
+		currentAggregatedFeed = aggregatedFeedService.addFeed(currentAggregatedFeed, feed);
 		return EDIT_AGGREGATEDFEED;
 	}
 
 	public String removeFeed() {
 		currentAggregatedFeed.getFeeds().remove(getAggregatedFeeds().getRowData());
-		currentAggregatedFeed = aggregatedFeedService.merge(currentAggregatedFeed);
+		currentAggregatedFeed = aggregatedFeedService.update(currentAggregatedFeed);
 		reload();
 		return EDIT_AGGREGATEDFEED;
 	}
 
 	public String addNewFeed() {
 		try {
-			Feed newFeed = feedFetcherService.add(newFeedUrl);
+			Feed newFeed = feedFetcherService.addNewFeed(newFeedUrl);
 			return addFeed(newFeed);
 		} catch (Exception ex) {
 			return "add-feed-failure";
@@ -90,7 +90,7 @@ public class EditAggregatedFeedBean implements Serializable {
 		currentAggregatedFeed.setUsername(username);
 		currentAggregatedFeed.setTheme(theme);
 		currentAggregatedFeed.setNumLastDay(numLastDay);
-		currentAggregatedFeed = aggregatedFeedService.merge(currentAggregatedFeed);
+		currentAggregatedFeed = aggregatedFeedService.update(currentAggregatedFeed);
 		return EDIT_AGGREGATEDFEED;
 	}
 
@@ -138,7 +138,7 @@ public class EditAggregatedFeedBean implements Serializable {
 	}
 
 	private void buildAvailableFeedsDataModel(String filter) {
-		List<Feed> feeds = feedService.findAvailableFeedsByAggregatedFeedWithFilter(currentAggregatedFeed, filter);
+		List<Feed> feeds = feedService.findAvailableFeedsByCustomFeedWithFilter(currentAggregatedFeed, filter);
 		Collections.sort(feeds, FEEDS_COMPARATOR);
 		this.availableFeedsDataModel = new CollectionDataModel(feeds);
 	}

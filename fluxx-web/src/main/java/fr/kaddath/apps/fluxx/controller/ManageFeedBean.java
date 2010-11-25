@@ -51,7 +51,7 @@ public class ManageFeedBean implements Serializable {
 
 	public String update() {
 		Feed feed = feedsDataModel.getRowData();
-		feedFetcherService.update(feed);
+		feedFetcherService.updateExistingFeed(feed);
 		reload();
 		return MANAGE_FEEDS;
 	}
@@ -66,7 +66,7 @@ public class ManageFeedBean implements Serializable {
 
 	public String updateInError() {
 		Feed feed = feedsInErrorDataModel.getRowData();
-		feedFetcherService.update(feed);
+		feedFetcherService.updateExistingFeed(feed);
 		reload();
 		return MANAGE_FEEDS;
 	}

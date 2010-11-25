@@ -6,6 +6,7 @@ import static javax.persistence.CascadeType.MERGE;
 import static javax.persistence.CascadeType.PERSIST;
 import static javax.persistence.CascadeType.REFRESH;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,14 +30,18 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
 		@NamedQuery(name = "findItemsByLink", query = "SELECT item FROM Item item WHERE item.link = :link"),
 		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT item FROM Item item WHERE item.feed = :feed AND item.link = :link") })
-public class Item implements Comparable<Item> {
+public class Item implements Comparable<Item>, Serializable {
+
+	private static final long serialVersionUID = 2607672054863155365L;
+
+	public static final int MAX_ITEM_LINK_SIZE = 512;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@NotNull
-	@Column(length = 20480)
+	@Column(length = MAX_ITEM_LINK_SIZE)
 	private String link;
 
 	private String author;
@@ -61,10 +66,19 @@ public class Item implements Comparable<Item> {
 	private Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
 
 	@ManyToMany(cascade = { DETACH, MERGE, PERSIST, REFRESH })
-	private Set<FeedCategory> feedCategories = new HashSet<FeedCategory>();
+	private Set<Category> categories = new HashSet<Category>();
 
 	@ManyToOne
 	private Feed feed;
+
+	public Item(String link, Feed feed) {
+		this.link = link;
+		this.feed = feed;
+	}
+
+	public Item() {
+
+	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -121,12 +135,12 @@ public class Item implements Comparable<Item> {
 		this.feed = feed;
 	}
 
-	public Set<FeedCategory> getFeedCategories() {
-		return feedCategories;
+	public Set<Category> getCategories() {
+		return categories;
 	}
 
-	public void setFeedCategories(Set<FeedCategory> feedCategories) {
-		this.feedCategories = feedCategories;
+	public void setCategories(Set<Category> categories) {
+		this.categories = categories;
 	}
 
 	public String getLink() {

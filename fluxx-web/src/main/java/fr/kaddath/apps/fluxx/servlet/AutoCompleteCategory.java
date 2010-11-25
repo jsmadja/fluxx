@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.kaddath.apps.fluxx.service.FeedCategoryService;
+import fr.kaddath.apps.fluxx.service.CategoryService;
 
 /**
  *
@@ -27,7 +27,7 @@ import fr.kaddath.apps.fluxx.service.FeedCategoryService;
 public class AutoCompleteCategory extends HttpServlet {
    
     @Inject
-    FeedCategoryService categoryService;
+    CategoryService categoryService;
 
     @Resource(lookup="fluxx/autocomplete/category")
     private Integer numCategories;

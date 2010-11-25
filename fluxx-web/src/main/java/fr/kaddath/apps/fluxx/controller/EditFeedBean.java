@@ -61,7 +61,7 @@ public class EditFeedBean implements Serializable {
     public String update() {
         Feed feed = feedService.findFeedById(id);
         feed.setUrl(url);
-        feedFetcherService.update(feed);
+        feedFetcherService.updateExistingFeed(feed);
         currentFeed = (Feed) FacesContext.getCurrentInstance().getAttributes().put("feed", feed);
         return EDIT_FEED;
     }

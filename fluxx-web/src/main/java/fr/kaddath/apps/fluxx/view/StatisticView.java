@@ -20,7 +20,7 @@ import javax.inject.Named;
 import org.apache.commons.lang.time.DateUtils;
 
 import fr.kaddath.apps.fluxx.domain.Feed;
-import fr.kaddath.apps.fluxx.service.AggregatedFeedService;
+import fr.kaddath.apps.fluxx.service.CustomFeedService;
 import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.ItemService;
 
@@ -35,7 +35,7 @@ public class StatisticView {
 	ItemService itemService;
 
 	@Inject
-	AggregatedFeedService aggregatedFeedService;
+	CustomFeedService aggregatedFeedService;
 
 	public long getNumFeeds() {
 		return feedService.getNumFeeds();
@@ -46,7 +46,7 @@ public class StatisticView {
 	}
 
 	public long getNumAggregatedFeeds() {
-		return aggregatedFeedService.getNumAggregatedFeeds();
+		return aggregatedFeedService.getNumCustomFeeds();
 	}
 
 	public String getNumItemsByDayOfLastMonth() {

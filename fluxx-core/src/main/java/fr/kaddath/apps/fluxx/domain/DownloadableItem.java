@@ -11,62 +11,70 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="DOWNLOADABLEITEM",uniqueConstraints=@UniqueConstraint(columnNames={"URL"}))
+@Table(name = "DOWNLOADABLEITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class DownloadableItem {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @NotNull
-    @Column(length=20480)
-    private String url;
+	@NotNull
+	@Column(length = 20480)
+	private String url;
 
-    @ManyToOne
-    private Item item;
+	@ManyToOne
+	private Item item;
 
-    private String type;
+	private String type;
 
-    private Long fileLength;
+	private Long fileLength;
 
-    public String getType() {
-        return type;
-    }
+	public DownloadableItem() {
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public DownloadableItem(Item item) {
+		this.item = item;
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public Long getFileLength() {
-        return fileLength;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public void setFileLength(Long fileLength) {
-        this.fileLength = fileLength;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public Item getItem() {
-        return item;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
+	public Long getFileLength() {
+		return fileLength;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setFileLength(Long fileLength) {
+		this.fileLength = fileLength;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }

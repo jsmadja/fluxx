@@ -15,7 +15,7 @@ public class Fluxx {
 
     @WebMethod
     public void addFeed(String feedUrl) throws DownloadFeedException {
-        feedFetcherService.add(feedUrl);
+        feedFetcherService.addNewFeed(feedUrl);
     }
 
 }
