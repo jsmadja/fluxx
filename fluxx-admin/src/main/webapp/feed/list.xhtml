@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp">
+    <ui:define name="content_right">
+        <h:form>
+            <h1>${page_title_forcefeedupdate}</h1>
+
+            <h2><h:outputText value="${msgs.page_subtitle_feeds_inerror}" rendered="#{manageFeedBean.feedsInError.rowCount > 0}"/> </h2>
+
+            <h:dataTable  id="feedsInErrorTable" value="#{manageFeedBean.feedsInError}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" rendered="#{manageFeedBean.feedsInError.rowCount > 0}">
+                <h:column>
+                    <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
+                    <h:commandLink action="#{editFeed.edit}">
+                        <h:outputText value="${feed.title}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">${msgs.form_field_feed_status}</f:facet>
+                    <h:graphicImage id="status_warning" url="/myimages/warning.png" alt="Warning" rendered="#{feed.inError}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink action="#{manageFeedBean.updateInError}">
+                        <h:graphicImage id="updateInError" url="/myimages/refresh.png" alt="${msgs.form_button_update}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink action="#{manageFeedBean.deleteInError}">
+                        <h:graphicImage id="delete" url="/myimages/delete.png" alt="${msgs.form_button_delete}" />
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+
+            <h2>${msgs.page_subtitle_available_feeds}</h2>
+
+            <p>
+            <h:commandLink value="${msgs.form_button_update}" action="#{manageFeedBean.updateAll}" />
+            </p>
+            
+            <h:dataTable  id="feedsTable" value="#{manageFeedBean.feeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" >
+                <h:column>
+                    <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
+                    <h:commandLink action="#{editFeed.edit}">
+                        <h:outputText value="${feed.title}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">${msgs.form_field_feed_lastupdate}</f:facet>
+                    <h:outputText value="${feed.lastUpdate}">
+                        <f:convertDateTime pattern="dd/MM/yyyy" timeZone="#{msgs.timezone}"/>
+                    </h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:graphicImage id="status_warning" url="/myimages/warning.png" alt="Warning" rendered="#{feed.inError}" />
+                    <h:graphicImage id="status_ok" url="/myimages/ok.png" alt="Ok" rendered="#{!feed.inError}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink action="#{manageFeedBean.update}">
+                        <h:graphicImage id="update" url="/myimages/refresh.png" alt="${msgs.form_button_update}" />
+                    </h:commandLink>
+                </h:column>
+                <h:column>
+                    <f:facet name="header"></f:facet>
+                    <h:commandLink action="#{manageFeedBean.delete}">
+                        <h:graphicImage id="delete" url="/myimages/delete.png" alt="${msgs.form_button_delete}" />
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+            
+            <emcomp:opmlIcon href="#{facesContext.externalContext.requestContextPath}/feedsOpml"/>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
