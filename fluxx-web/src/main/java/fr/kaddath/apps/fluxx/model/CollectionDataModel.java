@@ -6,41 +6,43 @@ import java.util.Collection;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
+@SuppressWarnings("rawtypes")
 public class CollectionDataModel {
 
-    private int  rowsPerPage = Integer.MAX_VALUE;
+	private final int rowsPerPage = Integer.MAX_VALUE;
 
-    private Collection data;
-    private Paginator paginator;
-    private DataModel dataModel;
+	private final Collection data;
+	private Paginator paginator;
+	private final DataModel dataModel;
 
-    public CollectionDataModel(Collection data) {
-        this.data = data;
-        this.dataModel = getPaginator().createPageDataModel();
-    }
+	public CollectionDataModel(Collection data) {
+		this.data = data;
+		this.dataModel = getPaginator().createPageDataModel();
+	}
 
-    private  Paginator getPaginator() {
-        if (paginator == null) {
-            paginator = new Paginator(rowsPerPage) {
+	private Paginator getPaginator() {
+		if (paginator == null) {
+			paginator = new Paginator(rowsPerPage) {
 
-                @Override
-                public int getItemsCount() {
-                    return data.size();
-                }
+				@Override
+				public int getItemsCount() {
+					return data.size();
+				}
 
-                @Override
-                public DataModel createPageDataModel() {
-                    int first = getPageFirstItem();
-                    int last = Math.min(data.size(), getPageFirstItem()+getPageSize());
-                    return new ListDataModel(new ArrayList(data).subList(first, last));
-                }
-            };
-        }
+				@SuppressWarnings("unchecked")
+				@Override
+				public DataModel createPageDataModel() {
+					int first = getPageFirstItem();
+					int last = Math.min(data.size(), getPageFirstItem() + getPageSize());
+					return new ListDataModel(new ArrayList(data).subList(first, last));
+				}
+			};
+		}
 
-        return paginator;
-    }
+		return paginator;
+	}
 
-    public DataModel getDataModel() {
-        return dataModel;
-    }
+	public DataModel getDataModel() {
+		return dataModel;
+	}
 }

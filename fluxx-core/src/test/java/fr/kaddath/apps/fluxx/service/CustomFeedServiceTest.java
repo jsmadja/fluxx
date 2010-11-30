@@ -2,11 +2,8 @@ package fr.kaddath.apps.fluxx.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.junit.Test;
 
@@ -16,23 +13,18 @@ import fr.kaddath.apps.fluxx.domain.Item;
 
 public class CustomFeedServiceTest extends AbstractTest {
 
-	private static final Logger log = Logger.getLogger(CustomFeedServiceTest.class.getName());
-
 	@Test
-	public void addAggregatedFeed() {
-		Long old = customFeedService.getNumCustomFeeds();
-		log.log(Level.INFO, "{0} aggregatedfeeds before adding", old);
+	public void should_add_a_new_custom_feed() {
+		Long initialCount = customFeedService.getNumCustomFeeds();
 		customFeedService.addCustomFeed("fluxxer", createRandomString(), 7);
-		log.log(Level.INFO, "{0} aggregatedfeeds after adding", customFeedService.getNumCustomFeeds());
-		assertTrue(customFeedService.getNumCustomFeeds() > old);
+		assertEquals(initialCount + 1, customFeedService.getNumCustomFeeds().longValue());
 	}
 
 	@Test
-	public void testCreateUrl() throws Exception {
+	public void should_create_a_valid_url() throws Exception {
 		CustomFeed feed = createCustomFeed();
 		String expResult = "http://" + serverName + ":" + serverPort + contextPath + "/rss?id=" + feed.getId();
 		String result = customFeedService.createUrl(request, feed);
-		log.info(result);
 		assertEquals(expResult, result);
 	}
 
@@ -45,21 +37,19 @@ public class CustomFeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void findByAggregatedFeedId() {
-		CustomFeed aggregatedFeed = customFeedService.addCustomFeed("fluxxer", createRandomString(), 7);
-		CustomFeed af = customFeedService.findById(aggregatedFeed.getId());
-		assertEquals(aggregatedFeed.getId(), af.getId());
+	public void should_return_an_existing_custom_feed_when_searching_by_its_id() {
+		CustomFeed customFeed = customFeedService.addCustomFeed("fluxxer", createRandomString(), 7);
+		CustomFeed af = customFeedService.findById(customFeed.getId());
+		assertEquals(customFeed.getId(), af.getId());
 	}
 
 	@Test
-	public void delete() {
+	public void should_delete_two_feeds() {
 		CustomFeed af1 = createCustomFeed();
 		CustomFeed af2 = createCustomFeed();
-		Long old = customFeedService.getNumCustomFeeds();
-		log.log(Level.INFO, "{0} aggregatedfeeds before deleting", old);
+		Long initialCount = customFeedService.getNumCustomFeeds();
 		customFeedService.delete(af1);
 		customFeedService.delete(af2);
-		log.log(Level.INFO, "{0} aggregatedfeeds after deleting", customFeedService.getNumCustomFeeds());
-		assertTrue(customFeedService.getNumCustomFeeds() < old);
+		assertEquals(initialCount - 2, customFeedService.getNumCustomFeeds().longValue());
 	}
 }

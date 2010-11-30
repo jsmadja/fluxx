@@ -25,6 +25,7 @@ import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.service.CategoryService;
+import fr.kaddath.apps.fluxx.service.CrawlerService;
 import fr.kaddath.apps.fluxx.service.CustomFeedService;
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import fr.kaddath.apps.fluxx.service.FeedService;
@@ -47,6 +48,7 @@ public abstract class AbstractTest {
 	protected static CustomFeedService customFeedService;
 	protected static CategoryService categoryService;
 	protected static ItemBuilderService itemBuilderService;
+	protected static CrawlerService crawlerService;
 
 	protected static String uuid = UUID.randomUUID().toString();
 	protected static HttpServletRequest request;
@@ -80,9 +82,9 @@ public abstract class AbstractTest {
 			isIntegrationTest = "true".equals(System.getenv("integration-test"))
 					|| "true".equals(System.getProperty("integration-test"));
 			System.err.println("Integration Test : " + isIntegrationTest);
+
 			Map<String, Object> properties = new HashMap<String, Object>();
 			properties.put(EJBContainer.MODULES, new File("target/classes"));
-			// container = EJBContainer.createEJBContainer();
 			container = EJBContainer.createEJBContainer(properties);
 
 			namingContext = container.getContext();
@@ -97,6 +99,7 @@ public abstract class AbstractTest {
 			itemBuilderService = (ItemBuilderService) lookup("ItemBuilderService");
 			customFeedService = (CustomFeedService) lookup("CustomFeedService");
 			categoryService = (CategoryService) lookup("CategoryService");
+			crawlerService = (CrawlerService) lookup("CrawlerService");
 
 			request = mock(HttpServletRequest.class);
 			when(request.getServerPort()).thenReturn(serverPort);

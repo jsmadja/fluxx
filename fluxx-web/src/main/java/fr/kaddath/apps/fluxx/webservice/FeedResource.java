@@ -9,7 +9,7 @@ import javax.ws.rs.core.Context;
 
 import fr.kaddath.apps.fluxx.service.Services;
 
-@Path("rss/{username}/{theme}")
+@Path("rss/{username}/{category}")
 public class FeedResource {
 	@Context
 	private HttpServletRequest request;
@@ -18,8 +18,8 @@ public class FeedResource {
 
 	@GET
 	@Produces("application/xml")
-	public String getXml(@PathParam(value = "username") String username, @PathParam(value = "theme") String theme) {
-		return Services.getRssService().getRssFeedByUsernameAndTheme(username, theme, request, feedEncoding);
+	public String getXml(@PathParam(value = "username") String username, @PathParam(value = "category") String category) {
+		return Services.getRssService().getRssFeedByUsernameAndCategory(username, category, request, feedEncoding);
 	}
 
 }

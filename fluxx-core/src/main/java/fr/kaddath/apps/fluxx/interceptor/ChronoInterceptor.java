@@ -1,5 +1,6 @@
 package fr.kaddath.apps.fluxx.interceptor;
 
+import java.io.Serializable;
 import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -7,7 +8,9 @@ import java.util.logging.Logger;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
 
-public class ChronoInterceptor {
+public class ChronoInterceptor implements Serializable {
+
+	private static final long serialVersionUID = -5649581046041044809L;
 
 	private static final Logger LOG = Logger.getLogger(ChronoInterceptor.class.getName());
 

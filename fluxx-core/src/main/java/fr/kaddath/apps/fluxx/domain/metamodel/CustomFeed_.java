@@ -18,6 +18,6 @@ public class CustomFeed_ {
 	public static volatile ListAttribute<CustomFeed, Feed> feeds;
 	public static volatile SingularAttribute<CustomFeed, Date> referentDay;
 	public static volatile SingularAttribute<CustomFeed, String> username;
-	public static volatile SingularAttribute<CustomFeed, String> theme;
+	public static volatile SingularAttribute<CustomFeed, String> category;
 
 }

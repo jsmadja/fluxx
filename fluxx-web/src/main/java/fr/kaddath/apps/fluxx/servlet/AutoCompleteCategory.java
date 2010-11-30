@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package fr.kaddath.apps.fluxx.servlet;
 
 import java.io.IOException;
@@ -19,76 +14,47 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.kaddath.apps.fluxx.service.CategoryService;
 
-/**
- *
- * @author jsmadja
- */
-@WebServlet(name="AutoCompleteCategory", urlPatterns={"/AutoCompleteCategory"})
+@WebServlet(name = "AutoCompleteCategory", urlPatterns = { "/AutoCompleteCategory" })
 public class AutoCompleteCategory extends HttpServlet {
-   
-    @Inject
-    CategoryService categoryService;
 
-    @Resource(lookup="fluxx/autocomplete/category")
-    private Integer numCategories;
+	private static final long serialVersionUID = -5595823845823527972L;
 
-    /** 
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            String query = request.getParameter("query");
-            List<String> categories = categoryService.findCategoryNamesInLowerCaseWithLike(query, numCategories);
-            for (String categorie:categories) {
-                out.println(categorie);
-            }
-            
-        } finally { 
-            out.close();
-        }
-    } 
+	@Inject
+	CategoryService categoryService;
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
-    } 
+	@Resource(lookup = "fluxx/autocomplete/category")
+	private Integer numCategories;
 
-    /** 
-     * Handles the HTTP <code>POST</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-        processRequest(request, response);
-    }
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+			IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		try {
+			String query = request.getParameter("query");
+			List<String> categories = categoryService.findCategoryNamesInLowerCaseWithLike(query, numCategories);
+			for (String categorie : categories) {
+				out.println(categorie);
+			}
 
-    /** 
-     * Returns a short description of the servlet.
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+		} finally {
+			out.close();
+		}
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		processRequest(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+			IOException {
+		processRequest(request, response);
+	}
+
+	@Override
+	public String getServletInfo() {
+		return "Use to build suggest list";
+	}
 
 }

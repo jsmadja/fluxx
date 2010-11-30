@@ -9,9 +9,24 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 	<ui:define name="content_right">
 		<f:view>
-			<div class="post">
-			<h1>Welcome to Fluxx</h1>
-			</div>
+			<h1 style="text-align: center; font-size: 72px">Fluxx</h1>
+			<center>
+				<h:form>
+	            	<div style="font-size:32px;vertical-align: middle;">
+		            	http://www.fluxx.com/
+		            		<h:inputText id="username"
+							value="#{editCustomFeed.username}" size="20" />
+		            		/
+		            		<h:inputText id="category" value="#{customFeed.category}"
+							size="20"  />
+						<h:message for="username" styleClass="error" />
+						<h:message for="category" styleClass="error" />
+						<br/><br/>
+						<h:commandButton id="submit" value="${msgs.form_button_add}"
+							action="#{customFeed.add}" />
+					</div>
+				</h:form>					
+			</center>
 		</f:view>
 	</ui:define>
 </ui:composition>

@@ -76,9 +76,9 @@ public class CustomFeedService {
 		return items;
 	}
 
-	public CustomFeed addCustomFeed(String username, String theme, int numLastDay) {
+	public CustomFeed addCustomFeed(String username, String category, int numLastDay) {
 		CustomFeed customFeed = new CustomFeed();
-		customFeed.setTheme(theme);
+		customFeed.setCategory(category);
 		customFeed.setUsername(username);
 		customFeed.setNumLastDay(numLastDay);
 		customFeed = em.merge(customFeed);
@@ -118,13 +118,13 @@ public class CustomFeedService {
 		return customFeed;
 	}
 
-	public CustomFeed findByUsernameAndName(String username, String theme) {
+	public CustomFeed findByUsernameAndName(String username, String category) {
 		CriteriaQuery<CustomFeed> cq = cb.createQuery(CustomFeed.class);
 		Root<CustomFeed> feed = cq.from(CustomFeed.class);
 
 		Predicate usernameClause = cb.equal(feed.get(CustomFeed_.username), username);
-		Predicate themeClause = cb.equal(feed.get(CustomFeed_.theme), theme);
-		cq.where(cb.and(usernameClause, themeClause));
+		Predicate categoryClause = cb.equal(feed.get(CustomFeed_.category), category);
+		cq.where(cb.and(usernameClause, categoryClause));
 		cq.select(feed);
 		List<CustomFeed> list = em.createQuery(cq).getResultList();
 		if (list.isEmpty()) {

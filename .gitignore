@@ -9,4 +9,9 @@ sonar
 sun-appserv-samples
 .externalToolBuilders
 maven-eclipse.xml
-fluxx-web/src/webapp/WEB-INF/lib
+fluxx-web/src/main/webapp/WEB-INF/lib
+fluxx-core/bin
+fluxx-web/bin
+fluxx-admin/bin
+fluxx-web/src/main/webapp/WEB-INF/classes
+fluxx-admin/src/main/webapp/WEB-INF/classes

@@ -20,16 +20,17 @@
 		<developerConnection>scm:git:git://github.com/jsmadja/fluxx.git</developerConnection>
 	</scm>
 
-	<profiles>
-		<profile>
-			<id>continuous-integration</id>
-		</profile>
-		<profile>
-			<id>production</id>
-		</profile>
-	</profiles>
-
 	<dependencies>
+		<dependency>
+			<groupId>edu.uci.ics</groupId>
+			<artifactId>crawler4j</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.htmlparser</groupId>
+			<artifactId>htmlparser</artifactId>
+			<version>1.6</version>
+		</dependency>
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<version>${eh-cache-version}</version>

@@ -28,7 +28,7 @@ public class RssFeedCache {
 
 	public void put(String key, String value) {
 		cache.put(new Element(key, value));
-		logger.log(Level.INFO, "put {0} aggregated feed in cache", key);
+		logger.log(Level.INFO, "put {0} custom feed in cache", key);
 	}
 
 	public void clear() {
@@ -38,7 +38,7 @@ public class RssFeedCache {
 
 	public void remove(String key) {
 		cache.remove(key);
-		logger.log(Level.INFO, "remove {0} aggregated feed from cache", key);
+		logger.log(Level.INFO, "remove {0} custom feed from cache", key);
 	}
 
 	public String get(String key) {

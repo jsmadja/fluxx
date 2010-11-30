@@ -36,7 +36,7 @@ public class CustomFeed implements Serializable {
 	private String username;
 
 	@NotNull
-	private String theme;
+	private String category;
 
 	@Temporal(javax.persistence.TemporalType.DATE)
 	private Date referentDay;
@@ -74,12 +74,12 @@ public class CustomFeed implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return theme.hashCode() + username.hashCode();
+		return category.hashCode() + username.hashCode();
 	}
 
 	@Override
 	public String toString() {
-		return theme;
+		return category;
 	}
 
 	public String getUsername() {
@@ -98,12 +98,12 @@ public class CustomFeed implements Serializable {
 		this.id = id;
 	}
 
-	public String getTheme() {
-		return theme;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setTheme(String theme) {
-		this.theme = theme;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 }

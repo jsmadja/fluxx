@@ -69,7 +69,6 @@ public class ItemService {
 		cb = em.getCriteriaBuilder();
 	}
 
-	@Interceptors({ ChronoInterceptor.class })
 	public Item findItemByLink(String link) {
 		Query query = em.createNamedQuery("findItemsByLink");
 		query.setParameter("link", link);

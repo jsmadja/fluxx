@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import fr.kaddath.apps.fluxx.collection.Pair;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
@@ -20,15 +21,15 @@ public class CategoryService {
 	@PersistenceContext
 	EntityManager em;
 
-	public List<String[]> findNumItemFeedsByCategory() {
-		List<String[]> numItemFeedsByCategory = new ArrayList<String[]>();
+	public List<Pair<String, Integer>> findNumItemFeedsByCategory() {
+		List<Pair<String, Integer>> numItemsByCategory = new ArrayList<Pair<String, Integer>>();
 		Query q = em
 				.createNativeQuery("SELECT fc.NAME, count(ifc.ITEM_ID) FROM CATEGORY fc, item_category ifc WHERE fc.name = ifc.CATEGORIES_NAME GROUP BY fc.name");
 		for (Object o : q.getResultList()) {
 			Object[] couple = (Object[]) o;
-			numItemFeedsByCategory.add(new String[] { (String) couple[0], couple[1].toString() });
+			numItemsByCategory.add(new Pair<String, Integer>(couple[0].toString(), (Integer) couple[1]));
 		}
-		return numItemFeedsByCategory;
+		return numItemsByCategory;
 	}
 
 	public Category findCategoryByName(String name) {

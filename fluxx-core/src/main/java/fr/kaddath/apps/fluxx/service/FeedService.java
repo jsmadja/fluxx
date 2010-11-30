@@ -99,16 +99,22 @@ public class FeedService {
 		return em.createQuery(cq).getResultList();
 	}
 
-	public List<Feed> findAvailableFeedsByAggregatedFeed(CustomFeed aggregatedFeed) {
-		List<Feed> feeds = aggregatedFeed.getFeeds();
+	public List<Feed> findAvailableFeedsByCustomFeed(CustomFeed customFeed) {
+		List<Feed> feeds = customFeed.getFeeds();
 		List<Feed> availableFeeds = findAllFeeds();
 		availableFeeds.removeAll(feeds);
 		return availableFeeds;
 	}
 
 	public List<Feed> findAvailableFeedsByCustomFeedWithFilter(CustomFeed customFeed, String filter) {
+		if (filter == null) {
+			filter = "";
+		}
 		filter = filter.toLowerCase();
-		List<Feed> feeds = customFeed.getFeeds();
+		List<Feed> feeds = new ArrayList<Feed>();
+		if (customFeed != null) {
+			feeds.addAll(customFeed.getFeeds());
+		}
 		Set<Feed> availableFeeds = new HashSet<Feed>();
 		availableFeeds.addAll(findFeedsByCategory(filter));
 		availableFeeds.removeAll(feeds);

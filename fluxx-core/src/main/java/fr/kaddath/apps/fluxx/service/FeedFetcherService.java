@@ -15,7 +15,6 @@ import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -31,10 +30,8 @@ import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
-import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
-@Interceptors({ ChronoInterceptor.class })
 public class FeedFetcherService {
 
 	private static final Logger LOG = Logger.getLogger(FeedFetcherService.class.getName());
@@ -63,7 +60,6 @@ public class FeedFetcherService {
 
 	private static int analyzeSize = 0;
 
-	@Interceptors({ ChronoInterceptor.class })
 	@Schedule(minute = "*/15", hour = "*", persistent = true)
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
@@ -128,7 +124,12 @@ public class FeedFetcherService {
 	}
 
 	public Feed addNewFeed(String feedUrl) throws DownloadFeedException {
-		return fetch(new Feed(feedUrl));
+		Feed feed = feedService.findFeedByUrl(feedUrl);
+		if (feed == null) {
+			LOG.info("Add a new feed with url :" + feedUrl);
+			feed = fetch(new Feed(feedUrl));
+		}
+		return feed;
 	}
 
 	private Feed fetch(Feed feed) throws DownloadFeedException {

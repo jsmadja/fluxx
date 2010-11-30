@@ -18,7 +18,6 @@ import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
-@Interceptors({ ChronoInterceptor.class })
 public class AsynchronousFeedDownloaderService {
 
 	private static final SyndFeedInput syndFeedInput = new SyndFeedInput();
@@ -36,6 +35,7 @@ public class AsynchronousFeedDownloaderService {
 		}
 	}
 
+	@Interceptors({ ChronoInterceptor.class })
 	private SyndFeed createSyndFeed(String text) throws IllegalArgumentException, FeedException {
 		return syndFeedInput.build(new StringReader(text));
 	}

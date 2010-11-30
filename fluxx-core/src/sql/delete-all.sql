@@ -1,10 +1,8 @@
 delete from SEQUENCE;
-delete from ITEM_FEEDCATEGORY;
-delete from FLUXXER_FEEDCATEGORY;
-delete from AGGREGATEDFEED_FEED;
-delete from AGGREGATEDFEED;
+delete from ITEM_CATEGORY;
+delete from CUSTOMFEED_FEED;
+delete from CUSTOMFEED;
 delete from DOWNLOADABLEITEM;
-delete from FEEDCATEGORY;
+delete from CATEGORY;
 delete from ITEM;
 delete from FEED;
-delete from FLUXXER;

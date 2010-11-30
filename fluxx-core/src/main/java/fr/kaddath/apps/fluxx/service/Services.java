@@ -11,12 +11,20 @@ public class Services {
 	private static FeedService feedService;
 	private static ItemService itemService;
 	private static RssService rssService;
+	private static FeedFetcherService feedFetcherService;
 
 	public static FeedService getFeedService() {
 		if (feedService == null) {
 			feedService = (FeedService) lookup(FeedService.class.getSimpleName());
 		}
 		return feedService;
+	}
+
+	public static FeedFetcherService getFeedFetcherService() {
+		if (feedFetcherService == null) {
+			feedFetcherService = (FeedFetcherService) lookup(FeedFetcherService.class.getSimpleName());
+		}
+		return feedFetcherService;
 	}
 
 	public static ItemService getItemService() {
@@ -36,9 +44,13 @@ public class Services {
 	private static Object lookup(String service) {
 		try {
 			return new InitialContext().lookup("java:global/fluxx/" + service);
-		} catch (NamingException ex) {
-			Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
-			throw new RuntimeException(ex);
+		} catch (NamingException e) {
+			try {
+				return new InitialContext().lookup("java:global/classes/" + service);
+			} catch (NamingException ex) {
+				Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
+				throw new RuntimeException(ex);
+			}
 		}
 	}
 }

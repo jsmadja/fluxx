@@ -109,11 +109,11 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void should_not_return_feed_in_custom_feed() throws Exception {
+	public void should_not_return_feed_in_available_feeds_when_feed_is_already_in() throws Exception {
 		Feed feed1 = createFeedWithDownloadableItems();
 		createFeedWithCategories();
-		CustomFeed aggregatedFeed = createCustomFeedWithOneFeed(feed1);
-		List<Feed> feeds = feedService.findAvailableFeedsByAggregatedFeed(aggregatedFeed);
+		CustomFeed customFeed = createCustomFeedWithOneFeed(feed1);
+		List<Feed> feeds = feedService.findAvailableFeedsByCustomFeed(customFeed);
 		assertFalse(feeds.contains(feed1));
 	}
 
