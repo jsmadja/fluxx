@@ -33,4 +33,14 @@ public class DownloadableItemService {
 			return list.get(0);
 		}
 	}
+
+	public DownloadableItem store(DownloadableItem downloadableItem) {
+		if (downloadableItem.getId() == null) {
+			em.persist(downloadableItem);
+		} else {
+			downloadableItem = em.merge(downloadableItem);
+		}
+		em.flush();
+		return downloadableItem;
+	}
 }

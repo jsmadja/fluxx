@@ -11,19 +11,17 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "DOWNLOADABLEITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class DownloadableItem {
+
+	public static final int MAX_DOWNLOADABLE_LINK_SIZE = 512;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@NotNull
-	@Column(length = 20480)
+	@Column(length = MAX_DOWNLOADABLE_LINK_SIZE)
 	private String url;
-
-	@ManyToOne
-	private Item item;
 
 	private String type;
 
@@ -31,10 +29,6 @@ public class DownloadableItem {
 
 	public DownloadableItem() {
 
-	}
-
-	public DownloadableItem(Item item) {
-		this.item = item;
 	}
 
 	public String getType() {
@@ -59,14 +53,6 @@ public class DownloadableItem {
 
 	public void setFileLength(Long fileLength) {
 		this.fileLength = fileLength;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public void setItem(Item item) {
-		this.item = item;
 	}
 
 	public Long getId() {

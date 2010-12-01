@@ -8,22 +8,29 @@ import javax.persistence.Id;
 @Entity
 public class Category implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    private String name;
+	@Id
+	private String name;
 
-    @Override
-    public String toString() {
-        return name;
-    }
+	public Category() {
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Category(String name) {
+		this.name = name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }    
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }

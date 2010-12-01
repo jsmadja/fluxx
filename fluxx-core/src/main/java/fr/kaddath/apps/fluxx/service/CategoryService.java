@@ -62,10 +62,13 @@ public class CategoryService {
 	}
 
 	public Category create(String categoryName) {
-		Category category = new Category();
-		category.setName(categoryName);
-		em.persist(category);
-		em.flush();
+		Category category = findCategoryByName(categoryName);
+		if (category == null) {
+			category = new Category(categoryName);
+			em.persist(category);
+			em.flush();
+		}
 		return category;
 	}
+
 }

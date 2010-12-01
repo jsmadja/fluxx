@@ -21,7 +21,7 @@ public class ChronoInterceptor implements Serializable {
 		long timeMillis = System.currentTimeMillis();
 		Object o = ctx.proceed();
 		long currentTimeMillis = System.currentTimeMillis();
-		String methodName = ctx.getClass().getName() + "." + ctx.getMethod().getName();
+		String methodName = ctx.getMethod().getDeclaringClass().getName() + "." + ctx.getMethod().getName();
 		long duration = currentTimeMillis - timeMillis;
 		if (duration >= DURATION_THRESHOLD_IN_MS) {
 			String message = MessageFormat.format("{0} executed in {1} ms", new Object[] { methodName, duration });

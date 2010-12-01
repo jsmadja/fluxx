@@ -27,6 +27,7 @@ import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.service.CategoryService;
 import fr.kaddath.apps.fluxx.service.CrawlerService;
 import fr.kaddath.apps.fluxx.service.CustomFeedService;
+import fr.kaddath.apps.fluxx.service.DownloadableItemService;
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import fr.kaddath.apps.fluxx.service.FeedService;
 import fr.kaddath.apps.fluxx.service.ItemBuilderService;
@@ -49,6 +50,7 @@ public abstract class AbstractTest {
 	protected static CategoryService categoryService;
 	protected static ItemBuilderService itemBuilderService;
 	protected static CrawlerService crawlerService;
+	protected static DownloadableItemService downloadableItemService;
 
 	protected static String uuid = UUID.randomUUID().toString();
 	protected static HttpServletRequest request;
@@ -66,10 +68,13 @@ public abstract class AbstractTest {
 	protected static final String CATEGORY_NAME = "category";
 
 	private static final File FILE_CASTCODEURS = new File("src/test/resources/lescastcodeurs.xml");
-	private static final File FILE_FRANDROID = new File("src/test/resources/frandroid.xml");
-
 	public static final String URL_CASTCODEURS = "http://lescastcodeurs.libsyn.com/rss";
+
+	private static final File FILE_FRANDROID = new File("src/test/resources/frandroid.xml");
 	public static final String URL_FRANDROID = "http://feeds2.feedburner.com/Frandroid";
+
+	private static final File FILE_LE_MONDE = new File("src/test/resources/lemonde.xml");
+	public static final String URL_LE_MONDE = "http://www.lemonde.fr/rss/sequence/0,2-3546,1-0,0.xml";
 
 	protected static boolean isIntegrationTest;
 
@@ -100,6 +105,7 @@ public abstract class AbstractTest {
 			customFeedService = (CustomFeedService) lookup("CustomFeedService");
 			categoryService = (CategoryService) lookup("CategoryService");
 			crawlerService = (CrawlerService) lookup("CrawlerService");
+			downloadableItemService = (DownloadableItemService) lookup("DownloadableItemService");
 
 			request = mock(HttpServletRequest.class);
 			when(request.getServerPort()).thenReturn(serverPort);
@@ -153,6 +159,14 @@ public abstract class AbstractTest {
 		}
 	}
 
+	protected Feed createFeedLeMonde() {
+		if (isIntegrationTest) {
+			return createFeedFromUrl(URL_LE_MONDE);
+		} else {
+			return createFeed(FILE_LE_MONDE);
+		}
+	}
+
 	protected String createRandomString() {
 		return UUID.randomUUID().toString().substring(0, 8);
 	}
@@ -174,12 +188,11 @@ public abstract class AbstractTest {
 	}
 
 	protected void createFeeds() throws FileNotFoundException {
-		int maxFeeds = 20;
+		int maxFeeds = 5;
 		Scanner sc = new Scanner(new File("src/test/resources/feeds.urls"));
 		int i = 0;
 		while (sc.hasNextLine() && i < maxFeeds) {
 			String url = sc.nextLine();
-			System.err.println("Importing : " + url);
 			createFeedFromUrl(url);
 			i++;
 		}

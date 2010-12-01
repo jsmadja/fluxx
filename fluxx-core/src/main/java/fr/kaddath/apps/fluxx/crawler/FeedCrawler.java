@@ -16,6 +16,7 @@ import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.url.WebURL;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.service.CrawlerService;
+import fr.kaddath.apps.fluxx.service.FeedFetcherService;
 import fr.kaddath.apps.fluxx.service.Services;
 
 public class FeedCrawler extends WebCrawler {
@@ -29,22 +30,30 @@ public class FeedCrawler extends WebCrawler {
 	private static final Pattern filters = Pattern
 			.compile(".*(\\.(css|js|bmp|gif|jpe?g|png|tiff?|mid|mp2|mp3|mp4|wav|avi|mov|mpeg|ico|ram|m4v|pdf|rm|smil|wmv|swf|wma|zip|rar|gz))$");
 
+	private final FeedFetcherService feedFetcherService;
+
+	public FeedCrawler() {
+		feedFetcherService = Services.getFeedFetcherService();
+	}
+
 	@Override
 	public boolean shouldVisit(WebURL url) {
-		if (NUM_FEEDS_ADDED >= MAX_FEEDS_TO_ADD) {
+		if (isStoppable()) {
 			return false;
 		}
-
 		String href = url.getURL().toLowerCase();
 		return (!filters.matcher(href).matches());
 	}
 
+	private boolean isStoppable() {
+		return NUM_FEEDS_ADDED >= MAX_FEEDS_TO_ADD;
+	}
+
 	@Override
 	public void visit(Page page) {
-		if (NUM_FEEDS_ADDED >= MAX_FEEDS_TO_ADD) {
+		if (isStoppable()) {
 			return;
 		}
-
 		try {
 			addAllFeedsFoundInPage(page);
 		} catch (Exception e) {
@@ -66,8 +75,26 @@ public class FeedCrawler extends WebCrawler {
 				}
 			}
 		} catch (Exception e) {
-			LOG.info(e.getMessage());
+			String msg = e.getMessage();
+			if (isLoggable(msg)) {
+				LOG.info(e.getMessage());
+				e.printStackTrace();
+			}
 		}
+	}
+
+	private boolean isLoggable(String msg) {
+		boolean notLoggable = isHTTPError(msg);
+		notLoggable |= isCharacterMismatchError(msg);
+		return !notLoggable;
+	}
+
+	private boolean isCharacterMismatchError(String msg) {
+		return msg.contains("character mismatch");
+	}
+
+	private boolean isHTTPError(String msg) {
+		return msg.contains("Server returned HTTP response code");
 	}
 
 	private void addFeed(Node node) throws DownloadFeedException {
@@ -78,7 +105,8 @@ public class FeedCrawler extends WebCrawler {
 	}
 
 	private void add(String feedUrl) throws DownloadFeedException {
-		Services.getFeedFetcherService().addNewFeed(feedUrl);
+		feedFetcherService.addNewFeed(feedUrl);
 		NUM_FEEDS_ADDED++;
+		LOG.info("Crawled feeds : " + NUM_FEEDS_ADDED + "/" + MAX_FEEDS_TO_ADD);
 	}
 }

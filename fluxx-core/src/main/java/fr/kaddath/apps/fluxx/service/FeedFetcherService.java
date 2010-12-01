@@ -1,6 +1,8 @@
 package fr.kaddath.apps.fluxx.service;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,6 +32,7 @@ import fr.kaddath.apps.fluxx.cache.RssFeedCache;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
+import fr.kaddath.apps.fluxx.exception.InvalidItemException;
 
 @Stateless
 public class FeedFetcherService {
@@ -124,12 +127,26 @@ public class FeedFetcherService {
 	}
 
 	public Feed addNewFeed(String feedUrl) throws DownloadFeedException {
+		feedUrl = clean(feedUrl);
+
 		Feed feed = feedService.findFeedByUrl(feedUrl);
 		if (feed == null) {
-			LOG.info("Add a new feed with url :" + feedUrl);
 			feed = fetch(new Feed(feedUrl));
 		}
 		return feed;
+	}
+
+	private String clean(String url) {
+		try {
+			url = StringUtils.trimToEmpty(url);
+			url = org.apache.commons.lang.StringEscapeUtils.unescapeHtml(url);
+			url = URLDecoder.decode(url, "UTF-8");
+			url = url.trim();
+		} catch (UnsupportedEncodingException e) {
+			LOG.log(Level.SEVERE, e.getMessage(), e);
+		}
+
+		return url;
 	}
 
 	private Feed fetch(Feed feed) throws DownloadFeedException {
@@ -140,6 +157,7 @@ public class FeedFetcherService {
 			updateWithFeedContent(feed, syndFeed);
 			return store(feed);
 		} catch (Exception e) {
+			LOG.log(Level.SEVERE, e.getMessage(), e);
 			throw new DownloadFeedException(e.getMessage());
 		}
 	}
@@ -206,6 +224,8 @@ public class FeedFetcherService {
 						item.setFeed(feed);
 						feed.getItems().add(item);
 						feed.setLastUpdate(Calendar.getInstance().getTime());
+					} catch (InvalidItemException e) {
+						LOG.info(e.getMessage());
 					} catch (Exception e) {
 						LOG.severe(e.getMessage());
 					}

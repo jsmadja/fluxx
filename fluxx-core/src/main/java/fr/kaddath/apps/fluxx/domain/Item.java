@@ -1,9 +1,7 @@
 package fr.kaddath.apps.fluxx.domain;
 
-import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.CascadeType.DETACH;
 import static javax.persistence.CascadeType.MERGE;
-import static javax.persistence.CascadeType.PERSIST;
 import static javax.persistence.CascadeType.REFRESH;
 
 import java.io.Serializable;
@@ -21,7 +19,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -62,10 +59,10 @@ public class Item implements Comparable<Item>, Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDate;
 
-	@OneToMany(cascade = { ALL }, mappedBy = "item")
+	@ManyToMany(cascade = { DETACH, MERGE, REFRESH })
 	private Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
 
-	@ManyToMany(cascade = { DETACH, MERGE, PERSIST, REFRESH })
+	@ManyToMany(cascade = { DETACH, MERGE, REFRESH })
 	private Set<Category> categories = new HashSet<Category>();
 
 	@ManyToOne
