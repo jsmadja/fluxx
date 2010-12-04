@@ -14,7 +14,7 @@ body {
 
 }
 
-a:link, a:visited {	color: #006699; text-decoration: underline; }
+a:link, a:visited {	color: grey; text-decoration: none; }
 
 a:active, a:hover { color: #990000; text-decoration: none; }
 
@@ -45,6 +45,6 @@ a:active, a:hover { color: #990000; text-decoration: none; }
 }
 
 #footer {
-	margin-top: 100px;
+	margin-top: 40px;
 	text-align:center;	
 }

@@ -15,7 +15,6 @@
                 else if (field.value == '') field.value = field.defaultValue;
             }
         </script>
-        <link href="#{facesContext.externalContext.requestContextPath}/mystyle.css" rel="stylesheet" type="text/css" />
         
         <title>${msgs.text_fluxx_title}</title>
 
@@ -25,12 +24,19 @@
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/animation/animation-min.js"></script>
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/datasource/datasource-min.js"></script>
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.1/build/autocomplete/autocomplete-min.js"></script>
+    
+    	<link href="#{facesContext.externalContext.requestContextPath}/mystyle.css" rel="stylesheet" type="text/css" />
+        
     </h:head>
     <h:body styleClass="yui-skin-sam">
         <div id="top_bg">
             <div class="container">
                 <div id="content">
-                    <div id="content_left">
+                <h1 style="text-align: center; font-size: 72px; color:orange"><a href="#{facesContext.externalContext.requestContextPath}"><img style="border-style:none" src="#{facesContext.externalContext.requestContextPath}/myimages/logo.png" alt="logo"/></a> Fluxx</h1>
+				<div>
+				<h1 style="text-align: center;" >Create your own RSS feeds with <span style="color:orange;font-weight:bold;">#{statisticView.numItems} items</span> in <span style="color:orange;font-weight:bold;">#{statisticView.numFeeds} rss feeds</span></h1>
+				</div>
+			        <div id="content_left">
                         <div class="post">
                             <ui:insert name="content_right" />
                         </div>
@@ -45,8 +51,7 @@
         </div>
         <div id="footer">
         	<p style="color: rgb(118, 118, 118); font-size: 8pt;">
-				<ui:include src="/stats.xhtml"/><br/><br/>
-				2010 - fluxx
+				<ui:include src="/stats.xhtml"/> | ©2010
 			</p>
         </div>
 

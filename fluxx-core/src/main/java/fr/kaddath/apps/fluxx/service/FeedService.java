@@ -69,25 +69,19 @@ public class FeedService {
 		return q.getResultList();
 	}
 
-	public List<Feed> findAllFeeds() {
+	public List<Feed> findAllFeedsNotInError() {
 		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
 		Root<Feed> feed = cq.from(Feed.class);
 		cq.select(feed);
+		cq.where(cb.isFalse(feed.get(Feed_.inError)));
 		cq.orderBy(cb.asc(feed.get(Feed_.title)));
 		return em.createQuery(cq).getResultList();
 	}
 
-	public List<Feed> findAllFeedsNotInError() {
-		CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-		Root<Feed> feed = cq.from(Feed.class);
-
-		cq.select(feed);
-
-		cq.where(cb.isFalse(feed.get(Feed_.inError)));
-
-		cq.orderBy(cb.asc(feed.get(Feed_.title)));
-
-		return em.createQuery(cq).getResultList();
+	public List<Feed> findAllTopPriorityFeeds() {
+		// FIXME: fr.kaddath.apps.fluxx.service.FeedService.findAllTopPriorityFeeds
+		String strQuery = "select f from FEED f where f.ID in (select distinct feed_id from CUSTOMFEED_FEED)";
+		return em.createNativeQuery(strQuery).getResultList();
 	}
 
 	public List<Feed> findAllFeedsInError() {
@@ -101,7 +95,7 @@ public class FeedService {
 
 	public List<Feed> findAvailableFeedsByCustomFeed(CustomFeed customFeed) {
 		List<Feed> feeds = customFeed.getFeeds();
-		List<Feed> availableFeeds = findAllFeeds();
+		List<Feed> availableFeeds = findAllFeedsNotInError();
 		availableFeeds.removeAll(feeds);
 		return availableFeeds;
 	}
@@ -141,8 +135,8 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByCategory(String filter) {
-		String strQuery = "select distinct f.ID from ITEM i, FEED f where f.id = i.FEED_ID and i.id in (select distinct item_id from ITEM_CATEGORY where lower(CATEGORIES_NAME) like '%"
-				+ filter.toLowerCase() + "%')";
+		String strQuery = "select distinct f.ID from ITEM i, FEED f where f.id = i.FEED_ID and i.id in (select distinct item_id from ITEM_CATEGORY, CATEGORY where lower(CATEGORY.NAME) like '%"
+				+ filter.toLowerCase() + "%' and CATEGORY.ID = ITEM_CATEGORY.CATEGORIES_ID)";
 		Query query = em.createNativeQuery(strQuery);
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
@@ -166,10 +160,12 @@ public class FeedService {
 	}
 
 	public List<String> findCategoriesByFeed(Feed feed) {
-		String strQuery = "select item_category.CATEGORIES_NAME"
-				+ " from FEED feed, ITEM item, ITEM_CATEGORY item_category" + " where feed.ID = " + feed.getId()
-				+ " and item.FEED_ID = feed.ID and item_category.ITEM_ID = item.ID"
-				+ " group by item_category.CATEGORIES_NAME" + " order by count(item.ID) desc";
+		String strQuery = "select category.NAME"
+				+ " from FEED feed, ITEM item, ITEM_CATEGORY item_category, CATEGORY category" //
+				+ " where feed.ID = " + feed.getId() //
+				+ " and item.FEED_ID = feed.ID and item_category.ITEM_ID = item.ID" //
+				+ " and category.ID = item_category.CATEGORIES_ID" //
+				+ " order by category.NAME asc";
 		Query query = em.createNativeQuery(strQuery);
 		query.setMaxResults(MAX_CATEGORIES_TO_RETRIEVE);
 		return query.getResultList();
@@ -202,7 +198,8 @@ public class FeedService {
 	}
 
 	public Feed findLastUpdatedFeed() {
-		Query query = em.createQuery("select f from Feed f order by f.lastUpdate DESC");
+		Query query = em
+				.createQuery("select f from Feed f where f.lastUpdate in ( select MAX(g.lastUpdate) from Feed g)");
 		return getSingleResult(query);
 	}
 
@@ -229,4 +226,5 @@ public class FeedService {
 		em.persist(feed);
 		em.flush();
 	}
+
 }

@@ -4,9 +4,9 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core">
-    ${msgs.text_lastupdate} -
+    ${msgs.text_lastupdate} 
         <h:outputText value="#{statisticView.lastUpdate}">
                <f:convertDateTime pattern="dd/MM/yyyy HH'h'mm" timeZone="#{msgs.timezone}"/>
         </h:outputText>
-    - #{statisticView.numFeeds} ${msgs.text_feeds} - #{statisticView.numItems} ${msgs.text_items} - #{statisticView.numAggregatedFeeds} ${msgs.text_aggregatedfeeds}
+    | #{statisticView.numFeeds} ${msgs.text_feeds} | #{statisticView.numItems} ${msgs.text_items} 
 </ui:composition>

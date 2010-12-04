@@ -27,7 +27,7 @@ import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
 
-import fr.kaddath.apps.fluxx.cache.RssFeedCache;
+import fr.kaddath.apps.fluxx.cache.CustomFeedCache;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
@@ -45,7 +45,7 @@ public class RssService {
 	private SyndFeed syndFeed;
 
 	@EJB
-	private RssFeedCache feedCache;
+	private CustomFeedCache feedCache;
 
 	@EJB
 	private CustomFeedService customFeedService;
@@ -154,15 +154,26 @@ public class RssService {
 	}
 
 	public String getRssFeedById(Long id, HttpServletRequest request, String encoding) {
-		CustomFeed feed = customFeedService.findById(id);
-		if (feed != null) {
-			if (feedCache.contains(id.toString())) {
-				return feedCache.get(id.toString());
+		CustomFeed customFeed = customFeedService.findById(id);
+		return getRssFeed(customFeed, request, encoding);
+	}
+
+	public String getRssFeedByUsernameAndCategory(String username, String category, HttpServletRequest request,
+			String encoding) {
+		CustomFeed customFeed = customFeedService.findByUsernameAndName(username, category);
+		return getRssFeed(customFeed, request, encoding);
+	}
+
+	private String getRssFeed(CustomFeed customFeed, HttpServletRequest request, String encoding) {
+		if (customFeed != null) {
+			Long id = customFeed.getId();
+			if (feedCache.contains(id)) {
+				return feedCache.get(id);
 			} else {
-				String url = customFeedService.createUrl(request, feed);
+				String url = customFeedService.createUrl(request, customFeed);
 				try {
-					feedCache.put(id.toString(), createRssFeed(feed, url, encoding));
-					return feedCache.get(id.toString());
+					feedCache.put(id, createRssFeed(customFeed, url, encoding));
+					return feedCache.get(id);
 				} catch (Exception ex) {
 					Logger.getLogger(RssService.class.getName()).log(Level.SEVERE, null, ex);
 					return "";
@@ -171,12 +182,6 @@ public class RssService {
 		} else {
 			return "";
 		}
-	}
-
-	public String getRssFeedByUsernameAndCategory(String username, String category, HttpServletRequest request,
-			String feedEncoding) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

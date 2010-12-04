@@ -24,7 +24,7 @@ public class CategoryService {
 	public List<Pair<String, Integer>> findNumItemFeedsByCategory() {
 		List<Pair<String, Integer>> numItemsByCategory = new ArrayList<Pair<String, Integer>>();
 		Query q = em
-				.createNativeQuery("SELECT fc.NAME, count(ifc.ITEM_ID) FROM CATEGORY fc, item_category ifc WHERE fc.name = ifc.CATEGORIES_NAME GROUP BY fc.name");
+				.createNativeQuery("SELECT c.NAME, count(ic.ITEM_ID) FROM CATEGORY c, item_category ic WHERE c.ID = ic.CATEGORIES_ID GROUP BY c.name");
 		for (Object o : q.getResultList()) {
 			Object[] couple = (Object[]) o;
 			numItemsByCategory.add(new Pair<String, Integer>(couple[0].toString(), (Integer) couple[1]));

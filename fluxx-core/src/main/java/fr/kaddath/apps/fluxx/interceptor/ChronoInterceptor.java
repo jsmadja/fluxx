@@ -14,7 +14,7 @@ public class ChronoInterceptor implements Serializable {
 
 	private static final Logger LOG = Logger.getLogger(ChronoInterceptor.class.getName());
 
-	private static final int DURATION_THRESHOLD_IN_MS = 50;
+	private static final int DURATION_THRESHOLD_IN_MS = 100;
 
 	@AroundInvoke
 	public Object intercept(InvocationContext ctx) throws java.lang.Exception {

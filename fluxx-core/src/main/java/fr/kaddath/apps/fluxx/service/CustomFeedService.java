@@ -18,7 +18,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
 
-import fr.kaddath.apps.fluxx.cache.RssFeedCache;
+import fr.kaddath.apps.fluxx.cache.CustomFeedCache;
 import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
@@ -38,7 +38,7 @@ public class CustomFeedService {
 	private CriteriaBuilder cb;
 
 	@EJB
-	RssFeedCache feedCache;
+	CustomFeedCache feedCache;
 
 	@PostConstruct
 	public void init() {
@@ -81,19 +81,29 @@ public class CustomFeedService {
 		customFeed.setCategory(category);
 		customFeed.setUsername(username);
 		customFeed.setNumLastDay(numLastDay);
-		customFeed = em.merge(customFeed);
+		System.err.println(customFeed + " em:" + em);
+		customFeed = store(customFeed);
+		return customFeed;
+	}
+
+	private CustomFeed store(CustomFeed customFeed) {
+		if (customFeed.getId() == null || findById(customFeed.getId()) == null) {
+			em.persist(customFeed);
+		} else {
+			customFeed = em.merge(customFeed);
+		}
 		em.flush();
 		return customFeed;
 	}
 
 	public CustomFeed update(CustomFeed customFeed) {
-		customFeed = em.merge(customFeed);
-		em.flush();
-		feedCache.remove(customFeed.getId().toString());
+		customFeed = store(customFeed);
+		feedCache.remove(customFeed.getId());
 		return customFeed;
 	}
 
 	public void delete(CustomFeed customFeed) {
+		feedCache.remove(customFeed.getId());
 		em.remove(findById(customFeed.getId()));
 	}
 

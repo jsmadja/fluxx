@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
 
-import fr.kaddath.apps.fluxx.cache.RssFeedCache;
+import fr.kaddath.apps.fluxx.cache.CustomFeedCache;
 import fr.kaddath.apps.fluxx.cache.RssItemCache;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.domain.CustomFeed;
@@ -44,7 +44,7 @@ public abstract class AbstractTest {
 	protected static ItemService itemService;
 	protected static OpmlService opmlService;
 	protected static FeedFetcherService feedFetcherService;
-	protected static RssFeedCache cache;
+	protected static CustomFeedCache cache;
 	protected static RssItemCache rssItemCache;
 	protected static CustomFeedService customFeedService;
 	protected static CategoryService categoryService;
@@ -94,7 +94,7 @@ public abstract class AbstractTest {
 
 			namingContext = container.getContext();
 
-			cache = (RssFeedCache) lookup("RssFeedCache");
+			cache = (CustomFeedCache) lookup("CustomFeedCache");
 
 			feedService = (FeedService) lookup("FeedService");
 			rssService = (RssService) lookup("RssService");

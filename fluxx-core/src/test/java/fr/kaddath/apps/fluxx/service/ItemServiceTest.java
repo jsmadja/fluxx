@@ -68,7 +68,7 @@ public class ItemServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void testFindFirstItem() throws Exception {
+	public void should_find_the_first_item() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
 		Item item = itemService.findFirstItem(feed);
 		List<Item> items = itemService.findItemsByFeed(feed);

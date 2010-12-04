@@ -12,13 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OrderBy;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "CUSTOMFEED", uniqueConstraints = @UniqueConstraint(columnNames = { "CUSTOMFEEDID" }))
 public class CustomFeed implements Serializable {
 
 	private static final long serialVersionUID = 1L;

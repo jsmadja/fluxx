@@ -36,9 +36,13 @@ public class Services {
 	private static Object lookup(String service) {
 		try {
 			return new InitialContext().lookup("java:global/fluxx-web/" + service);
-		} catch (NamingException ex) {
-			Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
-			throw new RuntimeException(ex);
+		} catch (NamingException e) {
+			try {
+				return new InitialContext().lookup("java:global/fluxx/" + service);
+			} catch (NamingException ex) {
+				Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
+			}
+			throw new RuntimeException(e);
 		}
 	}
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +21,8 @@ public class AutoCompleteCategory extends HttpServlet {
 	@Inject
 	CategoryService categoryService;
 
-	@Resource(lookup = "fluxx/autocomplete/category")
-	private Integer numCategories;
+	// @Resource(lookup = "fluxx/autocomplete/category")
+	private final Integer numCategories = 10;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,
 			IOException {
@@ -54,7 +53,7 @@ public class AutoCompleteCategory extends HttpServlet {
 
 	@Override
 	public String getServletInfo() {
-		return "Use to build suggest list";
+		return "Used to build suggest list";
 	}
 
 }

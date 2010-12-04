@@ -130,6 +130,12 @@ public class ItemService {
 		return getUniqueResult(query);
 	}
 
+	public Item findFirstItemv2(Feed feed) {
+		Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate asc");
+		query.setParameter("feed", feed);
+		return getUniqueResult(query);
+	}
+
 	public long getNumItemsByDay(Date date) {
 
 		Calendar calendar = getInstance();

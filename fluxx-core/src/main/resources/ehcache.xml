@@ -106,7 +106,7 @@
 		defined on your system. On a standard Linux system this will be /tmp"
 	-->
 
-	<cache 	name="rss_feed_cache"
+	<cache 	name="custom_feed_cache"
 			maxElementsInMemory="10000"
 			eternal="false"
 			overflowToDisk="false"

@@ -1,3 +1,39 @@
+.custom_feed_field {
+	border-style:groove;
+	vertical-align: middle; 
+	height: 25px; 
+	width:150px;
+	font-size: 20px; 
+	color: orange;
+	text-align:left;
+}
+
+.yui-skin-sam .yui-ac-input {
+	border-style:groove;
+	vertical-align: middle; 
+	height: 25px; 
+	width:150px;
+	font-size: 20px; 
+	color: orange;
+	text-align:left;
+}
+
+.yui-skin-sam .yui-ac-content li.yui-ac-highlight {
+	background:none repeat scroll 0 0 orange;
+	color:#FFFFFF;
+}
+
+.yui-skin-sam .yui-ac-container {
+	width:150px;
+	text-align:left;
+} 
+
+.custom_feed_label {
+	font-size: 12px; 
+	color: orange;
+	margin:1px;
+}
+
 .table_header {
     font-weight: bold;
     text-align: left;

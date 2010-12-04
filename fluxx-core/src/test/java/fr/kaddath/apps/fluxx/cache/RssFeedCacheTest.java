@@ -12,7 +12,8 @@ import fr.kaddath.apps.fluxx.AbstractTest;
 
 public class RssFeedCacheTest extends AbstractTest {
 
-	private static String key = "mykey";
+	private static final Long KEY_DOESNT_EXIST = -1L;
+	private static Long key = 1L;
 	private static String value = "myvalue";
 
 	@Test
@@ -29,7 +30,7 @@ public class RssFeedCacheTest extends AbstractTest {
 
 	@Test
 	public void should_return_false_when_calling_contains_on_an_inexistant_object() {
-		assertFalse(cache.contains("this_key_doesnt_exist"));
+		assertFalse(cache.contains(KEY_DOESNT_EXIST));
 	}
 
 	@Test
@@ -40,7 +41,7 @@ public class RssFeedCacheTest extends AbstractTest {
 
 	@Test
 	public void should_not_fail_on_getting_an_inexistant_value() {
-		assertNull(cache.get("this_key_doesnt_exist"));
+		assertNull(cache.get(KEY_DOESNT_EXIST));
 	}
 
 	@Test
@@ -58,6 +59,6 @@ public class RssFeedCacheTest extends AbstractTest {
 
 	@Test
 	public void should_not_fail_when_removing_an_inexistant_value() {
-		cache.remove("this_key_doesnt_exist");
+		cache.remove(KEY_DOESNT_EXIST);
 	}
 }

@@ -34,7 +34,7 @@ public class FeedCategoryServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void findCategoryByName() throws Exception {
+	public void should_return_an_existing_category() throws Exception {
 		Category category = createCategory();
 		Category categoryFound = categoryService.findCategoryByName(category.getName());
 		assertNotNull(categoryFound);

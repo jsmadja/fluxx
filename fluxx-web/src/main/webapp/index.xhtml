@@ -9,23 +9,56 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 	<ui:define name="content_right">
 		<f:view>
-			<h1 style="text-align: center; font-size: 72px">Fluxx</h1>
 			<center>
-				<h:form>
-	            	<div style="font-size:32px;vertical-align: middle;">
-		            	http://www.fluxx.com/
-		            		<h:inputText id="username"
-							value="#{editCustomFeed.username}" size="20" />
+				<div id="myContainer"></div>
+				<h:form id="completion">
+					<div style="font-size:25px">
+					<span style="vertical-align:middle;width:400px;">
+		            	http://www.fluxx.com/rss/
+		            	</span>
+		            		<h:inputText styleClass="custom_feed_field" id="username" value="#{customFeed.username}" size="10" />
 		            		/
-		            		<h:inputText id="category" value="#{customFeed.category}"
-							size="20"  />
+		            		<h:inputText styleClass="custom_feed_field" id="category" value="#{customFeed.category}" size="10" />
 						<h:message for="username" styleClass="error" />
 						<h:message for="category" styleClass="error" />
-						<br/><br/>
-						<h:commandButton id="submit" value="${msgs.form_button_add}"
-							action="#{customFeed.add}" />
+						&nbsp;
+						<h:commandButton id="submit" value="${msgs.form_button_add}" action="#{customFeed.add}" />
 					</div>
-				</h:form>					
+				</h:form>
+				<div id="myAutoComplete"></div>
+        <script type="text/javascript">
+            YAHOO.example.BasicRemote = function() {
+                // Use an XHRDataSource
+                var oDS = new YAHOO.util.XHRDataSource("#{facesContext.externalContext.requestContextPath}/AutoCompleteCategory");
+                // Set the responseType
+                oDS.responseType = YAHOO.util.XHRDataSource.TYPE_TEXT;
+                // Define the schema of the delimited results
+                oDS.responseSchema = {
+                    recordDelim: "\n",
+                    fieldDelim: "\t"
+                };
+                // Enable caching
+                oDS.maxCacheEntries = 5;
+
+                // Instantiate the AutoComplete
+                var oAC = new YAHOO.widget.AutoComplete('completion:category', "myContainer", oDS);
+                oAC.maxResultsDisplayed = 25;
+
+                return {
+                    oDS: oDS,
+                    oAC: oAC
+                };
+            }();
+       </script>
+       
+       <br/><br/><br/>
+       <b>Some examples :</b> 
+       <table style="font-size:15px">
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">mike</span>/<span style="color:orange">movies</span></a></td></tr>
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">angie</span>/<span style="color:orange">iphone</span></a></td></tr>
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">bradley</span>/<span style="color:orange">videogames</span></a></td></tr>
+       	</table>
+       
 			</center>
 		</f:view>
 	</ui:define>

@@ -78,15 +78,6 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void should_return_all_feeds() throws Exception {
-		Feed feed1 = createFeedWithDownloadableItems();
-		Feed feed2 = createFeedWithCategories();
-		List<Feed> feeds = feedService.findAllFeeds();
-		assertTrue(feeds.contains(feed1));
-		assertTrue(feeds.contains(feed2));
-	}
-
-	@Test
 	public void testFindAllFeedsNotInError() throws Exception {
 		createFeedWithDownloadableItems();
 		List<Feed> feeds = feedService.findAllFeedsNotInError();
@@ -187,4 +178,9 @@ public class FeedServiceTest extends AbstractTest {
 
 	}
 
+	@Test
+	public void should_find_last_updated_feed() {
+		Feed feed = feedService.findLastUpdatedFeed();
+		assertNotNull(feed);
+	}
 }

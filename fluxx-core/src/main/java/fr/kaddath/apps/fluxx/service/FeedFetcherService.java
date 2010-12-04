@@ -28,7 +28,8 @@ import com.sun.syndication.feed.synd.SyndPerson;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
-import fr.kaddath.apps.fluxx.cache.RssFeedCache;
+import fr.kaddath.apps.fluxx.cache.CustomFeedCache;
+import fr.kaddath.apps.fluxx.collection.Pair;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
@@ -55,7 +56,7 @@ public class FeedFetcherService {
 	EntityManager em;
 
 	@EJB
-	RssFeedCache feedCache;
+	CustomFeedCache feedCache;
 
 	private static final int ONE_MEGABYTE = 1048576;
 
@@ -64,21 +65,36 @@ public class FeedFetcherService {
 	private static int analyzeSize = 0;
 
 	@Schedule(minute = "*/15", hour = "*", persistent = true)
+	public void updateTopPriorityFeeds() {
+		LOG.info("Top priority update is starting ...");
+		analyzeSize = 0;
+		feedCache.clear();
+		List<Pair<Feed, SyndFeed>> couples = downloadTopPriorityFeeds();
+		int downloadSize = computeDownloadSize(couples);
+		updateFeeds(couples);
+		logUpdateStats(downloadSize);
+	}
+
+	private void logUpdateStats(int downloadSize) {
+		LOG.info("Update is finished (" + convertInMegaBytes(downloadSize) + " MB downloaded, "
+				+ convertInMegaBytes(analyzeSize) + " MB analyzed)");
+	}
+
+	@Schedule(minute = "0", hour = "*/1", persistent = true)
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
 		analyzeSize = 0;
 		feedCache.clear();
-		List<Object[]> couples = downloadFeeds();
+		List<Pair<Feed, SyndFeed>> couples = downloadAllFeeds();
 		int downloadSize = computeDownloadSize(couples);
 		updateFeeds(couples);
-		LOG.info("Full update is finished (" + convertInMegaBytes(downloadSize) + " MB downloaded, "
-				+ convertInMegaBytes(analyzeSize) + " MB analyzed)");
+		logUpdateStats(downloadSize);
 	}
 
-	private int computeDownloadSize(List<Object[]> couples) {
+	private int computeDownloadSize(List<Pair<Feed, SyndFeed>> couples) {
 		int size = 0;
-		for (Object[] couple : couples) {
-			Feed feed = (Feed) couple[0];
+		for (Pair<Feed, SyndFeed> couple : couples) {
+			Feed feed = couple.left();
 			size += feed.getSize();
 		}
 		return size;
@@ -90,13 +106,23 @@ public class FeedFetcherService {
 		return df.format((double) size / ONE_MEGABYTE);
 	}
 
-	private List<Object[]> downloadFeeds() {
-		List<Object[]> couples = new ArrayList<Object[]>();
+	private List<Pair<Feed, SyndFeed>> downloadAllFeeds() {
 		List<Feed> feeds = feedService.findAllFeedsNotInError();
+		return downloadFeeds(feeds);
+	}
+
+	private List<Pair<Feed, SyndFeed>> downloadTopPriorityFeeds() {
+		List<Feed> feeds = feedService.findAllTopPriorityFeeds();
+		return downloadFeeds(feeds);
+	}
+
+	private List<Pair<Feed, SyndFeed>> downloadFeeds(List<Feed> feeds) {
+		List<Pair<Feed, SyndFeed>> couples = new ArrayList<Pair<Feed, SyndFeed>>();
+
 		for (int i = 0; i < feeds.size(); i++) {
 			Feed feed = feeds.get(i);
 			try {
-				Object[] couple = downloaderService.downloadFeedContent(feed);
+				Pair<Feed, SyndFeed> couple = downloaderService.downloadFeedContent(feed);
 				couples.add(couple);
 			} catch (DownloadFeedException e) {
 				feed.setInError(true);
@@ -107,11 +133,11 @@ public class FeedFetcherService {
 		return couples;
 	}
 
-	private void updateFeeds(List<Object[]> couples) {
+	private void updateFeeds(List<Pair<Feed, SyndFeed>> couples) {
 		for (int i = 0; i < couples.size();) {
-			Object[] couple = couples.get(i);
-			Feed feed = (Feed) couple[0];
-			SyndFeed syndFeed = (SyndFeed) couple[1];
+			Pair<Feed, SyndFeed> couple = couples.get(i);
+			Feed feed = couple.left();
+			SyndFeed syndFeed = couple.right();
 			if (mustBeUpdated(feed)) {
 				analyzeSize += feed.getSize();
 				createFromSyndFeed(feed, syndFeed);

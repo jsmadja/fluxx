@@ -19,14 +19,17 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "findItemsByLink", query = "SELECT item FROM Item item WHERE item.link = :link"),
 		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT item FROM Item item WHERE item.feed = :feed AND item.link = :link") })
+@Table(name = "ITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "LINK" }))
 public class Item implements Comparable<Item>, Serializable {
 
 	private static final long serialVersionUID = 2607672054863155365L;

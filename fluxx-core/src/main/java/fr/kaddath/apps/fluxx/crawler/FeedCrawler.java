@@ -52,6 +52,7 @@ public class FeedCrawler extends WebCrawler {
 	@Override
 	public void visit(Page page) {
 		if (isStoppable()) {
+			Thread.currentThread().interrupt();
 			return;
 		}
 		try {
@@ -98,6 +99,7 @@ public class FeedCrawler extends WebCrawler {
 	}
 
 	private void addFeed(Node node) throws DownloadFeedException {
+		// FIXME outofboound
 		String rssLink = node.getText().split("href=\"")[1].split("\"")[0];
 		if (rssLink.startsWith("http")) {
 			add(rssLink);
