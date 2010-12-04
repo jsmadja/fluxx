@@ -38,21 +38,24 @@ public class FeedCrawler extends WebCrawler {
 
 	@Override
 	public boolean shouldVisit(WebURL url) {
-		if (isStoppable()) {
+		if (!isCrawable()) {
 			return false;
 		}
 		String href = url.getURL().toLowerCase();
 		return (!filters.matcher(href).matches());
 	}
 
-	private boolean isStoppable() {
-		return NUM_FEEDS_ADDED >= MAX_FEEDS_TO_ADD;
+	private boolean isCrawable() {
+		boolean crawl = NUM_FEEDS_ADDED < MAX_FEEDS_TO_ADD;
+		if (!crawl) {
+			getMyController().stop();
+		}
+		return crawl;
 	}
 
 	@Override
 	public void visit(Page page) {
-		if (isStoppable()) {
-			Thread.currentThread().interrupt();
+		if (!isCrawable()) {
 			return;
 		}
 		try {
@@ -68,7 +71,7 @@ public class FeedCrawler extends WebCrawler {
 			NodeFilter nodeFilter = new HasAttributeFilter("type", "application/rss+xml");
 			NodeList list = parser.parse(nodeFilter);
 			SimpleNodeIterator nodes = list.elements();
-			while (nodes.hasMoreNodes()) {
+			while (isCrawable() && nodes.hasMoreNodes()) {
 				try {
 					addFeed(nodes.nextNode());
 				} catch (DownloadFeedException e) {
@@ -99,16 +102,20 @@ public class FeedCrawler extends WebCrawler {
 	}
 
 	private void addFeed(Node node) throws DownloadFeedException {
-		// FIXME outofboound
-		String rssLink = node.getText().split("href=\"")[1].split("\"")[0];
+		String link = node.getText();
+		LOG.info("Feed crawler thinks you could add : " + link);
+		link = link.replaceAll("\'", "\"");
+		String rssLink = link.split("href=\"")[1].split("\"")[0];
 		if (rssLink.startsWith("http")) {
 			add(rssLink);
 		}
 	}
 
 	private void add(String feedUrl) throws DownloadFeedException {
-		feedFetcherService.addNewFeed(feedUrl);
-		NUM_FEEDS_ADDED++;
-		LOG.info("Crawled feeds : " + NUM_FEEDS_ADDED + "/" + MAX_FEEDS_TO_ADD);
+		if (!feedFetcherService.exists(feedUrl)) {
+			feedFetcherService.addNewFeed(feedUrl);
+			NUM_FEEDS_ADDED++;
+			LOG.info("Crawled feeds : " + NUM_FEEDS_ADDED + "/" + MAX_FEEDS_TO_ADD);
+		}
 	}
 }

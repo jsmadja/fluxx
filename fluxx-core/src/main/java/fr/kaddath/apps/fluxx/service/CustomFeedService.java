@@ -105,6 +105,7 @@ public class CustomFeedService {
 	public void delete(CustomFeed customFeed) {
 		feedCache.remove(customFeed.getId());
 		em.remove(findById(customFeed.getId()));
+		em.flush();
 	}
 
 	public Long getNumCustomFeeds() {
@@ -141,6 +142,14 @@ public class CustomFeedService {
 			return null;
 		} else {
 			return list.get(0);
+		}
+	}
+
+	public void deleteAllCustomFeeds() {
+		Query query = em.createQuery("select cf from CustomFeed cf");
+		List<CustomFeed> customFeeds = query.getResultList();
+		for (CustomFeed customFeed : customFeeds) {
+			delete(customFeed);
 		}
 	}
 }

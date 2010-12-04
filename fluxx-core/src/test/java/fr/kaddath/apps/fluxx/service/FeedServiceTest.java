@@ -180,6 +180,7 @@ public class FeedServiceTest extends AbstractTest {
 
 	@Test
 	public void should_find_last_updated_feed() {
+		createFeedWithCategories();
 		Feed feed = feedService.findLastUpdatedFeed();
 		assertNotNull(feed);
 	}

@@ -227,4 +227,12 @@ public class FeedService {
 		em.flush();
 	}
 
+	public void deleteAllFeeds() {
+		Query query = em.createQuery("select f from Feed f");
+		List<Feed> feeds = query.getResultList();
+		for (Feed feed : feeds) {
+			delete(feed);
+		}
+	}
+
 }

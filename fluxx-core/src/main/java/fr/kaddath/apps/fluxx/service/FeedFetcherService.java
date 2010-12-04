@@ -243,7 +243,7 @@ public class FeedFetcherService {
 			SyndEntryImpl syndEntryImpl = (SyndEntryImpl) o;
 			String link = syndEntryImpl.getLink();
 			if (link != null) {
-				Item item = itemService.findItemByLink(link, feed);
+				Item item = itemService.findItemByLink(link);
 				if (item == null) {
 					try {
 						item = itemBuilderService.createItemFromSyndEntry(syndEntryImpl);
@@ -273,5 +273,9 @@ public class FeedFetcherService {
 		}
 		em.flush();
 		return feed;
+	}
+
+	public boolean exists(String feedUrl) {
+		return feedService.findFeedByUrl(feedUrl) != null;
 	}
 }

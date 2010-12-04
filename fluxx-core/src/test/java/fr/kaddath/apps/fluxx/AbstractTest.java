@@ -15,6 +15,9 @@ import javax.naming.Context;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
+import org.junit.After;
+import org.junit.Before;
+
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
 
@@ -199,4 +202,33 @@ public abstract class AbstractTest {
 
 	}
 
+	@Before
+	public void setUp() {
+
+	}
+
+	@After
+	public void tearDown() {
+		if (!isIntegrationTest) {
+			deleteAll();
+		}
+	}
+
+	protected void deleteAll() {
+		deleteAllFeeds();
+		deleteAllCustomFeeds();
+		deleteAllCategories();
+	}
+
+	private void deleteAllCategories() {
+		categoryService.deleteAllCategories();
+	}
+
+	private void deleteAllCustomFeeds() {
+		customFeedService.deleteAllCustomFeeds();
+	}
+
+	private void deleteAllFeeds() {
+		feedService.deleteAllFeeds();
+	}
 }

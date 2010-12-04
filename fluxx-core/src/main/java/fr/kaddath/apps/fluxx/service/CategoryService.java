@@ -71,4 +71,18 @@ public class CategoryService {
 		return category;
 	}
 
+	public void deleteAllCategories() {
+		Query query = em.createQuery("select c from Category c");
+		List<Category> categories = query.getResultList();
+		for (Category category : categories) {
+			delete(category);
+		}
+	}
+
+	private void delete(Category category) {
+		Category categoryToRemove = em.find(Category.class, category.getId());
+		em.remove(categoryToRemove);
+		em.flush();
+	}
+
 }
