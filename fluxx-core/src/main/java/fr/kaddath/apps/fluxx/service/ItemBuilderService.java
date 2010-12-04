@@ -6,6 +6,9 @@ import java.util.Set;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -15,11 +18,14 @@ import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndEnclosure;
 import com.sun.syndication.feed.synd.SyndEntryImpl;
 
+import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
-import fr.kaddath.apps.fluxx.domain.FeedCategory;
 import fr.kaddath.apps.fluxx.domain.Item;
+import fr.kaddath.apps.fluxx.exception.InvalidItemException;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
+@Interceptors({ ChronoInterceptor.class })
 public class ItemBuilderService {
 
 	@PersistenceContext
@@ -29,15 +35,23 @@ public class ItemBuilderService {
 	DownloadableItemService downloadableItemService;
 
 	@EJB
-	FeedCategoryService feedCategoryService;
+	CategoryService categoryService;
 
-	public Item createItemFromSyndEntry(SyndEntryImpl syndEntryImpl) {
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+	public Item createItemFromSyndEntry(SyndEntryImpl syndEntryImpl) throws InvalidItemException {
 		Item item = new Item();
 		addItemInformations(syndEntryImpl, item);
-		em.persist(item);
+		validate(item);
 		addFeedCategories(syndEntryImpl, item);
 		addDownloadableItems(syndEntryImpl, item);
 		return item;
+	}
+
+	private void validate(Item item) throws InvalidItemException {
+		String link = item.getLink();
+		if (link.length() >= Item.MAX_ITEM_LINK_SIZE) {
+			throw new InvalidItemException("Item contains an invalid item with link [" + link + "]");
+		}
 	}
 
 	private void addItemInformations(SyndEntryImpl syndEntryImpl, Item item) {
@@ -55,43 +69,38 @@ public class ItemBuilderService {
 
 	@SuppressWarnings("unchecked")
 	private void addFeedCategories(SyndEntryImpl syndEntryImpl, Item item) {
-		Set<FeedCategory> feedCategories = new HashSet<FeedCategory>();
+		Set<Category> categories = new HashSet<Category>();
 		List<SyndCategory> syndCategories = syndEntryImpl.getCategories();
 		for (SyndCategory syndCategorie : syndCategories) {
 			String categoryName = syndCategorie.getName();
-			FeedCategory feedCategory = null;
+			Category category = null;
 			if (StringUtils.isNotBlank(categoryName)) {
-				feedCategory = feedCategoryService.findCategoryByName(categoryName);
-				if (feedCategory == null) {
-					feedCategory = new FeedCategory();
-					feedCategory.setName(categoryName);
-					em.persist(feedCategory);
-					em.flush();
+				category = categoryService.findCategoryByName(categoryName);
+				if (category == null) {
+					category = categoryService.create(categoryName);
 				}
-				feedCategories.add(feedCategory);
+				categories.add(category);
 			}
 		}
-		item.setFeedCategories(feedCategories);
+		item.setCategories(categories);
 	}
 
 	@SuppressWarnings("unchecked")
-	private void addDownloadableItems(SyndEntryImpl syndEntryImpl, Item item) {
+	public void addDownloadableItems(SyndEntryImpl syndEntryImpl, Item item) {
 		Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
 		List<SyndEnclosure> syndEnclosures = syndEntryImpl.getEnclosures();
 		for (SyndEnclosure syndEnclosure : syndEnclosures) {
-			DownloadableItem downloadableItem = null;
 			String url = syndEnclosure.getUrl();
+			DownloadableItem downloadableItem = null;
 			if (StringUtils.isNotBlank(url)) {
 				downloadableItem = downloadableItemService.findByUrl(url);
-			}
-			if (downloadableItem == null) {
-				downloadableItem = new DownloadableItem();
-				downloadableItem.setUrl(url);
-				downloadableItem.setFileLength(syndEnclosure.getLength());
-				downloadableItem.setType(syndEnclosure.getType());
-				downloadableItem.setItem(item);
-				em.persist(downloadableItem);
-				em.flush();
+				if (downloadableItem == null) {
+					downloadableItem = new DownloadableItem();
+					downloadableItem.setUrl(url);
+					downloadableItem.setFileLength(syndEnclosure.getLength());
+					downloadableItem.setType(syndEnclosure.getType());
+					downloadableItem = downloadableItemService.store(downloadableItem);
+				}
 			}
 			downloadableItems.add(downloadableItem);
 		}

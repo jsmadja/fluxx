@@ -16,31 +16,32 @@ import fr.kaddath.apps.fluxx.service.Services;
 @FacesComponent(value = "tagline")
 public class TagLine extends UIComponentBase {
 
-    private FeedService feedService;
+	private final FeedService feedService;
 
-    public TagLine() {
-        super();
-        feedService = Services.getFeedService();
-    }
+	public TagLine() {
+		super();
+		feedService = Services.getFeedService();
+	}
 
-    @Override
-    public String getFamily() {
-        return "fluxx";
-    }
+	@Override
+	public String getFamily() {
+		return "fluxx";
+	}
 
-    @Override
-    public void encodeEnd(FacesContext context) throws IOException {
-        ResponseWriter responseWriter = context.getResponseWriter();
-        Feed feed = (Feed) getAttributes().get("feed");
-        List<String> categories = feedService.findCategoriesByFeedId(feed.getId().toString());
-        Collections.sort(categories);
-        for (String category:categories) {
-            responseWriter.startElement("img", this);
-            responseWriter.writeAttribute("src", context.getExternalContext().getRequestContextPath()+"/myimages/tag.png", "src");
-            responseWriter.endElement("img");
-            responseWriter.write(category);
-            responseWriter.write("&nbsp;&nbsp;&nbsp;");
-        }
-    }
+	@Override
+	public void encodeEnd(FacesContext context) throws IOException {
+		ResponseWriter responseWriter = context.getResponseWriter();
+		Feed feed = (Feed) getAttributes().get("feed");
+		List<String> categories = feedService.findCategoriesByFeed(feed);
+		Collections.sort(categories);
+		for (String category : categories) {
+			responseWriter.startElement("img", this);
+			responseWriter.writeAttribute("src", context.getExternalContext().getRequestContextPath()
+					+ "/myimages/tag.png", "src");
+			responseWriter.endElement("img");
+			responseWriter.write(category);
+			responseWriter.write("&nbsp;&nbsp;&nbsp;");
+		}
+	}
 
 }

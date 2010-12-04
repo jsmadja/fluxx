@@ -5,68 +5,62 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="DOWNLOADABLEITEM",uniqueConstraints=@UniqueConstraint(columnNames={"URL"}))
+@Table(name = "DOWNLOADABLEITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class DownloadableItem {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	public static final int MAX_DOWNLOADABLE_LINK_SIZE = 512;
 
-    @NotNull
-    @Column(length=20480)
-    private String url;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @ManyToOne
-    private Item item;
+	@NotNull
+	@Column(length = MAX_DOWNLOADABLE_LINK_SIZE)
+	private String url;
 
-    private String type;
+	private String type;
 
-    private Long fileLength;
+	private Long fileLength;
 
-    public String getType() {
-        return type;
-    }
+	public DownloadableItem() {
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public Long getFileLength() {
-        return fileLength;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public void setFileLength(Long fileLength) {
-        this.fileLength = fileLength;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public Item getItem() {
-        return item;
-    }
+	public Long getFileLength() {
+		return fileLength;
+	}
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
+	public void setFileLength(Long fileLength) {
+		this.fileLength = fileLength;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }

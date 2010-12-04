@@ -1,6 +1,5 @@
 package fr.kaddath.apps.fluxx.domain;
 
-import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.CascadeType.DETACH;
 import static javax.persistence.CascadeType.REFRESH;
 
@@ -9,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,12 +17,15 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "FEED", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class Feed implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -37,11 +40,11 @@ public class Feed implements Serializable {
 	private Boolean complete = false;
 
 	@OrderBy("publishedDate DESC")
-	@OneToMany(cascade = { ALL }, mappedBy = "feed")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "feed")
 	private List<Item> items = new ArrayList<Item>();
 
 	@ManyToMany(mappedBy = "feeds", cascade = { DETACH, REFRESH })
-	private List<AggregatedFeed> aggregatedFeeds;
+	private List<CustomFeed> customFeeds;
 
 	private String author;
 
@@ -65,6 +68,16 @@ public class Feed implements Serializable {
 
 	@Transient
 	private int size;
+
+	private Double publicationRatio;
+
+	public Feed() {
+
+	}
+
+	public Feed(String url) {
+		this.url = url;
+	}
 
 	@Override
 	public String toString() {
@@ -177,12 +190,12 @@ public class Feed implements Serializable {
 		this.id = id;
 	}
 
-	public List<AggregatedFeed> getAggregatedFeeds() {
-		return aggregatedFeeds;
+	public List<CustomFeed> getCustomFeeds() {
+		return customFeeds;
 	}
 
-	public void setAggregatedFeeds(List<AggregatedFeed> aggregatedFeeds) {
-		this.aggregatedFeeds = aggregatedFeeds;
+	public void setCustomFeeds(List<CustomFeed> customFeeds) {
+		this.customFeeds = customFeeds;
 	}
 
 	public void setSize(int size) {
@@ -191,6 +204,14 @@ public class Feed implements Serializable {
 
 	public int getSize() {
 		return size;
+	}
+
+	public Double getPublicationRatio() {
+		return publicationRatio;
+	}
+
+	public void setPublicationRatio(Double publicationRatio) {
+		this.publicationRatio = publicationRatio;
 	}
 
 }

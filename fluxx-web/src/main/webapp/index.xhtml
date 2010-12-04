@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<ui:define name="content_right">
+		<f:view>
+			<center>
+				<div id="myContainer"></div>
+				<h:form id="completion">
+					<div style="font-size:25px">
+					<span style="vertical-align:middle;width:400px;">
+		            	http://www.fluxx.com/rss/
+		            	</span>
+		            		<h:inputText styleClass="custom_feed_field" id="username" value="#{customFeed.username}" size="10" />
+		            		/
+		            		<h:inputText styleClass="custom_feed_field" id="category" value="#{customFeed.category}" size="10" />
+						<h:message for="username" styleClass="error" />
+						<h:message for="category" styleClass="error" />
+						&nbsp;
+						<h:commandButton id="submit" value="${msgs.form_button_add}" action="#{customFeed.add}" />
+					</div>
+				</h:form>
+				<div id="myAutoComplete"></div>
+        <script type="text/javascript">
+            YAHOO.example.BasicRemote = function() {
+                // Use an XHRDataSource
+                var oDS = new YAHOO.util.XHRDataSource("#{facesContext.externalContext.requestContextPath}/AutoCompleteCategory");
+                // Set the responseType
+                oDS.responseType = YAHOO.util.XHRDataSource.TYPE_TEXT;
+                // Define the schema of the delimited results
+                oDS.responseSchema = {
+                    recordDelim: "\n",
+                    fieldDelim: "\t"
+                };
+                // Enable caching
+                oDS.maxCacheEntries = 5;
+
+                // Instantiate the AutoComplete
+                var oAC = new YAHOO.widget.AutoComplete('completion:category', "myContainer", oDS);
+                oAC.maxResultsDisplayed = 25;
+
+                return {
+                    oDS: oDS,
+                    oAC: oAC
+                };
+            }();
+       </script>
+       
+       <br/><br/><br/>
+       <b>Some examples :</b> 
+       <table style="font-size:15px">
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">mike</span>/<span style="color:orange">movies</span></a></td></tr>
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">angie</span>/<span style="color:orange">iphone</span></a></td></tr>
+       		<tr><td><a href="/">http://www.fluxx.com/rss/<span style="color:orange">bradley</span>/<span style="color:orange">videogames</span></a></td></tr>
+       	</table>
+       
+			</center>
+		</f:view>
+	</ui:define>
+</ui:composition>

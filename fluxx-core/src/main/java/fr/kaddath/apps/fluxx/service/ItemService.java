@@ -31,9 +31,10 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 @SuppressWarnings("unchecked")
+@Interceptors({ ChronoInterceptor.class })
 public class ItemService {
 
-	public static final int MAX_ITEM_TO_RETRIEVE = 20;
+	public static final int MAX_ITEM_TO_RETRIEVE = Integer.MAX_VALUE;
 
 	@PersistenceContext
 	EntityManager em;
@@ -68,14 +69,13 @@ public class ItemService {
 		cb = em.getCriteriaBuilder();
 	}
 
-	@Interceptors({ ChronoInterceptor.class })
 	public Item findItemByLink(String link) {
 		Query query = em.createNamedQuery("findItemsByLink");
 		query.setParameter("link", link);
 		return getUniqueResult(query);
 	}
 
-	public List<Item> findItemsByFeedAndAfter(Feed feed, Date date) {
+	public List<Item> findItemsByFeedAndAfterDate(Feed feed, Date date) {
 		CriteriaQuery<Item> cq = cb.createQuery(Item.class);
 
 		Root<Item> item = cq.from(Item.class);
@@ -130,6 +130,12 @@ public class ItemService {
 		return getUniqueResult(query);
 	}
 
+	public Item findFirstItemv2(Feed feed) {
+		Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate asc");
+		query.setParameter("feed", feed);
+		return getUniqueResult(query);
+	}
+
 	public long getNumItemsByDay(Date date) {
 
 		Calendar calendar = getInstance();
@@ -143,13 +149,13 @@ public class ItemService {
 		return getNumItemsBetween(from, to);
 	}
 
-	public Item getFirstItem() {
+	public Item findFirstItem() {
 		Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate ASC");
 		query.setMaxResults(1);
 		return getUniqueResult(query);
 	}
 
-	public Item getLastItem() {
+	public Item findLastItem() {
 		Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate DESC");
 		query.setMaxResults(1);
 		return getUniqueResult(query);
@@ -173,4 +179,5 @@ public class ItemService {
 		query.setParameter("feed", feed);
 		return getUniqueResult(query);
 	}
+
 }

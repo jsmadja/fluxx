@@ -70,7 +70,7 @@ public class Crawler {
 			System.err.println("found rss : " + rssFeed);
 			rss.add(rssFeed);
 			try {
-				feedFetcherService.add(rssFeed);
+				feedFetcherService.addNewFeed(rssFeed);
 			} catch (DownloadFeedException e) {
 				e.printStackTrace();
 			}

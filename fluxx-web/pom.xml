@@ -80,6 +80,9 @@
 			<resource>
 				<directory>${basedir}/src/etc/${environment-name}</directory>
 			</resource>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+			</resource>
 		</resources>
 		<plugins>
 			<plugin>
@@ -87,7 +90,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<warName>fluxx</warName>
-					<webappDirectory>${basedir}/src/webapp</webappDirectory>
+					<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
 				</configuration>
 			</plugin>
 			<plugin>

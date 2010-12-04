@@ -3,13 +3,16 @@ package fr.kaddath.apps.fluxx.service;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
+import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
+@Interceptors({ ChronoInterceptor.class })
 public class DownloadableItemService {
 
 	@PersistenceContext
@@ -29,5 +32,15 @@ public class DownloadableItemService {
 		} else {
 			return list.get(0);
 		}
+	}
+
+	public DownloadableItem store(DownloadableItem downloadableItem) {
+		if (downloadableItem.getId() == null) {
+			em.persist(downloadableItem);
+		} else {
+			downloadableItem = em.merge(downloadableItem);
+		}
+		em.flush();
+		return downloadableItem;
 	}
 }

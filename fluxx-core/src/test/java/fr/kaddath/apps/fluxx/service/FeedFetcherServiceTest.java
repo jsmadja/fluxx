@@ -1,31 +1,45 @@
 package fr.kaddath.apps.fluxx.service;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import org.junit.Test;
 
 import fr.kaddath.apps.fluxx.AbstractTest;
+import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 
 public class FeedFetcherServiceTest extends AbstractTest {
 
 	@Test
-	public void should_update() throws Exception {
-		createFeeds();
-		feedFetcherService.updateAll();
-		feedFetcherService.updateAll();
+	public void should_update_all_feeds() throws Exception {
+		if (isIntegrationTest) {
+			createFeeds();
+			feedFetcherService.updateAll();
+			feedFetcherService.updateAll();
+		}
 	}
 
-	private void createFeeds() throws FileNotFoundException {
-		int maxFeeds = 5;
-		Scanner sc = new Scanner(new File("src/test/resources/feeds.urls"));
-		int i = 0;
-		while (sc.hasNextLine() && i < maxFeeds) {
-			String url = sc.nextLine();
-			createFeed(url);
-			i++;
+	@Test
+	public void should_fetch_url_with_amp() throws DownloadFeedException {
+		if (isIntegrationTest) {
+			feedFetcherService
+					.addNewFeed("http://news.google.fr/news?pz=1&amp;cf=all&amp;ned=fr&amp;hl=fr&amp;topic=w&amp;output=rss");
 		}
+	}
 
+	@Test
+	public void should_fetch_le_monde() throws DownloadFeedException {
+		createFeedLeMonde();
+	}
+
+	@Test
+	public void should_fetch_les_castcodeurs() throws DownloadFeedException {
+		if (isIntegrationTest) {
+			feedFetcherService.addNewFeed(URL_CASTCODEURS);
+		}
+	}
+
+	@Test
+	public void should_fetch_frandroid() throws DownloadFeedException {
+		if (isIntegrationTest) {
+			feedFetcherService.addNewFeed(URL_FRANDROID);
+		}
 	}
 }
