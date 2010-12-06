@@ -26,4 +26,14 @@ public class Fluxx {
 	public void crawl(String url, Integer maxFeedsToAdd) throws Exception {
 		crawlerService.crawl(url, maxFeedsToAdd);
 	}
+
+	@WebMethod
+	public void updateAll() {
+		feedFetcherService.updateAll();
+	}
+
+	@WebMethod
+	public void updateTopPriorityFeeds() {
+		feedFetcherService.updateTopPriorityFeeds();
+	}
 }

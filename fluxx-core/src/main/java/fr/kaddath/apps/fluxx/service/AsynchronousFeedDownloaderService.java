@@ -27,7 +27,7 @@ public class AsynchronousFeedDownloaderService {
 		try {
 			String content = downloadContent(feed.getUrl());
 			SyndFeed syndFeed = createSyndFeed(content);
-			int size = computeSize(content);
+			int size = content.length();
 			feed.setSize(size);
 
 			return new Pair<Feed, SyndFeed>(feed, syndFeed);
@@ -50,7 +50,4 @@ public class AsynchronousFeedDownloaderService {
 		return builder.toString();
 	}
 
-	private int computeSize(String text) throws IOException {
-		return text.getBytes().length;
-	}
 }

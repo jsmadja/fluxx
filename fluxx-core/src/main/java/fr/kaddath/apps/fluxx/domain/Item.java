@@ -27,14 +27,21 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "findItemsByLink", query = "SELECT item FROM Item item WHERE item.link = :link"),
-		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT item FROM Item item WHERE item.feed = :feed AND item.link = :link") })
+		@NamedQuery(name = "findItemsByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
+		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed AND i.link = :link"),
+		@NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate IN (SELECT MAX(j.publishedDate) FROM Item j)"),
+		@NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate IN (SELECT MIN(j.publishedDate) FROM Item j)"),
+		@NamedQuery(name = "findFirstItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate asc"),
+		@NamedQuery(name = "findLastItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate desc"),
+		@NamedQuery(name = "getNumItemsOfFeed", query = "SELECT COUNT(i) FROM Item i WHERE i.feed = :feed"),
+		@NamedQuery(name = "getNumItems", query = "SELECT COUNT(i) FROM Item i") })
 @Table(name = "ITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "LINK" }))
 public class Item implements Comparable<Item>, Serializable {
 
-	private static final long serialVersionUID = 2607672054863155365L;
+	private static final long serialVersionUID = 2607672054863355365L;
 
 	public static final int MAX_ITEM_LINK_SIZE = 512;
+	public static final int MAX_ITEM_TITLE_SIZE = 512;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -57,6 +64,8 @@ public class Item implements Comparable<Item>, Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date publishedDate;
 
+	@NotNull
+	@Column(length = MAX_ITEM_TITLE_SIZE)
 	private String title;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -71,8 +80,9 @@ public class Item implements Comparable<Item>, Serializable {
 	@ManyToOne
 	private Feed feed;
 
-	public Item(String link, Feed feed) {
+	public Item(String link, String title, Feed feed) {
 		this.link = link;
+		this.title = title;
 		this.feed = feed;
 	}
 

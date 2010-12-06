@@ -118,10 +118,11 @@ public class FeedFetcherService {
 
 	private List<Pair<Feed, SyndFeed>> downloadFeeds(List<Feed> feeds) {
 		List<Pair<Feed, SyndFeed>> couples = new ArrayList<Pair<Feed, SyndFeed>>();
-
 		for (int i = 0; i < feeds.size(); i++) {
 			Feed feed = feeds.get(i);
 			try {
+				LOG.log(Level.INFO, "[{0}%] Download feed : {1} ... ", new Object[] {
+						getInPercent(i + 1, feeds.size()), feed.getTitle() });
 				Pair<Feed, SyndFeed> couple = downloaderService.downloadFeedContent(feed);
 				couples.add(couple);
 			} catch (DownloadFeedException e) {

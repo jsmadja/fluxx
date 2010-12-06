@@ -6,8 +6,10 @@ import static org.mockito.Mockito.when;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.ejb.embeddable.EJBContainer;
@@ -25,8 +27,11 @@ import fr.kaddath.apps.fluxx.cache.CustomFeedCache;
 import fr.kaddath.apps.fluxx.cache.RssItemCache;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.domain.CustomFeed;
+import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import fr.kaddath.apps.fluxx.domain.Feed;
+import fr.kaddath.apps.fluxx.domain.Item;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
+import fr.kaddath.apps.fluxx.service.AsynchronousFeedDownloaderService;
 import fr.kaddath.apps.fluxx.service.CategoryService;
 import fr.kaddath.apps.fluxx.service.CrawlerService;
 import fr.kaddath.apps.fluxx.service.CustomFeedService;
@@ -54,6 +59,7 @@ public abstract class AbstractTest {
 	protected static ItemBuilderService itemBuilderService;
 	protected static CrawlerService crawlerService;
 	protected static DownloadableItemService downloadableItemService;
+	protected static AsynchronousFeedDownloaderService asynchronousFeedDownloaderService;
 
 	protected static String uuid = UUID.randomUUID().toString();
 	protected static HttpServletRequest request;
@@ -109,6 +115,7 @@ public abstract class AbstractTest {
 			categoryService = (CategoryService) lookup("CategoryService");
 			crawlerService = (CrawlerService) lookup("CrawlerService");
 			downloadableItemService = (DownloadableItemService) lookup("DownloadableItemService");
+			asynchronousFeedDownloaderService = (AsynchronousFeedDownloaderService) lookup("AsynchronousFeedDownloaderService");
 
 			request = mock(HttpServletRequest.class);
 			when(request.getServerPort()).thenReturn(serverPort);
@@ -199,7 +206,32 @@ public abstract class AbstractTest {
 			createFeedFromUrl(url);
 			i++;
 		}
+	}
 
+	protected Feed createCompleteFeed() {
+		Feed feed = new Feed();
+		feed.setUrl(VALID_URL);
+		feed.setTitle(VALID_TITLE);
+
+		Item item = new Item(VALID_LINK, VALID_TITLE, feed);
+
+		Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
+		DownloadableItem downloadableItem = new DownloadableItem();
+		downloadableItem.setFileLength(FILE_LENGTH);
+		downloadableItem.setType(TYPE);
+		downloadableItem.setUrl(VALID_LINK);
+		downloadableItem = downloadableItemService.store(downloadableItem);
+		downloadableItems.add(downloadableItem);
+		item.setDownloadableItems(downloadableItems);
+
+		Set<Category> categories = new HashSet<Category>();
+		Category category = categoryService.create(CATEGORY_NAME);
+		categories.add(category);
+
+		item.setCategories(categories);
+
+		feed.getItems().add(item);
+		return feed;
 	}
 
 	@Before

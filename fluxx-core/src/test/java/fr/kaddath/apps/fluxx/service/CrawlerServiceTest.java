@@ -10,8 +10,7 @@ public class CrawlerServiceTest extends AbstractTest {
 
 	@Test
 	public void should_crawl() throws Exception {
-		deleteAll();
-		isIntegrationTest = true;
+		isIntegrationTest = false;
 		if (isIntegrationTest) {
 			crawlerService.crawl("http://www.lemonde.fr", MAX_FEEDS_TO_ADD);
 		}

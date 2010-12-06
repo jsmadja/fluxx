@@ -23,20 +23,20 @@ public class TendencyService {
 	public static final int MILLISEC_IN_A_DAY = 1000 * 60 * 60 * 24;
 
 	public double computeDayTendency(Feed feed) {
-		long numItems = itemService.getNumItems(feed);
+		long numItems = itemService.getNumItemsOfFeed(feed);
 		if (numItems == 0) {
 			return 0;
 		}
-		Item item = itemService.findFirstItem(feed);
+		Item item = itemService.findFirstItemOfFeed(feed);
 		return computeDayTendency(item.getPublishedDate(), numItems);
 	}
 
 	public double computeWeekTendency(Feed feed) {
-		long numItems = itemService.getNumItems(feed);
+		long numItems = itemService.getNumItemsOfFeed(feed);
 		if (numItems == 0) {
 			return 0;
 		}
-		Item item = itemService.findFirstItem(feed);
+		Item item = itemService.findFirstItemOfFeed(feed);
 		return computeWeekTendency(item.getPublishedDate(), numItems);
 	}
 

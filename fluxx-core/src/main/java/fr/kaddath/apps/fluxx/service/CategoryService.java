@@ -9,6 +9,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import org.apache.commons.lang.StringUtils;
+
 import fr.kaddath.apps.fluxx.collection.Pair;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
@@ -18,6 +20,7 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 @Interceptors({ ChronoInterceptor.class })
 public class CategoryService {
 
+	private static final String invalidCharacters = "\"#/|'";
 	@PersistenceContext
 	EntityManager em;
 
@@ -62,6 +65,12 @@ public class CategoryService {
 	}
 
 	public Category create(String categoryName) {
+		if (categoryName != null) {
+			categoryName = categoryName.trim();
+			for (Character c : invalidCharacters.toCharArray()) {
+				categoryName = StringUtils.remove(categoryName, c);
+			}
+		}
 		Category category = findCategoryByName(categoryName);
 		if (category == null) {
 			category = new Category(categoryName);

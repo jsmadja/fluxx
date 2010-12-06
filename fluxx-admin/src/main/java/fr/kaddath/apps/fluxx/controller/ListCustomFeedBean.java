@@ -14,6 +14,8 @@ import fr.kaddath.apps.fluxx.service.CustomFeedService;
 @SessionScoped
 public class ListCustomFeedBean implements Serializable {
 
+	private static final long serialVersionUID = 1949660677636196611L;
+
 	private static final String MANAGE_AGGREGATEDFEED = "manage-aggregatedfeed";
 
 	private String category;

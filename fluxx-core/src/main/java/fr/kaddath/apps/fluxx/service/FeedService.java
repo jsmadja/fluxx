@@ -62,7 +62,7 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByInError(boolean inError, int firstResult) {
-		Query q = em.createQuery("SELECT Feed FROM Feed AS feed WHERE feed.inError = :inError order by feed.title");
+		Query q = em.createNamedQuery("findFeedsByInError");
 		q.setParameter("inError", inError);
 		q.setFirstResult(firstResult);
 		q.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
@@ -79,8 +79,7 @@ public class FeedService {
 	}
 
 	public List<Feed> findAllTopPriorityFeeds() {
-		// FIXME: fr.kaddath.apps.fluxx.service.FeedService.findAllTopPriorityFeeds
-		String strQuery = "select f from FEED f where f.ID in (select distinct feed_id from CUSTOMFEED_FEED)";
+		String strQuery = "SELECT f.* FROM FEED f WHERE f.id IN (SELECT DISTINCT feed_id FROM CUSTOMFEED_FEED)";
 		return em.createNativeQuery(strQuery).getResultList();
 	}
 
@@ -155,7 +154,7 @@ public class FeedService {
 	}
 
 	public Long getNumFeeds() {
-		Query query = em.createQuery("select count(f) from Feed f");
+		Query query = em.createNamedQuery("getNumFeeds");
 		return (Long) query.getSingleResult();
 	}
 
@@ -182,7 +181,7 @@ public class FeedService {
 	}
 
 	public Feed findFeedByUrl(String url) {
-		Query query = em.createQuery("select f from Feed f where f.url = :url");
+		Query query = em.createNamedQuery("findFeedByUrl");
 		query.setParameter("url", url);
 		return getSingleResult(query);
 	}
@@ -198,8 +197,7 @@ public class FeedService {
 	}
 
 	public Feed findLastUpdatedFeed() {
-		Query query = em
-				.createQuery("select f from Feed f where f.lastUpdate in ( select MAX(g.lastUpdate) from Feed g)");
+		Query query = em.createNamedQuery("findLastUpdatedFeed");
 		return getSingleResult(query);
 	}
 
@@ -228,7 +226,7 @@ public class FeedService {
 	}
 
 	public void deleteAllFeeds() {
-		Query query = em.createQuery("select f from Feed f");
+		Query query = em.createNamedQuery("findAllFeeds");
 		List<Feed> feeds = query.getResultList();
 		for (Feed feed : feeds) {
 			delete(feed);

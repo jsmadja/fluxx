@@ -22,6 +22,8 @@ import fr.kaddath.apps.fluxx.service.ItemService;
 @SessionScoped
 public class EditFeedBean implements Serializable {
 
+	private static final long serialVersionUID = -5993382815103965143L;
+
 	@Inject
 	private FeedService feedService;
 
@@ -77,6 +79,7 @@ public class EditFeedBean implements Serializable {
 		publishedDate = currentFeed.getPublishedDate();
 	}
 
+	@SuppressWarnings("unchecked")
 	public DataModel<Item> getItems() {
 		if (itemsDataModel == null) {
 			buildItemsDataModel();

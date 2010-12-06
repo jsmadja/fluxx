@@ -6,47 +6,19 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.junit.Test;
 
 import fr.kaddath.apps.fluxx.AbstractTest;
 import fr.kaddath.apps.fluxx.domain.Category;
 import fr.kaddath.apps.fluxx.domain.CustomFeed;
-import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
+import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 
 public class FeedServiceTest extends AbstractTest {
-
-	private Feed createCompleteFeed() {
-		Feed feed = new Feed();
-		feed.setUrl(VALID_URL);
-		feed.setTitle(VALID_TITLE);
-
-		Item item = new Item(VALID_LINK, feed);
-
-		Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
-		DownloadableItem downloadableItem = new DownloadableItem();
-		downloadableItem.setFileLength(FILE_LENGTH);
-		downloadableItem.setType(TYPE);
-		downloadableItem.setUrl(VALID_LINK);
-		downloadableItem = downloadableItemService.store(downloadableItem);
-		downloadableItems.add(downloadableItem);
-		item.setDownloadableItems(downloadableItems);
-
-		Set<Category> categories = new HashSet<Category>();
-		Category category = categoryService.create(CATEGORY_NAME);
-		categories.add(category);
-
-		item.setCategories(categories);
-
-		feed.getItems().add(item);
-		return feed;
-	}
 
 	@Test
 	public void should_persist_a_feed() {
@@ -66,7 +38,7 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void should_return_feeds_in_error() throws Exception {
+	public void should_find_feeds_in_error() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
 		feed.setInError(true);
 		feedService.update(feed);
@@ -78,7 +50,7 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void testFindAllFeedsNotInError() throws Exception {
+	public void should_find_all_feeds_not_in_error() throws Exception {
 		createFeedWithDownloadableItems();
 		List<Feed> feeds = feedService.findAllFeedsNotInError();
 		assertFalse(feeds.isEmpty());
@@ -88,7 +60,7 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void testFindAllFeedsInError() throws Exception {
+	public void should_find_all_feeds_in_error() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
 		feed.setInError(true);
 		feedService.update(feed);
@@ -100,7 +72,7 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void should_not_return_feed_in_available_feeds_when_feed_is_already_in() throws Exception {
+	public void should_not_find_feed_in_available_feeds_when_feed_is_already_in() throws Exception {
 		Feed feed1 = createFeedWithDownloadableItems();
 		createFeedWithCategories();
 		CustomFeed customFeed = createCustomFeedWithOneFeed(feed1);
@@ -157,25 +129,24 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void testFindFeedById() throws Exception {
+	public void should_return_the_same_feed_when_searching_by_id() throws Exception {
 		Feed feed1 = createFeedWithDownloadableItems();
 		Feed feed2 = feedService.findFeedById(feed1.getId());
 		assertEquals(feed1, feed2);
 	}
 
 	@Test
-	public void testFindFeedByUrl() throws Exception {
+	public void should_return_the_same_feed_when_searching_by_url() throws Exception {
 		Feed feed1 = createFeedWithDownloadableItems();
 		Feed feed2 = feedService.findFeedByUrl(feed1.getUrl());
 		assertEquals(feed1, feed2);
 	}
 
 	@Test
-	public void testGetNumFeedType() throws Exception {
+	public void should_return_feed_types() throws Exception {
 		createFeedWithDownloadableItems();
 		Map<String, Long> feedType = feedService.getNumFeedType();
 		assertFalse(feedType.isEmpty());
-
 	}
 
 	@Test
@@ -183,5 +154,13 @@ public class FeedServiceTest extends AbstractTest {
 		createFeedWithCategories();
 		Feed feed = feedService.findLastUpdatedFeed();
 		assertNotNull(feed);
+	}
+
+	@Test
+	public void should_find_all_top_priority_feeds() throws DownloadFeedException {
+		Feed f1 = createFeedWithCategories();
+		createCustomFeedWithOneFeed(f1);
+		List<Feed> feeds = feedService.findAllTopPriorityFeeds();
+		assertFalse(feeds.isEmpty());
 	}
 }

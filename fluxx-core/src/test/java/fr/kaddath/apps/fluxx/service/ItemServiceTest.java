@@ -27,8 +27,8 @@ public class ItemServiceTest extends AbstractTest {
 	@Test
 	public void should_find_all_items_of_a_feed_when_search_begin_at_first_item_date() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
-		Item item = itemService.findFirstItem(feed);
-		List<Item> items = itemService.findItemsByFeedAndAfterDate(feed, item.getPublishedDate());
+		Item item = itemService.findFirstItemOfFeed(feed);
+		List<Item> items = itemService.findItemsOfFeedAndAfterDate(feed, item.getPublishedDate());
 		List<Item> expectedItems = itemService.findItemsByFeed(feed);
 		assertEquals(expectedItems.size(), items.size());
 	}
@@ -44,7 +44,7 @@ public class ItemServiceTest extends AbstractTest {
 	public void should_return_the_exact_item_size_of_an_existing_feed() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
 		int numItems = itemService.findItemsByFeed(feed).size();
-		assertEquals(itemService.getNumItems(feed), numItems);
+		assertEquals(itemService.getNumItemsOfFeed(feed), numItems);
 	}
 
 	@Test
@@ -61,7 +61,7 @@ public class ItemServiceTest extends AbstractTest {
 	@Test
 	public void testFindLastItem() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
-		Item item = itemService.findLastItem(feed);
+		Item item = itemService.findLastItemOfFeed(feed);
 		List<Item> items = itemService.findItemsByFeed(feed);
 		assertFalse(items.isEmpty());
 		isLast(items, item);
@@ -70,7 +70,7 @@ public class ItemServiceTest extends AbstractTest {
 	@Test
 	public void should_find_the_first_item() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
-		Item item = itemService.findFirstItem(feed);
+		Item item = itemService.findFirstItemOfFeed(feed);
 		List<Item> items = itemService.findItemsByFeed(feed);
 		assertFalse(items.isEmpty());
 		isFirst(items, item);

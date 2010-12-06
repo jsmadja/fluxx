@@ -27,6 +27,7 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 @Interceptors({ ChronoInterceptor.class })
+@SuppressWarnings("unchecked")
 public class CustomFeedService {
 
 	@PersistenceContext
@@ -70,7 +71,7 @@ public class CustomFeedService {
 
 		List<Item> items = new ArrayList<Item>();
 		for (Feed f : customFeed.getFeeds()) {
-			items.addAll(itemService.findItemsByFeedAndAfterDate(f, date));
+			items.addAll(itemService.findItemsOfFeedAndAfterDate(f, date));
 		}
 
 		return items;

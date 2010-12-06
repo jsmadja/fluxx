@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
@@ -25,6 +27,12 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@NamedQueries({
+		@NamedQuery(name = "findLastUpdatedFeed", query = "SELECT f FROM Feed f WHERE f.lastUpdate IN (SELECT MAX(g.lastUpdate) FROM Feed g)"),
+		@NamedQuery(name = "findFeedsByInError", query = "SELECT f FROM Feed f WHERE f.inError = :inError ORDER BY f.title"),
+		@NamedQuery(name = "getNumFeeds", query = "SELECT COUNT(f) FROM Feed f"),
+		@NamedQuery(name = "findFeedByUrl", query = "SELECT f FROM Feed f WHERE f.url = :url"),
+		@NamedQuery(name = "findAllFeeds", query = "SELECT f FROM Feed f") })
 @Table(name = "FEED", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class Feed implements Serializable {
 

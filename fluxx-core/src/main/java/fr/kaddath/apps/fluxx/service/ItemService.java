@@ -75,7 +75,7 @@ public class ItemService {
 		return getUniqueResult(query);
 	}
 
-	public List<Item> findItemsByFeedAndAfterDate(Feed feed, Date date) {
+	public List<Item> findItemsOfFeedAndAfterDate(Feed feed, Date date) {
 		CriteriaQuery<Item> cq = cb.createQuery(Item.class);
 
 		Root<Item> item = cq.from(Item.class);
@@ -108,30 +108,24 @@ public class ItemService {
 	}
 
 	public Long getNumItems() {
-		Query query = em.createQuery("select count(i) from Item i");
+		Query query = em.createNamedQuery("getNumItems");
 		return (Long) query.getSingleResult();
 	}
 
-	public long getNumItems(Feed feed) {
-		Query query = em.createQuery("select count(i) from Item i where i.feed = :feed");
+	public long getNumItemsOfFeed(Feed feed) {
+		Query query = em.createNamedQuery("getNumItemsOfFeed");
 		query.setParameter("feed", feed);
 		return (Long) query.getSingleResult();
 	}
 
-	public Item findLastItem(Feed feed) {
-		Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate desc");
+	public Item findLastItemOfFeed(Feed feed) {
+		Query query = em.createNamedQuery("findLastItemOfFeed");
 		query.setParameter("feed", feed);
 		return getUniqueResult(query);
 	}
 
-	public Item findFirstItem(Feed feed) {
-		Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate asc");
-		query.setParameter("feed", feed);
-		return getUniqueResult(query);
-	}
-
-	public Item findFirstItemv2(Feed feed) {
-		Query query = em.createQuery("select i from Item i where i.feed = :feed order by i.publishedDate asc");
+	public Item findFirstItemOfFeed(Feed feed) {
+		Query query = em.createNamedQuery("findFirstItemOfFeed");
 		query.setParameter("feed", feed);
 		return getUniqueResult(query);
 	}
@@ -150,13 +144,13 @@ public class ItemService {
 	}
 
 	public Item findFirstItem() {
-		Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate ASC");
+		Query query = em.createNamedQuery("findFirstItem");
 		query.setMaxResults(1);
 		return getUniqueResult(query);
 	}
 
 	public Item findLastItem() {
-		Query query = em.createQuery("SELECT i FROM Item i ORDER BY i.publishedDate DESC");
+		Query query = em.createNamedQuery("findLastItem");
 		query.setMaxResults(1);
 		return getUniqueResult(query);
 	}
@@ -173,7 +167,7 @@ public class ItemService {
 		return getNumItemsBetween(from, to);
 	}
 
-	public Item findItemByLink(String link, Feed feed) {
+	public Item findItemByLinkWithFeed(String link, Feed feed) {
 		Query query = em.createNamedQuery("findItemsByLinkWithFeed");
 		query.setParameter("link", link);
 		query.setParameter("feed", feed);

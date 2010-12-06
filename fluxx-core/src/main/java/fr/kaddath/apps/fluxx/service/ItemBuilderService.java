@@ -48,9 +48,21 @@ public class ItemBuilderService {
 	}
 
 	private void validate(Item item) throws InvalidItemException {
+		validateLink(item);
+		validateTitle(item);
+	}
+
+	private void validateLink(Item item) throws InvalidItemException {
 		String link = item.getLink();
 		if (link.length() >= Item.MAX_ITEM_LINK_SIZE) {
 			throw new InvalidItemException("Item contains an invalid item with link [" + link + "]");
+		}
+	}
+
+	private void validateTitle(Item item) throws InvalidItemException {
+		String title = item.getTitle();
+		if (title.length() >= Item.MAX_ITEM_TITLE_SIZE) {
+			throw new InvalidItemException("Item contains an invalid item with title [" + title + "]");
 		}
 	}
 

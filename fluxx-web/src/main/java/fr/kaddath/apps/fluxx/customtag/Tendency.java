@@ -39,7 +39,7 @@ public class Tendency extends UIComponentBase {
         ResponseWriter responseWriter = context.getResponseWriter();
         Feed feed = (Feed) getAttributes().get("feed");
 
-        float numItems = itemService.getNumItems(feed);
+        float numItems = itemService.getNumItemsOfFeed(feed);
 
         int periodInDays = computePeriod(feed);
         if (periodInDays == 0) {
@@ -82,7 +82,7 @@ public class Tendency extends UIComponentBase {
 
     private int computePeriod(Feed feed) {
 
-        Item lastItem = itemService.findFirstItem(feed);
+        Item lastItem = itemService.findFirstItemOfFeed(feed);
         if (lastItem == null) {
             return 0;
         }
