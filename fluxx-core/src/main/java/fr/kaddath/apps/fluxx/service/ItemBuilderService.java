@@ -1,6 +1,5 @@
 package fr.kaddath.apps.fluxx.service;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -26,6 +25,7 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 @Interceptors({ ChronoInterceptor.class })
+@SuppressWarnings("unchecked")
 public class ItemBuilderService {
 
 	@PersistenceContext
@@ -42,7 +42,7 @@ public class ItemBuilderService {
 		Item item = new Item();
 		addItemInformations(syndEntryImpl, item);
 		validate(item);
-		addFeedCategories(syndEntryImpl, item);
+		addCategories(syndEntryImpl, item);
 		addDownloadableItems(syndEntryImpl, item);
 		return item;
 	}
@@ -79,44 +79,48 @@ public class ItemBuilderService {
 		item.setUri(syndEntryImpl.getUri());
 	}
 
-	@SuppressWarnings("unchecked")
-	private void addFeedCategories(SyndEntryImpl syndEntryImpl, Item item) {
-		Set<Category> categories = new HashSet<Category>();
+	private void addCategories(SyndEntryImpl syndEntryImpl, Item item) {
+		Set<Category> categories = item.getCategories();
 		List<SyndCategory> syndCategories = syndEntryImpl.getCategories();
 		for (SyndCategory syndCategorie : syndCategories) {
-			String categoryName = syndCategorie.getName();
-			Category category = null;
-			if (StringUtils.isNotBlank(categoryName)) {
-				category = categoryService.findCategoryByName(categoryName);
-				if (category == null) {
-					category = categoryService.create(categoryName);
-				}
-				categories.add(category);
-			}
+			addCategory(categories, syndCategorie);
 		}
-		item.setCategories(categories);
 	}
 
-	@SuppressWarnings("unchecked")
+	private void addCategory(Set<Category> categories, SyndCategory syndCategory) {
+		String categoryName = syndCategory.getName();
+		Category category = null;
+		if (StringUtils.isNotBlank(categoryName)) {
+			category = categoryService.findCategoryByName(categoryName);
+			if (category == null) {
+				category = categoryService.create(categoryName);
+			}
+			categories.add(category);
+		}
+	}
+
 	public void addDownloadableItems(SyndEntryImpl syndEntryImpl, Item item) {
-		Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
+		Set<DownloadableItem> downloadableItems = item.getDownloadableItems();
 		List<SyndEnclosure> syndEnclosures = syndEntryImpl.getEnclosures();
 		for (SyndEnclosure syndEnclosure : syndEnclosures) {
-			String url = syndEnclosure.getUrl();
-			DownloadableItem downloadableItem = null;
-			if (StringUtils.isNotBlank(url)) {
-				downloadableItem = downloadableItemService.findByUrl(url);
-				if (downloadableItem == null) {
-					downloadableItem = new DownloadableItem();
-					downloadableItem.setUrl(url);
-					downloadableItem.setFileLength(syndEnclosure.getLength());
-					downloadableItem.setType(syndEnclosure.getType());
-					downloadableItem = downloadableItemService.store(downloadableItem);
-				}
+			addDownloadableItem(downloadableItems, syndEnclosure);
+		}
+	}
+
+	private void addDownloadableItem(Set<DownloadableItem> downloadableItems, SyndEnclosure syndEnclosure) {
+		String url = syndEnclosure.getUrl();
+		DownloadableItem downloadableItem = null;
+		if (StringUtils.isNotBlank(url)) {
+			downloadableItem = downloadableItemService.findByUrl(url);
+			if (downloadableItem == null) {
+				downloadableItem = new DownloadableItem();
+				downloadableItem.setUrl(url);
+				downloadableItem.setFileLength(syndEnclosure.getLength());
+				downloadableItem.setType(syndEnclosure.getType());
+				downloadableItem = downloadableItemService.store(downloadableItem);
 			}
 			downloadableItems.add(downloadableItem);
 		}
-		item.setDownloadableItems(downloadableItems);
 	}
 
 }

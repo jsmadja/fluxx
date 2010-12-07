@@ -9,18 +9,21 @@
                 xmlns:fluxx="http://fluxx.fr.cn/custom-taglib"
                 xmlns:emcomp="http://java.sun.com/jsf/composite/emcomp">
     <ui:define name="content_right">
+    <center>
 		<h:form>
-			<div style="font-size:12px">
+			<div style="font-size:25px">
 				<span style="vertical-align:middle">http://www.fluxx.com/rss/</span>
 	            <h:outputText styleClass="custom_feed_label" id="username" value="#{customFeed.username}" />
 	            /
 	            <h:outputText styleClass="custom_feed_label" id="category" value="#{customFeed.category}" />
 			
 			    <emcomp:rssIcon href="http://www.fluxx.com/rss/#{customFeed.username}/#{customFeed.category}"/>
-			
 			</div>
 		</h:form>					
 
+		<br/><br/>
+
+		Rechercher : 
 		<div id="myContainer"></div>
         <h:form id="completion">
         	<h:inputText onfocus="clearText(this)" onblur="clearText(this)"  id="myInput" value="#{customFeed.filter}" maxlength="20" size="20" style="width:200px">#{customFeed.category}</h:inputText>
@@ -57,24 +60,22 @@
                <h:dataTable id="availableFeedsTable" value="#{customFeed.availableFeeds}" var="feed" width="500px" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2">
                    <h:column>
                        <f:facet name="header"></f:facet>
-                       <fluxx:tendency feed="#{feed}" />
-                   </h:column>
-                   <h:column>
-                       <f:facet name="header"><h:outputText value="${msgs.form_field_feed_name}"/></f:facet>
-                       <h:commandLink action="#{customFeed.addFeed}">
-                           <h:outputText title="${feed.description}" value="${feed.title}" />
-                       </h:commandLink>
-                   </h:column>
-                   <h:column>
-                       <f:facet name="header"><h:outputText value="${msgs.form_field_feed_description}"/></f:facet>
-                       <h:commandLink action="#{customFeed.addFeed}">
-                           <h:outputText title="${feed.description}" value="${feed.description}" />
-                       </h:commandLink>
-                   </h:column>
-                   <h:column>
-                       <f:facet name="header"><h:outputText value="${msgs.form_field_feed_url}"/></f:facet>
-                       <emcomp:rssIcon href="${feed.url}" />
-                   </h:column>
+                 		    <p>
+                 		    	<h:outputText title="${feed.url}" value="${feed.title}" />
+                       			<fluxx:tendency feed="#{feed}" />
+                       		</p>
+                       		<p>
+                       			<h:outputText title="${feed.url}" value="${feed.url}" />
+                       		</p>
+                       		<p>
+                 				<h:outputText value="${feed.description}" />
+                       		</p>
+                       		<p style="text-align: right">
+                       		<h:commandLink action="#{customFeed.addFeed}">
+                           		<h:outputText title="ajouter" value="ajouter" />
+                       		</h:commandLink>
+                       		</p>
+                 	</h:column>
                </h:dataTable>
            </h:form>
       </div>
@@ -98,5 +99,6 @@
        
        <a href="#{facesContext.externalContext.requestContextPath}/faces/feed/import-opml.xhtml">${msgs.page_title_importopml}</a>
         
+    </center>
     </ui:define>
 </ui:composition>

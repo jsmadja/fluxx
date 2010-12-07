@@ -20,7 +20,7 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 @Interceptors({ ChronoInterceptor.class })
 public class CategoryService {
 
-	private static final String invalidCharacters = "\"#/|'";
+	private static final String invalidCharacters = "\"#/|!'";
 	@PersistenceContext
 	EntityManager em;
 

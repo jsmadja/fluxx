@@ -1,6 +1,7 @@
 package fr.kaddath.apps.fluxx.service;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -26,7 +27,7 @@ public class FeedCategoryServiceTest extends AbstractTest {
 		createFeedWithCategories();
 		List<Pair<String, Integer>> allNumItemByCategory = categoryService.findNumItemFeedsByCategory();
 		assertNotNull(allNumItemByCategory);
-		assertTrue(allNumItemByCategory.size() > 0);
+		assertFalse(allNumItemByCategory.isEmpty());
 		for (Pair<String, Integer> numItemByCategory : allNumItemByCategory) {
 			assertTrue(numItemByCategory.left().length() > 0);
 			assertTrue(numItemByCategory.right() > 0);

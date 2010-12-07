@@ -7,12 +7,16 @@ import javax.jws.WebService;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 import fr.kaddath.apps.fluxx.service.CrawlerService;
 import fr.kaddath.apps.fluxx.service.FeedFetcherService;
+import fr.kaddath.apps.fluxx.service.ScheduledUpdateService;
 
 @WebService
 public class Fluxx {
 
 	@EJB
 	private FeedFetcherService feedFetcherService;
+
+	@EJB
+	private ScheduledUpdateService scheduledUpdateService;
 
 	@EJB
 	private CrawlerService crawlerService;
@@ -29,11 +33,11 @@ public class Fluxx {
 
 	@WebMethod
 	public void updateAll() {
-		feedFetcherService.updateAll();
+		scheduledUpdateService.updateAll();
 	}
 
 	@WebMethod
 	public void updateTopPriorityFeeds() {
-		feedFetcherService.updateTopPriorityFeeds();
+		scheduledUpdateService.updateTopPriorityFeeds();
 	}
 }

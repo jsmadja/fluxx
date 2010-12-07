@@ -8,15 +8,6 @@ import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 public class FeedFetcherServiceTest extends AbstractTest {
 
 	@Test
-	public void should_update_all_feeds() throws Exception {
-		if (isIntegrationTest) {
-			createFeeds();
-			feedFetcherService.updateAll();
-			feedFetcherService.updateAll();
-		}
-	}
-
-	@Test
 	public void should_fetch_url_with_amp() throws DownloadFeedException {
 		if (isIntegrationTest) {
 			feedFetcherService
@@ -42,4 +33,12 @@ public class FeedFetcherServiceTest extends AbstractTest {
 			feedFetcherService.addNewFeed(URL_FRANDROID);
 		}
 	}
+
+	@Test
+	public void should_fetch_lnb() throws DownloadFeedException {
+		if (isIntegrationTest) {
+			feedFetcherService.addNewFeed("http://www.lnb.fr/index_rss.php?id=2&lng=fr");
+		}
+	}
+
 }

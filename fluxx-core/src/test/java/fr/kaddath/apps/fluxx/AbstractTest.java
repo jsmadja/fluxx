@@ -42,6 +42,7 @@ import fr.kaddath.apps.fluxx.service.ItemBuilderService;
 import fr.kaddath.apps.fluxx.service.ItemService;
 import fr.kaddath.apps.fluxx.service.OpmlService;
 import fr.kaddath.apps.fluxx.service.RssService;
+import fr.kaddath.apps.fluxx.service.ScheduledUpdateService;
 
 public abstract class AbstractTest {
 
@@ -60,6 +61,7 @@ public abstract class AbstractTest {
 	protected static CrawlerService crawlerService;
 	protected static DownloadableItemService downloadableItemService;
 	protected static AsynchronousFeedDownloaderService asynchronousFeedDownloaderService;
+	protected static ScheduledUpdateService scheduledUpdateService;
 
 	protected static String uuid = UUID.randomUUID().toString();
 	protected static HttpServletRequest request;
@@ -116,6 +118,7 @@ public abstract class AbstractTest {
 			crawlerService = (CrawlerService) lookup("CrawlerService");
 			downloadableItemService = (DownloadableItemService) lookup("DownloadableItemService");
 			asynchronousFeedDownloaderService = (AsynchronousFeedDownloaderService) lookup("AsynchronousFeedDownloaderService");
+			scheduledUpdateService = (ScheduledUpdateService) lookup("ScheduledUpdateService");
 
 			request = mock(HttpServletRequest.class);
 			when(request.getServerPort()).thenReturn(serverPort);

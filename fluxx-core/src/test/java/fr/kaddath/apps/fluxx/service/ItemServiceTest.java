@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Date;
 import java.util.List;
@@ -22,6 +23,15 @@ public class ItemServiceTest extends AbstractTest {
 		Item item1 = itemService.findItemsByFeed(feed).get(0);
 		Item item2 = itemService.findItemByLink(item1.getLink());
 		assertEquals(item1, item2);
+	}
+
+	@Test
+	public void should_thrown_an_exception_when_passing_null_value() throws Exception {
+		try {
+			itemService.findItemByLink(null);
+			fail("should throw an exception");
+		} catch (Throwable t) {
+		}
 	}
 
 	@Test
@@ -59,7 +69,7 @@ public class ItemServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void testFindLastItem() throws Exception {
+	public void should_find_the_last_item_of_a_feed() throws Exception {
 		Feed feed = createFeedWithDownloadableItems();
 		Item item = itemService.findLastItemOfFeed(feed);
 		List<Item> items = itemService.findItemsByFeed(feed);

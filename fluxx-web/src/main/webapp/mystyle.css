@@ -29,7 +29,7 @@
 } 
 
 .custom_feed_label {
-	font-size: 12px; 
+	font-size: 25px; 
 	color: orange;
 	margin:1px;
 }
@@ -40,14 +40,14 @@
     color: white;
     background-color: #888;
     border-style: solid;
-    border-color: black;
+    border-color: white;
     border-width: thin;
     border-spacing: 0px;
 }
 
 .table_row_style_1 {
     font-weight: normal;
-    background-color: white;
+    background-color: #fefefe;
     color: black;
 }
 

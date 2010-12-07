@@ -12,10 +12,10 @@
       <property name="eclipselink.logging.session" value="false"/>
       <property name="eclipselink.logging.thread" value="false"/>
       
-      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/fluxx;create=true"/>
-      <property name="javax.persistence.jdbc.user" value="APP"/>
-      <property name="javax.persistence.jdbc.password" value="APP"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:8889/fluxx"/>
+      <property name="javax.persistence.jdbc.user" value="fluxx"/>
+      <property name="javax.persistence.jdbc.password" value="fluxx"/>
     </properties>
   </persistence-unit>
 </persistence>

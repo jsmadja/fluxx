@@ -6,6 +6,7 @@ import static java.util.Calendar.MONTH;
 import static java.util.Calendar.YEAR;
 import static java.util.Calendar.getInstance;
 
+import java.security.InvalidParameterException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -70,9 +71,12 @@ public class ItemService {
 	}
 
 	public Item findItemByLink(String link) {
-		Query query = em.createNamedQuery("findItemsByLink");
-		query.setParameter("link", link);
-		return getUniqueResult(query);
+		if (link != null) {
+			Query query = em.createNamedQuery("findItemsByLink");
+			query.setParameter("link", link);
+			return getUniqueResult(query);
+		}
+		throw new InvalidParameterException("link is a mandatory parameter");
 	}
 
 	public List<Item> findItemsOfFeedAndAfterDate(Feed feed, Date date) {
@@ -172,6 +176,16 @@ public class ItemService {
 		query.setParameter("link", link);
 		query.setParameter("feed", feed);
 		return getUniqueResult(query);
+	}
+
+	public Item store(Item item) {
+		if (item.getId() == null) {
+			em.persist(item);
+		} else {
+			item = em.merge(item);
+		}
+		em.flush();
+		return item;
 	}
 
 }

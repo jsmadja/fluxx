@@ -63,4 +63,17 @@ public class DownloadableItem {
 		this.id = id;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null || !(obj instanceof DownloadableItem)) {
+			return false;
+		}
+		DownloadableItem di = (DownloadableItem) obj;
+		return url.equals(di.url);
+	}
+
+	@Override
+	public int hashCode() {
+		return url.hashCode();
+	}
 }

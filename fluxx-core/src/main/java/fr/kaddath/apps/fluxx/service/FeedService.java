@@ -29,7 +29,7 @@ import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 public class FeedService {
 
 	private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
-	private static final int MAX_FEEDS_TO_RETRIEVE = 25;
+	private static final int MAX_FEEDS_TO_RETRIEVE = 10;
 
 	@PersistenceContext
 	EntityManager em;
@@ -220,9 +220,14 @@ public class FeedService {
 		return maps;
 	}
 
-	public void persist(Feed feed) {
-		em.persist(feed);
+	public Feed store(Feed feed) {
+		if (feed.getId() == null) {
+			em.persist(feed);
+		} else {
+			feed = em.merge(feed);
+		}
 		em.flush();
+		return feed;
 	}
 
 	public void deleteAllFeeds() {

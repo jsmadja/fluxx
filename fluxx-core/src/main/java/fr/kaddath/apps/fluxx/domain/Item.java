@@ -38,7 +38,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "ITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "LINK" }))
 public class Item implements Comparable<Item>, Serializable {
 
-	private static final long serialVersionUID = 2607672054863355365L;
+	private static final long serialVersionUID = 2707672054863355365L;
 
 	public static final int MAX_ITEM_LINK_SIZE = 512;
 	public static final int MAX_ITEM_TITLE_SIZE = 512;

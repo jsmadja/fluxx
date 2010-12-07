@@ -23,7 +23,7 @@ public class FeedServiceTest extends AbstractTest {
 	@Test
 	public void should_persist_a_feed() {
 		Feed feed = createCompleteFeed();
-		feedService.persist(feed);
+		feed = feedService.store(feed);
 		Feed actualFeed = feedService.findFeedById(feed.getId());
 		assertEquals(feed, actualFeed);
 	}
