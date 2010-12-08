@@ -86,7 +86,7 @@ public class FeedFetcherService {
 		try {
 			feed.setInError(false);
 			fetch(feed);
-		} catch (Throwable e) {
+		} catch (Exception e) {
 			LOG.warning(e.getMessage());
 			feed.setInError(true);
 			feed = feedService.store(feed);

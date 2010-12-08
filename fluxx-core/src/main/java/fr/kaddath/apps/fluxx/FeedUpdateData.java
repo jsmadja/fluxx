@@ -23,13 +23,12 @@ public class FeedUpdateData {
 	}
 
 	public void addAnalyze(Feed feed) {
-		addDownload(feed);
 		analyzeSize += feed.getSize();
 	}
 
 	private void logUpdateStats() {
-		LOG.info("Update is finished (" + convertInMegaBytes(downloadSize) + " MB downloaded, "
-				+ convertInMegaBytes(analyzeSize) + " MB analyzed)");
+		LOG.info(convertInMegaBytes(downloadSize) + " MB downloaded, " + convertInMegaBytes(analyzeSize)
+				+ " MB analyzed");
 	}
 
 	private String convertInMegaBytes(int size) {

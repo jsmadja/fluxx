@@ -7,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.ejb.EJB;
-import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
@@ -40,9 +39,9 @@ public class ScheduledUpdateService {
 	@EJB
 	FeedFetcherService feedFetcherService;
 
-	private static final Map<Feed, Integer> feedSizes = new HashMap<Feed, Integer>();
+	private static final Map<Feed, Integer> FEED_SIZES = new HashMap<Feed, Integer>();
 
-	@Schedule(minute = "*/15", hour = "*")
+	// @Schedule(minute = "*/15", hour = "*")
 	public void updateTopPriorityFeeds() {
 		LOG.info("Top priority update is starting ...");
 		List<Feed> feeds = feedService.findAllTopPriorityFeeds();
@@ -50,7 +49,7 @@ public class ScheduledUpdateService {
 		LOG.info("Top priority update is stopping ...");
 	}
 
-	@Schedule(minute = "0", hour = "0,12")
+	// @Schedule(minute = "0", hour = "0,12")
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
 		List<Feed> feeds = feedService.findAllFeedsNotInError();
@@ -82,18 +81,17 @@ public class ScheduledUpdateService {
 	public void updateFeed(Pair<Feed, SyndFeed> couple, FeedUpdateData fud) {
 		Feed feed = couple.left();
 		SyndFeed syndFeed = couple.right();
+		fud.addDownload(feed);
 		if (mustBeUpdated(feed)) {
 			fud.addAnalyze(feed);
 			feedFetcherService.createFromSyndFeed(feed, syndFeed);
-		} else {
-			fud.addDownload(feed);
 		}
-		feedSizes.put(feed, feed.getSize());
+		FEED_SIZES.put(feed, feed.getSize());
 	}
 
 	private boolean mustBeUpdated(Feed feed) {
-		Integer oldSize = feedSizes.get(feed);
-		return oldSize == null || feed.getSize() != oldSize;
+		Integer oldSize = FEED_SIZES.get(feed);
+		return oldSize == null || !oldSize.equals(feed.getSize());
 	}
 
 	private int getInPercent(int counter, float numFeeds) {
