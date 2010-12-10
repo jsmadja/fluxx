@@ -26,7 +26,6 @@ public class ChronoInterceptor implements Serializable {
 		if (duration >= DURATION_THRESHOLD_IN_MS) {
 			String message = MessageFormat.format("{0} executed in {1} ms", new Object[] { methodName, duration });
 			LOG.log(Level.INFO, message);
-			// Logger.getLogger("1longrequest.fr.kaddath.apps.fluxx").severe("truc");
 		}
 		return o;
 	}

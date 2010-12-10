@@ -29,8 +29,8 @@ import javax.validation.constraints.NotNull;
 @NamedQueries({
 		@NamedQuery(name = "findItemsByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
 		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed AND i.link = :link"),
-		@NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate IN (SELECT MAX(j.publishedDate) FROM Item j)"),
-		@NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate IN (SELECT MIN(j.publishedDate) FROM Item j)"),
+		@NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MAX(j.publishedDate) FROM Item j)"),
+		@NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MIN(j.publishedDate) FROM Item j)"),
 		@NamedQuery(name = "findFirstItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate asc"),
 		@NamedQuery(name = "findLastItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate desc"),
 		@NamedQuery(name = "getNumItemsOfFeed", query = "SELECT COUNT(i) FROM Item i WHERE i.feed = :feed"),

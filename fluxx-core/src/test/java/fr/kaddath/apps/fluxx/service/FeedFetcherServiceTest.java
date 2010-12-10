@@ -3,6 +3,7 @@ package fr.kaddath.apps.fluxx.service;
 import org.junit.Test;
 
 import fr.kaddath.apps.fluxx.AbstractTest;
+import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
 
 public class FeedFetcherServiceTest extends AbstractTest {
@@ -39,6 +40,12 @@ public class FeedFetcherServiceTest extends AbstractTest {
 		if (isIntegrationTest) {
 			feedFetcherService.addNewFeed("http://www.lnb.fr/index_rss.php?id=2&lng=fr");
 		}
+	}
+
+	@Test
+	public void should_fetch_lespasperdus() throws DownloadFeedException {
+		Feed feed = feedFetcherService.addNewFeed("http://lespasperdus.blogspot.com/feeds/posts/default?alt=rss");
+		feedFetcherService.updateExistingFeed(feed);
 	}
 
 }

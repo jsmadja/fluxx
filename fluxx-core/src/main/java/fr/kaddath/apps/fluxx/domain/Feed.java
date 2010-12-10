@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "findLastUpdatedFeed", query = "SELECT f FROM Feed f WHERE f.lastUpdate IN (SELECT MAX(g.lastUpdate) FROM Feed g)"),
+		@NamedQuery(name = "findLastUpdatedFeed", query = "SELECT f FROM Feed f WHERE f.lastUpdate = (SELECT MAX(g.lastUpdate) FROM Feed g)"),
 		@NamedQuery(name = "findFeedsByInError", query = "SELECT f FROM Feed f WHERE f.inError = :inError ORDER BY f.title"),
 		@NamedQuery(name = "getNumFeeds", query = "SELECT COUNT(f) FROM Feed f"),
 		@NamedQuery(name = "findFeedByUrl", query = "SELECT f FROM Feed f WHERE f.url = :url"),
