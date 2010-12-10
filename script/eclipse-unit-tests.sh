@@ -1,1 +1,1 @@
-mvn eclipse:clean eclipse:eclipse -Denvironment-name=development
+mvn eclipse:clean eclipse:eclipse -Pdevelopment

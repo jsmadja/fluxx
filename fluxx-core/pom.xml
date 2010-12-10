@@ -29,6 +29,15 @@
 					</plugin>
 				</plugins>
 			</build>
+			<properties>
+        		<environment-name>preproduction</environment-name>            
+    		</properties>
+		</profile>
+		<profile>
+			<id>development</id>
+			<properties>
+        		<environment-name>development</environment-name>            
+    		</properties>
 		</profile>
 	</profiles>
 	
