@@ -54,6 +54,7 @@ public class Item implements Comparable<Item>, Serializable {
 	private String author;
 
 	@Lob
+	// @Column(columnDefinition = "LONGTEXT")
 	private String description;
 
 	private String descriptionType;
