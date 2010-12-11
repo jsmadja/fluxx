@@ -17,3 +17,4 @@ fluxx-web/src/main/webapp/WEB-INF/classes
 fluxx-admin/src/main/webapp/WEB-INF/classes
 fluxx-admin/src/main/webapp/WEB-INF/lib
 .pmd
+reports
