@@ -58,7 +58,7 @@
         <sl4j-version>1.5.6</sl4j-version>
         <rome-version>0.9</rome-version>
         <commons-lang-version>2.3</commons-lang-version>
-        <eh-cache-version>2.2.0</eh-cache-version>
+        <eh-cache-version>2.3.0</eh-cache-version>
         <hibernate-validator-version>4.0.2.GA</hibernate-validator-version>
         <javaee-version>6.0</javaee-version>
         <jdom-version>1.0</jdom-version>
