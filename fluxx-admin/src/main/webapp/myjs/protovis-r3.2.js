@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2010 Julien SMADJA <julien.smadja@gmail.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 // fba9dc2
 var a;if(!Array.prototype.map)Array.prototype.map=function(b,c){for(var d=this.length,f=new Array(d),g=0;g<d;g++)if(g in this)f[g]=b.call(c,this[g],g,this);return f};if(!Array.prototype.filter)Array.prototype.filter=function(b,c){for(var d=this.length,f=[],g=0;g<d;g++)if(g in this){var h=this[g];b.call(c,h,g,this)&&f.push(h)}return f};if(!Array.prototype.forEach)Array.prototype.forEach=function(b,c){for(var d=this.length>>>0,f=0;f<d;f++)f in this&&b.call(c,this[f],f,this)};
 if(!Array.prototype.reduce)Array.prototype.reduce=function(b,c){var d=this.length;if(!d&&arguments.length==1)throw new Error("reduce: empty array, no initial value");var f=0;if(arguments.length<2)for(;;){if(f in this){c=this[f++];break}if(++f>=d)throw new Error("reduce: no values, no initial value");}for(;f<d;f++)if(f in this)c=b(c,this[f],f,this);return c};var pv={};pv.version={major:3,minor:2};pv.identity=function(b){return b};pv.index=function(){return this.index};pv.child=function(){return this.childIndex};
