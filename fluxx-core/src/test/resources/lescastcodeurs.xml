@@ -1,6 +1,9 @@
-<rss version="2.0" xmlns:amp="http://www.adobe.com/amp/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:libsyn="http://libsyn.com/rss-extension" xmlns:media="http://search.yahoo.com/mrss/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rss version="2.0" xmlns:amp="http://www.adobe.com/amp/1.0" xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:libsyn="http://libsyn.com/rss-extension" xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <channel>
-        <atom:link href="http://lescastcodeurs.libsyn.com/rss" rel="self" type="application/rss+xml" />
+        <atom:link href="http://lescastcodeurs.libsyn.com/rss" rel="self" type="application/rss+xml"/>
         <title>Les Cast Codeurs Podcast</title>
         <link>http://lescastcodeurs.com</link>
         <description>Le podcast Java en Français dans le texte</description>
@@ -18,15 +21,15 @@
         </image>
         <itunes:author>Emmanuel Bernard, Guillaume Laforge, Vincent Massol, Antonio Goncalves</itunes:author>
         <itunes:category text="Technology">
-            <itunes:category text="Tech News" />
+            <itunes:category text="Tech News"/>
         </itunes:category>
         <itunes:category text="Technology">
-            <itunes:category text="Tech News" />
+            <itunes:category text="Tech News"/>
         </itunes:category>
         <itunes:category text="Technology">
-            <itunes:category text="Tech News" />
+            <itunes:category text="Tech News"/>
         </itunes:category>
-        <itunes:image href="http://asset-server.libsyn.com/show/k-b7722b970dac16e2/height/300/width/300.jpg" />
+        <itunes:image href="http://asset-server.libsyn.com/show/k-b7722b970dac16e2/height/300/width/300.jpg"/>
         <itunes:explicit>no</itunes:explicit>
         <itunes:owner>
             <itunes:name>Emmanuel Bernard</itunes:name>
@@ -35,8 +38,9 @@
         <itunes:summary>
             Restez informes sur les sujets brulants de l industrie Java.
             Plongez sur un sujet precis avec l interview de l episode.
-            Supportez les radotages de vos hotes : Emmanuel Bernard (JBoss), Antonio Goncalves (Ecrivain romantique), Guillaume Laforge (VMWare) et Vincent Massol (XWiki).
-</itunes:summary>
+            Supportez les radotages de vos hotes : Emmanuel Bernard (JBoss), Antonio Goncalves (Ecrivain romantique),
+            Guillaume Laforge (VMWare) et Vincent Massol (XWiki).
+        </itunes:summary>
         <itunes:subtitle>En Francais dans le Code</itunes:subtitle>
         <item>
             <libsyn:ItemId>k-226cee21f1cf8888</libsyn:ItemId>
@@ -95,7 +99,8 @@
                 &lt;div&gt;Oracle et les JUGs&amp;nbsp;&lt;a href=&quot;http://www.parisjug.org/xwiki/bin/view/Blog/To%20be%20or%20not%20to%20be%20(part%20of%20IOUC)%2C%20that%20is%20the%20question&quot;&gt;http://www.parisjug.org/xwiki/bin/view/Blog/To%20be%20or%20not%20to%20be%20(part%20of%20IOUC)%2C%20that%20is%20the%20question&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
                 &lt;div&gt;Gemalto&amp;nbsp;&lt;a href=&quot;http://www.frandroid.com/44367/gemalto-attaque-google-android&quot;&gt;http://www.frandroid.com/44367/gemalto-attaque-google-android&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Infographie de qui intente un proces a qui dans l&apos;industrie du mobile&amp;nbsp;&lt;a href=&quot;http://www.informationisbeautiful.net/2010/whos-suing-whom-in-the-telecoms-trade/&quot;&gt;http://www.informationisbeautiful.net/2010/whos-suing-whom-in-the-telecoms-trade/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Infographie de qui intente un proces a qui dans l&apos;industrie du mobile&amp;nbsp;&lt;a
+                href=&quot;http://www.informationisbeautiful.net/2010/whos-suing-whom-in-the-telecoms-trade/&quot;&gt;http://www.informationisbeautiful.net/2010/whos-suing-whom-in-the-telecoms-trade/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Mexican stand-off&amp;nbsp;&lt;a href=&quot;http://dictionary.reverso.net/english-cobuild/Mexican&quot;&gt;http://dictionary.reverso.net/english-cobuild/Mexican&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
                 &lt;div&gt;Data Center Google en Belgique&amp;nbsp;&lt;a href=&quot;http://www.zorgloob.com/2010/10/03/google-saint-ghislain/&quot;&gt;http://www.zorgloob.com/2010/10/03/google-saint-ghislain/&lt;/a&gt;&lt;/div&gt;
@@ -120,30 +125,37 @@
                 &lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Flattr-ez nous sur&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="false">3df7eff25ae1106c5ab882ba71e73b37</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-226cee21f1cf8888" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-226cee21f1cf8888"/>
             <pubDate>Wed, 03 Nov 2010 08:39:53 +0000</pubDate>
             <itunes:explicit>no</itunes:explicit>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2998</itunes:duration>
-            <enclosure length="36049594" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-30.mp3" />
+            <enclosure length="36049594" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-30.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-544bcdf8709b28f1</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 29 - La forge logicielle et l&apos;industrialisation chez un editeur - Guest star Vincent Massol mais aussi Nicolas De Loof et Arnaud Heritier</title>
+            <title>Les Cast Codeurs Podcast - Episode 29 - La forge logicielle et l&apos;industrialisation chez un
+                editeur - Guest star Vincent Massol mais aussi Nicolas De Loof et Arnaud Heritier
+            </title>
             <link>http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-29.mp3</link>
             <description>
                 &lt;div&gt;Enregistr&amp;eacute; le 14 octobre 2010&lt;/div&gt;
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;
                 &lt;div&gt;Vincent Massol&lt;/div&gt;
-                &lt;div&gt;XWiki SAS: &lt;a href=&quot;http://xwiki.comprojet&quot;&gt;http://xwiki.comprojet&lt;/a&gt; open source: http:/xwiki.orgpratiques de dev du projet open source: &lt;a href=&quot;http://dev.xwiki.orgmon&quot;&gt;http://dev.xwiki.orgmon&lt;/a&gt; blog: &lt;a href=&quot;http://massol.net&quot;&gt;http://massol.net&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;XWiki SAS: &lt;a href=&quot;http://xwiki.comprojet&quot;&gt;http://xwiki.comprojet&lt;/a&gt;
+                open source: http:/xwiki.orgpratiques de dev du projet open source: &lt;a href=&quot;http://dev.xwiki.orgmon&quot;&gt;http://dev.xwiki.orgmon&lt;/a&gt;
+                blog: &lt;a href=&quot;http://massol.net&quot;&gt;http://massol.net&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;Nicolas De Loof&lt;/div&gt;
-                &lt;div&gt;Ma page perso : &lt;a href=&quot;http://www.loof.frLe&quot;&gt;http://www.loof.frLe&lt;/a&gt; Jug : &lt;a href=&quot;http://www.breizhjug.org&quot;&gt;http://www.breizhjug.org&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Le bouquin : &lt;a href=&quot;http://www.pearson.fr/livre/?GCOI=27440100730370Mon&quot;&gt;http://www.pearson.fr/livre/?GCOI=27440100730370Mon&lt;/a&gt; p&apos;tit projet perso : &lt;a href=&quot;http://www.fonzie.fr&quot;&gt;http://www.fonzie.fr&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Ma page perso : &lt;a href=&quot;http://www.loof.frLe&quot;&gt;http://www.loof.frLe&lt;/a&gt;
+                Jug : &lt;a href=&quot;http://www.breizhjug.org&quot;&gt;http://www.breizhjug.org&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Le bouquin : &lt;a href=&quot;http://www.pearson.fr/livre/?GCOI=27440100730370Mon&quot;&gt;http://www.pearson.fr/livre/?GCOI=27440100730370Mon&lt;/a&gt;
+                p&apos;tit projet perso : &lt;a href=&quot;http://www.fonzie.fr&quot;&gt;http://www.fonzie.fr&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Et soyons fou, ma boite : &lt;a href=&quot;http://www.itlabs.fr.orange-business.com/&quot;&gt;http://www.itlabs.fr.orange-business.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;Arnaud Heritier&lt;/div&gt;
@@ -178,15 +190,16 @@
                 &lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Flattr-ez nous sur&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="false">8d4323ae3fe4b4f290c40d2a0aac89f5</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-544bcdf8709b28f1" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-544bcdf8709b28f1"/>
             <pubDate>Tue, 19 Oct 2010 12:33:19 +0000</pubDate>
             <itunes:explicit>no</itunes:explicit>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>5117</itunes:duration>
-            <enclosure length="61469215" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-29.mp3" />
+            <enclosure length="61469215" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-29.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-fd9eb3adc67f0bb9</libsyn:ItemId>
@@ -220,22 +233,25 @@
                 &lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Flattr-ez nous sur&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="false">f913e98cf20b605b21a202baed6d350a</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-fd9eb3adc67f0bb9" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-fd9eb3adc67f0bb9"/>
             <pubDate>Sat, 25 Sep 2010 12:04:00 +0000</pubDate>
             <itunes:explicit>no</itunes:explicit>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3795</itunes:duration>
-            <enclosure length="45605698" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-28.mp3" />
+            <enclosure length="45605698" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-28.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-c1903b9912815225</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 27 - Interview sur GraniteDS avec Franck Wolff et William Drai</title>
+            <title>Les Cast Codeurs Podcast - Episode 27 - Interview sur GraniteDS avec Franck Wolff et William Drai
+            </title>
             <link>http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-27.mp3</link>
             <description>
-                &lt;div&gt;Les Cast Codeurs Podcast - Episode 27 - Interview sur GraniteDS avec Franck Wolff et William Drai&lt;/div&gt;
+                &lt;div&gt;Les Cast Codeurs Podcast - Episode 27 - Interview sur GraniteDS avec Franck Wolff et William
+                Drai&lt;/div&gt;
                 &lt;div&gt;Enregistr&amp;eacute; le 7 septembre 2010&lt;/div&gt;
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;Franck Wolff et William Drai&amp;nbsp;&lt;a href=&quot;http://graniteds.blogspot.com/&quot;&gt;http://graniteds.blogspot.com/&lt;/a&gt;&lt;/div&gt;
@@ -259,15 +275,16 @@
                 &lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Flattr-ez nous sur&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="false">3a17ffccfb5e536aa88f29e5893c90e7</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-c1903b9912815225" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-c1903b9912815225"/>
             <pubDate>Sun, 12 Sep 2010 18:02:00 +0000</pubDate>
             <itunes:explicit>no</itunes:explicit>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4059</itunes:duration>
-            <enclosure length="48780952" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-27.mp3" />
+            <enclosure length="48780952" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-27.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-f34885bf207afa9e</libsyn:ItemId>
@@ -336,14 +353,15 @@
                 &lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Flattr-ez nous sur&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=637394#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-f34885bf207afa9e" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-f34885bf207afa9e"/>
             <pubDate>Wed, 18 Aug 2010 12:02:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3468</itunes:duration>
-            <enclosure length="41686402" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-26.mp3" />
+            <enclosure length="41686402" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-26.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-8822a844ae899aeb</libsyn:ItemId>
@@ -354,15 +372,17 @@
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&quot;&gt;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Presentation utilisee:&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/resources/LesCastCodeurs-ep25-USI2010.pdf&quot;&gt;http://lescastcodeurs.com/resources/LesCastCodeurs-ep25-USI2010.pdf&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://lescastcodeurs.com/resources/LesCastCodeurs-ep25-USI2010.pdf&quot;&gt;&lt;/a&gt;Video JavaZone (Java 4-ever)&amp;nbsp;&lt;a href=&quot;http://jz10.java.no/java-4-ever-trailer.html&quot;&gt;http://jz10.java.no/java-4-ever-trailer.html&lt;/a&gt;&lt;/div&gt;
-</description>
+                &lt;div&gt;&lt;a href=&quot;http://lescastcodeurs.com/resources/LesCastCodeurs-ep25-USI2010.pdf&quot;&gt;&lt;/a&gt;Video
+                JavaZone (Java 4-ever)&amp;nbsp;&lt;a href=&quot;http://jz10.java.no/java-4-ever-trailer.html&quot;&gt;http://jz10.java.no/java-4-ever-trailer.html&lt;/a&gt;&lt;/div&gt;
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=633088#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-8822a844ae899aeb" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-8822a844ae899aeb"/>
             <pubDate>Sun, 25 Jul 2010 12:54:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2720</itunes:duration>
-            <enclosure length="32703311" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-25.mp3" />
+            <enclosure length="32703311" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-25.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-b131093b8d2374a1</libsyn:ItemId>
@@ -373,14 +393,18 @@
                 &lt;div&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;News&lt;/strong&gt;&lt;/div&gt;
                 &lt;p&gt;USI 2010&amp;nbsp;&lt;a href=&quot;http://www.universite-du-si.com/&quot;&gt;http://www.universite-du-si.com/&lt;/a&gt;&lt;/p&gt;
-                &lt;p&gt;&lt;a href=&quot;http://www.universite-du-si.com/&quot;&gt;&lt;/a&gt;Video des cast codeurs&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&quot;&gt;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&lt;/a&gt;&lt;/p&gt;
-                &lt;p&gt;&lt;a href=&quot;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&quot;&gt;&lt;/a&gt;Jazoon 2010&amp;nbsp;&lt;a href=&quot;http://jazoon.com/&quot;&gt;http://jazoon.com/&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href=&quot;http://www.universite-du-si.com/&quot;&gt;&lt;/a&gt;Video des cast codeurs&amp;nbsp;&lt;a
+                href=&quot;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&quot;&gt;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href=&quot;http://lescastcodeurs.com/2010/05/video-promo-les-cast-codeurs-a-luniversite-du-si-2010/&quot;&gt;&lt;/a&gt;Jazoon
+                2010&amp;nbsp;&lt;a href=&quot;http://jazoon.com/&quot;&gt;http://jazoon.com/&lt;/a&gt;&lt;/p&gt;
                 &lt;div&gt;Actors, dataflow, fork/joinGPars&amp;nbsp;&lt;a href=&quot;http://www.gpars.org/guide/index.html&quot;&gt;http://www.gpars.org/guide/index.html&lt;/a&gt;&amp;nbsp;&lt;/div&gt;
-                &lt;div&gt;DSL xtext&amp;nbsp;&lt;a href=&quot;http://www.eclipse.org/Xtext/&quot;&gt;http://www.eclipse.org/Xtext/&lt;/a&gt;&amp;nbsp;IntelliJ MPS&amp;nbsp;&lt;a href=&quot;http://www.jetbrains.com/mps/index.html&quot;&gt;http://www.jetbrains.com/mps/index.html&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;DSL xtext&amp;nbsp;&lt;a href=&quot;http://www.eclipse.org/Xtext/&quot;&gt;http://www.eclipse.org/Xtext/&lt;/a&gt;&amp;nbsp;IntelliJ
+                MPS&amp;nbsp;&lt;a href=&quot;http://www.jetbrains.com/mps/index.html&quot;&gt;http://www.jetbrains.com/mps/index.html&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Standardization cloud computing&amp;nbsp;&lt;a href=&quot;http://jazoon.com/Portals/0/Content/slides/we_a7_1430-1520_tidwell.pdf&quot;&gt;http://jazoon.com/Portals/0/Content/slides/we_a7_1430-1520_tidwell.pdf&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Simple Cloud&amp;nbsp;&lt;a href=&quot;http://simplecloud.org/&quot;&gt;http://simplecloud.org/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;em&gt;Google I/O&lt;/em&gt;&lt;/div&gt;
-                &lt;div&gt;Froyo&amp;nbsp;&lt;a href=&quot;http://www.frandroid.com/17842/android-2-2-froyo-quavons-nous&quot;&gt;http://www.frandroid.com/17842/android-2-2-froyo-quavons-nous&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.infoq.com/news/2010/05/Android-2.2&quot;&gt;http://www.infoq.com/news/2010/05/Android-2.2&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Froyo&amp;nbsp;&lt;a href=&quot;http://www.frandroid.com/17842/android-2-2-froyo-quavons-nous&quot;&gt;http://www.frandroid.com/17842/android-2-2-froyo-quavons-nous&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.infoq.com/news/2010/05/Android-2.2&quot;&gt;http://www.infoq.com/news/2010/05/Android-2.2&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Google Cloud Storage&amp;nbsp;&lt;a href=&quot;http://www.infoq.com/news/2010/06/Google-Storage-for-Developers&quot;&gt;http://www.infoq.com/news/2010/06/Google-Storage-for-Developers&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Google App Engine for entreprise&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/business/&quot;&gt;http://code.google.com/appengine/business/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;SpringSource&amp;nbsp;&lt;a href=&quot;http://blog.springsource.com/2010/05/19/spring-google-appengine/&quot;&gt;http://blog.springsource.com/2010/05/19/spring-google-appengine/&lt;/a&gt;&lt;/div&gt;
@@ -425,18 +449,21 @@
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;/div&gt;
                 &lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=625250#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b131093b8d2374a1" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b131093b8d2374a1"/>
             <pubDate>Fri, 18 Jun 2010 08:37:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4176</itunes:duration>
-            <enclosure length="50188032" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-24.mp3" />
+            <enclosure length="50188032" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-24.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-7f87b1152c8204b8</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 23 - Interview DVCS et Git j&apos;ai vu la lumiere avec David Gageot d&apos;Algodeal</title>
+            <title>Les Cast Codeurs Podcast - Episode 23 - Interview DVCS et Git j&apos;ai vu la lumiere avec David
+                Gageot d&apos;Algodeal
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=618541#</link>
             <description>
                 &lt;div&gt;Enregistre le 11 mai 2010&lt;/div&gt;
@@ -455,7 +482,8 @@
                 &lt;div&gt;TeamCity&amp;nbsp;&lt;a href=&quot;http://www.jetbrains.com/teamcity/&quot;&gt;http://www.jetbrains.com/teamcity/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Infinitest&amp;nbsp;&lt;a href=&quot;http://improvingworks.com/products/infinitest/&quot;&gt;http://improvingworks.com/products/infinitest/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Serverless Continuous Integration with Git&amp;nbsp;&lt;a href=&quot;http://blog.javabien.net/2009/12/01/serverless-ci-with-git/&quot;&gt;http://blog.javabien.net/2009/12/01/serverless-ci-with-git/&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Hudson&amp;nbsp;&lt;a href=&quot;http://hudson-ci.org/&quot;&gt;http://hudson-ci.org/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://kohsuke.org/category/infradna/&quot;&gt;http://kohsuke.org/category/infradna/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Hudson&amp;nbsp;&lt;a href=&quot;http://hudson-ci.org/&quot;&gt;http://hudson-ci.org/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://kohsuke.org/category/infradna/&quot;&gt;http://kohsuke.org/category/infradna/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;MySQL&amp;nbsp;&lt;a href=&quot;http://www.mysql.fr/&quot;&gt;http://www.mysql.fr/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;H2 database&amp;nbsp;&lt;a href=&quot;http://www.h2database.com&quot;&gt;http://www.h2database.com&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;GitK&amp;nbsp;&lt;a href=&quot;http://www.kernel.org/pub/software/scm/git/docs/v1.6.0.6/gitk.html&quot;&gt;http://www.kernel.org/pub/software/scm/git/docs/v1.6.0.6/gitk.html&lt;/a&gt;&lt;/div&gt;
@@ -479,14 +507,15 @@
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;/div&gt;
                 &lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=618541#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-7f87b1152c8204b8" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-7f87b1152c8204b8"/>
             <pubDate>Wed, 26 May 2010 08:34:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3802</itunes:duration>
-            <enclosure length="45690714" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-23.mp3" />
+            <enclosure length="45690714" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-23.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-34b6803a72fd5a44</libsyn:ItemId>
@@ -498,14 +527,21 @@
                 &lt;div&gt;&lt;strong&gt;Nouvelles&lt;/strong&gt;&lt;/div&gt;
                 &lt;div&gt;Disquette 3,5 pouces, c&apos;est fini &lt;a href=&quot;http://www.geeksaresexy.net/2010/04/26/farewell-to-the-floppy&quot;&gt;http://www.geeksaresexy.net/2010/04/26/farewell-to-the-floppy&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;VmForce&amp;nbsp;&lt;a href=&quot;http://www.vmforce.com/&quot;&gt;http://www.vmforce.com/&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://sacha.labourey.com/2010/04/29/the-springforcevmforce-announcement/&quot;&gt;http://sacha.labourey.com/2010/04/29/the-springforcevmforce-announcement/&lt;/a&gt; (Sacha Labourey)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://blog.springsource.com/2010/04/27/vmforce-spring-cloud/&quot;&gt;http://blog.springsource.com/2010/04/27/vmforce-spring-cloud/&lt;/a&gt; (Rod Johnson)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://blogs.vmware.com/console/2010/04/vmforce-and-vmwares-open-paas-strategy.html&quot;&gt;http://blogs.vmware.com/console/2010/04/vmforce-and-vmwares-open-paas-strategy.html&lt;/a&gt; (Steve Herrod -- VMWare CTO)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://sacha.labourey.com/2010/04/29/the-springforcevmforce-announcement/&quot;&gt;http://sacha.labourey.com/2010/04/29/the-springforcevmforce-announcement/&lt;/a&gt;
+                (Sacha Labourey)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://blog.springsource.com/2010/04/27/vmforce-spring-cloud/&quot;&gt;http://blog.springsource.com/2010/04/27/vmforce-spring-cloud/&lt;/a&gt;
+                (Rod Johnson)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://blogs.vmware.com/console/2010/04/vmforce-and-vmwares-open-paas-strategy.html&quot;&gt;http://blogs.vmware.com/console/2010/04/vmforce-and-vmwares-open-paas-strategy.html&lt;/a&gt;
+                (Steve Herrod -- VMWare CTO)&lt;/div&gt;
                 &lt;div&gt;Steve Jobs contre Flash Gordon&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://www.apple.com/hotnews/thoughts-on-flash/&quot;&gt;http://www.apple.com/hotnews/thoughts-on-flash/&lt;/a&gt; (Steve Jobs)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://android-france.fr/2010/05/11/flash-sur-android-2-2-en-video-et-la-future-home-de-froyo/&quot;&gt;http://android-france.fr/2010/05/11/flash-sur-android-2-2-en-video-et-la-future-home-de-froyo/&lt;/a&gt; (Flash sur Android 2.2)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://www.gamasutra.com/view/news/28410/Report_FTC_Examining_Possible_Antitrust_Violations_Involving_Apples_Flash_Ban.php&quot;&gt;http://www.gamasutra.com/view/news/28410/Report_FTC_Examining_Possible_Antitrust_Violations_Involving_Apples_Flash_Ban.php&lt;/a&gt; (la Federal Trade Commission)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://www.businessmobile.fr/actualites/audience-du-trafic-internet-mobile-l-iphone-depasse-par-android-aux-etats-unis-39751237.htm&quot;&gt;http://www.businessmobile.fr/actualites/audience-du-trafic-internet-mobile-l-iphone-depasse-par-android-aux-etats-unis-39751237.htm&lt;/a&gt; Traffic internet des platformes android vient d&apos;atteindre l&apos;iPhone&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://www.apple.com/hotnews/thoughts-on-flash/&quot;&gt;http://www.apple.com/hotnews/thoughts-on-flash/&lt;/a&gt;
+                (Steve Jobs)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://android-france.fr/2010/05/11/flash-sur-android-2-2-en-video-et-la-future-home-de-froyo/&quot;&gt;http://android-france.fr/2010/05/11/flash-sur-android-2-2-en-video-et-la-future-home-de-froyo/&lt;/a&gt;
+                (Flash sur Android 2.2)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://www.gamasutra.com/view/news/28410/Report_FTC_Examining_Possible_Antitrust_Violations_Involving_Apples_Flash_Ban.php&quot;&gt;http://www.gamasutra.com/view/news/28410/Report_FTC_Examining_Possible_Antitrust_Violations_Involving_Apples_Flash_Ban.php&lt;/a&gt;
+                (la Federal Trade Commission)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://www.businessmobile.fr/actualites/audience-du-trafic-internet-mobile-l-iphone-depasse-par-android-aux-etats-unis-39751237.htm&quot;&gt;http://www.businessmobile.fr/actualites/audience-du-trafic-internet-mobile-l-iphone-depasse-par-android-aux-etats-unis-39751237.htm&lt;/a&gt;
+                Traffic internet des platformes android vient d&apos;atteindre l&apos;iPhone&lt;/div&gt;
                 &lt;div&gt;Appcelerator &lt;a href=&quot;http://www.appcelerator.com/&quot;&gt;http://www.appcelerator.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;JavaFX &lt;a href=&quot;http://javafx.com/&quot;&gt;http://javafx.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;HP rachete Palm &lt;a href=&quot;http://www.euroinvestor.co.uk/news/story.aspx?id=11028725&quot;&gt;http://www.euroinvestor.co.uk/news/story.aspx?id=11028725&lt;/a&gt;&lt;/div&gt;
@@ -513,7 +549,9 @@
                 &lt;div&gt;Hibernate Search 3.2 &lt;a href=&quot;http://in.relation.to/Bloggers/HibernateSearch32ReleasedMappingMassIndexingClustering&quot;&gt;http://in.relation.to/Bloggers/HibernateSearch32ReleasedMappingMassIndexingClustering&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;XWiki Entreprise 2.3&lt;/div&gt;
                 &lt;div&gt;Oracle Data Center &lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=60096&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=60096&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Faille de securite JIRA&amp;nbsp; &lt;a href=&quot;https://blogs.apache.org/infra/entry/apache_org_04_09_2010&quot;&gt;https://blogs.apache.org/infra/entry/apache_org_04_09_2010&lt;/a&gt; &lt;a href=&quot;http://www.jboss.org/announcements/jira_security_incident_190410.html&quot;&gt;http://www.jboss.org/announcements/jira_security_incident_190410.html&lt;/a&gt; &lt;a href=&quot;http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html&quot;&gt;http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Faille de securite JIRA&amp;nbsp; &lt;a href=&quot;https://blogs.apache.org/infra/entry/apache_org_04_09_2010&quot;&gt;https://blogs.apache.org/infra/entry/apache_org_04_09_2010&lt;/a&gt;
+                &lt;a href=&quot;http://www.jboss.org/announcements/jira_security_incident_190410.html&quot;&gt;http://www.jboss.org/announcements/jira_security_incident_190410.html&lt;/a&gt;
+                &lt;a href=&quot;http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html&quot;&gt;http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Cross site scripting &lt;a href=&quot;http://en.wikipedia.org/wiki/Cross-site_scripting&quot;&gt;http://en.wikipedia.org/wiki/Cross-site_scripting&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;JUGs&lt;/strong&gt;&lt;/div&gt;
                 &lt;div&gt;Paris Scala User Group&amp;nbsp;&lt;a href=&quot;http://groups.google.com/group/paris-scala-user-group&quot;&gt;http://groups.google.com/group/paris-scala-user-group&lt;/a&gt;&lt;/div&gt;
@@ -522,7 +560,8 @@
                 &lt;div&gt;GeeCon&amp;nbsp;&lt;a href=&quot;http://2010.geecon.org/main/home&quot;&gt;http://2010.geecon.org/main/home&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Agile days&amp;nbsp;&lt;a href=&quot;http://conf.agile-france.org/&quot;&gt;http://conf.agile-france.org/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Sofia Conf 2010&amp;nbsp;&lt;a href=&quot;http://sophiaconf2010.fr/&quot;&gt;http://sophiaconf2010.fr/&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Universite du SI&amp;nbsp;&lt;a href=&quot;http://www.universite-du-si.com/&quot;&gt;http://www.universite-du-si.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&quot;&gt;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Universite du SI&amp;nbsp;&lt;a href=&quot;http://www.universite-du-si.com/&quot;&gt;http://www.universite-du-si.com/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&quot;&gt;http://www.universite-du-si.com/fr/conferences/6-paris-usi-2010/sessions/859-il-est-frais-mon-java&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;La video de promo des cast codeurs&amp;nbsp;&lt;a href=&quot;http://www.youtube.com/watch?v=gGxWzVMRpHo&quot;&gt;http://www.youtube.com/watch?v=gGxWzVMRpHo&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;Les outils de l&apos;episode&lt;/strong&gt;&lt;/div&gt;
                 &lt;div&gt;Command Center&lt;/div&gt;
@@ -554,18 +593,21 @@
                 &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=615600#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-34b6803a72fd5a44" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-34b6803a72fd5a44"/>
             <pubDate>Mon, 17 May 2010 07:17:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3019</itunes:duration>
-            <enclosure length="36303584" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-22.mp3" />
+            <enclosure length="36303584" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-22.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-3e3d9a35edd47395</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 21 - Interview independents partie 2 - Aucune SSII n&apos;a ete martyrisee pendant l&apos;enregistreme</title>
+            <title>Les Cast Codeurs Podcast - Episode 21 - Interview independents partie 2 - Aucune SSII n&apos;a ete
+                martyrisee pendant l&apos;enregistreme
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=609013#</link>
             <description>
                 &lt;div&gt;Enregistre le 22 mars 2010&lt;/div&gt;
@@ -600,18 +642,21 @@
                 &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=609013#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-3e3d9a35edd47395" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-3e3d9a35edd47395"/>
             <pubDate>Tue, 27 Apr 2010 08:59:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3140</itunes:duration>
-            <enclosure length="37753008" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-21.mp3" />
+            <enclosure length="37753008" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-21.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-b45b905acae93eba</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 20 - Oracle je t&apos;aime moi non plus et l&apos;invasion des lapins</title>
+            <title>Les Cast Codeurs Podcast - Episode 20 - Oracle je t&apos;aime moi non plus et l&apos;invasion des
+                lapins
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=605877#</link>
             <description>
                 &lt;div&gt;Enregistr&amp;eacute; le 14 avril 2010&lt;/div&gt;
@@ -625,7 +670,8 @@
                 &lt;div&gt;&lt;em&gt;RoadMap de GlassFish&lt;/em&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://blogs.sun.com/alexismp/&quot;&gt;http://blogs.sun.com/alexismp/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://mediacast.sun.com/users/am74686/media/CommunityUpdate-25Mar2010.pdf&quot;&gt;http://mediacast.sun.com/users/am74686/media/CommunityUpdate-25Mar2010.pdf&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;&lt;em&gt;Solaris 10 plus gratuit&amp;nbsp;et toues les fonctionalites ne seront pas dans OpenSolaris&lt;/em&gt;&lt;/div&gt;
+                &lt;div&gt;&lt;em&gt;Solaris 10 plus gratuit&amp;nbsp;et toues les fonctionalites ne seront pas dans
+                OpenSolaris&lt;/em&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://www.cuddletech.com/blog/pivot/entry.php?id=1120&quot;&gt;http://www.cuddletech.com/blog/pivot/entry.php?id=1120&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;em&gt;Le Codec VP8 de Google, Open Sourc&amp;eacute;?&lt;/em&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://java.dzone.com/dose/dzone-daily-dose-414&quot;&gt;http://java.dzone.com/dose/dzone-daily-dose-414&lt;/a&gt;&lt;/div&gt;
@@ -642,21 +688,29 @@
                 &lt;div&gt;nouveau site web et wiki &lt;a href=&quot;http://hibernate.org&quot;&gt;http://hibernate.org&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Demande de retours sur JPA 2+&amp;nbsp;&lt;a href=&quot;http://blogs.sun.com/ldemichiel/entry/jpa_next_thinking_about_the&quot;&gt;http://blogs.sun.com/ldemichiel/entry/jpa_next_thinking_about_the&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;Questions des Auditeurs&lt;/strong&gt;&lt;/div&gt;
-                &lt;div&gt;Arnauld VM: DVCS: Git vs. Mercurial etc. G perso choisi Git pour son bon support de SVN: facilite la transition&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://git-scm.com/&quot;&gt;http://git-scm.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://mercurial.selenic.com/&quot;&gt;http://mercurial.selenic.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://bazaar.canonical.com/en/&quot;&gt;http://bazaar.canonical.com/en/&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Antoine SD:&amp;nbsp; @lescastcodeurs sur mon #nabaztag. Bizard : @agoncal fait moins son effet &quot;Dr Love&quot; quand sa voix sort d&apos;un lapin :-).&lt;/div&gt;
-                &lt;div&gt;Arnauld VM: l&apos;&amp;eacute;p 20: Qui utilise autre ch que Maven et qu&apos;en pensez-vs? (Graddle, Rake, Ant+Ivy...) (Cf. JavaPosse 294 - ~60&apos;)&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://maven.apache.org/&quot;&gt;http://maven.apache.org/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.gradle.org/&quot;&gt;http://www.gradle.org/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://code.google.com/p/gerrit/&quot;&gt;http://code.google.com/p/gerrit/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Arnauld VM: DVCS: Git vs. Mercurial etc. G perso choisi Git pour son bon support de SVN:
+                facilite la transition&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://git-scm.com/&quot;&gt;http://git-scm.com/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://mercurial.selenic.com/&quot;&gt;http://mercurial.selenic.com/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://bazaar.canonical.com/en/&quot;&gt;http://bazaar.canonical.com/en/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Antoine SD:&amp;nbsp; @lescastcodeurs sur mon #nabaztag. Bizard : @agoncal fait moins son
+                effet &quot;Dr Love&quot; quand sa voix sort d&apos;un lapin :-).&lt;/div&gt;
+                &lt;div&gt;Arnauld VM: l&apos;&amp;eacute;p 20: Qui utilise autre ch que Maven et qu&apos;en pensez-vs?
+                (Graddle, Rake, Ant+Ivy...) (Cf. JavaPosse 294 - ~60&apos;)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://maven.apache.org/&quot;&gt;http://maven.apache.org/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.gradle.org/&quot;&gt;http://www.gradle.org/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://code.google.com/p/gerrit/&quot;&gt;http://code.google.com/p/gerrit/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;Les JUGs et conferences&lt;/strong&gt;&lt;/div&gt;
                 &lt;div&gt;Red Hat Summit et JBoss World 2010&amp;nbsp;&lt;a href=&quot;http://www.redhat.com/promo/summit/2010/&quot;&gt;http://www.redhat.com/promo/summit/2010/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Cr&amp;eacute;ation du Scala User Group et du Birt User Group&lt;/div&gt;
-                &lt;div&gt;Cr&amp;eacute;ation du BruJUG&amp;nbsp;&lt;a href=&quot;http://www.brussels-jug.be/&quot;&gt;http://www.brussels-jug.be/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.brussels-jug.be/?page_id=43&quot;&gt;http://www.brussels-jug.be/?page_id=43&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Cr&amp;eacute;ation du BruJUG&amp;nbsp;&lt;a href=&quot;http://www.brussels-jug.be/&quot;&gt;http://www.brussels-jug.be/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.brussels-jug.be/?page_id=43&quot;&gt;http://www.brussels-jug.be/?page_id=43&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;ParisJUG soir&amp;eacute;e share, build &amp;amp; deploy&amp;nbsp;&lt;a href=&quot;http://www.parisjug.org/xwiki/bin/view/Meeting/20100511&quot;&gt;http://www.parisjug.org/xwiki/bin/view/Meeting/20100511&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Jazoon&amp;nbsp;&lt;a href=&quot;http://jazoon.com/&quot;&gt;http://jazoon.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Gr8conf&amp;nbsp;&lt;a href=&quot;http://gr8conf.org/&quot;&gt;http://gr8conf.org/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Geneva JUG&amp;nbsp;&lt;a href=&quot;http://www.genevajug.ch/&quot;&gt;http://www.genevajug.ch/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;Les outils de l&apos;&amp;eacute;pisode&lt;/strong&gt;&lt;/div&gt;
-                &lt;div&gt;Keepass / KeepassX&amp;nbsp;&lt;a href=&quot;http://keepass.info/&quot;&gt;http://keepass.info/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.keepassx.org/&quot;&gt;http://www.keepassx.org/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Keepass / KeepassX&amp;nbsp;&lt;a href=&quot;http://keepass.info/&quot;&gt;http://keepass.info/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.keepassx.org/&quot;&gt;http://www.keepassx.org/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;1Password&amp;nbsp;&lt;a href=&quot;http://agilewebsolutions.com/products/1Password&quot;&gt;http://agilewebsolutions.com/products/1Password&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;JD-GUI&amp;nbsp;&lt;a href=&quot;http://java.decompiler.free.fr/?q=jdgui&quot;&gt;http://java.decompiler.free.fr/?q=jdgui&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;RefCardz GIT&amp;nbsp;&lt;a href=&quot;http://refcardz.dzone.com/refcardz/getting-started-git&quot;&gt;http://refcardz.dzone.com/refcardz/getting-started-git&lt;/a&gt;&lt;/div&gt;
@@ -667,22 +721,26 @@
                 &lt;/div&gt;
                 &lt;div&gt;sur le groupe Google&amp;nbsp;&lt;a href=&quot;http://groups.google.com/group/lescastcodeurs&quot;&gt;http://groups.google.com/group/lescastcodeurs&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;ou sur le site web&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=605877#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b45b905acae93eba" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b45b905acae93eba"/>
             <pubDate>Sun, 18 Apr 2010 21:01:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4282</itunes:duration>
-            <enclosure length="51462739" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-20.mp3" />
+            <enclosure length="51462739" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-20.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-883923d68ee08de1</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 19 - Interview independents partie 1 - Mathilde Lemee, Nicolas Martignole et Antonio Goncalv</title>
+            <title>Les Cast Codeurs Podcast - Episode 19 - Interview independents partie 1 - Mathilde Lemee, Nicolas
+                Martignole et Antonio Goncalv
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=597739#</link>
             <description>
                 &lt;div&gt;Enregistre le 22 mars 2010&lt;/div&gt;
-                &lt;div&gt;Dans cette interview, trois independants partagent leurs experiences et cassent du sucre sur les SSII. Mais comme il y a beaucoup a dire, on a separe l&apos;interview en deux parties.&lt;/div&gt;
+                &lt;div&gt;Dans cette interview, trois independants partagent leurs experiences et cassent du sucre sur
+                les SSII. Mais comme il y a beaucoup a dire, on a separe l&apos;interview en deux parties.&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://java-freelance.fr/&quot;&gt;http://java-freelance.fr/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://www.touilleur-express.fr/&quot;&gt;http://www.touilleur-express.fr/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://twitter.com/nmartignole&quot;&gt;http://twitter.com/nmartignole&lt;/a&gt;&lt;/div&gt;
@@ -695,25 +753,28 @@
                 &lt;div&gt;&amp;nbsp;- sur le groupe google lescastcodeurs&amp;nbsp;&lt;a href=&quot;http://groups.google.com/group/lescastcodeurs&quot;&gt;http://groups.google.com/group/lescastcodeurs&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;- sur twitter&amp;nbsp;&lt;a href=&quot;http://twitter.com/lescastcodeurs&quot;&gt;http://twitter.com/lescastcodeurs&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;- en audio par email a&amp;nbsp;&lt;a href=&quot;mailto:commentaire@lescastcodeurs.com&quot;&gt;commentaire@lescastcodeurs.com&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=597739#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-883923d68ee08de1" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-883923d68ee08de1"/>
             <pubDate>Sat, 27 Mar 2010 20:15:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2816</itunes:duration>
-            <enclosure length="33858929" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-19.mp3" />
+            <enclosure length="33858929" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-19.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-35aeca2a96f5cfad</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 18 - Invite special Alexis Moussine-Pouchkine de Sun France Oracle</title>
+            <title>Les Cast Codeurs Podcast - Episode 18 - Invite special Alexis Moussine-Pouchkine de Sun France Oracle
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=594136#</link>
             <description>
                 &lt;div&gt;Enregistre le 8 mars 2010&lt;/div&gt;
                 &lt;div&gt;Retrouver les episodes et notes format&amp;eacute;es sur http://lescastcodeurs.com&lt;/div&gt;
                 &lt;div&gt;&lt;strong&gt;Interview&lt;/strong&gt;&lt;/div&gt;
                 &lt;div&gt;Oracle Sun Webcast&amp;nbsp;&lt;a href=&quot;http://www.oracle.com/events/productstrategy/index.html&quot;&gt;http://www.oracle.com/events/productstrategy/index.html&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;&lt;a href=&quot;http://www.oracle.com/events/productstrategy/index.html&quot;&gt;&lt;/a&gt;VM (JRockit,&amp;nbsp;HotSpot)&lt;/div&gt;
+                &lt;div&gt;&lt;a href=&quot;http://www.oracle.com/events/productstrategy/index.html&quot;&gt;&lt;/a&gt;VM
+                (JRockit,&amp;nbsp;HotSpot)&lt;/div&gt;
                 &lt;div&gt;Java 7&lt;/div&gt;
                 &lt;div&gt;Weblogic Glassfish&lt;/div&gt;
                 &lt;div&gt;Gizzly NIO&lt;/div&gt;
@@ -755,14 +816,15 @@
                 &lt;div&gt;Maven:&amp;nbsp;plugin release&amp;nbsp;&lt;a href=&quot;http://maven.apache.org/plugins/maven-release-plugin/&quot;&gt;http://maven.apache.org/plugins/maven-release-plugin/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Posez vos questions aux CastCodeurs pour l&apos;episode 20 sur le google group&amp;nbsp;&lt;/div&gt;
                 &lt;div&gt;&lt;a href=&quot;http://groups.google.com/group/lescastcodeurs?pli=1&quot;&gt;http://groups.google.com/group/lescastcodeurs?pli=1&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=594136#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-35aeca2a96f5cfad" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-35aeca2a96f5cfad"/>
             <pubDate>Wed, 17 Mar 2010 08:19:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4726</itunes:duration>
-            <enclosure length="56786810" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-18.mp3" />
+            <enclosure length="56786810" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-18.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-ee1058b09bcef472</libsyn:ItemId>
@@ -771,10 +833,15 @@
             <description>
                 &lt;div&gt;Enregitree le 9 Fevrier 2010, reenregistree le 17 fevrier 2010 mieux vaut deux fois qu&apos;une&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-                &lt;div&gt;Guillaume Bort&amp;nbsp;&lt;a href=&quot;http://twitter.com/PlayFramework&quot;&gt;http://twitter.com/PlayFramework&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.zenexity.fr/&quot;&gt;http://www.zenexity.fr/&lt;/a&gt;&lt;/div&gt;
-                &lt;div&gt;Nicolas Leroux&amp;nbsp;&lt;a href=&quot;http://twitter.com/nicolasleroux&quot;&gt;http://twitter.com/nicolasleroux&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.lunatech-research.com/&quot;&gt;http://www.lunatech-research.com/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Guillaume Bort&amp;nbsp;&lt;a href=&quot;http://twitter.com/PlayFramework&quot;&gt;http://twitter.com/PlayFramework&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.zenexity.fr/&quot;&gt;http://www.zenexity.fr/&lt;/a&gt;&lt;/div&gt;
+                &lt;div&gt;Nicolas Leroux&amp;nbsp;&lt;a href=&quot;http://twitter.com/nicolasleroux&quot;&gt;http://twitter.com/nicolasleroux&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.lunatech-research.com/&quot;&gt;http://www.lunatech-research.com/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
-                &lt;div&gt;Note: Nicolas &amp;eacute;tait dans l&apos;interview originale que j&apos;ai malheureusement perdu. Guillaume et moi avons essay&amp;eacute; de reproduire autant que possible l&apos;atmosph&amp;egrave;re de l&apos;interview originale. Donc Nicolas &amp;eacute;tait l&amp;agrave; sans &amp;ecirc;tre l&amp;agrave; dans la seconde :)&lt;/div&gt;
+                &lt;div&gt;Note: Nicolas &amp;eacute;tait dans l&apos;interview originale que j&apos;ai malheureusement
+                perdu. Guillaume et moi avons essay&amp;eacute; de reproduire autant que possible l&apos;atmosph&amp;egrave;re
+                de l&apos;interview originale. Donc Nicolas &amp;eacute;tait l&amp;agrave; sans &amp;ecirc;tre l&amp;agrave;
+                dans la seconde :)&lt;/div&gt;
                 &lt;div&gt;&amp;nbsp;&lt;/div&gt;
                 &lt;div&gt;Play! Framework&amp;nbsp;&lt;a href=&quot;http://www.playframework.org/&quot;&gt;http://www.playframework.org/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Hibernate&amp;nbsp;&lt;a href=&quot;https://www.hibernate.org/&quot;&gt;https://www.hibernate.org/&lt;/a&gt;&lt;/div&gt;
@@ -805,18 +872,21 @@
                 &lt;div&gt;prototype&amp;nbsp;&lt;a href=&quot;http://www.prototypejs.org/&quot;&gt;http://www.prototypejs.org/&lt;/a&gt;&amp;nbsp;&lt;/div&gt;
                 &lt;div&gt;jQuery in Action&amp;nbsp;&lt;a href=&quot;http://www.manning.com/bibeault/&quot;&gt;http://www.manning.com/bibeault/&lt;/a&gt;&lt;/div&gt;
                 &lt;div&gt;Sass&amp;nbsp;&lt;a href=&quot;http://sass-lang.com/&quot;&gt;http://sass-lang.com/&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=584398#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-ee1058b09bcef472" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-ee1058b09bcef472"/>
             <pubDate>Sat, 20 Feb 2010 09:56:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3580</itunes:duration>
-            <enclosure length="42956631" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-17.mp3" />
+            <enclosure length="42956631" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-17.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-b441c1257791c934</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 16 - Le seul podcast Java cette semaine qui ne parle PAS du webcast de Snoracle</title>
+            <title>Les Cast Codeurs Podcast - Episode 16 - Le seul podcast Java cette semaine qui ne parle PAS du
+                webcast de Snoracle
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=576511#</link>
             <description>
                 &lt;div&gt;Enregistre le 25 janvier 2010&lt;/div&gt;
@@ -859,79 +929,214 @@
                 &lt;div&gt;Maven pluging Version de chez Codehaus Mojo&amp;nbsp;&lt;a href=&quot;http://mojo.codehaus.org/versions-maven-plugin/&quot;&gt;http://mojo.codehaus.org/versions-maven-plugin/&lt;/a&gt;&lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div&gt;Livre d&apos;Arnaud&amp;nbsp;&lt;a href=&quot;http://livre.fnac.com/a2748495/Nicolas-de-Loof-Apache-Maven&quot;&gt;http://livre.fnac.com/a2748495/Nicolas-de-Loof-Apache-Maven&lt;/a&gt;&lt;/div&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=576511#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b441c1257791c934" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-b441c1257791c934"/>
             <pubDate>Sat, 30 Jan 2010 11:59:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3569</itunes:duration>
-            <enclosure length="43867551" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-16.mp3" />
+            <enclosure length="43867551" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-16.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-3111d67c4502f535</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast - Episode 15 - Interview de Didier Girard et Guillaume Laforge sur Google App Engine</title>
+            <title>Les Cast Codeurs Podcast - Episode 15 - Interview de Didier Girard et Guillaume Laforge sur Google
+                App Engine
+            </title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=571694#</link>
-            <description>&lt;div&gt;&lt;div&gt;Le 13 janvier 2010&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Didier Girard&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.application-servers.com/&quot;&gt;http://www.application-servers.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.ongwt.com/&quot;&gt;http://www.ongwt.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.sfeir.com/&quot;&gt;http://www.sfeir.com/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Guillaume Laforge&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://groovy.codehaus.org/&quot;&gt;http://groovy.codehaus.org&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Google App Engine&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://code.google.com/appengine/&quot;&gt;http://code.google.com/appengine&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Python&lt;/div&gt;&lt;div&gt;Gaelyk&amp;nbsp;&lt;a href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Jetty&amp;nbsp;&lt;a href=&quot;http://jetty.codehaus.org/jetty/&quot;&gt;http://jetty.codehaus.org/jetty&lt;/a&gt;&lt;/div&gt;&lt;div&gt;OpenJDK&amp;nbsp;&lt;a href=&quot;http://openjdk.java.net/&quot;&gt;http://openjdk.java.net&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Apache Harmony&amp;nbsp;&lt;a href=&quot;http://harmony.apache.org/&quot;&gt;http://harmony.apache.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;White ist Google App Engine&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/docs/java/jrewhitelist.html&quot;&gt;http://code.google.com/appengine/docs/java/jrewhitelist.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Secure Data Connector&amp;nbsp;&lt;a href=&quot;http://code.google.com/securedataconnector/docs/1.0/overview.html&quot;&gt;http://code.google.com/securedataconnector/docs/1.0/overview.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Datastore -&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html&quot;&gt;http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/docs/java/datastore/&quot;&gt;http://code.google.com/appengine/docs/java/datastore/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Data Nucleus&amp;nbsp;&lt;a href=&quot;http://www.datanucleus.org/&quot;&gt;http://www.datanucleus.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;NoSQL France&lt;/div&gt;</description>
+            <description>&lt;div&gt;&lt;div&gt;Le 13 janvier 2010&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Didier
+                Girard&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.application-servers.com/&quot;&gt;http://www.application-servers.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.ongwt.com/&quot;&gt;http://www.ongwt.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.sfeir.com/&quot;&gt;http://www.sfeir.com/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Guillaume
+                Laforge&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://groovy.codehaus.org/&quot;&gt;http://groovy.codehaus.org&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Google
+                App Engine&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://code.google.com/appengine/&quot;&gt;http://code.google.com/appengine&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Python&lt;/div&gt;&lt;div&gt;Gaelyk&amp;nbsp;&lt;a
+                href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Jetty&amp;nbsp;&lt;a
+                href=&quot;http://jetty.codehaus.org/jetty/&quot;&gt;http://jetty.codehaus.org/jetty&lt;/a&gt;&lt;/div&gt;&lt;div&gt;OpenJDK&amp;nbsp;&lt;a
+                href=&quot;http://openjdk.java.net/&quot;&gt;http://openjdk.java.net&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Apache
+                Harmony&amp;nbsp;&lt;a href=&quot;http://harmony.apache.org/&quot;&gt;http://harmony.apache.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;White
+                ist Google App Engine&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/docs/java/jrewhitelist.html&quot;&gt;http://code.google.com/appengine/docs/java/jrewhitelist.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Secure
+                Data Connector&amp;nbsp;&lt;a href=&quot;http://code.google.com/securedataconnector/docs/1.0/overview.html&quot;&gt;http://code.google.com/securedataconnector/docs/1.0/overview.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Datastore
+                -&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html&quot;&gt;http://code.google.com/appengine/docs/python/gettingstarted/usingdatastore.html&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://code.google.com/appengine/docs/java/datastore/&quot;&gt;http://code.google.com/appengine/docs/java/datastore/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Data
+                Nucleus&amp;nbsp;&lt;a href=&quot;http://www.datanucleus.org/&quot;&gt;http://www.datanucleus.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;NoSQL
+                France&lt;/div&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=571694#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-3111d67c4502f535" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-3111d67c4502f535"/>
             <pubDate>Mon, 18 Jan 2010 13:55:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4034</itunes:duration>
-            <enclosure length="48525895" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-15.mp3" />
+            <enclosure length="48525895" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-15.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-9388db202d23135a</libsyn:ItemId>
             <title>Les Cast Codeurs Podcast - Episode 14 - Les previsions du bilan et le bilan des previsions</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=563717#</link>
-            <description>&lt;div&gt;Le 14 decembre 2009&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Nouvelles&lt;/b&gt;&lt;/div&gt;Java EE 6&amp;nbsp;&lt;a href=&quot;http://java.sun.com/javaee/&quot;&gt;http://java.sun.com/javaee/&lt;/a&gt;&lt;div&gt;Glassfish v3&amp;nbsp;&lt;a href=&quot;https://glassfish.dev.java.net/downloads/v3-final.html&quot;&gt;https://glassfish.dev.java.net/downloads/v3-final.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Caucho Resin&amp;nbsp;&lt;a href=&quot;http://www.caucho.com/&quot;&gt;http://www.caucho.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JBoss AS 6 M1&amp;nbsp;&lt;a href=&quot;http://in.relation.to/Bloggers/IntroducingJBossAS600M1&quot;&gt;http://in.relation.to/Bloggers/IntroducingJBossAS600M1&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Yahoo server de cache&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/11/03/yahoo_open_sources_application_server/&quot;&gt;http://www.theregister.co.uk/2009/11/03/yahoo_open_sources_application_server/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google public DNS&amp;nbsp;&lt;a href=&quot;http://code.google.com/speed/public-dns/&quot;&gt;http://code.google.com/speed/public-dns/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://code.google.com/speed/public-dns/docs/intro.html&quot;&gt;http://code.google.com/speed/public-dns/docs/intro.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google App Engine 1.3&amp;nbsp;&lt;a href=&quot;http://googleappengine.blogspot.com/2009/12/app-engine-sdk-130-released-including.html&quot;&gt;http://googleappengine.blogspot.com/2009/12/app-engine-sdk-130-released-including.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Microsoft et le Cloud Storage&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/12/10/azure_storage_boxes/&quot;&gt;http://www.theregister.co.uk/2009/12/10/azure_storage_boxes/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Livre Apache Maven de Arnaud Hertier et Nicolas De loof&amp;nbsp;&lt;a href=&quot;http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X&quot;&gt;http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Le bilan Java 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Sun rachete par oracle&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/12/18/oracle_q2/&quot;&gt;http://www.theregister.co.uk/2009/12/18/oracle_q2/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Java User Groups&amp;nbsp;&lt;a href=&quot;http://java.sun.com/community/usergroups/&quot;&gt;http://java.sun.com/community/usergroups/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Le cloud&lt;/div&gt;&lt;div&gt;Les rachats des boites open source&amp;nbsp;(Terracotta sur Ehcache et Quartz, VMWare sur Spring Source, Intalio sur jetty)&lt;/div&gt;&lt;div&gt;ExoPlatform&amp;nbsp;&lt;a href=&quot;http://www.exoplatform.com/portal/public/website/&quot;&gt;http://www.exoplatform.com/portal/public/website/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;XWiki&amp;nbsp;&lt;a href=&quot;http://www.xwiki.com&quot;&gt;http://www.xwiki.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Scala&amp;nbsp;&lt;a href=&quot;http://www.scala-lang.org/&quot;&gt;http://www.scala-lang.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Fantom&amp;nbsp;&lt;a href=&quot;http://fantom.org/&quot;&gt;http://fantom.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Go&amp;nbsp;&lt;a href=&quot;http://golang.org/&quot;&gt;http://golang.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Cedric Beust&amp;nbsp;&lt;a href=&quot;http://beust.com/weblog/&quot;&gt;http://beust.com/weblog/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Les Cast Codeurs&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Les JUGs Francais&amp;nbsp;&lt;a href=&quot;http://www.touilleur-express.fr/2009/12/06/evenements-des-jugs-en-decembre-2009/&quot;&gt;http://www.touilleur-express.fr/2009/12/06/evenements-des-jugs-en-decembre-2009/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;AlpesJUG&amp;nbsp;&lt;a href=&quot;http://alpesjug.org/&quot;&gt;http://alpesjug.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JUG Toulouse&amp;nbsp;&lt;a href=&quot;http://www.jugtoulouse.org/&quot;&gt;http://www.jugtoulouse.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Xebia calendrier de l&apos;Avent&amp;nbsp;&lt;a href=&quot;http://blog.xebia.fr/2009/12/25/calendrier-de-l%E2%80%99avent-20&quot;&gt;http://blog.xebia.fr/2009/12/25/calendrier-de-l’avent-20&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Le bilan des cast codeurs 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Antonio&amp;nbsp;&lt;a href=&quot;http://agoncal.wordpress.com/&quot;&gt;http://agoncal.wordpress.com/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://twitter.com/agoncal&quot;&gt;http://twitter.com/agoncal&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Vincent&amp;nbsp;&lt;a href=&quot;http://massol.myxwiki.org/xwiki/bin/view/Main/WebHome&quot;&gt;http://massol.myxwiki.org/xwiki/bin/view/Main/WebHome&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://twitter.com/vmassol&quot;&gt;http://twitter.com/vmassol&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Guillaume&amp;nbsp;&lt;a href=&quot;http://glaforge.free.fr/weblog/&quot;&gt;http://glaforge.free.fr/weblog/&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://twitter.com/glaforge&quot;&gt;http://twitter.com/glaforge&lt;/a&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;Gaelyk&amp;nbsp;&lt;a href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Emmanuel&amp;nbsp;&lt;a href=&quot;http://in.relation.to/Bloggers/Emmanuel&quot;&gt;http://in.relation.to/Bloggers/Emmanuel&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://emmanuelbernard.com&quot;&gt;http://emmanuelbernard.com&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://twitter.com/emmanuelbernard&quot;&gt;http://twitter.com/emmanuelbernard&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Hibernate Search 3.2 Beta 1&amp;nbsp;&lt;a href=&quot;http://relation.to/13197.lace&quot;&gt;http://relation.to/13197.lace&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Les previsions 2010&lt;/b&gt;&lt;/div&gt;&lt;div&gt;liens non existant encore :)&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Retrouvez nous sur Twitter&amp;nbsp;&lt;a href=&quot;http://twitter.com/lescastcodeurs&quot;&gt;http://twitter.com/lescastcodeurs&lt;/a&gt;&amp;nbsp;ou sur notre Google groupe&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Votez et laissez des commentaires sur itunes&amp;nbsp;&lt;a href=&quot;http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=312239675&quot;&gt;http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=312239675&lt;/a&gt;&amp;nbsp;et parlez des cast codeurs autour de vous&lt;/div&gt;</description>
+            <description>&lt;div&gt;Le 14 decembre 2009&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Nouvelles&lt;/b&gt;&lt;/div&gt;Java
+                EE 6&amp;nbsp;&lt;a href=&quot;http://java.sun.com/javaee/&quot;&gt;http://java.sun.com/javaee/&lt;/a&gt;&lt;div&gt;Glassfish
+                v3&amp;nbsp;&lt;a href=&quot;https://glassfish.dev.java.net/downloads/v3-final.html&quot;&gt;https://glassfish.dev.java.net/downloads/v3-final.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Caucho
+                Resin&amp;nbsp;&lt;a href=&quot;http://www.caucho.com/&quot;&gt;http://www.caucho.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JBoss
+                AS 6 M1&amp;nbsp;&lt;a href=&quot;http://in.relation.to/Bloggers/IntroducingJBossAS600M1&quot;&gt;http://in.relation.to/Bloggers/IntroducingJBossAS600M1&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Yahoo
+                server de cache&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/11/03/yahoo_open_sources_application_server/&quot;&gt;http://www.theregister.co.uk/2009/11/03/yahoo_open_sources_application_server/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google
+                public DNS&amp;nbsp;&lt;a href=&quot;http://code.google.com/speed/public-dns/&quot;&gt;http://code.google.com/speed/public-dns/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://code.google.com/speed/public-dns/docs/intro.html&quot;&gt;http://code.google.com/speed/public-dns/docs/intro.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google
+                App Engine 1.3&amp;nbsp;&lt;a href=&quot;http://googleappengine.blogspot.com/2009/12/app-engine-sdk-130-released-including.html&quot;&gt;http://googleappengine.blogspot.com/2009/12/app-engine-sdk-130-released-including.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Microsoft
+                et le Cloud Storage&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/12/10/azure_storage_boxes/&quot;&gt;http://www.theregister.co.uk/2009/12/10/azure_storage_boxes/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Livre
+                Apache Maven de Arnaud Hertier et Nicolas De loof&amp;nbsp;&lt;a href=&quot;http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X&quot;&gt;http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Le
+                bilan Java 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Sun rachete par oracle&amp;nbsp;&lt;a href=&quot;http://www.theregister.co.uk/2009/12/18/oracle_q2/&quot;&gt;http://www.theregister.co.uk/2009/12/18/oracle_q2/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Java
+                User Groups&amp;nbsp;&lt;a href=&quot;http://java.sun.com/community/usergroups/&quot;&gt;http://java.sun.com/community/usergroups/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Le
+                cloud&lt;/div&gt;&lt;div&gt;Les rachats des boites open source&amp;nbsp;(Terracotta sur Ehcache et
+                Quartz, VMWare sur Spring Source, Intalio sur jetty)&lt;/div&gt;&lt;div&gt;ExoPlatform&amp;nbsp;&lt;a
+                href=&quot;http://www.exoplatform.com/portal/public/website/&quot;&gt;http://www.exoplatform.com/portal/public/website/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;XWiki&amp;nbsp;&lt;a
+                href=&quot;http://www.xwiki.com&quot;&gt;http://www.xwiki.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Scala&amp;nbsp;&lt;a
+                href=&quot;http://www.scala-lang.org/&quot;&gt;http://www.scala-lang.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Fantom&amp;nbsp;&lt;a
+                href=&quot;http://fantom.org/&quot;&gt;http://fantom.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Go&amp;nbsp;&lt;a
+                href=&quot;http://golang.org/&quot;&gt;http://golang.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Cedric Beust&amp;nbsp;&lt;a
+                href=&quot;http://beust.com/weblog/&quot;&gt;http://beust.com/weblog/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Les
+                Cast Codeurs&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Les
+                JUGs Francais&amp;nbsp;&lt;a href=&quot;http://www.touilleur-express.fr/2009/12/06/evenements-des-jugs-en-decembre-2009/&quot;&gt;http://www.touilleur-express.fr/2009/12/06/evenements-des-jugs-en-decembre-2009/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;AlpesJUG&amp;nbsp;&lt;a
+                href=&quot;http://alpesjug.org/&quot;&gt;http://alpesjug.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JUG
+                Toulouse&amp;nbsp;&lt;a href=&quot;http://www.jugtoulouse.org/&quot;&gt;http://www.jugtoulouse.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Xebia
+                calendrier de l&apos;Avent&amp;nbsp;&lt;a href=&quot;http://blog.xebia.fr/2009/12/25/calendrier-de-l%E2%80%99avent-20&quot;&gt;http://blog.xebia.fr/2009/12/25/calendrier-de-l’avent-20&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Le
+                bilan des cast codeurs 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Antonio&amp;nbsp;&lt;a href=&quot;http://agoncal.wordpress.com/&quot;&gt;http://agoncal.wordpress.com/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://twitter.com/agoncal&quot;&gt;http://twitter.com/agoncal&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Vincent&amp;nbsp;&lt;a
+                href=&quot;http://massol.myxwiki.org/xwiki/bin/view/Main/WebHome&quot;&gt;http://massol.myxwiki.org/xwiki/bin/view/Main/WebHome&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://twitter.com/vmassol&quot;&gt;http://twitter.com/vmassol&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Guillaume&amp;nbsp;&lt;a
+                href=&quot;http://glaforge.free.fr/weblog/&quot;&gt;http://glaforge.free.fr/weblog/&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://twitter.com/glaforge&quot;&gt;http://twitter.com/glaforge&lt;/a&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;Gaelyk&amp;nbsp;&lt;a
+                href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Emmanuel&amp;nbsp;&lt;a
+                href=&quot;http://in.relation.to/Bloggers/Emmanuel&quot;&gt;http://in.relation.to/Bloggers/Emmanuel&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://emmanuelbernard.com&quot;&gt;http://emmanuelbernard.com&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://twitter.com/emmanuelbernard&quot;&gt;http://twitter.com/emmanuelbernard&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Hibernate
+                Search 3.2 Beta 1&amp;nbsp;&lt;a href=&quot;http://relation.to/13197.lace&quot;&gt;http://relation.to/13197.lace&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Les
+                previsions 2010&lt;/b&gt;&lt;/div&gt;&lt;div&gt;liens non existant encore :)&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Retrouvez
+                nous sur Twitter&amp;nbsp;&lt;a href=&quot;http://twitter.com/lescastcodeurs&quot;&gt;http://twitter.com/lescastcodeurs&lt;/a&gt;&amp;nbsp;ou
+                sur notre Google groupe&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Votez
+                et laissez des commentaires sur itunes&amp;nbsp;&lt;a href=&quot;http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=312239675&quot;&gt;http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=312239675&lt;/a&gt;&amp;nbsp;et
+                parlez des cast codeurs autour de vous&lt;/div&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=563717#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-9388db202d23135a" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-9388db202d23135a"/>
             <pubDate>Fri, 25 Dec 2009 09:24:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3444</itunes:duration>
-            <enclosure length="43717703" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-14.mp3" />
+            <enclosure length="43717703" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-14.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-aa80b1b9c0bebb1b</libsyn:ItemId>
             <title>Les Cast Codeurs Episode 13 - Interview de Jean-Francois Arcand sur Atmosphere</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=558101#</link>
-            <description>&lt;div&gt;&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 13 - Interview de Jean-Francois Arcand sur Atmosphere&lt;br/&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre le mardi 19 novembre 2009&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;Jean Francois Arcand&lt;div&gt;&lt;a href=&quot;http://www.java.net/blogs/jfarcand/&quot;&gt;http://www.java.net/blogs/jfarcand/&lt;/a&gt;&lt;br/&gt;&lt;div&gt;@jfarcand&lt;br/&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Grizzly&amp;nbsp;&lt;a href=&quot;https://grizzly.dev.java.net/&quot;&gt;https://grizzly.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Tomcat&amp;nbsp;&lt;a href=&quot;http://tomcat.apache.org&quot;&gt;http://tomcat.apache.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Atmosphere&amp;nbsp;&lt;a href=&quot;https://atmosphere.dev.java.net/&quot;&gt;https://atmosphere.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Netty&amp;nbsp;&lt;a href=&quot;http://www.jboss.org/netty/&quot;&gt;http://www.jboss.org/netty/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Mina&amp;nbsp;&lt;a href=&quot;http://mina.apache.org/&quot;&gt;http://mina.apache.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Comet&amp;nbsp;&lt;a href=&quot;http://en.wikipedia.org/wiki/Comet_(programming)&quot;&gt;http://en.wikipedia.org/wiki/Comet_(programming)&lt;/a&gt;&lt;/div&gt;&lt;div&gt;spdy protocol&amp;nbsp;&lt;a href=&quot;http://sites.google.com/a/chromium.org/dev/spdy/spdy-whitepaper&quot;&gt;http://sites.google.com/a/chromium.org/dev/spdy/spdy-whitepaper&lt;/a&gt;&lt;/div&gt;&lt;div&gt;NIO&amp;nbsp;&lt;a href=&quot;http://en.wikipedia.org/wiki/New_I/O&quot;&gt;http://en.wikipedia.org/wiki/New_I/O&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Apache Portable Runtime&amp;nbsp;&lt;a href=&quot;http://apr.apache.org/&quot;&gt;http://apr.apache.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Jersey&amp;nbsp;&lt;a href=&quot;https://jersey.dev.java.net/&quot;&gt;https://jersey.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google App Engine&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/&quot;&gt;http://code.google.com/appengine/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Tasks&amp;nbsp;&lt;a href=&quot;http://googleappengine.blogspot.com/2009/06/new-task-queue-api-on-google-app-engine.html&quot;&gt;http://googleappengine.blogspot.com/2009/06/new-task-queue-api-on-google-app-engine.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Suivez-nous sur twitter &lt;a href=&quot;http://twitter.com/lescastcodeurs&quot;&gt;@lescastcodeurs&lt;/a&gt; ou sur notre forum, voir&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
+            <description>&lt;div&gt;&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 13 - Interview de Jean-Francois Arcand
+                sur Atmosphere&lt;br/&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre le mardi 19 novembre 2009&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;Jean
+                Francois Arcand&lt;div&gt;&lt;a href=&quot;http://www.java.net/blogs/jfarcand/&quot;&gt;http://www.java.net/blogs/jfarcand/&lt;/a&gt;&lt;br/&gt;&lt;div&gt;@jfarcand&lt;br/&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Grizzly&amp;nbsp;&lt;a
+                href=&quot;https://grizzly.dev.java.net/&quot;&gt;https://grizzly.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Tomcat&amp;nbsp;&lt;a
+                href=&quot;http://tomcat.apache.org&quot;&gt;http://tomcat.apache.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Atmosphere&amp;nbsp;&lt;a
+                href=&quot;https://atmosphere.dev.java.net/&quot;&gt;https://atmosphere.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Netty&amp;nbsp;&lt;a
+                href=&quot;http://www.jboss.org/netty/&quot;&gt;http://www.jboss.org/netty/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Mina&amp;nbsp;&lt;a
+                href=&quot;http://mina.apache.org/&quot;&gt;http://mina.apache.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Comet&amp;nbsp;&lt;a
+                href=&quot;http://en.wikipedia.org/wiki/Comet_(programming)&quot;&gt;http://en.wikipedia.org/wiki/Comet_(programming)&lt;/a&gt;&lt;/div&gt;&lt;div&gt;spdy
+                protocol&amp;nbsp;&lt;a href=&quot;http://sites.google.com/a/chromium.org/dev/spdy/spdy-whitepaper&quot;&gt;http://sites.google.com/a/chromium.org/dev/spdy/spdy-whitepaper&lt;/a&gt;&lt;/div&gt;&lt;div&gt;NIO&amp;nbsp;&lt;a
+                href=&quot;http://en.wikipedia.org/wiki/New_I/O&quot;&gt;http://en.wikipedia.org/wiki/New_I/O&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Apache
+                Portable Runtime&amp;nbsp;&lt;a href=&quot;http://apr.apache.org/&quot;&gt;http://apr.apache.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Jersey&amp;nbsp;&lt;a
+                href=&quot;https://jersey.dev.java.net/&quot;&gt;https://jersey.dev.java.net/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Google
+                App Engine&amp;nbsp;&lt;a href=&quot;http://code.google.com/appengine/&quot;&gt;http://code.google.com/appengine/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Tasks&amp;nbsp;&lt;a
+                href=&quot;http://googleappengine.blogspot.com/2009/06/new-task-queue-api-on-google-app-engine.html&quot;&gt;http://googleappengine.blogspot.com/2009/06/new-task-queue-api-on-google-app-engine.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Suivez-nous
+                sur twitter &lt;a href=&quot;http://twitter.com/lescastcodeurs&quot;&gt;@lescastcodeurs&lt;/a&gt; ou sur
+                notre forum, voir&amp;nbsp;&lt;a href=&quot;http://lescastcodeurs.com/&quot;&gt;http://lescastcodeurs.com&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=558101#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-aa80b1b9c0bebb1b" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-aa80b1b9c0bebb1b"/>
             <pubDate>Wed, 09 Dec 2009 08:46:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2745</itunes:duration>
-            <enclosure length="33158667" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-13.mp3" />
+            <enclosure length="33158667" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-13.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-5fe67b3779fa0627</libsyn:ItemId>
             <title>Les Cast Codeurs Episode 12 - Special Devoxx 2009</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=551505#</link>
-            <description>&lt;div&gt;&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 12 - Special Devoxx 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre le mardi 19 novembre 2009&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Invités&lt;/div&gt;&lt;div&gt;Romain Guy -&amp;nbsp;&lt;a href=&quot;http://www.curious-creature.org/&quot;&gt;http://www.curious-creature.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Nicolas Martignole -&amp;nbsp;&lt;a href=&quot;http://www.touilleur-express.fr/&quot;&gt;http://www.touilleur-express.fr&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Alexis Moussine-Pouchkine -&amp;nbsp;&lt;a href=&quot;http://blogs.sun.com/alexismp&quot;&gt;http://blogs.sun.com/alexismp&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;News&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Devoxx 2009&amp;nbsp;&lt;a href=&quot;http://devoxx.com/&quot;&gt;http://devoxx.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;a href=&quot;http://parleys.com&quot;&gt;http://parleys.com&lt;/a&gt;&lt;div&gt;EE 6 delivre le 10 decembre 2009&lt;/div&gt;&lt;div&gt;Scala&amp;nbsp;&lt;a href=&quot;http://www.scala-lang.org/&quot;&gt;http://www.scala-lang.org&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Lift&amp;nbsp;&lt;a href=&quot;http://liftweb.net&quot;&gt;http://liftweb.net&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JDK 7 vs Java 7&amp;nbsp;&lt;a href=&quot;https://jdk7.dev.java.net/&quot;&gt;https://jdk7.dev.java.net&lt;/a&gt;&amp;nbsp;&lt;a href=&quot;http://www.jroller.com/scolebourne/entry/no_more_java_7&quot;&gt;http://www.jroller.com/scolebourne/entry/no_more_java_7&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Projet Lombok&amp;nbsp;&lt;a href=&quot;http://projectlombok.org&quot;&gt;http://projectlombok.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Amazon EC2&amp;nbsp;&lt;a href=&quot;http://aws.amazon.com/ec2/&quot;&gt;http://aws.amazon.com/ec2&lt;/a&gt;&lt;/div&gt;&lt;div&gt;VMWare&amp;nbsp;&lt;a href=&quot;http://www.vmware.com/&quot;&gt;http://www.vmware.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Cloud foundry&amp;nbsp;&lt;a href=&quot;http://www.cloudfoundry.com&quot;&gt;http://www.cloudfoundry.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;</description>
+            <description>&lt;div&gt;&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 12 - Special Devoxx 2009&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre
+                le mardi 19 novembre 2009&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Invités&lt;/div&gt;&lt;div&gt;Romain
+                Guy -&amp;nbsp;&lt;a href=&quot;http://www.curious-creature.org/&quot;&gt;http://www.curious-creature.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Nicolas
+                Martignole -&amp;nbsp;&lt;a href=&quot;http://www.touilleur-express.fr/&quot;&gt;http://www.touilleur-express.fr&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Alexis
+                Moussine-Pouchkine -&amp;nbsp;&lt;a href=&quot;http://blogs.sun.com/alexismp&quot;&gt;http://blogs.sun.com/alexismp&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;News&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Devoxx
+                2009&amp;nbsp;&lt;a href=&quot;http://devoxx.com/&quot;&gt;http://devoxx.com&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;a
+                href=&quot;http://parleys.com&quot;&gt;http://parleys.com&lt;/a&gt;&lt;div&gt;EE 6 delivre le 10
+                decembre 2009&lt;/div&gt;&lt;div&gt;Scala&amp;nbsp;&lt;a href=&quot;http://www.scala-lang.org/&quot;&gt;http://www.scala-lang.org&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Lift&amp;nbsp;&lt;a
+                href=&quot;http://liftweb.net&quot;&gt;http://liftweb.net&lt;/a&gt;&lt;/div&gt;&lt;div&gt;JDK 7 vs Java
+                7&amp;nbsp;&lt;a href=&quot;https://jdk7.dev.java.net/&quot;&gt;https://jdk7.dev.java.net&lt;/a&gt;&amp;nbsp;&lt;a
+                href=&quot;http://www.jroller.com/scolebourne/entry/no_more_java_7&quot;&gt;http://www.jroller.com/scolebourne/entry/no_more_java_7&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Projet
+                Lombok&amp;nbsp;&lt;a href=&quot;http://projectlombok.org&quot;&gt;http://projectlombok.org&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Amazon
+                EC2&amp;nbsp;&lt;a href=&quot;http://aws.amazon.com/ec2/&quot;&gt;http://aws.amazon.com/ec2&lt;/a&gt;&lt;/div&gt;&lt;div&gt;VMWare&amp;nbsp;&lt;a
+                href=&quot;http://www.vmware.com/&quot;&gt;http://www.vmware.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Cloud
+                foundry&amp;nbsp;&lt;a href=&quot;http://www.cloudfoundry.com&quot;&gt;http://www.cloudfoundry.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=551505#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5fe67b3779fa0627" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5fe67b3779fa0627"/>
             <pubDate>Fri, 20 Nov 2009 18:28:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3697</itunes:duration>
-            <enclosure length="44635434" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-12.mp3" />
+            <enclosure length="44635434" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-12.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-e6c7d1a534f6ad10</libsyn:ItemId>
             <title>Les Cast Codeurs Episode 11 - Les predictions de l&apos;Oracle et la dette technique</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=546730#</link>
-            <description>&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 11 - Les predictions de l&apos;Oracle et la dette technique&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre le mardi 3 novembre&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;News&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Spring et ou pas et EE 6&lt;/div&gt;&lt;div&gt;Lire les commentaires du blog : &lt;a href=&quot;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat&quot;&gt;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;a href=&quot;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat#comment-1254446751984&quot;&gt;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat#comment-1254446751984&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://pro.01net.com/editorial/507474/spring-3-0-sera-compatible-java-ee-6/&quot;&gt;http://pro.01net.com/editorial/507474/spring-3-0-sera-compatible-java-ee-6/&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;br/&gt;&lt;div&gt;Java EE 6 en brouillon final&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://jcp.org/en/jsr/summary?id=316&quot;&gt;http://jcp.org/en/jsr/summary?id=316&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Arrivee des Managed Beans&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;JSR-330 @Inject approuvee&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://blogs.sun.com/theaquarium/entry/jsr_330_approved_dependency_injection&quot;&gt;http://blogs.sun.com/theaquarium/entry/jsr_330_approved_dependency_injection&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Java 5 a passe la date de fin de vie&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://java.sun.com/j2se/1.5/&quot;&gt;http://java.sun.com/j2se/1.5/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Retro weaver &lt;a href=&quot;http://retroweaver.sourceforge.net/&quot;&gt;http://retroweaver.sourceforge.net/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Oracle parle aux clients de Sun&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.oracle.com/ocom/groups/public/documents/webcontent/038563.pdf&quot;&gt;http://www.oracle.com/ocom/groups/public/documents/webcontent/038563.pdf&lt;/a&gt;&lt;div&gt;&lt;a href=&quot;http://www.h-online.com/open/news/item/Oracle-clarifies-plans-for-Java-tools-and-OpenOffice-843661.html&quot;&gt;http://www.h-online.com/open/news/item/Oracle-clarifies-plans-for-Java-tools-and-OpenOffice-843661.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://wings-of-wind.com/2009/10/29/newsflash-no-more-mysql/&quot;&gt;http://wings-of-wind.com/2009/10/29/newsflash-no-more-mysql/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.infoworld.com/d/open-source/mysql-co-founder-questions-viability-mysql-fork-protect-users-717&quot;&gt;http://www.infoworld.com/d/open-source/mysql-co-founder-questions-viability-mysql-fork-protect-users-717&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.reuters.com/article/idgSmallBusiness/idUS347326965920091028&quot;&gt;http://www.reuters.com/article/idgSmallBusiness/idUS347326965920091028&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.lemondeinformatique.fr/actualites/lire-oracle-motive-pour-glassfish-et-mitige-sur-netbeans-29364.html&quot;&gt;http://www.lemondeinformatique.fr/actualites/lire-oracle-motive-pour-glassfish-et-mitige-sur-netbeans-29364.html&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Eclipse RCP&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Netbeans platform&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;MySQL Richard Sallman &lt;a href=&quot;http://news.techworld.com/applications/3204638/richard-stallman-oracle-must-divest-mysql/?intcmp=ros-md-rm&quot;&gt;http://news.techworld.com/applications/3204638/richard-stallman-oracle-must-divest-mysql/?intcmp=ros-md-rm&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Sacha Labourey sur MySQL et les licenses doubles &lt;a href=&quot;http://sacha.labourey.com/2009/10/25/sun-vs-and-orcl-the-failure-of-the-dual-licensing-model/&quot;&gt;http://sacha.labourey.com/2009/10/25/sun-vs-and-orcl-the-failure-of-the-dual-licensing-model/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Le coeur d&apos;IntelliJ devient open source&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://blogs.jetbrains.com/idea/2009/10/intellij-idea-open-sourced/&quot;&gt;http://blogs.jetbrains.com/idea/2009/10/intellij-idea-open-sourced/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Cedric Beust &lt;a href=&quot;http://beust.com/weblog/archives/000520.html&quot;&gt;http://beust.com/weblog/archives/000520.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Duct tape programmer &lt;a href=&quot;http://www.joelonsoftware.com/items/2009/09/23.html&quot;&gt;http://www.joelonsoftware.com/items/2009/09/23.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Dette technique &lt;a href=&quot;http://www.martinfowler.com/bliki/TechnicalDebt.html&quot;&gt;http://www.martinfowler.com/bliki/TechnicalDebt.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Sonar &lt;a href=&quot;http://sonar.codehaus.org/&quot;&gt;http://sonar.codehaus.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Google a releasé la version 2.0 d&apos;Android&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;a href=&quot;http://www.playframework.org/&quot;&gt;http://www.playframework.org/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Hibernate en 1300 lignes de code (ca revient chaque annee) &lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=58266&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=58266&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Les conferences&lt;/b&gt;&lt;/div&gt;&lt;div&gt;SpringOne&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Devoxx &lt;a href=&quot;http://www.devoxx.com&quot;&gt;http://www.devoxx.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Hibernate Search University &lt;a href=&quot;http://www.devoxx.com/display/DV09/Hibernate+Search+university&quot;&gt;http://www.devoxx.com/display/DV09/Hibernate+Search+university&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Gaelyk &lt;a href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Valtech days &lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;quot;Cette année le format est un peu différent des années précédentes, à savoir que les Valtech Days se dérouleront sur 2 journées discontinues :&lt;/div&gt;&lt;div&gt;* 1 le Mardi 17 Novembre 2009 (et oui dans 1 peu moins d&apos;un mois maintenant!)&lt;/div&gt;&lt;div&gt;* 1 autre aux environs de Mars 2010&lt;/div&gt;&lt;div&gt;Vous pouvez consulter les détails de la conférence sur la page suivante :&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.valtech.fr/fr/index/valtech_days.html/&quot;&gt;http://www.valtech.fr/fr/index/valtech_days.html/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;En bref, l&apos;évènement aura lieu à la Défense, et s’adresse à tous les acteurs du marché : clients, leaders d’opinion, formateurs et consultants.&lt;/div&gt;&lt;div&gt;Cette édition sera consacrée aux innovations IT et marketing autour de trois thèmes : les Méthodes Agiles,  l’E-business &amp;amp; le Web 2.0 ainsi que les Innovations Technologiques.&lt;/div&gt;&lt;div&gt;Au programme cette année, une journée entièrement consacrée aux séminaires, témoignages et débats avec encore des nouveautés en terme de format et de contenu.&lt;/div&gt;&lt;div&gt;En particulier, vous pouvez consulter les intitulés des sessions de cette nouvelle mouture à cette page :&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.valtech.fr/fr/index/valtech_days/Programme.html&quot;&gt;http://www.valtech.fr/fr/index/valtech_days/Programme.html&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;quot;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Outils de la semaine&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Click to flash &lt;a href=&quot;http://rentzsch.github.com/clicktoflash/&quot;&gt;http://rentzsch.github.com/clicktoflash/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;</description>
+            <description>&lt;div&gt;&lt;b&gt;Les Cast Codeurs Episode 11 - Les predictions de l&apos;Oracle et la dette
+                technique&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Enregistre le mardi 3 novembre&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;News&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Spring
+                et ou pas et EE 6&lt;/div&gt;&lt;div&gt;Lire les commentaires du blog : &lt;a href=&quot;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat&quot;&gt;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat#comment-1254446751984&quot;&gt;http://www.adam-bien.com/roller/abien/entry/jsf_jpa_ejb_bloat#comment-1254446751984&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://pro.01net.com/editorial/507474/spring-3-0-sera-compatible-java-ee-6/&quot;&gt;http://pro.01net.com/editorial/507474/spring-3-0-sera-compatible-java-ee-6/&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;br/&gt;&lt;div&gt;Java
+                EE 6 en brouillon final&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://jcp.org/en/jsr/summary?id=316&quot;&gt;http://jcp.org/en/jsr/summary?id=316&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Arrivee
+                des Managed Beans&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;JSR-330 @Inject approuvee&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://blogs.sun.com/theaquarium/entry/jsr_330_approved_dependency_injection&quot;&gt;http://blogs.sun.com/theaquarium/entry/jsr_330_approved_dependency_injection&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Java
+                5 a passe la date de fin de vie&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://java.sun.com/j2se/1.5/&quot;&gt;http://java.sun.com/j2se/1.5/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Retro
+                weaver &lt;a href=&quot;http://retroweaver.sourceforge.net/&quot;&gt;http://retroweaver.sourceforge.net/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Oracle
+                parle aux clients de Sun&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.oracle.com/ocom/groups/public/documents/webcontent/038563.pdf&quot;&gt;http://www.oracle.com/ocom/groups/public/documents/webcontent/038563.pdf&lt;/a&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.h-online.com/open/news/item/Oracle-clarifies-plans-for-Java-tools-and-OpenOffice-843661.html&quot;&gt;http://www.h-online.com/open/news/item/Oracle-clarifies-plans-for-Java-tools-and-OpenOffice-843661.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://wings-of-wind.com/2009/10/29/newsflash-no-more-mysql/&quot;&gt;http://wings-of-wind.com/2009/10/29/newsflash-no-more-mysql/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.infoworld.com/d/open-source/mysql-co-founder-questions-viability-mysql-fork-protect-users-717&quot;&gt;http://www.infoworld.com/d/open-source/mysql-co-founder-questions-viability-mysql-fork-protect-users-717&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.reuters.com/article/idgSmallBusiness/idUS347326965920091028&quot;&gt;http://www.reuters.com/article/idgSmallBusiness/idUS347326965920091028&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;a
+                href=&quot;http://www.lemondeinformatique.fr/actualites/lire-oracle-motive-pour-glassfish-et-mitige-sur-netbeans-29364.html&quot;&gt;http://www.lemondeinformatique.fr/actualites/lire-oracle-motive-pour-glassfish-et-mitige-sur-netbeans-29364.html&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Eclipse
+                RCP&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Netbeans platform&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;MySQL
+                Richard Sallman &lt;a href=&quot;http://news.techworld.com/applications/3204638/richard-stallman-oracle-must-divest-mysql/?intcmp=ros-md-rm&quot;&gt;http://news.techworld.com/applications/3204638/richard-stallman-oracle-must-divest-mysql/?intcmp=ros-md-rm&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Sacha
+                Labourey sur MySQL et les licenses doubles &lt;a href=&quot;http://sacha.labourey.com/2009/10/25/sun-vs-and-orcl-the-failure-of-the-dual-licensing-model/&quot;&gt;http://sacha.labourey.com/2009/10/25/sun-vs-and-orcl-the-failure-of-the-dual-licensing-model/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Le
+                coeur d&apos;IntelliJ devient open source&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://blogs.jetbrains.com/idea/2009/10/intellij-idea-open-sourced/&quot;&gt;http://blogs.jetbrains.com/idea/2009/10/intellij-idea-open-sourced/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Cedric
+                Beust &lt;a href=&quot;http://beust.com/weblog/archives/000520.html&quot;&gt;http://beust.com/weblog/archives/000520.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Duct
+                tape programmer &lt;a href=&quot;http://www.joelonsoftware.com/items/2009/09/23.html&quot;&gt;http://www.joelonsoftware.com/items/2009/09/23.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Dette
+                technique &lt;a href=&quot;http://www.martinfowler.com/bliki/TechnicalDebt.html&quot;&gt;http://www.martinfowler.com/bliki/TechnicalDebt.html&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Sonar
+                &lt;a href=&quot;http://sonar.codehaus.org/&quot;&gt;http://sonar.codehaus.org/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Google
+                a releasé la version 2.0 d&apos;Android&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;a href=&quot;http://www.playframework.org/&quot;&gt;http://www.playframework.org/&lt;/a&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Hibernate
+                en 1300 lignes de code (ca revient chaque annee) &lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=58266&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=58266&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Les
+                conferences&lt;/b&gt;&lt;/div&gt;&lt;div&gt;SpringOne&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Devoxx
+                &lt;a href=&quot;http://www.devoxx.com&quot;&gt;http://www.devoxx.com&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Hibernate
+                Search University &lt;a href=&quot;http://www.devoxx.com/display/DV09/Hibernate+Search+university&quot;&gt;http://www.devoxx.com/display/DV09/Hibernate+Search+university&lt;/a&gt;&lt;/div&gt;&lt;div&gt;Gaelyk
+                &lt;a href=&quot;http://gaelyk.appspot.com/&quot;&gt;http://gaelyk.appspot.com/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;Valtech
+                days &lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;quot;Cette année le format est un peu différent des années
+                précédentes, à savoir que les Valtech Days se dérouleront sur 2 journées discontinues :&lt;/div&gt;&lt;div&gt;*
+                1 le Mardi 17 Novembre 2009 (et oui dans 1 peu moins d&apos;un mois maintenant!)&lt;/div&gt;&lt;div&gt;*
+                1 autre aux environs de Mars 2010&lt;/div&gt;&lt;div&gt;Vous pouvez consulter les détails de la
+                conférence sur la page suivante :&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.valtech.fr/fr/index/valtech_days.html/&quot;&gt;http://www.valtech.fr/fr/index/valtech_days.html/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;En
+                bref, l&apos;évènement aura lieu à la Défense, et s’adresse à tous les acteurs du marché : clients,
+                leaders d’opinion, formateurs et consultants.&lt;/div&gt;&lt;div&gt;Cette édition sera consacrée aux
+                innovations IT et marketing autour de trois thèmes : les Méthodes Agiles, l’E-business &amp;amp; le Web
+                2.0 ainsi que les Innovations Technologiques.&lt;/div&gt;&lt;div&gt;Au programme cette année, une
+                journée entièrement consacrée aux séminaires, témoignages et débats avec encore des nouveautés en terme
+                de format et de contenu.&lt;/div&gt;&lt;div&gt;En particulier, vous pouvez consulter les intitulés des
+                sessions de cette nouvelle mouture à cette page :&lt;/div&gt;&lt;div&gt;&lt;a href=&quot;http://www.valtech.fr/fr/index/valtech_days/Programme.html&quot;&gt;http://www.valtech.fr/fr/index/valtech_days/Programme.html&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&amp;quot;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Outils
+                de la semaine&lt;/b&gt;&lt;/div&gt;&lt;div&gt;Click to flash &lt;a href=&quot;http://rentzsch.github.com/clicktoflash/&quot;&gt;http://rentzsch.github.com/clicktoflash/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=546730#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-e6c7d1a534f6ad10" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-e6c7d1a534f6ad10"/>
             <pubDate>Sun, 08 Nov 2009 17:33:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4113</itunes:duration>
-            <enclosure length="50193007" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-11.mp3" />
+            <enclosure length="50193007" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-11.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-20f8644e3fb848b8</libsyn:ItemId>
@@ -958,55 +1163,149 @@
                 Right Scale http://www.rightscale.com/&lt;br/&gt;
                 Elastic Grid http://www.elastic-grid.com/&lt;br/&gt;
                 MapReduce http://en.wikipedia.org/wiki/MapReduce&lt;br/&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=535503#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-20f8644e3fb848b8" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-20f8644e3fb848b8"/>
             <pubDate>Fri, 09 Oct 2009 14:55:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3985</itunes:duration>
-            <enclosure length="49776624" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-10.mp3" />
+            <enclosure length="49776624" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-10.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-a4c217497cbcb22f</libsyn:ItemId>
             <title>Les Cast Codeurs Podcast - Episode 9 - Tout le monde rachete tout le monde</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=530788#</link>
-            <description>&lt;p&gt;Enregistr&amp;eacute; le 25 septembre 2009&lt;br /&gt;&lt;br /&gt;JBoss Community Asylum Podcast &lt;br /&gt;&lt;a href=&quot;http://asylum.libsyn.com/&quot;&gt;http://asylum.libsyn.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Sortie de XWiki 2.0&lt;br /&gt;&lt;a href=&quot;http://www.xwiki.org&quot;&gt;http://www.xwiki.org&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Nouvelles&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;Les programmeurs et la trentaine en France&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;http://www.touilleur-express.fr/2009/07/27/senior/&quot;&gt;http://www.touilleur-express.fr/2009/07/27/senior/&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://blog.loof.fr/2009/07/35-ans-presque-mort.html&quot;&gt;http://blog.loof.fr/2009/07/35-ans-presque-mort.html&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://olamy.blogspot.com/2009/07/evoluer-pour-un-informaticien-ca-veut.html&quot;&gt;http://olamy.blogspot.com/2009/07/evoluer-pour-un-informaticien-ca-veut.html&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://codingly.com/2008/12/29/degage-sale-programmeur/&quot;&gt;http://codingly.com/2008/12/29/degage-sale-programmeur/&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://sunchic.free.fr/wordpress/index.php/archives/2009/08/02/crise-quelle-crise/&quot;&gt;http://sunchic.free.fr/wordpress/index.php/archives/2009/08/02/crise-quelle-crise/&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.computerworld.com/s/article/9137708/Opinion_The_unspoken_truth_about_managing_geeks?taxonomyId=14&amp;amp;pageNumber=1&quot;&gt;http://www.computerworld.com/s/article/9137708/Opinion_The_unspoken_truth_about_managing_geeks?taxonomyId=14&amp;amp;pageNumber=1&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://agoncal.wordpress.com/2009/09/20/are-students-getting-brainwashed-to-become-project-managers/&quot;&gt;http://agoncal.wordpress.com/2009/09/20/are-students-getting-brainwashed-to-become-project-managers/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Java trademark&lt;/span&gt;&lt;br /&gt;JRebel&lt;br /&gt;&lt;a href=&quot;http://www.zeroturnaround.com/javarebel/&quot;&gt;http://www.zeroturnaround.com/javarebel/&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.zeroturnaround.com/blog/community-renames-javarebel-to-jrebel/&quot;&gt;http://www.zeroturnaround.com/blog/community-renames-javarebel-to-jrebel/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Devoxx&lt;br /&gt;&lt;a href=&quot;http://www.devoxx.com&quot;&gt;http://www.devoxx.com&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;SpringSource rachet&amp;eacute; par VMWare&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.infoq.com/news/2009/08/vmware-springsource&quot;&gt;http://www.infoq.com/news/2009/08/vmware-springsource&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=55430&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=55430&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://blogs.sun.com/theaquarium/entry/vmware_to_acquire_springsource&quot;&gt;http://blogs.sun.com/theaquarium/entry/vmware_to_acquire_springsource&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.developpez.net/forums/d791767/club-professionnels-informatique/actualites/rachat-springsource-vmware-projet-dacquisition-signe-protocole-daccord/&quot;&gt;http://www.developpez.net/forums/d791767/club-professionnels-informatique/actualites/rachat-springsource-vmware-projet-dacquisition-signe-protocole-daccord/&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://blog.ippon.fr/node/1336&quot;&gt;http://blog.ippon.fr/node/1336&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://thecodersbreakfast.net/index.php?post/2009/08/10/VMWare-acquiert-SpringSource&quot;&gt;http://thecodersbreakfast.net/index.php?post/2009/08/10/VMWare-acquiert-SpringSource&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.touilleur-express.fr/2009/08/11/springsource-rachete-par-vmware/&quot;&gt;http://www.touilleur-express.fr/2009/08/11/springsource-rachete-par-vmware/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Spring Source rach&amp;egrave;te CloudFoundry&lt;/span&gt;&lt;br /&gt;Spring Source CloudFoundry &lt;br /&gt;&lt;a href=&quot;http://www.cloudfoundry.com/&quot;&gt;http://www.cloudfoundry.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Elastic Grid &lt;br /&gt;&lt;a href=&quot;http://www.elastic-grid.com/&quot;&gt;http://www.elastic-grid.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;UShare Soft &lt;br /&gt;&lt;a href=&quot;http://www.usharesoft.com/&quot;&gt;http://www.usharesoft.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Intallio Rach&amp;egrave;te Jetty (le cloud, toujours le cloud)&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://blog.xebia.fr/2009/09/03/java-cloud-apres-tomcat-cest-au-tour-de-jetty&quot;&gt;http://blog.xebia.fr/2009/09/03/java-cloud-apres-tomcat-cest-au-tour-de-jetty&lt;/a&gt;&lt;br /&gt;&lt;br style=&quot;font-style: italic;&quot; /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;MuleSoft sort TCat server&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.mulesoft.com/tcat-server-enterprise-tomcat-application-server&quot;&gt;http://www.mulesoft.com/tcat-server-enterprise-tomcat-application-server&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=57531&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=57531&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.cbronline.com/news/mulesoft_releases_tcat_server_beta_with_ibeans_090922&quot;&gt;http://www.cbronline.com/news/mulesoft_releases_tcat_server_beta_with_ibeans_090922&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Bonitasoft&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.bonitasoft.com/&quot;&gt;http://www.bonitasoft.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;JBoss et Rest-*&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://blogs.sun.com/alexismp/entry/thoughts_on_rest&quot;&gt;http://blogs.sun.com/alexismp/entry/thoughts_on_rest&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://www.rest-star.org&quot;&gt;http://www.rest-star.org&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://apsblog.burtongroup.com/2009/09/rest-ive-got-a-bad-feeling-about-this.html&quot;&gt;http://apsblog.burtongroup.com/2009/09/rest-ive-got-a-bad-feeling-about-this.html&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Divers&lt;/span&gt;&lt;br /&gt;Sortie de Google Andriod 1.6 &lt;br /&gt;&lt;a href=&quot;http://developer.android.com/sdk/android-1.6-highlights.html&quot;&gt;http://developer.android.com/sdk/android-1.6-highlights.html&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Sortie de Google Frame&lt;br /&gt;&lt;a href=&quot;http://code.google.com/intl/fr-FR/chrome/chromeframe/&quot;&gt;http://code.google.com/intl/fr-FR/chrome/chromeframe/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Les librairies Guava open-sourc&amp;eacute;es&lt;br /&gt;&lt;a href=&quot;http://code.google.com/p/guava-libraries/&quot;&gt;http://code.google.com/p/guava-libraries/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Fusion JBoss Portal et eXo Portal = GateIn&lt;br /&gt;&lt;a href=&quot;http://www.gatein.org&quot;&gt;http://www.gatein.org&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Les JUGs et conferences&lt;/span&gt;&lt;br /&gt;Mars JUG qui inaugure le 15 octobre avec Emmanuel&lt;br /&gt;&lt;a href=&quot;http://www.marsjug.org/evenements&quot;&gt;http://www.marsjug.org/evenements&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Les mains dans le cambouis&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;CITCON &amp;agrave; Paris :&lt;br /&gt;&lt;a href=&quot;http://citconf.com/paris2009/&quot;&gt;http://citconf.com/paris2009/&lt;/a&gt;&lt;/p&gt;</description>
+            <description>&lt;p&gt;Enregistr&amp;eacute; le 25 septembre 2009&lt;br /&gt;&lt;br /&gt;JBoss Community
+                Asylum Podcast &lt;br /&gt;&lt;a href=&quot;http://asylum.libsyn.com/&quot;&gt;http://asylum.libsyn.com/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Sortie de XWiki 2.0&lt;br /&gt;&lt;a href=&quot;http://www.xwiki.org&quot;&gt;http://www.xwiki.org&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Nouvelles&lt;/span&gt;&lt;br
+                /&gt;&lt;br /&gt;Les programmeurs et la trentaine en France&lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;http://www.touilleur-express.fr/2009/07/27/senior/&quot;&gt;http://www.touilleur-express.fr/2009/07/27/senior/&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://blog.loof.fr/2009/07/35-ans-presque-mort.html&quot;&gt;http://blog.loof.fr/2009/07/35-ans-presque-mort.html&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://olamy.blogspot.com/2009/07/evoluer-pour-un-informaticien-ca-veut.html&quot;&gt;http://olamy.blogspot.com/2009/07/evoluer-pour-un-informaticien-ca-veut.html&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://codingly.com/2008/12/29/degage-sale-programmeur/&quot;&gt;http://codingly.com/2008/12/29/degage-sale-programmeur/&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://sunchic.free.fr/wordpress/index.php/archives/2009/08/02/crise-quelle-crise/&quot;&gt;http://sunchic.free.fr/wordpress/index.php/archives/2009/08/02/crise-quelle-crise/&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.computerworld.com/s/article/9137708/Opinion_The_unspoken_truth_about_managing_geeks?taxonomyId=14&amp;amp;pageNumber=1&quot;&gt;http://www.computerworld.com/s/article/9137708/Opinion_The_unspoken_truth_about_managing_geeks?taxonomyId=14&amp;amp;pageNumber=1&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://agoncal.wordpress.com/2009/09/20/are-students-getting-brainwashed-to-become-project-managers/&quot;&gt;http://agoncal.wordpress.com/2009/09/20/are-students-getting-brainwashed-to-become-project-managers/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Java trademark&lt;/span&gt;&lt;br /&gt;JRebel&lt;br
+                /&gt;&lt;a href=&quot;http://www.zeroturnaround.com/javarebel/&quot;&gt;http://www.zeroturnaround.com/javarebel/&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.zeroturnaround.com/blog/community-renames-javarebel-to-jrebel/&quot;&gt;http://www.zeroturnaround.com/blog/community-renames-javarebel-to-jrebel/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Devoxx&lt;br /&gt;&lt;a href=&quot;http://www.devoxx.com&quot;&gt;http://www.devoxx.com&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;SpringSource rachet&amp;eacute; par
+                VMWare&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.infoq.com/news/2009/08/vmware-springsource&quot;&gt;http://www.infoq.com/news/2009/08/vmware-springsource&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=55430&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=55430&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://blogs.sun.com/theaquarium/entry/vmware_to_acquire_springsource&quot;&gt;http://blogs.sun.com/theaquarium/entry/vmware_to_acquire_springsource&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.developpez.net/forums/d791767/club-professionnels-informatique/actualites/rachat-springsource-vmware-projet-dacquisition-signe-protocole-daccord/&quot;&gt;http://www.developpez.net/forums/d791767/club-professionnels-informatique/actualites/rachat-springsource-vmware-projet-dacquisition-signe-protocole-daccord/&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://blog.ippon.fr/node/1336&quot;&gt;http://blog.ippon.fr/node/1336&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://thecodersbreakfast.net/index.php?post/2009/08/10/VMWare-acquiert-SpringSource&quot;&gt;http://thecodersbreakfast.net/index.php?post/2009/08/10/VMWare-acquiert-SpringSource&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.touilleur-express.fr/2009/08/11/springsource-rachete-par-vmware/&quot;&gt;http://www.touilleur-express.fr/2009/08/11/springsource-rachete-par-vmware/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Spring Source rach&amp;egrave;te
+                CloudFoundry&lt;/span&gt;&lt;br /&gt;Spring Source CloudFoundry &lt;br /&gt;&lt;a href=&quot;http://www.cloudfoundry.com/&quot;&gt;http://www.cloudfoundry.com/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Elastic Grid &lt;br /&gt;&lt;a href=&quot;http://www.elastic-grid.com/&quot;&gt;http://www.elastic-grid.com/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;UShare Soft &lt;br /&gt;&lt;a href=&quot;http://www.usharesoft.com/&quot;&gt;http://www.usharesoft.com/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Intallio Rach&amp;egrave;te Jetty (le
+                cloud, toujours le cloud)&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://blog.xebia.fr/2009/09/03/java-cloud-apres-tomcat-cest-au-tour-de-jetty&quot;&gt;http://blog.xebia.fr/2009/09/03/java-cloud-apres-tomcat-cest-au-tour-de-jetty&lt;/a&gt;&lt;br
+                /&gt;&lt;br style=&quot;font-style: italic;&quot; /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;MuleSoft
+                sort TCat server&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://www.mulesoft.com/tcat-server-enterprise-tomcat-application-server&quot;&gt;http://www.mulesoft.com/tcat-server-enterprise-tomcat-application-server&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.theserverside.com/news/thread.tss?thread_id=57531&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=57531&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.cbronline.com/news/mulesoft_releases_tcat_server_beta_with_ibeans_090922&quot;&gt;http://www.cbronline.com/news/mulesoft_releases_tcat_server_beta_with_ibeans_090922&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Bonitasoft&lt;/span&gt;&lt;br /&gt;&lt;a
+                href=&quot;http://www.bonitasoft.com/&quot;&gt;http://www.bonitasoft.com/&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;&lt;span
+                style=&quot;font-style: italic;&quot;&gt;JBoss et Rest-*&lt;/span&gt;&lt;br /&gt;&lt;a href=&quot;http://blogs.sun.com/alexismp/entry/thoughts_on_rest&quot;&gt;http://blogs.sun.com/alexismp/entry/thoughts_on_rest&lt;/a&gt;&lt;br
+                /&gt;&lt;a href=&quot;http://www.rest-star.org&quot;&gt;http://www.rest-star.org&lt;/a&gt;&lt;br /&gt;&lt;a
+                href=&quot;http://apsblog.burtongroup.com/2009/09/rest-ive-got-a-bad-feeling-about-this.html&quot;&gt;http://apsblog.burtongroup.com/2009/09/rest-ive-got-a-bad-feeling-about-this.html&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Divers&lt;/span&gt;&lt;br /&gt;Sortie
+                de Google Andriod 1.6 &lt;br /&gt;&lt;a href=&quot;http://developer.android.com/sdk/android-1.6-highlights.html&quot;&gt;http://developer.android.com/sdk/android-1.6-highlights.html&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Sortie de Google Frame&lt;br /&gt;&lt;a href=&quot;http://code.google.com/intl/fr-FR/chrome/chromeframe/&quot;&gt;http://code.google.com/intl/fr-FR/chrome/chromeframe/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Les librairies Guava open-sourc&amp;eacute;es&lt;br /&gt;&lt;a href=&quot;http://code.google.com/p/guava-libraries/&quot;&gt;http://code.google.com/p/guava-libraries/&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;Fusion JBoss Portal et eXo Portal = GateIn&lt;br /&gt;&lt;a href=&quot;http://www.gatein.org&quot;&gt;http://www.gatein.org&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Les JUGs et conferences&lt;/span&gt;&lt;br
+                /&gt;Mars JUG qui inaugure le 15 octobre avec Emmanuel&lt;br /&gt;&lt;a href=&quot;http://www.marsjug.org/evenements&quot;&gt;http://www.marsjug.org/evenements&lt;/a&gt;&lt;br
+                /&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Les mains dans le cambouis&lt;/span&gt;&lt;br
+                /&gt;&lt;br /&gt;CITCON &amp;agrave; Paris :&lt;br /&gt;&lt;a href=&quot;http://citconf.com/paris2009/&quot;&gt;http://citconf.com/paris2009/&lt;/a&gt;&lt;/p&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=530788#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-a4c217497cbcb22f" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-a4c217497cbcb22f"/>
             <pubDate>Sun, 27 Sep 2009 14:41:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4236</itunes:duration>
-            <enclosure length="33890098" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-9.mp3" />
+            <enclosure length="33890098" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-9.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-ba0a3cae997b88dd</libsyn:ItemId>
             <title>Les Cast Codeurs Podcast Episode 8 - Interview de Romain Guy sur Google Android</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=519198#</link>
-            <description>&lt;p&gt;Le 25 aout 2009&lt;br /&gt; &lt;br /&gt; Site principal&lt;br /&gt; &lt;a href=&quot;http://www.android.com/&quot;&gt;http://www.android.com/&lt;/a&gt;&lt;br /&gt; &lt;br /&gt; Les sources&lt;br /&gt; &lt;a href=&quot;http://source.android.com/&quot;&gt;http://source.android.com/&lt;/a&gt;&lt;br /&gt; &lt;br /&gt; Le blog de l&apos;equipe Android&lt;br /&gt; &lt;a href=&quot;http://android-developers.blogspot.com&quot;&gt;http://android-developers.blogspot.com&lt;/a&gt;&lt;br /&gt; &lt;br /&gt; La base de bugs d&apos;Android&lt;br /&gt; &lt;a href=&quot;http://b.android.com&quot;&gt;http://b.android.com&lt;/a&gt;&lt;br /&gt; &lt;br /&gt; IRC sur freenode&lt;br /&gt; #android&lt;br /&gt; #androidfra&lt;br /&gt; #android-dev&lt;br /&gt; &lt;br /&gt; Le blog perso de Romain&lt;br /&gt; &lt;a href=&quot;http://www.curious-creature.org&quot;&gt;http://www.curious-creature.org&lt;/a&gt;&lt;/p&gt;</description>
+            <description>&lt;p&gt;Le 25 aout 2009&lt;br /&gt; &lt;br /&gt; Site principal&lt;br /&gt; &lt;a href=&quot;http://www.android.com/&quot;&gt;http://www.android.com/&lt;/a&gt;&lt;br
+                /&gt; &lt;br /&gt; Les sources&lt;br /&gt; &lt;a href=&quot;http://source.android.com/&quot;&gt;http://source.android.com/&lt;/a&gt;&lt;br
+                /&gt; &lt;br /&gt; Le blog de l&apos;equipe Android&lt;br /&gt; &lt;a href=&quot;http://android-developers.blogspot.com&quot;&gt;http://android-developers.blogspot.com&lt;/a&gt;&lt;br
+                /&gt; &lt;br /&gt; La base de bugs d&apos;Android&lt;br /&gt; &lt;a href=&quot;http://b.android.com&quot;&gt;http://b.android.com&lt;/a&gt;&lt;br
+                /&gt; &lt;br /&gt; IRC sur freenode&lt;br /&gt; #android&lt;br /&gt; #androidfra&lt;br /&gt;
+                #android-dev&lt;br /&gt; &lt;br /&gt; Le blog perso de Romain&lt;br /&gt; &lt;a href=&quot;http://www.curious-creature.org&quot;&gt;http://www.curious-creature.org&lt;/a&gt;&lt;/p&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=519198#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-ba0a3cae997b88dd" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-ba0a3cae997b88dd"/>
             <pubDate>Wed, 26 Aug 2009 07:44:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3826</itunes:duration>
-            <enclosure length="30610041" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-8.mp3" />
+            <enclosure length="30610041" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-8.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-20f1228688b7e12a</libsyn:ItemId>
             <title>Les Cast Codeurs podcast episode 7 - Le DSL et ses amantes</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=510414#</link>
             <description>
-                &lt;p&gt;30 juillet 2009&lt;br /&gt; &lt;br /&gt;&lt;br /&gt; Nouvelles&lt;br /&gt;&lt;br /&gt; Google OS&lt;br /&gt; PR http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html &lt;br /&gt; FAQ http://chrome.blogspot.com/2009/07/google-chrome-os-faq.html &lt;br /&gt; http://dashes.com/anil/2009/07/googles-microsoft-moment.html &lt;br /&gt; &lt;br /&gt; La chute d&apos;IE 6&lt;br /&gt; http://weblogs.mozillazine.org/asa/archives/2009/07/internet_explorer_6.html &lt;br /&gt; &lt;br /&gt; L&apos;equipe des drivers Oracle sous le feu nourris&lt;br /&gt; http://www.theserverside.com/news/thread.tss?thread_id=55237 &lt;br /&gt; &lt;br /&gt; Java EE &lt;br /&gt; Bean Validation and Hibernate Validator 4.0 Beta2&lt;br /&gt; http://in.relation.to/Bloggers/RoadToFinalBeanValidationPFD2AndItsImplementationHibernateValidator4Beta2 &lt;br /&gt; &lt;br /&gt; JSR 330 @Inject&lt;br /&gt; http://code.google.com/p/atinject/ &lt;br /&gt; http://groups.google.com/group/atinject-observer/browse_thread/thread/238a112393a12ae0 &lt;br /&gt; &lt;br /&gt; Google App Engine down &lt;br /&gt; Le probl&amp;egrave;me du cloud, si le cloud est down, c&apos;est que rien ne va plus ! Interruption de GAE (y compris GAE Java &amp;eacute;videmment) pendant 6 heures (probl&amp;egrave;me de Google File System, et donc de BigTable, et m&amp;ecirc;me impact sur Google Wave). &lt;br /&gt; &lt;br /&gt; Twitter hack&amp;eacute; &lt;br /&gt; http://www.techcrunch.com/2009/07/19/the-anatomy-of-the-twitter-attack/ &lt;br /&gt; &lt;br /&gt; Garbage collector G1 dedie aux machines multicoeurs &lt;br /&gt; http://www.theserverside.com/news/thread.tss?thread_id=54321 &lt;br /&gt; http://blogs.sun.com/jonthecollector/entry/our_collectors &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; Confs &lt;br /&gt; Agile conf 2009 a Chicago du 24 au 28 aout! (voir texte entier en bas de show note) &lt;br /&gt; JBoss World 2009 du 1er au 4 septembre 2009 a Chicago http://www.jbossworld.com/  &lt;br /&gt; SpringOne + G2X du 19 au 22 octobre a la Nouvelle Orleans http://www.springone2gx.com/conference/new_orleans/2009/10/home &lt;br /&gt; &lt;br /&gt; JPA 2 &lt;br /&gt; http://in.relation.to/Bloggers/LindaBlogsTheTypesafeQueryAPIForJPA20 &lt;br /&gt; http://blogs.sun.com/ldemichiel/entry/java_persistence_2_0_proposed &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; DSLs &lt;br /&gt; infoQ http://www.infoq.com/presentations/Creating-DSLs-in-Java-Venkat-Subramaniam &lt;br /&gt; Une pr&amp;eacute;sentation donn&amp;eacute;e &amp;agrave; JavaOne sur les DSLs en Groovy http://www.slideshare.net/glaforge/practical-groovy-domainspecific-languages &lt;br /&gt; Hibernate Search utilisant un DSL de configuration http://anonsvn.jboss.org/repos/hibernate/search/trunk/src/test/java/org/hibernate/search/test/configuration/ProgrammaticMappingTest.java ( methode NotUseddefineMapping() ) &lt;br /&gt; JetBrains Meta Programming System 1.0 http://www.theserverside.com/news/thread.tss?thread_id=55297 &lt;br /&gt; &lt;br /&gt; @lescastcodeurs sur twitter&lt;br /&gt; Retrouver les cast codeurs sur twitter http://twitter.com/lescastcodeurs&lt;/p&gt;
+                &lt;p&gt;30 juillet 2009&lt;br /&gt; &lt;br /&gt;&lt;br /&gt; Nouvelles&lt;br /&gt;&lt;br /&gt; Google
+                OS&lt;br /&gt; PR http://googleblog.blogspot.com/2009/07/introducing-google-chrome-os.html &lt;br /&gt;
+                FAQ http://chrome.blogspot.com/2009/07/google-chrome-os-faq.html &lt;br /&gt;
+                http://dashes.com/anil/2009/07/googles-microsoft-moment.html &lt;br /&gt; &lt;br /&gt; La chute d&apos;IE
+                6&lt;br /&gt; http://weblogs.mozillazine.org/asa/archives/2009/07/internet_explorer_6.html &lt;br /&gt;
+                &lt;br /&gt; L&apos;equipe des drivers Oracle sous le feu nourris&lt;br /&gt;
+                http://www.theserverside.com/news/thread.tss?thread_id=55237 &lt;br /&gt; &lt;br /&gt; Java EE &lt;br /&gt;
+                Bean Validation and Hibernate Validator 4.0 Beta2&lt;br /&gt;
+                http://in.relation.to/Bloggers/RoadToFinalBeanValidationPFD2AndItsImplementationHibernateValidator4Beta2
+                &lt;br /&gt; &lt;br /&gt; JSR 330 @Inject&lt;br /&gt; http://code.google.com/p/atinject/ &lt;br /&gt;
+                http://groups.google.com/group/atinject-observer/browse_thread/thread/238a112393a12ae0 &lt;br /&gt; &lt;br
+                /&gt; Google App Engine down &lt;br /&gt; Le probl&amp;egrave;me du cloud, si le cloud est down, c&apos;est
+                que rien ne va plus ! Interruption de GAE (y compris GAE Java &amp;eacute;videmment) pendant 6 heures
+                (probl&amp;egrave;me de Google File System, et donc de BigTable, et m&amp;ecirc;me impact sur Google
+                Wave). &lt;br /&gt; &lt;br /&gt; Twitter hack&amp;eacute; &lt;br /&gt;
+                http://www.techcrunch.com/2009/07/19/the-anatomy-of-the-twitter-attack/ &lt;br /&gt; &lt;br /&gt;
+                Garbage collector G1 dedie aux machines multicoeurs &lt;br /&gt;
+                http://www.theserverside.com/news/thread.tss?thread_id=54321 &lt;br /&gt;
+                http://blogs.sun.com/jonthecollector/entry/our_collectors &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; Confs
+                &lt;br /&gt; Agile conf 2009 a Chicago du 24 au 28 aout! (voir texte entier en bas de show note) &lt;br
+                /&gt; JBoss World 2009 du 1er au 4 septembre 2009 a Chicago http://www.jbossworld.com/ &lt;br /&gt;
+                SpringOne + G2X du 19 au 22 octobre a la Nouvelle Orleans
+                http://www.springone2gx.com/conference/new_orleans/2009/10/home &lt;br /&gt; &lt;br /&gt; JPA 2 &lt;br /&gt;
+                http://in.relation.to/Bloggers/LindaBlogsTheTypesafeQueryAPIForJPA20 &lt;br /&gt;
+                http://blogs.sun.com/ldemichiel/entry/java_persistence_2_0_proposed &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;
+                DSLs &lt;br /&gt; infoQ http://www.infoq.com/presentations/Creating-DSLs-in-Java-Venkat-Subramaniam &lt;br
+                /&gt; Une pr&amp;eacute;sentation donn&amp;eacute;e &amp;agrave; JavaOne sur les DSLs en Groovy
+                http://www.slideshare.net/glaforge/practical-groovy-domainspecific-languages &lt;br /&gt; Hibernate
+                Search utilisant un DSL de configuration
+                http://anonsvn.jboss.org/repos/hibernate/search/trunk/src/test/java/org/hibernate/search/test/configuration/ProgrammaticMappingTest.java
+                ( methode NotUseddefineMapping() ) &lt;br /&gt; JetBrains Meta Programming System 1.0
+                http://www.theserverside.com/news/thread.tss?thread_id=55297 &lt;br /&gt; &lt;br /&gt; @lescastcodeurs
+                sur twitter&lt;br /&gt; Retrouver les cast codeurs sur twitter http://twitter.com/lescastcodeurs&lt;/p&gt;
                 &lt;pre&gt;Agile Conf 2009. Texte d&apos;Eric Lefevre-Ardant
-                Agile 2009 Conference est la conf&amp;eacute;rence la plus importante dans l&apos;ann&amp;eacute;e sur les pratiques de d&amp;eacute;veloppement Agiles.
+                Agile 2009 Conference est la conf&amp;eacute;rence la plus importante dans l&apos;ann&amp;eacute;e sur
+                les pratiques de d&amp;eacute;veloppement Agiles.
                 Elle aura lieu cette ann&amp;eacute;e &amp;agrave; Chicago, du 24 au 28 ao&amp;ucirc;t.
-                La conf&amp;eacute;rence ne s&apos;adresse pas seulement &amp;agrave; des coachs Agile ou des chefs de projet. Un tiers des participants se d&amp;eacute;finissent comme &quot;d&amp;eacute;veloppeurs&quot; ou &quot;responsables techniques&quot; et cela se voit dans les sessions propos&amp;eacute;es.
+                La conf&amp;eacute;rence ne s&apos;adresse pas seulement &amp;agrave; des coachs Agile ou des chefs de
+                projet. Un tiers des participants se d&amp;eacute;finissent comme &quot;d&amp;eacute;veloppeurs&quot; ou
+                &quot;responsables techniques&quot; et cela se voit dans les sessions propos&amp;eacute;es.
                 Parmi les activit&amp;eacute;s qui peuvent int&amp;eacute;resser les amateurs de Java, notons :
-                la comp&amp;eacute;tition &quot;Programming With the Stars&quot; qui consiste &amp;agrave; r&amp;eacute;aliser un d&amp;eacute;veloppement en quelques minutes, en bin&amp;ocirc;me avec un d&amp;eacute;veloppeur reconnu, devant un juri de 3 experts. Le langage est au choix des participants.
-                le track Developer Jam (http://agile2009.agilealliance.org/developers) est particuli&amp;egrave;rement d&amp;eacute;di&amp;eacute; aux d&amp;eacute;veloppeurs, mais ces personnes seront aussi int&amp;eacute;ress&amp;eacute;es par Tools For Agility (http://agile2009.agilealliance.org/tools)
-                Voici des sessions qui s&apos;adressent directement &amp;agrave; des programmeurs Java (les + int&amp;eacute;ressantes &amp;agrave; mon sens) :
+                la comp&amp;eacute;tition &quot;Programming With the Stars&quot; qui consiste &amp;agrave; r&amp;eacute;aliser
+                un d&amp;eacute;veloppement en quelques minutes, en bin&amp;ocirc;me avec un d&amp;eacute;veloppeur
+                reconnu, devant un juri de 3 experts. Le langage est au choix des participants.
+                le track Developer Jam (http://agile2009.agilealliance.org/developers) est particuli&amp;egrave;rement d&amp;eacute;di&amp;eacute;
+                aux d&amp;eacute;veloppeurs, mais ces personnes seront aussi int&amp;eacute;ress&amp;eacute;es par Tools
+                For Agility (http://agile2009.agilealliance.org/tools)
+                Voici des sessions qui s&apos;adressent directement &amp;agrave; des programmeurs Java (les + int&amp;eacute;ressantes
+                &amp;agrave; mon sens) :
                 Emergent Design &amp;amp; Evolutionary Architecture
                 Scala: Object-Oriented and Functional Programming for the JVM
                 How to make your testing more Groovy
@@ -1019,7 +1318,7 @@
                 Executable requirements: BDD with easyb and JDave (parle aussi de Groovy)
                 Clean Code III: Functions
                 BDD clinic - the doctor is in
-                Malleable Code:  How Tests Improve Production Code
+                Malleable Code: How Tests Improve Production Code
                 Back to Basics - Writing Expressive Tests Without All The Wizardry
                 Test Driven Development in Java: Live and Uncensored
                 Acceptance Testing Java Applications with Cucumber, RSpec, and JRuby
@@ -1032,15 +1331,17 @@
                 http://agile2009.agilealliance.org/programOverview
                 Le site officiel est sur
                 http://agile2009.agilealliance.org/
-                Il y a des reductions pour les personnes qui s&apos;inscrivent t&amp;ocirc;t et surtout pour les groupes de 5 participants.&lt;/pre&gt;
-</description>
+                Il y a des reductions pour les personnes qui s&apos;inscrivent t&amp;ocirc;t et surtout pour les groupes
+                de 5 participants.&lt;/pre&gt;
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=510414#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-20f1228688b7e12a" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-20f1228688b7e12a"/>
             <pubDate>Sat, 01 Aug 2009 14:15:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3963</itunes:duration>
-            <enclosure length="31708241" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-7.mp3" />
+            <enclosure length="31708241" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-7.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-5ddada4d98626b86</libsyn:ItemId>
@@ -1049,8 +1350,10 @@
             <description>
                 16 juin 2009&lt;br/&gt;
                 &lt;br/&gt;
-                &lt;p&gt;Interview de Thomas Heute et Julien Viet sur les portails d&apos;entreprise et le partenariat entre eXo et JBoss pour developper un portail commun.
-                Qu&apos;est-ce qu&apos;un portail? Pour qui? Comment integrer les applications existantes? Un tour de la competition.&lt;/p&gt;
+                &lt;p&gt;Interview de Thomas Heute et Julien Viet sur les portails d&apos;entreprise et le partenariat
+                entre eXo et JBoss pour developper un portail commun.
+                Qu&apos;est-ce qu&apos;un portail? Pour qui? Comment integrer les applications existantes? Un tour de la
+                competition.&lt;/p&gt;
                 Thomas heute&lt;br/&gt;
                 Blog - &lt;a href=&quot;http://blog.thomas.heute.name/&quot;&gt;http://blog.thomas.heute.name/&lt;/a&gt;&lt;br/&gt;
                 &lt;a href=&quot;http://www.jboss.org/jbossportal/&quot;&gt;http://www.jboss.org/jbossportal/&lt;/a&gt;&lt;br/&gt;
@@ -1074,27 +1377,60 @@
                 &lt;br/&gt;
                 Nuxeo&lt;br/&gt;
                 &lt;a href=&quot;http://www.nuxeo.com/&quot;&gt;http://www.alfresco.com/&lt;/a&gt;&lt;br/&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=494146#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5ddada4d98626b86" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5ddada4d98626b86"/>
             <pubDate>Sun, 21 Jun 2009 12:44:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2465</itunes:duration>
-            <enclosure length="19724935" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-6.mp3" />
+            <enclosure length="19724935" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-6.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-5117a64a7e44a690</libsyn:ItemId>
-            <title>Les Cast Codeurs Podcast  - Episode 5 - Special JavaOne</title>
+            <title>Les Cast Codeurs Podcast - Episode 5 - Special JavaOne</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=489450#</link>
-            <description>4 juin 2009&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Nouvelles&lt;/span&gt;&lt;br/&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;Google IO&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Google Wave - &lt;a href=&quot;http://wave.google.com/&quot;&gt;http://wave.google.com/&lt;/a&gt;&lt;br/&gt;Google Wave under the hood &lt;a href=&quot;http://&quot;&gt;http://www.youtube.com/watch?v=uOFzWZrsPV0&lt;/a&gt;&lt;br/&gt;WOOT - &lt;a href=&quot;http://&quot;&gt;http://www.ludovic.org/xwiki/bin/view/Main/Gartner+analyzes+OT+used+by+Google+Wave+and+detects+WOOT+(the+algoythm+used+in+XWiki+Concerto)&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Android&lt;br/&gt;Free G2 for all Google IO developers - &lt;a href=&quot;http://&quot;&gt;http://www.techcrunch.com/2009/05/27/googles-oprah-moment-an-android-phone-for-everyone-at-google-io/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot;font-style: italic;&quot;&gt;JavaOne&lt;/span&gt;&lt;br/&gt;Keynote - &lt;a href=&quot;http://&quot;&gt;http://java.sun.com/javaone/2009/articles/gen_tuesday.jsp?feed=JSC&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;JavaStore - &lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.java.com/en/store/&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.computerworld.com/action/article.do?command=viewArticleBasic&amp;amp;articleId=9133899&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/02/javastore_sun_mobile/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Sun in the Clouds&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.sun.com/aboutsun/pr/2009-06/sunflash.20090601.2.xml&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.sun.com/solutions/cloudcomputing/index.jsp&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Larry Ellison et JavaFX&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/04/ellison_javafx_commitment/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Jigsaw (modules en Java) vs OSGi&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://tech.puredanger.com/2009/06/04/javaone-jigsaw/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;Red Hat annonce JBoss Open Choice: Java EE profiles&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://press.redhat.com/2009/06/08/jboss-open-choice-customers-speak-we-listen/&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/01/red_hat_app_server_spring/ &lt;/a&gt;&lt;br/&gt;Reponse de Rod Johnson - &lt;a href=&quot;http://&quot;&gt;http://blog.springsource.com/2009/06/03/red-hat-reacts-to-springsources-leadership/&lt;/a&gt;&lt;br/&gt;Reponse de Rich Sharples a Rod - &lt;a href=&quot;http://&quot;&gt;http://blog.softwhere.org/archives/865&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;JSR-330 vs JSR-299 aka @Inject vs WebBeans&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://crazybob.org/2009/05/announcing-javaxinjectinject.html&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://in.relation.to/Bloggers/CommentsOnAnnotationsForDependencyInjection&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=54499&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://blog.robjsoftware.org/2009/05/bob-vs-gavin-no-holds-barred.html&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.jroller.com/rickard/entry/why_inject_is_a_bad&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.adam-bien.com/roller/abien/entry/spring_guice_jsr_299_just&lt;/a&gt;&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://lists.jboss.org/pipermail/webbeans-dev/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Outils de la semaine&lt;/span&gt;&lt;br/&gt;DZone Refcardz&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://refcardz.dzone.com/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;JIRA client&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://almworks.com/jiraclient/overview.html&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Twitter client Nambu&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://nambu.com/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Feedly (RSS client for Firefox)&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.feedly.com&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Livre d&apos;Antonio&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.apress.com/book/view/1430219548&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Normandie JUG (premiere reunion le 16 juin)&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.normandyjug.org/&lt;/a&gt;</description>
+            <description>4 juin 2009&lt;br/&gt;&lt;br/&gt;&lt;span style=&quot;font-weight: bold;&quot;&gt;Nouvelles&lt;/span&gt;&lt;br/&gt;&lt;span
+                style=&quot;font-style: italic;&quot;&gt;Google IO&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;Google Wave - &lt;a
+                href=&quot;http://wave.google.com/&quot;&gt;http://wave.google.com/&lt;/a&gt;&lt;br/&gt;Google Wave
+                under the hood &lt;a href=&quot;http://&quot;&gt;http://www.youtube.com/watch?v=uOFzWZrsPV0&lt;/a&gt;&lt;br/&gt;WOOT
+                - &lt;a href=&quot;http://&quot;&gt;http://www.ludovic.org/xwiki/bin/view/Main/Gartner+analyzes+OT+used+by+Google+Wave+and+detects+WOOT+(the+algoythm+used+in+XWiki+Concerto)&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Android&lt;br/&gt;Free
+                G2 for all Google IO developers - &lt;a href=&quot;http://&quot;&gt;http://www.techcrunch.com/2009/05/27/googles-oprah-moment-an-android-phone-for-everyone-at-google-io/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;span
+                style=&quot;font-style: italic;&quot;&gt;JavaOne&lt;/span&gt;&lt;br/&gt;Keynote - &lt;a href=&quot;http://&quot;&gt;http://java.sun.com/javaone/2009/articles/gen_tuesday.jsp?feed=JSC&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;JavaStore
+                - &lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.java.com/en/store/&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.computerworld.com/action/article.do?command=viewArticleBasic&amp;amp;articleId=9133899&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/02/javastore_sun_mobile/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Sun
+                in the Clouds&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.sun.com/aboutsun/pr/2009-06/sunflash.20090601.2.xml&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.sun.com/solutions/cloudcomputing/index.jsp&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Larry
+                Ellison et JavaFX&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/04/ellison_javafx_commitment/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Jigsaw
+                (modules en Java) vs OSGi&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://tech.puredanger.com/2009/06/04/javaone-jigsaw/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;Red
+                Hat annonce JBoss Open Choice: Java EE profiles&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://press.redhat.com/2009/06/08/jboss-open-choice-customers-speak-we-listen/&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.theregister.co.uk/2009/06/01/red_hat_app_server_spring/ &lt;/a&gt;&lt;br/&gt;Reponse
+                de Rod Johnson - &lt;a href=&quot;http://&quot;&gt;http://blog.springsource.com/2009/06/03/red-hat-reacts-to-springsources-leadership/&lt;/a&gt;&lt;br/&gt;Reponse
+                de Rich Sharples a Rod - &lt;a href=&quot;http://&quot;&gt;http://blog.softwhere.org/archives/865&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;JSR-330
+                vs JSR-299 aka @Inject vs WebBeans&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://crazybob.org/2009/05/announcing-javaxinjectinject.html&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://in.relation.to/Bloggers/CommentsOnAnnotationsForDependencyInjection&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.theserverside.com/news/thread.tss?thread_id=54499&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://blog.robjsoftware.org/2009/05/bob-vs-gavin-no-holds-barred.html&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.jroller.com/rickard/entry/why_inject_is_a_bad&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://www.adam-bien.com/roller/abien/entry/spring_guice_jsr_299_just&lt;/a&gt;&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://lists.jboss.org/pipermail/webbeans-dev/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;span
+                style=&quot;font-weight: bold;&quot;&gt;Outils de la semaine&lt;/span&gt;&lt;br/&gt;DZone Refcardz&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://refcardz.dzone.com/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;JIRA client&lt;br/&gt;&lt;a
+                href=&quot;http://&quot;&gt;http://almworks.com/jiraclient/overview.html&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Twitter
+                client Nambu&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://nambu.com/&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Feedly
+                (RSS client for Firefox)&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.feedly.com&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Livre
+                d&apos;Antonio&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.apress.com/book/view/1430219548&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;Normandie
+                JUG (premiere reunion le 16 juin)&lt;br/&gt;&lt;a href=&quot;http://&quot;&gt;http://www.normandyjug.org/&lt;/a&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=489450#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5117a64a7e44a690" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-5117a64a7e44a690"/>
             <pubDate>Tue, 09 Jun 2009 03:12:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4313</itunes:duration>
-            <enclosure length="34507554" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-5.mp3" />
+            <enclosure length="34507554" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-5.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-8eb23b0bff967281</libsyn:ItemId>
@@ -1111,14 +1447,15 @@
                 &lt;a href=&quot;http://checkstyle.sourceforge.net/&quot;&gt;http://checkstyle.sourceforge.net/&lt;/a&gt;&lt;br/&gt;
                 &lt;a href=&quot;http://java-source.net/open-source/code-analyzers/sonar&quot;&gt;http://java-source.net/open-source/code-analyzers/sonar&lt;/a&gt;&lt;br/&gt;
                 &lt;a href=&quot;http://www.castsoftware.com/&quot;&gt;http://www.castsoftware.com/&lt;/a&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=483737#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-8eb23b0bff967281" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-8eb23b0bff967281"/>
             <pubDate>Mon, 25 May 2009 18:16:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>2375</itunes:duration>
-            <enclosure length="19005003" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-4.mp3" />
+            <enclosure length="19005003" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-4.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-821735c8860bc7c5</libsyn:ItemId>
@@ -1133,11 +1470,15 @@
                 * http://www.sun.com/aboutsun/pr/2009-04/sunflash.20090420.1.xml&lt;br/&gt;
                 * http://finance.yahoo.com/news/Oracle-Buys-prnews-14969049.html&lt;br/&gt;
                 * http://blog.xebia.fr/2009/04/20/oracle-rachete-sun/&lt;br/&gt;
-                * http://www.dng-consulting.com/blogs/index.php/2009/04/20/oracle-rachaegrave-te-sun-quelles-consae?blog=1&lt;br/&gt;
-                * http://www.lemondeinformatique.fr/actualites/lire-sun-oracle-un-sacre-coup-a-l-open-source-pour-forrester-28466.html&lt;br/&gt;
-                * http://www.forbes.com/2009/04/29/java-oracle-sun-technology-internet-infrastructure-java.html?partner=yahootix&lt;br/&gt;
+                *
+                http://www.dng-consulting.com/blogs/index.php/2009/04/20/oracle-rachaegrave-te-sun-quelles-consae?blog=1&lt;br/&gt;
+                *
+                http://www.lemondeinformatique.fr/actualites/lire-sun-oracle-un-sacre-coup-a-l-open-source-pour-forrester-28466.html&lt;br/&gt;
+                *
+                http://www.forbes.com/2009/04/29/java-oracle-sun-technology-internet-infrastructure-java.html?partner=yahootix&lt;br/&gt;
                 * JavaFX http://weblogs.java.net/blog/opinali/archive/2009/04/oracle_and_java.html&lt;br/&gt;
-                Bases de donnees en memoire: Derby http://db.apache.org/derby/, H2 http://www.h2database.com, HSQLDB http://hsqldb.org/ &lt;br/&gt;
+                Bases de donnees en memoire: Derby http://db.apache.org/derby/, H2 http://www.h2database.com, HSQLDB
+                http://hsqldb.org/ &lt;br/&gt;
                 &lt;h3&gt;Processeur multi coeur et Java&lt;/h3&gt;
                 Acteurs par Alex Miller http://tech.puredanger.com/presentations/actor-concurrency&lt;br/&gt;
                 Twitter et Scala http://www.artima.com/scalazine/articles/twitter_on_scala.html&lt;br/&gt;
@@ -1166,27 +1507,34 @@
                 http://lescastcodeurs.com&lt;br/&gt;
                 http://groups.google.com/group/lescastcodeurs&lt;br/&gt;
                 commentaire@lescastcodeurs.com&lt;br/&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=476805#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-821735c8860bc7c5" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-821735c8860bc7c5"/>
             <pubDate>Sun, 10 May 2009 22:42:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>3500</itunes:duration>
-            <enclosure length="28003038" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-3.mp3" />
+            <enclosure length="28003038" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-3.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-4998c22ae6fa3388</libsyn:ItemId>
             <title>Les Cast Codeurs Podcast - Episode 2</title>
             <link>http://lescastcodeurs.libsyn.com/index.php?post_id=464277#</link>
-            <description>&lt;p&gt;Interview d&apos;Emmanuel Lecharny sur Apache Directory Server. Qu&apos;est-ce qu&apos;un directory server? Pourquoi LDAP? A quoi ca sert? Qu&apos;est-ce qu&apos;offre Apache Directory Server? &lt;br /&gt;&lt;br /&gt; Enregistre le 28 mars 2009. &lt;br /&gt;&lt;br /&gt; Apache Directory Server &lt;a href=&quot;http://directory.apache.org/&quot;&gt;http://directory.apache.org/&lt;/a&gt;&lt;br /&gt; Project vision &lt;a href=&quot;http://directory.apache.org/community%26resources/ldap-renaissance.html&quot;&gt;http://directory.apache.org/community%26resources/ldap-renaissance.html&lt;/a&gt;&lt;br /&gt; Blog d&apos;Emmanuel Lecharny &lt;a href=&quot;http://hrabal.blogspot.com/&quot;&gt;http://hrabal.blogspot.com/&lt;/a&gt;&lt;/p&gt;</description>
+            <description>&lt;p&gt;Interview d&apos;Emmanuel Lecharny sur Apache Directory Server. Qu&apos;est-ce qu&apos;un
+                directory server? Pourquoi LDAP? A quoi ca sert? Qu&apos;est-ce qu&apos;offre Apache Directory Server?
+                &lt;br /&gt;&lt;br /&gt; Enregistre le 28 mars 2009. &lt;br /&gt;&lt;br /&gt; Apache Directory Server
+                &lt;a href=&quot;http://directory.apache.org/&quot;&gt;http://directory.apache.org/&lt;/a&gt;&lt;br /&gt;
+                Project vision &lt;a href=&quot;http://directory.apache.org/community%26resources/ldap-renaissance.html&quot;&gt;http://directory.apache.org/community%26resources/ldap-renaissance.html&lt;/a&gt;&lt;br
+                /&gt; Blog d&apos;Emmanuel Lecharny &lt;a href=&quot;http://hrabal.blogspot.com/&quot;&gt;http://hrabal.blogspot.com/&lt;/a&gt;&lt;/p&gt;</description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=464277#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-4998c22ae6fa3388" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-4998c22ae6fa3388"/>
             <pubDate>Mon, 27 Apr 2009 13:28:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>1988</itunes:duration>
-            <enclosure length="15911287" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-2.mp3" />
+            <enclosure length="15911287" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-2.mp3"/>
         </item>
         <item>
             <libsyn:ItemId>k-f72512a150764017</libsyn:ItemId>
@@ -1248,14 +1596,15 @@
                 Feedback&lt;br/&gt;
                 http://lescastcodeurs.com&lt;br/&gt;
                 commentaire@lescastcodeurs.com&lt;br/&gt;
-</description>
+            </description>
             <guid isPermaLink="true">http://lescastcodeurs.libsyn.com/index.php?post_id=453437#</guid>
-            <media:thumbnail url="http://asset-server.libsyn.com/item/k-f72512a150764017" />
+            <media:thumbnail url="http://asset-server.libsyn.com/item/k-f72512a150764017"/>
             <pubDate>Sun, 12 Apr 2009 00:40:00 +0000</pubDate>
             <itunes:keywords>[[item.keywords]]</itunes:keywords>
-            <itunes:subtitle />
+            <itunes:subtitle/>
             <itunes:duration>4493</itunes:duration>
-            <enclosure length="71902534" type="audio/mpeg" url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-1.mp3" />
+            <enclosure length="71902534" type="audio/mpeg"
+                       url="http://traffic.libsyn.com/lescastcodeurs/LesCastCodeurs-Episode-1.mp3"/>
         </item>
     </channel>
 </rss>

@@ -15,7 +15,7 @@ public class FluxxMessage {
         return messageResourceBundle.getString(key);
     }
 
-    public static String m(String key, Object ... attrs) {
+    public static String m(String key, Object... attrs) {
         return MessageFormat.format(m(key), attrs);
     }
 

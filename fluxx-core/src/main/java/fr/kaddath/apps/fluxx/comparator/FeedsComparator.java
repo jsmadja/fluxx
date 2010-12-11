@@ -1,8 +1,8 @@
 package fr.kaddath.apps.fluxx.comparator;
 
-import java.util.Comparator;
-
 import fr.kaddath.apps.fluxx.domain.Feed;
+
+import java.util.Comparator;
 
 public class FeedsComparator implements Comparator<Feed> {
 

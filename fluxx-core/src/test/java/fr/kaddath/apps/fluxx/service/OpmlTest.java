@@ -1,15 +1,14 @@
 package fr.kaddath.apps.fluxx.service;
 
-import static org.junit.Assert.assertTrue;
+import fr.kaddath.apps.fluxx.domain.Feed;
+import fr.kaddath.apps.fluxx.domain.Opml;
+import org.apache.commons.lang.StringUtils;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-import org.junit.Test;
-
-import fr.kaddath.apps.fluxx.domain.Feed;
-import fr.kaddath.apps.fluxx.domain.Opml;
+import static org.junit.Assert.assertTrue;
 
 public class OpmlTest {
 
@@ -23,7 +22,7 @@ public class OpmlTest {
 
         String xmlOpml = new Opml(feeds).build();
         System.err.println(xmlOpml);
-        assertTrue(StringUtils.isNotEmpty(xmlOpml));        
+        assertTrue(StringUtils.isNotEmpty(xmlOpml));
     }
 
 }

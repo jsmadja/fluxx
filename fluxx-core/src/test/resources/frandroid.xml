@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
-<channel>
-	<title>FrAndroid - Android</title>
-	
-	<link>http://www.frandroid.com</link>
-	<description>La communauté Android francophone autour du mobile</description>
-	<lastBuildDate>Fri, 19 Nov 2010 16:19:21 +0000</lastBuildDate>
-	<language>fr</language>
-	<sy:updatePeriod>hourly</sy:updatePeriod>
-	<sy:updateFrequency>1</sy:updateFrequency>
-	<generator>http://wordpress.org/?v=3.0.1</generator>
-		<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/Frandroid" /><feedburner:info uri="frandroid" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><media:copyright>Copyright FrAndroid</media:copyright><feedburner:emailServiceId>Frandroid</feedburner:emailServiceId><feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname><item>
-		<title>Après ses puces, Marvell prépare ses tablettes Android ! (vidéo)</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/TCM5F7s0f2k/</link>
-		<comments>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/#comments</comments>
-		<pubDate>Fri, 19 Nov 2010 14:57:07 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Android 2.2]]></category>
-		<category><![CDATA[android froyo]]></category>
-		<category><![CDATA[Marvell]]></category>
-		<category><![CDATA[Prototype]]></category>
-		<category><![CDATA[Tablet]]></category>
-		<category><![CDATA[tablette]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48350</guid>
-		<description><![CDATA[Après l&#8217;Armada 628 triple-coeur à 1.5 GHz, Marvell se lance dans la production de tablettes Android ! Voici ce qui pourrait révolutionner le marché des tablettes en terme de prix. Cette tablette n&#8217;en est pas à sa phase finale, puisque c&#8217;est un prototype sous Android FroYo (2.2), embarquant un écran de 10.1 pouces avec une résolution WXGA (1280 x 780 pixels). On a le Wi-Fi, des ports <a class="more-link" href="http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Après l&#8217;<a href="http://www.frandroid.com/37848/marvell-larmada-628-triple-coeur-cadence-a-15ghz/">Armada 628</a> triple-coeur à 1.5 GHz, Marvell se lance dans la production de tablettes Android !</p>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0"
+     version="2.0">
+    <channel>
+        <title>FrAndroid - Android</title>
+
+        <link>http://www.frandroid.com</link>
+        <description>La communauté Android francophone autour du mobile</description>
+        <lastBuildDate>Fri, 19 Nov 2010 16:19:21 +0000</lastBuildDate>
+        <language>fr</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <generator>http://wordpress.org/?v=3.0.1</generator>
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml"
+                     href="http://feeds.feedburner.com/Frandroid"/>
+        <feedburner:info uri="frandroid"/>
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
+        <media:copyright>Copyright FrAndroid</media:copyright>
+        <feedburner:emailServiceId>Frandroid</feedburner:emailServiceId>
+        <feedburner:feedburnerHostname>http://feedburner.google.com</feedburner:feedburnerHostname>
+        <item>
+            <title>Après ses puces, Marvell prépare ses tablettes Android ! (vidéo)</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/TCM5F7s0f2k/</link>
+            <comments>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/#comments
+            </comments>
+            <pubDate>Fri, 19 Nov 2010 14:57:07 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Android 2.2]]></category>
+            <category><![CDATA[android froyo]]></category>
+            <category><![CDATA[Marvell]]></category>
+            <category><![CDATA[Prototype]]></category>
+            <category><![CDATA[Tablet]]></category>
+            <category><![CDATA[tablette]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48350</guid>
+            <description>
+                <![CDATA[Après l&#8217;Armada 628 triple-coeur à 1.5 GHz, Marvell se lance dans la production de tablettes Android ! Voici ce qui pourrait révolutionner le marché des tablettes en terme de prix. Cette tablette n&#8217;en est pas à sa phase finale, puisque c&#8217;est un prototype sous Android FroYo (2.2), embarquant un écran de 10.1 pouces avec une résolution WXGA (1280 x 780 pixels). On a le Wi-Fi, des ports <a class="more-link" href="http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Après l&#8217;<a href="http://www.frandroid.com/37848/marvell-larmada-628-triple-coeur-cadence-a-15ghz/">Armada 628</a> triple-coeur à 1.5 GHz, Marvell se lance dans la production de tablettes Android !</p>
 <p>Voici ce qui pourrait révolutionner le marché des tablettes en terme de prix.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/marvell-pepcom-dsc0077-copy-rm-eng.jpg"><img class="aligncenter size-medium wp-image-48373 colorbox-48350" title="marvell-pepcom-dsc0077-copy-rm-eng" src="http://images.frandroid.com/wp-content/uploads/2010/11/marvell-pepcom-dsc0077-copy-rm-eng-630x417.jpg" alt="" width="510" height="338" /></a></p>
 <p style="text-align: center;">
@@ -55,25 +69,37 @@
 
 <p><a href="http://feedads.g.doubleclick.net/~a/P8MHR0eh8anBlycG63bvifa9Mlw/0/da"><img src="http://feedads.g.doubleclick.net/~a/P8MHR0eh8anBlycG63bvifa9Mlw/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/P8MHR0eh8anBlycG63bvifa9Mlw/1/da"><img src="http://feedads.g.doubleclick.net/~a/P8MHR0eh8anBlycG63bvifa9Mlw/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/TCM5F7s0f2k" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/feed/</wfw:commentRss>
-		<slash:comments>6</slash:comments>
-		<enclosure url="http://www.youtube.com/v/zPOFVr5lUes?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1078" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/zPOFVr5lUes?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1078" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/</feedburner:origLink></item>
-		<item>
-		<title>Les Acer Liquid E canadiens reçoivent la mise à jour vers Android FroYo (2.2) !</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/J0EixA9q81I/</link>
-		<comments>http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/#comments</comments>
-		<pubDate>Fri, 19 Nov 2010 12:30:45 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Acer]]></category>
-		<category><![CDATA[Acer Liquid E]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Android 2.2]]></category>
-		<category><![CDATA[android froyo]]></category>
-		<category><![CDATA[Canada]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48337</guid>
-		<description><![CDATA[De bonnes nouvelles à l&#8217;horizon pour les canadiens possesseurs d&#8217;un Acer Liquid E chez Rogers ou Fido, puisque la mise à jour vers Android FroYo (2.2) est là ! La manipulation n&#8217;est pas très complexe. Si vous ne l&#8217;aviez pas déjà fait, vous devez vous rendre sur le site officiel et choisir Acer Liquid E. Une fois cela fait, la mise à jour sera visible dans la partie <a class="more-link" href="http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>De bonnes nouvelles à l&#8217;horizon pour les canadiens possesseurs d&#8217;un <strong>Acer Liquid E</strong> chez Rogers ou Fido, puisque la mise à jour vers <strong><span style="text-decoration: underline;">Android FroYo (2.2)</span></strong> est là !</p>
+            <wfw:commentRss>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/feed/
+            </wfw:commentRss>
+            <slash:comments>6</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/zPOFVr5lUes?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1078" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/zPOFVr5lUes?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1078" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>http://www.frandroid.com/48350/apres-ses-puces-marvell-prepare-sa-tablette-android/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Les Acer Liquid E canadiens reçoivent la mise à jour vers Android FroYo (2.2) !</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/J0EixA9q81I/</link>
+            <comments>
+                http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/#comments
+            </comments>
+            <pubDate>Fri, 19 Nov 2010 12:30:45 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Acer]]></category>
+            <category><![CDATA[Acer Liquid E]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Android 2.2]]></category>
+            <category><![CDATA[android froyo]]></category>
+            <category><![CDATA[Canada]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48337</guid>
+            <description>
+                <![CDATA[De bonnes nouvelles à l&#8217;horizon pour les canadiens possesseurs d&#8217;un Acer Liquid E chez Rogers ou Fido, puisque la mise à jour vers Android FroYo (2.2) est là ! La manipulation n&#8217;est pas très complexe. Si vous ne l&#8217;aviez pas déjà fait, vous devez vous rendre sur le site officiel et choisir Acer Liquid E. Une fois cela fait, la mise à jour sera visible dans la partie <a class="more-link" href="http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>De bonnes nouvelles à l&#8217;horizon pour les canadiens possesseurs d&#8217;un <strong>Acer Liquid E</strong> chez Rogers ou Fido, puisque la mise à jour vers <strong><span style="text-decoration: underline;">Android FroYo (2.2)</span></strong> est là !</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/acer-liquid-1.jpg"><img class="aligncenter size-medium wp-image-48341 colorbox-48337" title="acer-liquid-1" src="http://images.frandroid.com/wp-content/uploads/2010/11/acer-liquid-1-630x422.jpg" alt="" width="510" height="342" /></a></p>
 <p>La manipulation n&#8217;est pas très complexe.<br />
 Si vous ne l&#8217;aviez pas déjà fait, vous devez vous rendre sur le <a href="http://mobile.acer.com/en/support-service/">site officiel</a> et choisir <strong>Acer Liquid E</strong>. Une fois cela fait, la mise à jour sera visible dans la partie : Canada/Android FroYo (2.2).</p>
@@ -113,28 +139,42 @@ Vous retrouverez bien évidemment toutes les fonctionnalités supplémentaires d
 
 <p><a href="http://feedads.g.doubleclick.net/~a/Od9c9ptsN_1cYZsc6OL1VlkVWjo/0/da"><img src="http://feedads.g.doubleclick.net/~a/Od9c9ptsN_1cYZsc6OL1VlkVWjo/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/Od9c9ptsN_1cYZsc6OL1VlkVWjo/1/da"><img src="http://feedads.g.doubleclick.net/~a/Od9c9ptsN_1cYZsc6OL1VlkVWjo/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/J0EixA9q81I" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/feed/</wfw:commentRss>
-		<slash:comments>14</slash:comments>
-		<enclosure url="http://www.youtube.com/v/yAZYSVr2Bhc&amp;amp;hl=fr_FR&amp;amp;fs=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1077" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/yAZYSVr2Bhc&amp;amp;hl=fr_FR&amp;amp;fs=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1077" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/</feedburner:origLink></item>
-		<item>
-		<title>L’Archos 101 victime de son succès ? Oui, elle est encore en rupture !</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/2u8R3R7BZQ8/</link>
-		<comments>http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/#comments</comments>
-		<pubDate>Fri, 19 Nov 2010 11:40:02 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Android 2.2]]></category>
-		<category><![CDATA[android froyo]]></category>
-		<category><![CDATA[Archos]]></category>
-		<category><![CDATA[Archos 101]]></category>
-		<category><![CDATA[Archos 101 IT]]></category>
-		<category><![CDATA[MID]]></category>
-		<category><![CDATA[Tablet]]></category>
-		<category><![CDATA[tablette]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48338</guid>
-		<description><![CDATA[Rappelez-vous en Novembre, une première vague était déjà arrivée. Mais elle n&#8217;avait durée aussi que quelques heures&#8230; Aujourd&#8217;hui s&#8217;est reproduit exactement la même chose, à savoir que l&#8217;Archos 101 ne sera resté que quelques instants en stock avant de repasser au statut indisponible. Est-ce qu&#8217;Archos perd de l&#8217;argent en faisant attendre ces futurs acquéreurs un mois de plus ? Alors qu&#8217;ils l&#8217;auraient voulu plus tôt&#8230; <a class="more-link" href="http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Rappelez-vous en Novembre, une première vague était déjà arrivée. Mais elle n&#8217;avait durée aussi que quelques heures&#8230;</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/feed/
+            </wfw:commentRss>
+            <slash:comments>14</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/yAZYSVr2Bhc&amp;amp;hl=fr_FR&amp;amp;fs=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1077" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/yAZYSVr2Bhc&amp;amp;hl=fr_FR&amp;amp;fs=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1077" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>
+                http://www.frandroid.com/48337/les-acer-liquid-e-canadiens-recoivent-la-mise-a-jour-vers-android-froyo-2-2/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>L’Archos 101 victime de son succès ? Oui, elle est encore en rupture !</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/2u8R3R7BZQ8/</link>
+            <comments>
+                http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/#comments
+            </comments>
+            <pubDate>Fri, 19 Nov 2010 11:40:02 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Android 2.2]]></category>
+            <category><![CDATA[android froyo]]></category>
+            <category><![CDATA[Archos]]></category>
+            <category><![CDATA[Archos 101]]></category>
+            <category><![CDATA[Archos 101 IT]]></category>
+            <category><![CDATA[MID]]></category>
+            <category><![CDATA[Tablet]]></category>
+            <category><![CDATA[tablette]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48338</guid>
+            <description>
+                <![CDATA[Rappelez-vous en Novembre, une première vague était déjà arrivée. Mais elle n&#8217;avait durée aussi que quelques heures&#8230; Aujourd&#8217;hui s&#8217;est reproduit exactement la même chose, à savoir que l&#8217;Archos 101 ne sera resté que quelques instants en stock avant de repasser au statut indisponible. Est-ce qu&#8217;Archos perd de l&#8217;argent en faisant attendre ces futurs acquéreurs un mois de plus ? Alors qu&#8217;ils l&#8217;auraient voulu plus tôt&#8230; <a class="more-link" href="http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Rappelez-vous en Novembre, une première vague était déjà arrivée. Mais elle n&#8217;avait durée aussi que quelques heures&#8230;</p>
 <p>Aujourd&#8217;hui s&#8217;est reproduit exactement la même chose, à savoir que l&#8217;Archos 101 ne sera resté que quelques instants en stock avant de repasser <a href="http://www.archos.com/store/psearch.html?country=fr&amp;lang=fr&amp;prod_id=archos101it">au statut indisponible</a>.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/archos-101-rupture.png"><img class="aligncenter size-medium wp-image-48346 colorbox-48338" title="archos-101-rupture" src="http://images.frandroid.com/wp-content/uploads/2010/11/archos-101-rupture-630x258.png" alt="" width="510" height="209" /></a></p>
 <p>Est-ce qu&#8217;Archos perd de l&#8217;argent en faisant attendre ces futurs acquéreurs un mois de plus ? Alors qu&#8217;ils l&#8217;auraient voulu plus tôt&#8230;</p>
@@ -159,24 +199,30 @@ Vous retrouverez bien évidemment toutes les fonctionnalités supplémentaires d
 
 <p><a href="http://feedads.g.doubleclick.net/~a/sWSau29uGLT1bJt7I3EAUDPPj7w/0/da"><img src="http://feedads.g.doubleclick.net/~a/sWSau29uGLT1bJt7I3EAUDPPj7w/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/sWSau29uGLT1bJt7I3EAUDPPj7w/1/da"><img src="http://feedads.g.doubleclick.net/~a/sWSau29uGLT1bJt7I3EAUDPPj7w/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/2u8R3R7BZQ8" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/feed/</wfw:commentRss>
-		<slash:comments>20</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/</feedburner:origLink></item>
-		<item>
-		<title>Steve Wozniak revient sur ses propos</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/MJVIWsCYOng/</link>
-		<comments>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/#comments</comments>
-		<pubDate>Fri, 19 Nov 2010 08:21:06 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Apple]]></category>
-		<category><![CDATA[iOS]]></category>
-		<category><![CDATA[iPhone]]></category>
-		<category><![CDATA[steve wozniak]]></category>
-		<category><![CDATA[wozniak]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48318</guid>
-		<description><![CDATA[Steve Wozniak tient à clarifier ses propos, mauvaise compréhension ou intervention d&#8217;Apple ? Hier, Steve Wozniak a été interrogé dans un journal hollandais De Telegraaf. C&#8217;est Engadget qui a trouvé cette publication et de part sa popularité dans le monde, l&#8217;information a circulé très rapidement. Deux éléments essentiels ressortent de cette interview : Android va dominer le marché des smartphones (c&#8217;est mathématique, mais toujours bon de l&#8217;entendre <a class="more-link" href="http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Steve Wozniak tient à clarifier ses propos, mauvaise compréhension ou intervention d&#8217;Apple ?</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/feed/
+            </wfw:commentRss>
+            <slash:comments>20</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48338/larchos-101-victime-de-son-succes-oui-elle-est-encore-rupture/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Steve Wozniak revient sur ses propos</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/MJVIWsCYOng/</link>
+            <comments>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/#comments</comments>
+            <pubDate>Fri, 19 Nov 2010 08:21:06 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Apple]]></category>
+            <category><![CDATA[iOS]]></category>
+            <category><![CDATA[iPhone]]></category>
+            <category><![CDATA[steve wozniak]]></category>
+            <category><![CDATA[wozniak]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48318</guid>
+            <description>
+                <![CDATA[Steve Wozniak tient à clarifier ses propos, mauvaise compréhension ou intervention d&#8217;Apple ? Hier, Steve Wozniak a été interrogé dans un journal hollandais De Telegraaf. C&#8217;est Engadget qui a trouvé cette publication et de part sa popularité dans le monde, l&#8217;information a circulé très rapidement. Deux éléments essentiels ressortent de cette interview : Android va dominer le marché des smartphones (c&#8217;est mathématique, mais toujours bon de l&#8217;entendre <a class="more-link" href="http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Steve Wozniak tient à clarifier ses propos, mauvaise compréhension ou intervention d&#8217;Apple ?</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/wozniak.jpg"><img class="aligncenter size-full wp-image-48321 colorbox-48318" title="wozniak" src="http://images.frandroid.com/wp-content/uploads/2010/11/wozniak.jpg" alt="" width="510" height="541" /></a></p>
 <p>Hier, Steve Wozniak a été <a href="http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/" target="_blank">interrogé dans un journal hollandais <em>De Telegraaf</em></a>. C&#8217;est Engadget qui a trouvé cette publication et de part sa popularité dans le monde, l&#8217;information a circulé très rapidement.</p>
 <p>Deux éléments essentiels ressortent de cette interview : Android va dominer le marché des smartphones (c&#8217;est mathématique, mais toujours bon de l&#8217;entendre de la part de personnes respectées) et le rythme des évolutions d&#8217;Android va permettre à l&#8217;OS de gagner en qualité, cohérence et satisfaction des utilisateurs.</p>
@@ -191,27 +237,30 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/O33yvmdFi0O_-U5QHabJzZqU8Jk/0/da"><img src="http://feedads.g.doubleclick.net/~a/O33yvmdFi0O_-U5QHabJzZqU8Jk/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/O33yvmdFi0O_-U5QHabJzZqU8Jk/1/da"><img src="http://feedads.g.doubleclick.net/~a/O33yvmdFi0O_-U5QHabJzZqU8Jk/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/MJVIWsCYOng" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/feed/</wfw:commentRss>
-		<slash:comments>60</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/</feedburner:origLink></item>
-		<item>
-		<title>Le Nexus One reçoit une mise à jour OTA « FRG83D »</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/H6rzGz0n52U/</link>
-		<comments>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 23:17:48 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[FRG83D]]></category>
-		<category><![CDATA[google]]></category>
-		<category><![CDATA[Google Nexus One]]></category>
-		<category><![CDATA[Nexus One]]></category>
-		<category><![CDATA[ota]]></category>
-		<category><![CDATA[over the air]]></category>
-		<category><![CDATA[update]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48303</guid>
-		<description><![CDATA[Depuis quelques temps j&#8217;ai pris un tic, je fais le *#*#CHECKIN#*#* au moins de 2 à 3 fois par jour, afin de voir si google ne publie pas une mise à jour. Et ce soir, à notre grande surprise il y a eu une mise à niveau mineure venant tout droit des serveurs de Google. Entendons-nous bien, ce n&#8217;est pas encore Android Gingerbread. On pourrait <a class="more-link" href="http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Depuis quelques temps j&#8217;ai pris un tic, je fais le *#*#CHECKIN#*#* au moins de 2 à 3 fois par jour, afin de voir si google ne publie pas une mise à jour.</p>
+            <wfw:commentRss>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/feed/</wfw:commentRss>
+            <slash:comments>60</slash:comments>
+            <feedburner:origLink>http://www.frandroid.com/48318/steve-wozniak-revient-sur-ses-propos/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Le Nexus One reçoit une mise à jour OTA « FRG83D »</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/H6rzGz0n52U/</link>
+            <comments>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/#comments</comments>
+            <pubDate>Thu, 18 Nov 2010 23:17:48 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[FRG83D]]></category>
+            <category><![CDATA[google]]></category>
+            <category><![CDATA[Google Nexus One]]></category>
+            <category><![CDATA[Nexus One]]></category>
+            <category><![CDATA[ota]]></category>
+            <category><![CDATA[over the air]]></category>
+            <category><![CDATA[update]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48303</guid>
+            <description>
+                <![CDATA[Depuis quelques temps j&#8217;ai pris un tic, je fais le *#*#CHECKIN#*#* au moins de 2 à 3 fois par jour, afin de voir si google ne publie pas une mise à jour. Et ce soir, à notre grande surprise il y a eu une mise à niveau mineure venant tout droit des serveurs de Google. Entendons-nous bien, ce n&#8217;est pas encore Android Gingerbread. On pourrait <a class="more-link" href="http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Depuis quelques temps j&#8217;ai pris un tic, je fais le *#*#CHECKIN#*#* au moins de 2 à 3 fois par jour, afin de voir si google ne publie pas une mise à jour.</p>
 <p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/google-nexus-one-frg83d.jpg"><img class="aligncenter size-full wp-image-48307 colorbox-48303" title="google-nexus-one-frg83d" src="http://images.frandroid.com/wp-content/uploads/2010/11/google-nexus-one-frg83d.jpg" alt="" width="450" height="520" /></a></p>
 <p>Et ce soir, à notre grande surprise il y a eu une mise à niveau mineure venant tout droit des serveurs de Google. Entendons-nous bien, ce n&#8217;est pas encore Android Gingerbread.</p>
 <p>On pourrait alors plus penser à un pré-patch en préparation à l&#8217;avant-Gingerbread, qui apporte :</p>
@@ -242,25 +291,35 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/Ca8W01MrNqrY3wZVBV9nj89wLH0/0/da"><img src="http://feedads.g.doubleclick.net/~a/Ca8W01MrNqrY3wZVBV9nj89wLH0/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/Ca8W01MrNqrY3wZVBV9nj89wLH0/1/da"><img src="http://feedads.g.doubleclick.net/~a/Ca8W01MrNqrY3wZVBV9nj89wLH0/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/H6rzGz0n52U" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/feed/</wfw:commentRss>
-		<slash:comments>55</slash:comments>
-		<enclosure url="http://android.clients.google.com/packages/ota/passion/ecb21b752065.signed-passion-FRG83D-from-FRG83.ecb21b75.zip" length="1395588" type="application/zip" /><media:content url="http://android.clients.google.com/packages/ota/passion/ecb21b752065.signed-passion-FRG83D-from-FRG83.ecb21b75.zip" fileSize="1395588" type="application/zip" /><feedburner:origLink>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/</feedburner:origLink></item>
-		<item>
-		<title>Test du HTC Desire Z sous Android</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/W0z-5ve4fhs/</link>
-		<comments>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 22:12:50 +0000</pubDate>
-		<dc:creator>Ulrich</dc:creator>
-				<category><![CDATA[Test]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Desire Z]]></category>
-		<category><![CDATA[HTC]]></category>
-		<category><![CDATA[HTC Desire Z]]></category>
-		<category><![CDATA[HTC Sense]]></category>
-		<category><![CDATA[Review]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=47890</guid>
-		<description><![CDATA[Après le test du Motorola Milestone 2, le deuxième plus attentu smartphone sous Android à clavier physique est bien sûr le HTC Desire Z. Je l&#8217;avais pris en main en septembre, et j&#8217;étais déjà emballé par cet androphone. Voilà 10 jours que Expansys m&#8217;a prêté un exemplaire du HTC Desire Z, voici mon verdict sur ce téléphone qui ne devrait plus trop tarder en France. Classique <a class="more-link" href="http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Après le <a href="http://www.frandroid.com/46548/test-du-motorola-milestone-2-sous-android/">test du Motorola Milestone 2</a>, le deuxième plus attentu smartphone sous Android à clavier physique est bien sûr le<strong> HTC Desire Z</strong>. <a href="http://www.frandroid.com/42346/prise-en-main-du-htc-desire-z-sous-android/">Je l&#8217;avais pris en main en septembre</a>, et j&#8217;étais déjà emballé par cet androphone.</p>
+            <wfw:commentRss>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/feed/
+            </wfw:commentRss>
+            <slash:comments>55</slash:comments>
+            <enclosure
+                    url="http://android.clients.google.com/packages/ota/passion/ecb21b752065.signed-passion-FRG83D-from-FRG83.ecb21b75.zip"
+                    length="1395588" type="application/zip"/>
+            <media:content
+                    url="http://android.clients.google.com/packages/ota/passion/ecb21b752065.signed-passion-FRG83D-from-FRG83.ecb21b75.zip"
+                    fileSize="1395588" type="application/zip"/>
+            <feedburner:origLink>http://www.frandroid.com/48303/le-nexus-one-recoit-une-mise-a-jour-ota-frg83d/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Test du HTC Desire Z sous Android</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/W0z-5ve4fhs/</link>
+            <comments>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/#comments</comments>
+            <pubDate>Thu, 18 Nov 2010 22:12:50 +0000</pubDate>
+            <dc:creator>Ulrich</dc:creator>
+            <category><![CDATA[Test]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Desire Z]]></category>
+            <category><![CDATA[HTC]]></category>
+            <category><![CDATA[HTC Desire Z]]></category>
+            <category><![CDATA[HTC Sense]]></category>
+            <category><![CDATA[Review]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=47890</guid>
+            <description>
+                <![CDATA[Après le test du Motorola Milestone 2, le deuxième plus attentu smartphone sous Android à clavier physique est bien sûr le HTC Desire Z. Je l&#8217;avais pris en main en septembre, et j&#8217;étais déjà emballé par cet androphone. Voilà 10 jours que Expansys m&#8217;a prêté un exemplaire du HTC Desire Z, voici mon verdict sur ce téléphone qui ne devrait plus trop tarder en France. Classique <a class="more-link" href="http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Après le <a href="http://www.frandroid.com/46548/test-du-motorola-milestone-2-sous-android/">test du Motorola Milestone 2</a>, le deuxième plus attentu smartphone sous Android à clavier physique est bien sûr le<strong> HTC Desire Z</strong>. <a href="http://www.frandroid.com/42346/prise-en-main-du-htc-desire-z-sous-android/">Je l&#8217;avais pris en main en septembre</a>, et j&#8217;étais déjà emballé par cet androphone.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/5188174586_281b1c652a_z.jpg"><img class="aligncenter size-medium wp-image-48295 colorbox-47890" title="5188174586_281b1c652a_z" src="http://images.frandroid.com/wp-content/uploads/2010/11/5188174586_281b1c652a_z-630x418.jpg" alt="" width="630" height="418" /></a></p>
 <p>Voilà 10 jours que<a href="http://expansys.fr"> Expansys </a>m&#8217;a prêté un exemplaire du <strong>HTC Desire Z</strong>, voici mon verdict sur ce téléphone qui ne devrait plus trop tarder en France.</p>
 <p><span id="more-47890"></span></p>
@@ -412,24 +471,28 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/eA7yE4FShJ6mdl6KPysZ5olFo3A/0/da"><img src="http://feedads.g.doubleclick.net/~a/eA7yE4FShJ6mdl6KPysZ5olFo3A/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/eA7yE4FShJ6mdl6KPysZ5olFo3A/1/da"><img src="http://feedads.g.doubleclick.net/~a/eA7yE4FShJ6mdl6KPysZ5olFo3A/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/W0z-5ve4fhs" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/feed/</wfw:commentRss>
-		<slash:comments>92</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/</feedburner:origLink></item>
-		<item>
-		<title>Angry Birds vers une version allégée pour les smartphones de première génération</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/5SeI6JwOfYQ/</link>
-		<comments>http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 20:30:25 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Applications Android]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[android game]]></category>
-		<category><![CDATA[Angry Birds]]></category>
-		<category><![CDATA[Angry Birds Lite]]></category>
-		<category><![CDATA[Jeu Android]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48232</guid>
-		<description><![CDATA[Angry Birds est l&#8217;un des jeux les plus joués sur téléphone mobile, ça en devient même hallucinant. Et pour preuve, le jeu va être décliné sur console et même faire partie des mini-jeux de Facebook dans un futur proche. On peut en acheter des peluches, des tee-shirts. Enfin vous l&#8217;aurez cerné, un vrai délire ! Le jeu est très simple, visez et détruisez les ennemis <a class="more-link" href="http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p><strong><span style="text-decoration: underline;">Angry Birds</span> </strong>est l&#8217;un des jeux les plus joués sur téléphone mobile, ça en devient même hallucinant.</p>
+            <wfw:commentRss>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/feed/</wfw:commentRss>
+            <slash:comments>92</slash:comments>
+            <feedburner:origLink>http://www.frandroid.com/47890/test-du-htc-desire-z-sous-android/</feedburner:origLink>
+        </item>
+        <item>
+            <title>Angry Birds vers une version allégée pour les smartphones de première génération</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/5SeI6JwOfYQ/</link>
+            <comments>
+                http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 20:30:25 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Applications Android]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[android game]]></category>
+            <category><![CDATA[Angry Birds]]></category>
+            <category><![CDATA[Angry Birds Lite]]></category>
+            <category><![CDATA[Jeu Android]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48232</guid>
+            <description>
+                <![CDATA[Angry Birds est l&#8217;un des jeux les plus joués sur téléphone mobile, ça en devient même hallucinant. Et pour preuve, le jeu va être décliné sur console et même faire partie des mini-jeux de Facebook dans un futur proche. On peut en acheter des peluches, des tee-shirts. Enfin vous l&#8217;aurez cerné, un vrai délire ! Le jeu est très simple, visez et détruisez les ennemis <a class="more-link" href="http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p><strong><span style="text-decoration: underline;">Angry Birds</span> </strong>est l&#8217;un des jeux les plus joués sur téléphone mobile, ça en devient même hallucinant.</p>
 <p>Et pour preuve, le jeu va être décliné sur console et même faire partie des mini-jeux de <strong>Facebook </strong>dans un futur proche. On peut en acheter des peluches, des tee-shirts. Enfin vous l&#8217;aurez cerné, un vrai délire !</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/angry-birds.png"><img class="aligncenter size-medium wp-image-48247 colorbox-48232" title="angry-birds" src="http://images.frandroid.com/wp-content/uploads/2010/11/angry-birds-630x191.png" alt="" width="510" height="155" /></a></p>
 <p>Le jeu est très simple, visez et détruisez les ennemis et leurs baraquements. Le jeu est assez immersif, d&#8217;ailleurs la vidéo présente au pied de l&#8217;article en témoigne.</p>
@@ -464,24 +527,37 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/zVLBwtrWHGuy0VNfZ7ZV7aYRJx4/0/da"><img src="http://feedads.g.doubleclick.net/~a/zVLBwtrWHGuy0VNfZ7ZV7aYRJx4/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/zVLBwtrWHGuy0VNfZ7ZV7aYRJx4/1/da"><img src="http://feedads.g.doubleclick.net/~a/zVLBwtrWHGuy0VNfZ7ZV7aYRJx4/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/5SeI6JwOfYQ" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/feed/</wfw:commentRss>
-		<slash:comments>37</slash:comments>
-		<enclosure url="http://www.youtube.com/v/-eyig_V-_5o?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1062" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/-eyig_V-_5o?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1062" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/</feedburner:origLink></item>
-		<item>
-		<title>ZTE va lancer une tablette en France, oui… mais laquelle ?</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/XFC5MAxVTsQ/</link>
-		<comments>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 20:15:11 +0000</pubDate>
-		<dc:creator>Ulrich</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[tablette]]></category>
-		<category><![CDATA[V9]]></category>
-		<category><![CDATA[Z-Pad]]></category>
-		<category><![CDATA[ZTE]]></category>
-		<category><![CDATA[ZTE E-Pad]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48271</guid>
-		<description><![CDATA[ZTE prépare le lancement d&#8217;une tablette 7 pouces en France, l&#8217;information vient d&#8217;un des responsables de l&#8217;entreprise lors de la présentation du ZTE Blade (smartphone sous Android 2.1) qui est de sortie en France (le test arrive&#8230;). ZTE Z-Pad C&#8217;est le format 7 pouces qui a été choisi, non pas par le fabricant, mais par un ou des opérateurs français. Justement, ZTE prépare deux tablettes <a class="more-link" href="http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p><strong>ZTE </strong>prépare le lancement d&#8217;une tablette 7 pouces en France, l&#8217;information vient d&#8217;un des responsables de l&#8217;entreprise lors de la présentation du ZTE Blade (smartphone sous Android 2.1) qui est de sortie en France (le test arrive&#8230;).</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/feed/
+            </wfw:commentRss>
+            <slash:comments>37</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/-eyig_V-_5o?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1062" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/-eyig_V-_5o?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1062" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>
+                http://www.frandroid.com/48232/angry-birds-vers-une-version-allegee-pour-les-smartphones-de-premiere-generation/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>ZTE va lancer une tablette en France, oui… mais laquelle ?</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/XFC5MAxVTsQ/</link>
+            <comments>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 20:15:11 +0000</pubDate>
+            <dc:creator>Ulrich</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[tablette]]></category>
+            <category><![CDATA[V9]]></category>
+            <category><![CDATA[Z-Pad]]></category>
+            <category><![CDATA[ZTE]]></category>
+            <category><![CDATA[ZTE E-Pad]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48271</guid>
+            <description>
+                <![CDATA[ZTE prépare le lancement d&#8217;une tablette 7 pouces en France, l&#8217;information vient d&#8217;un des responsables de l&#8217;entreprise lors de la présentation du ZTE Blade (smartphone sous Android 2.1) qui est de sortie en France (le test arrive&#8230;). ZTE Z-Pad C&#8217;est le format 7 pouces qui a été choisi, non pas par le fabricant, mais par un ou des opérateurs français. Justement, ZTE prépare deux tablettes <a class="more-link" href="http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p><strong>ZTE </strong>prépare le lancement d&#8217;une tablette 7 pouces en France, l&#8217;information vient d&#8217;un des responsables de l&#8217;entreprise lors de la présentation du ZTE Blade (smartphone sous Android 2.1) qui est de sortie en France (le test arrive&#8230;).</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/zte-light-10-12-2010-540x371.jpg"><img class="aligncenter size-full wp-image-48272 colorbox-48271" title="zte-light-10-12-2010-540x371" src="http://images.frandroid.com/wp-content/uploads/2010/11/zte-light-10-12-2010-540x371.jpg" alt="" width="540" height="371" /></a>ZTE Z-Pad</p>
 <p>C&#8217;est le format 7 pouces qui a été choisi, non pas par le fabricant, mais par un ou des opérateurs français. Justement, ZTE prépare deux tablettes 7 pouces : <strong>Z-Pad et V9</strong>. Laquelle sera de sortie en France ?<span id="more-48271"></span></p>
 <p style="text-align: center;"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="640" height="390" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><param name="src" value="http://www.youtube.com/v/dFJGYR3rhic&amp;hl=fr_FR&amp;feature=player_embedded&amp;version=3" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="640" height="390" src="http://www.youtube.com/v/dFJGYR3rhic&amp;hl=fr_FR&amp;feature=player_embedded&amp;version=3" allowscriptaccess="always" allowfullscreen="true"></embed></object></p>
@@ -493,24 +569,36 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/Q5F8_NWZ4iRfp7pUxTdt8shUbck/0/da"><img src="http://feedads.g.doubleclick.net/~a/Q5F8_NWZ4iRfp7pUxTdt8shUbck/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/Q5F8_NWZ4iRfp7pUxTdt8shUbck/1/da"><img src="http://feedads.g.doubleclick.net/~a/Q5F8_NWZ4iRfp7pUxTdt8shUbck/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/XFC5MAxVTsQ" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/feed/</wfw:commentRss>
-		<slash:comments>10</slash:comments>
-		<enclosure url="http://www.youtube.com/v/dFJGYR3rhic&amp;amp;hl=fr_FR&amp;amp;feature=player_embedded&amp;amp;version=3" length="3449" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/dFJGYR3rhic&amp;amp;hl=fr_FR&amp;amp;feature=player_embedded&amp;amp;version=3" fileSize="3449" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/</feedburner:origLink></item>
-		<item>
-		<title>Adobe Reader : Le lecteur de documents PDF passe à la version 10.0</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/K2K8Wq1rBE0/</link>
-		<comments>http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 20:00:42 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Applications Android]]></category>
-		<category><![CDATA[Adobe]]></category>
-		<category><![CDATA[adobe reader]]></category>
-		<category><![CDATA[Adobe Reader 10.0]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[PDF]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48230</guid>
-		<description><![CDATA[On ne l&#8217;a même pas vu évoluer mais cette nouvelle version apporte des avantages non négligeables. Vous devez sans doute connaitre la version bureau d&#8217;Adobe Reader qui est un logiciel qui permet de consulter les documents PDF. Aujourd&#8217;hui, l&#8217;application Android a reçu la mise à niveau en version 10.0 : il était déjà possible d&#8217;ouvrir des documents PDF mais l&#8217;étendu des options n&#8217;était pas encore <a class="more-link" href="http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>On ne l&#8217;a même pas vu évoluer mais cette nouvelle version apporte des avantages non négligeables.</p>
+            <wfw:commentRss>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/feed/
+            </wfw:commentRss>
+            <slash:comments>10</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/dFJGYR3rhic&amp;amp;hl=fr_FR&amp;amp;feature=player_embedded&amp;amp;version=3"
+                    length="3449" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/dFJGYR3rhic&amp;amp;hl=fr_FR&amp;amp;feature=player_embedded&amp;amp;version=3"
+                    fileSize="3449" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>http://www.frandroid.com/48271/zte-va-lancer-une-tablette-en-france-oui-mais-laquelle/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Adobe Reader : Le lecteur de documents PDF passe à la version 10.0</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/K2K8Wq1rBE0/</link>
+            <comments>
+                http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 20:00:42 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Applications Android]]></category>
+            <category><![CDATA[Adobe]]></category>
+            <category><![CDATA[adobe reader]]></category>
+            <category><![CDATA[Adobe Reader 10.0]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[PDF]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48230</guid>
+            <description>
+                <![CDATA[On ne l&#8217;a même pas vu évoluer mais cette nouvelle version apporte des avantages non négligeables. Vous devez sans doute connaitre la version bureau d&#8217;Adobe Reader qui est un logiciel qui permet de consulter les documents PDF. Aujourd&#8217;hui, l&#8217;application Android a reçu la mise à niveau en version 10.0 : il était déjà possible d&#8217;ouvrir des documents PDF mais l&#8217;étendu des options n&#8217;était pas encore <a class="more-link" href="http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>On ne l&#8217;a même pas vu évoluer mais cette nouvelle version apporte des avantages non négligeables.</p>
 <p>Vous devez sans doute connaitre la version bureau d&#8217;<strong>Adobe Reader</strong> qui est un logiciel qui permet de consulter les documents <strong>PDF</strong>.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/adobe-reader-10.0.jpg"><img class="aligncenter size-medium wp-image-48236 colorbox-48230" title="adobe-reader-10.0" src="http://images.frandroid.com/wp-content/uploads/2010/11/adobe-reader-10.0-630x555.jpg" alt="" width="510" height="450" /></a></p>
 <p>Aujourd&#8217;hui, l&#8217;application <strong>Android </strong>a reçu la mise à niveau en version 10.0 : il était déjà possible d&#8217;ouvrir des documents PDF mais l&#8217;étendu des options n&#8217;était pas encore au niveau de ce que l&#8217;on peut faire sur ordinateur.</p>
@@ -530,21 +618,29 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/mS1ZBhQwiU6JB02g5NGkLSZr-lo/0/da"><img src="http://feedads.g.doubleclick.net/~a/mS1ZBhQwiU6JB02g5NGkLSZr-lo/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/mS1ZBhQwiU6JB02g5NGkLSZr-lo/1/da"><img src="http://feedads.g.doubleclick.net/~a/mS1ZBhQwiU6JB02g5NGkLSZr-lo/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/K2K8Wq1rBE0" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/feed/</wfw:commentRss>
-		<slash:comments>11</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/</feedburner:origLink></item>
-		<item>
-		<title>Vertical Computer Systems intente des poursuites contre LG et Samsung</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/yKVIWz8tVbk/</link>
-		<comments>http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 19:34:14 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[vertical]]></category>
-		<category><![CDATA[vertical computer systems]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48198</guid>
-		<description><![CDATA[Vertical Computer Systems attaque LG et Samsung pour violations de brevets sur leurs téléphones Android. Vertical Computer Systems est une multinationale spécialisée dans la vente de logiciels administratifs, de technologies de base d&#8217;Internet ou encore de logiciel produits grâce à son réseau de distribution. Le principal logiciel de la marque est emPath et ses activités sur Internet incluent SiteFlash, ResponseFlash et le langage Emily XML Scripting Language. Après <a class="more-link" href="http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Vertical Computer Systems attaque LG et Samsung pour violations de brevets sur leurs téléphones Android.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/feed/
+            </wfw:commentRss>
+            <slash:comments>11</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48230/adobe-reader-le-lecteur-de-documents-pdf-passe-a-la-version-10-0/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Vertical Computer Systems intente des poursuites contre LG et Samsung</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/yKVIWz8tVbk/</link>
+            <comments>
+                http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 19:34:14 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[vertical]]></category>
+            <category><![CDATA[vertical computer systems]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48198</guid>
+            <description>
+                <![CDATA[Vertical Computer Systems attaque LG et Samsung pour violations de brevets sur leurs téléphones Android. Vertical Computer Systems est une multinationale spécialisée dans la vente de logiciels administratifs, de technologies de base d&#8217;Internet ou encore de logiciel produits grâce à son réseau de distribution. Le principal logiciel de la marque est emPath et ses activités sur Internet incluent SiteFlash, ResponseFlash et le langage Emily XML Scripting Language. Après <a class="more-link" href="http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Vertical Computer Systems attaque LG et Samsung pour violations de brevets sur leurs téléphones Android.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-18-à-14.35.12.png"><img class="aligncenter size-full wp-image-48200 colorbox-48198" title="Capture d’écran 2010-11-18 à 14.35.12" src="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-18-à-14.35.12.png" alt="" width="533" height="95" /></a></p>
 <p>Vertical Computer Systems est une multinationale spécialisée dans la vente de logiciels administratifs, de technologies de base d&#8217;Internet ou encore de logiciel produits grâce à son réseau de distribution. Le principal logiciel de la marque est <em>emPath</em> et ses activités sur Internet incluent SiteFlash, ResponseFlash et le langage Emily XML Scripting Language.</p>
 <p>Après de très nombreux procès entre Apple, HTC, Microsoft, Motorola, Oracle, Gemalto&#8230; on aurait pu penser que la situation allait se calmer, mais c&#8217;est l&#8217;inverse qui se produit.</p>
@@ -560,26 +656,34 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/aMRfFyNUeuEUTWxZu0AvofWxQu0/0/da"><img src="http://feedads.g.doubleclick.net/~a/aMRfFyNUeuEUTWxZu0AvofWxQu0/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/aMRfFyNUeuEUTWxZu0AvofWxQu0/1/da"><img src="http://feedads.g.doubleclick.net/~a/aMRfFyNUeuEUTWxZu0AvofWxQu0/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/yKVIWz8tVbk" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/feed/</wfw:commentRss>
-		<slash:comments>11</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/</feedburner:origLink></item>
-		<item>
-		<title>Rumeur : Android Honeycomb, dès le mois de février pour les tablettes ?</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/eLFDAyJykbs/</link>
-		<comments>http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 16:50:00 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Rumeurs]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Android Honeycomb]]></category>
-		<category><![CDATA[Netbook]]></category>
-		<category><![CDATA[Smartbook]]></category>
-		<category><![CDATA[Tablet]]></category>
-		<category><![CDATA[tablette]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48137</guid>
-		<description><![CDATA[Cette nouvelle version d&#8217;Android se confirme de plus en plus pour les tablettes. On sait déjà que Google veut ralentir les sorties des versions de son système d&#8217;exploitation mobile afin de se concentrer d&#8217;avantage sur la répartition des versions. Selon nos confrères de Digitimes, la nouvelle génération de tablette que prévoient de lancer Motorola et LG sortira directement sur la version d&#8217;Android Honeycomb, et ce, dès février/mars. <a class="more-link" href="http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/android_honeycomb.jpg"><img class="alignright size-full wp-image-48158 colorbox-48137" title="android_honeycomb" src="http://images.frandroid.com/wp-content/uploads/2010/11/android_honeycomb.jpg" alt="" width="266" height="229" /></a>Cette nouvelle version d&#8217;<strong>Android</strong> se confirme de plus en plus pour les tablettes.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/feed/
+            </wfw:commentRss>
+            <slash:comments>11</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48198/vertical-computer-systems-intente-des-poursuites-contre-lg-et-samsung/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Rumeur : Android Honeycomb, dès le mois de février pour les tablettes ?</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/eLFDAyJykbs/</link>
+            <comments>
+                http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 16:50:00 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Rumeurs]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Android Honeycomb]]></category>
+            <category><![CDATA[Netbook]]></category>
+            <category><![CDATA[Smartbook]]></category>
+            <category><![CDATA[Tablet]]></category>
+            <category><![CDATA[tablette]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48137</guid>
+            <description>
+                <![CDATA[Cette nouvelle version d&#8217;Android se confirme de plus en plus pour les tablettes. On sait déjà que Google veut ralentir les sorties des versions de son système d&#8217;exploitation mobile afin de se concentrer d&#8217;avantage sur la répartition des versions. Selon nos confrères de Digitimes, la nouvelle génération de tablette que prévoient de lancer Motorola et LG sortira directement sur la version d&#8217;Android Honeycomb, et ce, dès février/mars. <a class="more-link" href="http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/android_honeycomb.jpg"><img class="alignright size-full wp-image-48158 colorbox-48137" title="android_honeycomb" src="http://images.frandroid.com/wp-content/uploads/2010/11/android_honeycomb.jpg" alt="" width="266" height="229" /></a>Cette nouvelle version d&#8217;<strong>Android</strong> se confirme de plus en plus pour les tablettes.</p>
 <p>On sait déjà que Google veut ralentir les sorties des versions de son système d&#8217;exploitation mobile afin de se concentrer d&#8217;avantage sur la répartition des versions.</p>
 <p style="text-align: center;">
 <p>Selon nos confrères de <a href="http://www.digitimes.com/news/a20101117PD205.html">Digitimes</a>, la nouvelle génération de tablette que prévoient de lancer Motorola et LG sortira directement sur la version d&#8217;<strong>Android Honeycomb</strong>, et ce, dès février/mars.</p>
@@ -593,23 +697,31 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/9I-H52EcExhz11OXdD_hsUaTmK4/0/da"><img src="http://feedads.g.doubleclick.net/~a/9I-H52EcExhz11OXdD_hsUaTmK4/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/9I-H52EcExhz11OXdD_hsUaTmK4/1/da"><img src="http://feedads.g.doubleclick.net/~a/9I-H52EcExhz11OXdD_hsUaTmK4/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/eLFDAyJykbs" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/feed/</wfw:commentRss>
-		<slash:comments>26</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/</feedburner:origLink></item>
-		<item>
-		<title>Steve Wozniak annonce qu’Android sera la plateforme mobile dominante</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/-mJDkX4zudc/</link>
-		<comments>http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 16:14:06 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Apple]]></category>
-		<category><![CDATA[steve wozniak]]></category>
-		<category><![CDATA[wozniak]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48176</guid>
-		<description><![CDATA[Le cofondateur d&#8217;Apple, Steve Wozniak indique qu&#8217;Android va devenir le leader des plateformes pour smartphones. Steve Wozniak est d&#8217;origine polonaise et cofondateur d&#8217;Apple Computer (renommé depuis en Apple Inc) avec Steve Jobs. Il fut le concepteur des premiers ordinateurs Apple, notamment l&#8217;Apple I en 1976. Certains s&#8217;aventurent à dire que c&#8217;est grâce à lui que les ordinateurs ont pu arriver dans les foyers. Mais il ne restera que <a class="more-link" href="http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Le cofondateur d&#8217;Apple, Steve Wozniak indique qu&#8217;Android va devenir le leader des plateformes pour smartphones.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/feed/
+            </wfw:commentRss>
+            <slash:comments>26</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48137/rumeur-android-honeycomb-des-le-mois-de-fevrier-pour-les-tablettes/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Steve Wozniak annonce qu’Android sera la plateforme mobile dominante</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/-mJDkX4zudc/</link>
+            <comments>
+                http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 16:14:06 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Apple]]></category>
+            <category><![CDATA[steve wozniak]]></category>
+            <category><![CDATA[wozniak]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48176</guid>
+            <description>
+                <![CDATA[Le cofondateur d&#8217;Apple, Steve Wozniak indique qu&#8217;Android va devenir le leader des plateformes pour smartphones. Steve Wozniak est d&#8217;origine polonaise et cofondateur d&#8217;Apple Computer (renommé depuis en Apple Inc) avec Steve Jobs. Il fut le concepteur des premiers ordinateurs Apple, notamment l&#8217;Apple I en 1976. Certains s&#8217;aventurent à dire que c&#8217;est grâce à lui que les ordinateurs ont pu arriver dans les foyers. Mais il ne restera que <a class="more-link" href="http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Le cofondateur d&#8217;Apple, Steve Wozniak indique qu&#8217;Android va devenir le leader des plateformes pour smartphones.</p>
 <p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/wozniak1_gallery__542x400.jpg"><img class="aligncenter size-full wp-image-48178 colorbox-48176" title="PICEDITOR-SMH" src="http://images.frandroid.com/wp-content/uploads/2010/11/wozniak1_gallery__542x400.jpg" alt="" width="542" height="400" /></a></p>
 <p>Steve Wozniak est d&#8217;origine polonaise et cofondateur d&#8217;Apple Computer (renommé depuis en Apple Inc) avec Steve Jobs. Il fut le concepteur des premiers ordinateurs Apple, notamment l&#8217;Apple I en 1976. Certains s&#8217;aventurent à dire que c&#8217;est grâce à lui que les ordinateurs ont pu arriver dans les foyers. Mais il ne restera que neuf ans chez Apple (1976 &#8211; 1985) à cause de problèmes divers. Parallèlement à son départ, Steve Jobs quitte aussi la firme à cause d&#8217;une lutte de pouvoir pour désigner la personne à la tête de la société.</p>
 <p>Aujourd&#8217;hui Steve Wozniak n&#8217;a plus aucune relation directe avec Apple, mais cela ne l&#8217;empêche pas d&#8217;acheter les produits Apple. On a par ailleurs pu le voir lors de la keynote début Septembre, en tant que spectateur.</p>
@@ -620,21 +732,29 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/Sd4gPIQHIbwmGdrIz6zvq6ePN80/0/da"><img src="http://feedads.g.doubleclick.net/~a/Sd4gPIQHIbwmGdrIz6zvq6ePN80/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/Sd4gPIQHIbwmGdrIz6zvq6ePN80/1/da"><img src="http://feedads.g.doubleclick.net/~a/Sd4gPIQHIbwmGdrIz6zvq6ePN80/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/-mJDkX4zudc" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/feed/</wfw:commentRss>
-		<slash:comments>74</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/</feedburner:origLink></item>
-		<item>
-		<title>HTCSense.com sur le HTC Desire à la fin de l’année ?</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/FBDxNk6DlcE/</link>
-		<comments>http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 15:18:06 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Rumeurs]]></category>
-		<category><![CDATA[HTC]]></category>
-		<category><![CDATA[htcsense.com]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48188</guid>
-		<description><![CDATA[Le HTC Desire pourrait profiter de HTCSense.com d&#8217;ici à la fin de l&#8217;année. L&#8217;annonce des téléphones Desire HD et Z par HTC était accompagnée de la sortie de HTCSense.com. Jusqu&#8217;à maintenant seuls ces deux téléphones étaient supportés. A la suite de la conférence un compte Twitter du constructeur avait annoncé la possibilité de l&#8216;intégration de téléphones déjà sortis. HTCSense.com permet depuis une interface web de <a class="more-link" href="http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Le HTC Desire pourrait profiter de HTCSense.com d&#8217;ici à la fin de l&#8217;année.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/feed/
+            </wfw:commentRss>
+            <slash:comments>74</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48176/steve-wozniak-annonce-quandroid-sera-la-plateforme-mobile-dominante/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>HTCSense.com sur le HTC Desire à la fin de l’année ?</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/FBDxNk6DlcE/</link>
+            <comments>
+                http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 15:18:06 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Rumeurs]]></category>
+            <category><![CDATA[HTC]]></category>
+            <category><![CDATA[htcsense.com]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48188</guid>
+            <description>
+                <![CDATA[Le HTC Desire pourrait profiter de HTCSense.com d&#8217;ici à la fin de l&#8217;année. L&#8217;annonce des téléphones Desire HD et Z par HTC était accompagnée de la sortie de HTCSense.com. Jusqu&#8217;à maintenant seuls ces deux téléphones étaient supportés. A la suite de la conférence un compte Twitter du constructeur avait annoncé la possibilité de l&#8216;intégration de téléphones déjà sortis. HTCSense.com permet depuis une interface web de <a class="more-link" href="http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Le HTC Desire pourrait profiter de HTCSense.com d&#8217;ici à la fin de l&#8217;année.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-18-à-13.40.08.png"><img class="aligncenter size-full wp-image-48191 colorbox-48188" title="HtcSense.com" src="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-18-à-13.40.08.png" alt="" width="503" height="327" /></a></p>
 <p>L&#8217;annonce des téléphones Desire HD et Z par HTC était accompagnée de la sortie de HTCSense.com. Jusqu&#8217;à maintenant seuls ces deux téléphones étaient supportés. A la suite de la conférence un compte Twitter du constructeur avait annoncé la possibilité de l<a href="http://www.frandroid.com/37239/les-telephones-htc-sous-android-2-2-vont-ils-avoir-le-nouveau-htc-sense/" target="_blank">&#8216;intégration de téléphones déjà sortis</a>.</p>
 <p>HTCSense.com permet depuis une interface web de contrôler son téléphone : le faire sonner, bloquer, rediriger les appels, trouver sa position. Les messages peuvent être synchronisés afin pouvoir les retrouver en cas de réinitialisation. Le HTC Hub permet d&#8217;installer en un clic des applications, thèmes&#8230;</p>
@@ -643,24 +763,30 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/OfbpVkdXYUHX1zqYKApU8H_UXiI/0/da"><img src="http://feedads.g.doubleclick.net/~a/OfbpVkdXYUHX1zqYKApU8H_UXiI/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/OfbpVkdXYUHX1zqYKApU8H_UXiI/1/da"><img src="http://feedads.g.doubleclick.net/~a/OfbpVkdXYUHX1zqYKApU8H_UXiI/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/FBDxNk6DlcE" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/feed/</wfw:commentRss>
-		<slash:comments>40</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/</feedburner:origLink></item>
-		<item>
-		<title>Google Sky Map grimpe en version 1.6 !</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/3jN1TJkyUk0/</link>
-		<comments>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 14:20:20 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Applications Android]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Astronomie]]></category>
-		<category><![CDATA[google]]></category>
-		<category><![CDATA[Google Sky Map]]></category>
-		<category><![CDATA[Univers]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48136</guid>
-		<description><![CDATA[Amateurs d&#8217;astronomie, si vous ne connaissiez pas cette application, elle est faite pour vous ! Google Sky Map est une application qui vous permet de sillonner l&#8217;univers en 360 degrés, en partant d&#8217;un point précis, votre position sur la terre, position que l&#8217;on peut aussi déterminer soi-même. Une bonne nouvelle pour Google qui passe Sky Map en version 1.6, avec deux améliorations intéressantes. - Multi-Touch : Pincer facilement <a class="more-link" href="http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Amateurs d&#8217;astronomie, si vous ne connaissiez pas cette application, elle est faite pour vous !</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/feed/
+            </wfw:commentRss>
+            <slash:comments>40</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48188/htcsense-com-sur-le-htc-desire-a-la-fin-de-l%e2%80%99annee/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Google Sky Map grimpe en version 1.6 !</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/3jN1TJkyUk0/</link>
+            <comments>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/#comments</comments>
+            <pubDate>Thu, 18 Nov 2010 14:20:20 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Applications Android]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Astronomie]]></category>
+            <category><![CDATA[google]]></category>
+            <category><![CDATA[Google Sky Map]]></category>
+            <category><![CDATA[Univers]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48136</guid>
+            <description>
+                <![CDATA[Amateurs d&#8217;astronomie, si vous ne connaissiez pas cette application, elle est faite pour vous ! Google Sky Map est une application qui vous permet de sillonner l&#8217;univers en 360 degrés, en partant d&#8217;un point précis, votre position sur la terre, position que l&#8217;on peut aussi déterminer soi-même. Une bonne nouvelle pour Google qui passe Sky Map en version 1.6, avec deux améliorations intéressantes. - Multi-Touch : Pincer facilement <a class="more-link" href="http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Amateurs d&#8217;astronomie, si vous ne connaissiez pas cette application, elle est faite pour vous !</p>
 <p><strong><span style="text-decoration: underline;">Google Sky Map</span></strong> est une application qui vous permet de sillonner l&#8217;univers en 360 degrés, en partant d&#8217;un point précis, votre position sur la terre, position que l&#8217;on peut aussi déterminer soi-même.</p>
 <p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/google-sky-map-1.6.jpg"><img class="aligncenter size-full wp-image-48165 colorbox-48136" title="google-sky-map-1.6" src="http://images.frandroid.com/wp-content/uploads/2010/11/google-sky-map-1.6.jpg" alt="" width="450" height="520" /></a></p>
 <p>Une bonne nouvelle pour Google qui passe <strong><span style="text-decoration: underline;">Sky Map</span></strong> en version <span style="text-decoration: underline;">1.6</span>, avec deux améliorations intéressantes.</p>
@@ -683,26 +809,36 @@ Les lecteurs comprenant l&#8217;anglais peuvent écouter l&#8217;<a href="http:/
 
 <p><a href="http://feedads.g.doubleclick.net/~a/0v2iE4UzOCYX2uYdrKdw0iDgkdk/0/da"><img src="http://feedads.g.doubleclick.net/~a/0v2iE4UzOCYX2uYdrKdw0iDgkdk/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/0v2iE4UzOCYX2uYdrKdw0iDgkdk/1/da"><img src="http://feedads.g.doubleclick.net/~a/0v2iE4UzOCYX2uYdrKdw0iDgkdk/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/3jN1TJkyUk0" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/feed/</wfw:commentRss>
-		<slash:comments>6</slash:comments>
-		<enclosure url="http://www.youtube.com/v/p6znyx0gjb4?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1079" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/p6znyx0gjb4?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1079" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/</feedburner:origLink></item>
-		<item>
-		<title>Qualcomm annonce des puces 4 à 5x plus rapide en 2011</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/xGGVOFs-PNM/</link>
-		<comments>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 13:39:28 +0000</pubDate>
-		<dc:creator>Griphine</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Adreno]]></category>
-		<category><![CDATA[Adreno 3XX]]></category>
-		<category><![CDATA[CPU]]></category>
-		<category><![CDATA[GPU]]></category>
-		<category><![CDATA[MSM8960]]></category>
-		<category><![CDATA[Qualcomm]]></category>
-		<category><![CDATA[snapdragon]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48135</guid>
-		<description><![CDATA[Qualcomm cite et affirme que leur prochaine génération de processeurs, sera 4 à 5x plus performante que les actuelles. Effectivement, au moment où le QSD8672 cadencé @ 1,5 GHz arrivera sur le marché, il sera déjà presque dépassé ! L&#8217;entreprise a récemment annoncé sa nouvelle série de processeur double-coeur, le MSM8960 gravée en 28nm. Le Qualcomm MSM8960 offrira 5x plus de performances et consommera 75% de <a class="more-link" href="http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Qualcomm cite et affirme que leur prochaine génération de processeurs, sera 4 à 5x plus performante que les actuelles.</p>
+            <wfw:commentRss>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/feed/</wfw:commentRss>
+            <slash:comments>6</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/p6znyx0gjb4?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1079" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/p6znyx0gjb4?fs=1&amp;amp;hl=fr_FR&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1079" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>http://www.frandroid.com/48136/google-sky-map-grimpe-en-version-1-6/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Qualcomm annonce des puces 4 à 5x plus rapide en 2011</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/xGGVOFs-PNM/</link>
+            <comments>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 13:39:28 +0000</pubDate>
+            <dc:creator>Griphine</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Adreno]]></category>
+            <category><![CDATA[Adreno 3XX]]></category>
+            <category><![CDATA[CPU]]></category>
+            <category><![CDATA[GPU]]></category>
+            <category><![CDATA[MSM8960]]></category>
+            <category><![CDATA[Qualcomm]]></category>
+            <category><![CDATA[snapdragon]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48135</guid>
+            <description>
+                <![CDATA[Qualcomm cite et affirme que leur prochaine génération de processeurs, sera 4 à 5x plus performante que les actuelles. Effectivement, au moment où le QSD8672 cadencé @ 1,5 GHz arrivera sur le marché, il sera déjà presque dépassé ! L&#8217;entreprise a récemment annoncé sa nouvelle série de processeur double-coeur, le MSM8960 gravée en 28nm. Le Qualcomm MSM8960 offrira 5x plus de performances et consommera 75% de <a class="more-link" href="http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Qualcomm cite et affirme que leur prochaine génération de processeurs, sera 4 à 5x plus performante que les actuelles.</p>
 <p><a href="http://images.frandroid.com/wp-content/uploads/2010/11/roadmap_sm.jpg"><img class="aligncenter size-full wp-image-48140 colorbox-48135" title="roadmap_sm" src="http://images.frandroid.com/wp-content/uploads/2010/11/roadmap_sm.jpg" alt="" width="600" height="436" /></a></p>
 <p>Effectivement, au moment où le QSD8672 cadencé @ 1,5 GHz arrivera sur le marché, il sera déjà presque dépassé !</p>
 <p>L&#8217;entreprise a récemment annoncé sa nouvelle série de processeur double-coeur, le <strong>MSM8960</strong> gravée en 28nm.</p>
@@ -722,22 +858,28 @@ L&#8217;avenir en répondra de lui-même.</p>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/4ak_KJ9Hn_0ymfTgvQCTdBm8XaU/0/da"><img src="http://feedads.g.doubleclick.net/~a/4ak_KJ9Hn_0ymfTgvQCTdBm8XaU/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/4ak_KJ9Hn_0ymfTgvQCTdBm8XaU/1/da"><img src="http://feedads.g.doubleclick.net/~a/4ak_KJ9Hn_0ymfTgvQCTdBm8XaU/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/xGGVOFs-PNM" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/feed/</wfw:commentRss>
-		<slash:comments>26</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/</feedburner:origLink></item>
-		<item>
-		<title>(Infographie) 60% des utilisateurs d’Android ont moins de 34 ans</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/wz4Kc1gedkc/</link>
-		<comments>http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 10:07:23 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[android marketplace]]></category>
-		<category><![CDATA[infographie]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48120</guid>
-		<description><![CDATA[Une infographie de Mobclix montre notamment que les utilisateurs d&#8217;Android ont moins de 34 ans et qu&#8217;ils préfèrent un clavier physique à une interface tactile. MobClix est un réseau d&#8217;échange de publicités qui aide les développeurs pour iPhone, les publicitaires, les réseaux de publicités et les agences. Mais depuis la croissance spectaculaire d&#8217;Android, l&#8217;entreprise s&#8217;est progressivement intéressée à la plateforme de Google. Sur son blog, l&#8217;entreprise publie <a class="more-link" href="http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Une infographie de Mobclix montre notamment que les utilisateurs d&#8217;Android ont moins de 34 ans et qu&#8217;ils préfèrent un clavier physique à une interface tactile.</p>
+            <wfw:commentRss>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/feed/
+            </wfw:commentRss>
+            <slash:comments>26</slash:comments>
+            <feedburner:origLink>http://www.frandroid.com/48135/qualcomm-annonce-des-puces-4-a-5x-plus-rapide-en-2011/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>(Infographie) 60% des utilisateurs d’Android ont moins de 34 ans</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/wz4Kc1gedkc/</link>
+            <comments>
+                http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 10:07:23 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[android marketplace]]></category>
+            <category><![CDATA[infographie]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48120</guid>
+            <description>
+                <![CDATA[Une infographie de Mobclix montre notamment que les utilisateurs d&#8217;Android ont moins de 34 ans et qu&#8217;ils préfèrent un clavier physique à une interface tactile. MobClix est un réseau d&#8217;échange de publicités qui aide les développeurs pour iPhone, les publicitaires, les réseaux de publicités et les agences. Mais depuis la croissance spectaculaire d&#8217;Android, l&#8217;entreprise s&#8217;est progressivement intéressée à la plateforme de Google. Sur son blog, l&#8217;entreprise publie <a class="more-link" href="http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Une infographie de Mobclix montre notamment que les utilisateurs d&#8217;Android ont moins de 34 ans et qu&#8217;ils préfèrent un clavier physique à une interface tactile.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-17-à-23.16.01.png"><img class="aligncenter size-full wp-image-48122 colorbox-48120" title="Capture d’écran 2010-11-17 à 23.16.01" src="http://images.frandroid.com/wp-content/uploads/2010/11/Capture-d’écran-2010-11-17-à-23.16.01.png" alt="" width="603" height="323" /></a></p>
 <p><a href="http://www.mobclix.com" target="_blank">MobClix</a> est un réseau d&#8217;échange de publicités qui aide les développeurs pour iPhone, les publicitaires, les réseaux de publicités et les agences. Mais depuis la croissance spectaculaire d&#8217;Android, l&#8217;entreprise s&#8217;est progressivement intéressée à la plateforme de Google.</p>
 <p><a href="http://blog.mobclix.com/2010/11/17/mobclix-index-android-marketplace/" target="_blank">Sur son blog</a>, l&#8217;entreprise publie aujourd&#8217;hui une infographie regroupant des données diverses sur l&#8217;utilisation d&#8217;Android. Les données proviennent d&#8217;une étude réalisée auprès de 1052 clients américains au mois d&#8217;Octobre.</p>
@@ -759,25 +901,32 @@ L&#8217;avenir en répondra de lui-même.</p>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/3VE8iRiQG8sNxQt8gXqELQJjhDs/0/da"><img src="http://feedads.g.doubleclick.net/~a/3VE8iRiQG8sNxQt8gXqELQJjhDs/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/3VE8iRiQG8sNxQt8gXqELQJjhDs/1/da"><img src="http://feedads.g.doubleclick.net/~a/3VE8iRiQG8sNxQt8gXqELQJjhDs/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/wz4Kc1gedkc" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/feed/</wfw:commentRss>
-		<slash:comments>41</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/</feedburner:origLink></item>
-		<item>
-		<title>Les Samsung Galaxy S canadiens mis à jour mi-décembre</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/GhfJ1h7xJXE/</link>
-		<comments>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/#comments</comments>
-		<pubDate>Thu, 18 Nov 2010 09:17:32 +0000</pubDate>
-		<dc:creator>cr0vax</dc:creator>
-				<category><![CDATA[Matériels / Accessoires]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Bell]]></category>
-		<category><![CDATA[Canada]]></category>
-		<category><![CDATA[Rogers]]></category>
-		<category><![CDATA[samsung galaxy s]]></category>
-		<category><![CDATA[telus]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48128</guid>
-		<description><![CDATA[On apprend via Facebook que le Samsung Galaxy S Vibrant de Bell et le Samsung Galaxy S Captivate de Rogers seront mis à jour vers Android 2.2 mi-décembre. Les possesseurs du Galaxy S Fascinate de chez Telus devront quant à eux patienter jusqu&#8217;à début 2011 avant de voir une mise à jour arriver. La mise-à-jour n&#8217;aurait donc finalement que quelques semaines de retard par rapport <a class="more-link" href="http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>On apprend via <a href="http://www.facebook.com/samsungmobilecanada/posts/132725090116305">Facebook</a> que le <strong>Samsung Galaxy S Vibrant</strong> de <strong>Bell </strong>et le <strong>Samsung Galaxy S Captivate</strong> de <strong>Rogers </strong>seront mis à jour vers <strong>Android 2.2</strong> mi-décembre.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/feed/
+            </wfw:commentRss>
+            <slash:comments>41</slash:comments>
+            <feedburner:origLink>
+                http://www.frandroid.com/48120/infographie-les-utilisateurs-preferent-un-clavier-physique-et-60-dentre-eux-ont-moins-de-34-ans/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Les Samsung Galaxy S canadiens mis à jour mi-décembre</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/GhfJ1h7xJXE/</link>
+            <comments>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/#comments
+            </comments>
+            <pubDate>Thu, 18 Nov 2010 09:17:32 +0000</pubDate>
+            <dc:creator>cr0vax</dc:creator>
+            <category><![CDATA[Matériels / Accessoires]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Bell]]></category>
+            <category><![CDATA[Canada]]></category>
+            <category><![CDATA[Rogers]]></category>
+            <category><![CDATA[samsung galaxy s]]></category>
+            <category><![CDATA[telus]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48128</guid>
+            <description>
+                <![CDATA[On apprend via Facebook que le Samsung Galaxy S Vibrant de Bell et le Samsung Galaxy S Captivate de Rogers seront mis à jour vers Android 2.2 mi-décembre. Les possesseurs du Galaxy S Fascinate de chez Telus devront quant à eux patienter jusqu&#8217;à début 2011 avant de voir une mise à jour arriver. La mise-à-jour n&#8217;aurait donc finalement que quelques semaines de retard par rapport <a class="more-link" href="http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>On apprend via <a href="http://www.facebook.com/samsungmobilecanada/posts/132725090116305">Facebook</a> que le <strong>Samsung Galaxy S Vibrant</strong> de <strong>Bell </strong>et le <strong>Samsung Galaxy S Captivate</strong> de <strong>Rogers </strong>seront mis à jour vers <strong>Android 2.2</strong> mi-décembre.</p>
 <p>Les possesseurs du Galaxy S Fascinate de chez Telus devront quant à eux patienter jusqu&#8217;à début 2011 avant de voir une mise à jour arriver.</p>
 <p><a href="http://images.frandroid.com/wp-content/uploads/2010/04/frandroid-quebec.png"><img class="aligncenter size-full wp-image-14844 colorbox-48128" title="frandroid-quebec" src="http://images.frandroid.com/wp-content/uploads/2010/04/frandroid-quebec.png" alt="" width="476" height="400" /></a></p>
 <p>La mise-à-jour n&#8217;aurait donc finalement que quelques semaines de retard par rapport aux terminaux européens, même si rien en apparence ne vient justifier cela.</p>
@@ -785,26 +934,31 @@ L&#8217;avenir en répondra de lui-même.</p>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/uCgA1MUaoALeCw3yAIXM4Wp-Q68/0/da"><img src="http://feedads.g.doubleclick.net/~a/uCgA1MUaoALeCw3yAIXM4Wp-Q68/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/uCgA1MUaoALeCw3yAIXM4Wp-Q68/1/da"><img src="http://feedads.g.doubleclick.net/~a/uCgA1MUaoALeCw3yAIXM4Wp-Q68/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/GhfJ1h7xJXE" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/feed/</wfw:commentRss>
-		<slash:comments>22</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/</feedburner:origLink></item>
-		<item>
-		<title>Dell ajoute un nouveau coloris pour le Dell Streak</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/V3qNzWmLr5k/</link>
-		<comments>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/#comments</comments>
-		<pubDate>Wed, 17 Nov 2010 22:44:39 +0000</pubDate>
-		<dc:creator>billcat74</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[Android 2.2]]></category>
-		<category><![CDATA[best buy]]></category>
-		<category><![CDATA[BestBuy]]></category>
-		<category><![CDATA[Dell]]></category>
-		<category><![CDATA[Dell Streak]]></category>
-		<category><![CDATA[Dell Streak blanc]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48100</guid>
-		<description><![CDATA[En exclusivité, Best Buy vend maintenant dans certains magasins à travers les États-Unis, le Dell Streak en Blanc. Jusqu&#8217;à présent, un seul coloris (Noir) était disponible aux États-Unis contre deux coloris (Rouge et Noir) sur le vieux continent. Les futurs possesseurs de ce produit auront donc l’embarras du choix avec bientôt ce troisième coloris. Les caractéristiques restent identiques. Avec son écran de 5 pouces, le Dell Streak est un <a class="more-link" href="http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p style="text-align: center;"><img class="aligncenter colorbox-48100" title="Dell Streak Blanc (2)" src="http://pocketables.typepad.com/.a/6a00d83451c9ec69e20133f5f495e9970b-800wi" alt="Dell Streak Blanc (2)" width="500" height="386" /></p>
+            <wfw:commentRss>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/feed/
+            </wfw:commentRss>
+            <slash:comments>22</slash:comments>
+            <feedburner:origLink>http://www.frandroid.com/48128/les-samsung-galaxy-s-canadiens-mis-a-jour-mi-decembre/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Dell ajoute un nouveau coloris pour le Dell Streak</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/V3qNzWmLr5k/</link>
+            <comments>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/#comments
+            </comments>
+            <pubDate>Wed, 17 Nov 2010 22:44:39 +0000</pubDate>
+            <dc:creator>billcat74</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[Android 2.2]]></category>
+            <category><![CDATA[best buy]]></category>
+            <category><![CDATA[BestBuy]]></category>
+            <category><![CDATA[Dell]]></category>
+            <category><![CDATA[Dell Streak]]></category>
+            <category><![CDATA[Dell Streak blanc]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48100</guid>
+            <description>
+                <![CDATA[En exclusivité, Best Buy vend maintenant dans certains magasins à travers les États-Unis, le Dell Streak en Blanc. Jusqu&#8217;à présent, un seul coloris (Noir) était disponible aux États-Unis contre deux coloris (Rouge et Noir) sur le vieux continent. Les futurs possesseurs de ce produit auront donc l’embarras du choix avec bientôt ce troisième coloris. Les caractéristiques restent identiques. Avec son écran de 5 pouces, le Dell Streak est un <a class="more-link" href="http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p style="text-align: center;"><img class="aligncenter colorbox-48100" title="Dell Streak Blanc (2)" src="http://pocketables.typepad.com/.a/6a00d83451c9ec69e20133f5f495e9970b-800wi" alt="Dell Streak Blanc (2)" width="500" height="386" /></p>
 <p>En exclusivité, Best Buy vend maintenant dans certains magasins à travers les États-Unis, le <strong>Dell Streak</strong> en <span style="text-decoration: underline;">Blanc</span>.</p>
 <p>Jusqu&#8217;à présent, un seul coloris (Noir) était disponible aux États-Unis contre deux coloris (Rouge et Noir) sur le vieux continent.<span id="more-48100"></span></p>
 <p>Les futurs possesseurs de ce produit auront donc l’embarras du choix avec bientôt ce troisième coloris.</p>
@@ -816,23 +970,29 @@ L&#8217;avenir en répondra de lui-même.</p>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/j5_1a0IybBn0ZxyL8z3W_LagEAM/0/da"><img src="http://feedads.g.doubleclick.net/~a/j5_1a0IybBn0ZxyL8z3W_LagEAM/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/j5_1a0IybBn0ZxyL8z3W_LagEAM/1/da"><img src="http://feedads.g.doubleclick.net/~a/j5_1a0IybBn0ZxyL8z3W_LagEAM/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/V3qNzWmLr5k" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/feed/</wfw:commentRss>
-		<slash:comments>11</slash:comments>
-		<feedburner:origLink>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/</feedburner:origLink></item>
-		<item>
-		<title>Google Docs supporte l’édition du traitement de texte en version mobile</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/tSPoQDT_vGA/</link>
-		<comments>http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/#comments</comments>
-		<pubDate>Wed, 17 Nov 2010 18:50:49 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Applications Android]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[documents]]></category>
-		<category><![CDATA[google]]></category>
-		<category><![CDATA[google docs]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48077</guid>
-		<description><![CDATA[Le traitement de texte de Google Docs va être très prochainement utilisable depuis son navigateur mobile. Google docs est une suite bureautique en ligne composée d&#8217;un traitement de texte (Document), d&#8217;un tableau (Spreadsheet), d&#8217;une powerpoint-like (Presentation), d&#8217;un créateur de formulaire (Forms) et d&#8217;un outil de dessin (Drawing). Il est possible d&#8217;éditer des travaux à plusieurs et même de voir en temps réel les modifications, ainsi que <a class="more-link" href="http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Le traitement de texte de Google Docs va être très prochainement utilisable depuis son navigateur mobile.</p>
+            <wfw:commentRss>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/feed/
+            </wfw:commentRss>
+            <slash:comments>11</slash:comments>
+            <feedburner:origLink>http://www.frandroid.com/48100/dell-ajoute-une-nouvelle-colorie-pour-le-dell-streak/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Google Docs supporte l’édition du traitement de texte en version mobile</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/tSPoQDT_vGA/</link>
+            <comments>
+                http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/#comments
+            </comments>
+            <pubDate>Wed, 17 Nov 2010 18:50:49 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Applications Android]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[documents]]></category>
+            <category><![CDATA[google]]></category>
+            <category><![CDATA[google docs]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48077</guid>
+            <description>
+                <![CDATA[Le traitement de texte de Google Docs va être très prochainement utilisable depuis son navigateur mobile. Google docs est une suite bureautique en ligne composée d&#8217;un traitement de texte (Document), d&#8217;un tableau (Spreadsheet), d&#8217;une powerpoint-like (Presentation), d&#8217;un créateur de formulaire (Forms) et d&#8217;un outil de dessin (Drawing). Il est possible d&#8217;éditer des travaux à plusieurs et même de voir en temps réel les modifications, ainsi que <a class="more-link" href="http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Le traitement de texte de Google Docs va être très prochainement utilisable depuis son navigateur mobile.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/mobiledocs1.png"><img class="aligncenter size-full wp-image-48079 colorbox-48077" title="mobiledocs1" src="http://images.frandroid.com/wp-content/uploads/2010/11/mobiledocs1.png" alt="" width="185" height="370" /></a></p>
 <p>Google docs est une suite bureautique en ligne composée d&#8217;un traitement de texte (Document), d&#8217;un tableau (Spreadsheet), d&#8217;une powerpoint-like (Presentation), d&#8217;un créateur de formulaire (Forms) et d&#8217;un outil de dessin (Drawing). Il est possible d&#8217;éditer des travaux à plusieurs et même de voir en temps réel les modifications, ainsi que la position du curseur de la personne.</p>
 <p>A l&#8217;heure actuelle, une application Android est <a href="http://www.frandroid.com/36973/google-docs-supportera-bientot-ledition-sur-android/" target="_blank">en préparation</a> mais rien n&#8217;est officiellement disponible. Il reste cependant des outils tiers comme <a href="http://www.frandroid.com/43815/docs-to-go-la-nouvelle-mise-a-jour-3-0-est-arrivee/" target="_blank">Docs to go</a> qui permettent d&#8217;éditer et de visionner les différents types de travaux.</p>
@@ -847,25 +1007,39 @@ Et la liste est longue&#8230; !&nbsp;&raquo;</p></blockquote>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/OQoo-Utv7t3luCCtuXRrR-VNkKs/0/da"><img src="http://feedads.g.doubleclick.net/~a/OQoo-Utv7t3luCCtuXRrR-VNkKs/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/OQoo-Utv7t3luCCtuXRrR-VNkKs/1/da"><img src="http://feedads.g.doubleclick.net/~a/OQoo-Utv7t3luCCtuXRrR-VNkKs/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/tSPoQDT_vGA" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/feed/</wfw:commentRss>
-		<slash:comments>18</slash:comments>
-		<enclosure url="http://www.youtube.com/v/eAr5VoYdVBo?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1085" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/eAr5VoYdVBo?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1085" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/</feedburner:origLink></item>
-		<item>
-		<title>Le Sony Ericsson Xperia X10 recevra officiellement le multitouch en 2011</title>
-		<link>http://feedproxy.google.com/~r/Frandroid/~3/Q8-z6v4z-5c/</link>
-		<comments>http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/#comments</comments>
-		<pubDate>Wed, 17 Nov 2010 18:30:23 +0000</pubDate>
-		<dc:creator>g123k</dc:creator>
-				<category><![CDATA[Actualités Générales]]></category>
-		<category><![CDATA[Matériels / Accessoires]]></category>
-		<category><![CDATA[Android]]></category>
-		<category><![CDATA[multitouch]]></category>
-		<category><![CDATA[Sony Ericsson]]></category>
-		<category><![CDATA[Sony Ericsson Xperia X10]]></category>
-		<category><![CDATA[xperia x10]]></category>
-		<guid isPermaLink="false">http://www.frandroid.com/?p=48062</guid>
-		<description><![CDATA[Sony Ericsson va mettre en place le support du multitouch sur le Xperia X10 dans une prochaine mise à jour. Avant sa sortie, le Sony Ericsson Xperia X10 avait fait l&#8217;objet de nombreuses rumeurs sur la version d&#8217;Android ou encore sur l&#8217;intégration du multitouch. Finalement, le téléphone est sorti en 1.6 sans multipoint. Très récemment il vient d&#8217;être mis à jour en 2.1, mais toujours <a class="more-link" href="http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/">Lire la suite...</a>]]></description>
-			<content:encoded><![CDATA[<p>Sony Ericsson va mettre en place le support du <strong>multitouch </strong>sur le <strong>Xperia X10</strong> dans une prochaine mise à jour.</p>
+            <wfw:commentRss>
+                http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/feed/
+            </wfw:commentRss>
+            <slash:comments>18</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/eAr5VoYdVBo?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1085" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/eAr5VoYdVBo?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1085" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>
+                http://www.frandroid.com/48077/google-docs-supporte-ledition-du-traitement-de-texte-en-version-mobile/
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Le Sony Ericsson Xperia X10 recevra officiellement le multitouch en 2011</title>
+            <link>http://feedproxy.google.com/~r/Frandroid/~3/Q8-z6v4z-5c/</link>
+            <comments>
+                http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/#comments
+            </comments>
+            <pubDate>Wed, 17 Nov 2010 18:30:23 +0000</pubDate>
+            <dc:creator>g123k</dc:creator>
+            <category><![CDATA[Actualités Générales]]></category>
+            <category><![CDATA[Matériels / Accessoires]]></category>
+            <category><![CDATA[Android]]></category>
+            <category><![CDATA[multitouch]]></category>
+            <category><![CDATA[Sony Ericsson]]></category>
+            <category><![CDATA[Sony Ericsson Xperia X10]]></category>
+            <category><![CDATA[xperia x10]]></category>
+            <guid isPermaLink="false">http://www.frandroid.com/?p=48062</guid>
+            <description>
+                <![CDATA[Sony Ericsson va mettre en place le support du multitouch sur le Xperia X10 dans une prochaine mise à jour. Avant sa sortie, le Sony Ericsson Xperia X10 avait fait l&#8217;objet de nombreuses rumeurs sur la version d&#8217;Android ou encore sur l&#8217;intégration du multitouch. Finalement, le téléphone est sorti en 1.6 sans multipoint. Très récemment il vient d&#8217;être mis à jour en 2.1, mais toujours <a class="more-link" href="http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/">Lire la suite...</a>]]></description>
+            <content:encoded><![CDATA[<p>Sony Ericsson va mettre en place le support du <strong>multitouch </strong>sur le <strong>Xperia X10</strong> dans une prochaine mise à jour.</p>
 <p style="text-align: center;"><a href="http://images.frandroid.com/wp-content/uploads/2010/11/se-xperia-x10-multitouch.jpg"><img class="aligncenter size-full wp-image-48068 colorbox-48062" title="se-xperia-x10-multitouch" src="http://images.frandroid.com/wp-content/uploads/2010/11/se-xperia-x10-multitouch.jpg" alt="" width="480" height="354" /></a></p>
 <p>Avant sa sortie, le Sony Ericsson Xperia X10 avait fait l&#8217;objet de <a href="http://www.frandroid.com/14154/le-sony-ericsson-x10-multi-touch-ou-pas/">nombreuses</a> <a href="http://www.frandroid.com/14019/le-sony-ericsson-x10-est-finalement-multi-touch-et-sera-mise-a-jour-en-android-2-1-ou-2-2-en-septembre/">rumeurs </a>sur la version d&#8217;Android ou encore sur l&#8217;intégration du multitouch. Finalement, le téléphone est sorti en 1.6 sans multipoint. Très récemment il vient d&#8217;être <a href="http://www.frandroid.com/45854/android-2-1-sony-ericsson-x10-x10-mini-et-mini-pro/">mis à jour en 2.1</a>, mais toujours pas de technologie multipoint.</p>
 <p>Pourtant le <a href="http://blogs.sonyericsson.com/products/2009/11/05/answers-to-some-of-your-questions/" target="_blank">blog officiel</a> de la marque avait fait état de l&#8217;implémentation de cette fonctionnalité :</p>
@@ -882,8 +1056,21 @@ Et la liste est longue&#8230; !&nbsp;&raquo;</p></blockquote>
 
 <p><a href="http://feedads.g.doubleclick.net/~a/sqaQCIZuunjcCvq6oM58S2hgFnE/0/da"><img src="http://feedads.g.doubleclick.net/~a/sqaQCIZuunjcCvq6oM58S2hgFnE/0/di" border="0" ismap="true"></img></a><br/>
 <a href="http://feedads.g.doubleclick.net/~a/sqaQCIZuunjcCvq6oM58S2hgFnE/1/da"><img src="http://feedads.g.doubleclick.net/~a/sqaQCIZuunjcCvq6oM58S2hgFnE/1/di" border="0" ismap="true"></img></a></p><img src="http://feeds.feedburner.com/~r/Frandroid/~4/Q8-z6v4z-5c" height="1" width="1"/>]]></content:encoded>
-			<wfw:commentRss>http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/feed/</wfw:commentRss>
-		<slash:comments>40</slash:comments>
-		<enclosure url="http://www.youtube.com/v/n_JCHwa8JUw?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" length="1065" type="application/x-shockwave-flash" /><media:content url="http://www.youtube.com/v/n_JCHwa8JUw?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00" fileSize="1065" type="application/x-shockwave-flash" /><feedburner:origLink>http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/</feedburner:origLink></item>
-	<copyright>Copyright FrAndroid</copyright><media:rating>nonadult</media:rating></channel>
+            <wfw:commentRss>
+                http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/feed/
+            </wfw:commentRss>
+            <slash:comments>40</slash:comments>
+            <enclosure
+                    url="http://www.youtube.com/v/n_JCHwa8JUw?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    length="1065" type="application/x-shockwave-flash"/>
+            <media:content
+                    url="http://www.youtube.com/v/n_JCHwa8JUw?fs=1&amp;amp;hl=fr_FR&amp;amp;hd=1&amp;amp;color1=0x234900&amp;amp;color2=0x4e9e00"
+                    fileSize="1065" type="application/x-shockwave-flash"/>
+            <feedburner:origLink>
+                http://www.frandroid.com/48062/le-sony-ericsson-xperia-x10-recevra-officiellement-le-multitouch-en-2011/
+            </feedburner:origLink>
+        </item>
+        <copyright>Copyright FrAndroid</copyright>
+        <media:rating>nonadult</media:rating>
+    </channel>
 </rss><!-- Dynamic page generated in 0.418 seconds. --><!-- Cached page generated by WP-Super-Cache on 2010-11-19 17:34:59 --><!-- Compression = gzip -->
