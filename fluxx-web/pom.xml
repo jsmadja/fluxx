@@ -18,7 +18,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>fr.kaddath.apps</groupId>
+	<groupId>fr.fluxx</groupId>
 	<artifactId>fluxx-web</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
@@ -26,7 +26,7 @@
 	<url>http://fluxx.fr.cr/</url>
 
 	<parent>
-		<groupId>fr.kaddath.apps.fluxx</groupId>
+		<groupId>fr.fluxx</groupId>
 		<artifactId>fluxx</artifactId>
 		<version>1.0</version>
 	</parent>
@@ -49,7 +49,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>fr.kaddath.apps</groupId>
+			<groupId>fr.fluxx</groupId>
 			<artifactId>fluxx-core</artifactId>
 			<version>1.0</version>
 		</dependency>
@@ -69,21 +69,25 @@
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>${jsf-version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf-version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.1.2</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax</groupId>
