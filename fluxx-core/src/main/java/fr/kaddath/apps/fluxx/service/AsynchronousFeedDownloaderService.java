@@ -22,7 +22,6 @@ import java.net.URL;
 import java.util.Scanner;
 
 import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
 
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.FeedException;
@@ -31,7 +30,6 @@ import com.sun.syndication.io.SyndFeedInput;
 import fr.kaddath.apps.fluxx.collection.Pair;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.exception.DownloadFeedException;
-import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
 public class AsynchronousFeedDownloaderService {
@@ -51,7 +49,6 @@ public class AsynchronousFeedDownloaderService {
 		}
 	}
 
-	@Interceptors({ ChronoInterceptor.class })
 	private SyndFeed createSyndFeed(String text) throws FeedException {
 		return SYND_FEED_INPUT.build(new StringReader(text));
 	}

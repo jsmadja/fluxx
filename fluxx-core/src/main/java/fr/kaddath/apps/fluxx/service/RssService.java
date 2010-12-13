@@ -27,7 +27,6 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
-import javax.interceptor.Interceptors;
 import javax.servlet.http.HttpServletRequest;
 
 import com.sun.syndication.feed.synd.SyndCategory;
@@ -49,11 +48,9 @@ import fr.kaddath.apps.fluxx.domain.CustomFeed;
 import fr.kaddath.apps.fluxx.domain.DownloadableItem;
 import fr.kaddath.apps.fluxx.domain.Feed;
 import fr.kaddath.apps.fluxx.domain.Item;
-import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 import fr.kaddath.apps.fluxx.resource.FluxxMessage;
 
 @Stateful
-@Interceptors({ ChronoInterceptor.class })
 public class RssService {
 
 	private static final String FEED_TYPE = "rss_2.0";

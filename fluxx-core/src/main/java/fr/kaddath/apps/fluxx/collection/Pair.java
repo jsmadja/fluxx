@@ -18,24 +18,33 @@ package fr.kaddath.apps.fluxx.collection;
 
 public class Pair<K, V> {
 
-    private final K left;
-    private final V right;
+	private final K left;
+	private final V right;
 
-    public Pair(K left, V right) {
-        this.left = left;
-        this.right = right;
-    }
+	public Pair(K left, V right) {
+		this.left = left;
+		this.right = right;
+	}
 
-    public K left() {
-        return left;
-    }
+	public K left() {
+		return left;
+	}
 
-    public V right() {
-        return right;
-    }
+	public V right() {
+		return right;
+	}
 
-    @Override
-    public String toString() {
-        return left + " -> " + right;
-    }
+	@Override
+	public String toString() {
+		return left + " -> " + right;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Pair) {
+			Pair<?, ?> p = (Pair<?, ?>) obj;
+			return left.equals(p.left) && right.equals(p.right);
+		}
+		return false;
+	}
 }

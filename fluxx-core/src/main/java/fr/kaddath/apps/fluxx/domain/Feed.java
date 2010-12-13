@@ -35,12 +35,16 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
+
+import org.joda.time.DateTime;
 
 @Entity
 @NamedQueries({
@@ -52,7 +56,12 @@ import javax.validation.constraints.NotNull;
 @Table(name = "FEED", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class Feed implements Serializable {
 
+	private static final Double MAXIMUM_TIME_OUT_UPDATE = 12D; // max 12 hours before update
+	private static final Double MINIMUM_TIME_OUT_UPDATE = 1D; // min 1 hour before update
+
 	private static final long serialVersionUID = 1L;
+
+	private static final Double MAXIMUM_PUBLICATION_RATIO = 100D; // max 100 items per days
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -88,6 +97,9 @@ public class Feed implements Serializable {
 	private Date lastUpdate;
 
 	@Temporal(TemporalType.TIMESTAMP)
+	private Date nextUpdate;
+
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date publishedDate;
 
 	@Transient
@@ -119,6 +131,24 @@ public class Feed implements Serializable {
 	@Override
 	public int hashCode() {
 		return url.hashCode();
+	}
+
+	@PrePersist
+	@PreUpdate
+	public void calculateNextUpdate() {
+		if (getPublicationRatio() == null || getPublicationRatio() == 0) {
+			setPublicationRatio(MAXIMUM_PUBLICATION_RATIO);
+		}
+		int timeOutInHours = (int) (MAXIMUM_TIME_OUT_UPDATE / getPublicationRatio());
+		if (timeOutInHours > MAXIMUM_TIME_OUT_UPDATE) {
+			timeOutInHours = MAXIMUM_TIME_OUT_UPDATE.intValue();
+		} else if (timeOutInHours < MINIMUM_TIME_OUT_UPDATE) {
+			timeOutInHours = MINIMUM_TIME_OUT_UPDATE.intValue();
+		}
+		DateTime date = new DateTime();
+		date = date.plusHours(timeOutInHours);
+		setNextUpdate(date.toDate());
+		setLastUpdate(new Date());
 	}
 
 	public String getAuthor() {
@@ -239,6 +269,14 @@ public class Feed implements Serializable {
 
 	public void setPublicationRatio(Double publicationRatio) {
 		this.publicationRatio = publicationRatio;
+	}
+
+	public Date getNextUpdate() {
+		return nextUpdate;
+	}
+
+	public void setNextUpdate(Date nextUpdate) {
+		this.nextUpdate = nextUpdate;
 	}
 
 }

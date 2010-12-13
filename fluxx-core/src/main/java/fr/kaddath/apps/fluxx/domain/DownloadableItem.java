@@ -16,74 +16,83 @@
 
 package fr.kaddath.apps.fluxx.domain;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "DOWNLOADABLEITEM", uniqueConstraints = @UniqueConstraint(columnNames = {"URL"}))
+@Table(name = "DOWNLOADABLEITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
+@NamedQueries({ @NamedQuery(name = "findDownloadableItemByUrl", query = "SELECT d FROM DownloadableItem d WHERE d.url = :url") })
 public class DownloadableItem {
 
-    public static final int MAX_DOWNLOADABLE_LINK_SIZE = 512;
+	public static final int MAX_DOWNLOADABLE_LINK_SIZE = 512;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-    @NotNull
-    @Column(length = MAX_DOWNLOADABLE_LINK_SIZE)
-    private String url;
+	@NotNull
+	@Column(length = MAX_DOWNLOADABLE_LINK_SIZE)
+	private String url;
 
-    private String type;
+	private String type;
 
-    private Long fileLength;
+	private Long fileLength;
 
-    public DownloadableItem() {
+	public DownloadableItem() {
 
-    }
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-    public Long getFileLength() {
-        return fileLength;
-    }
+	public Long getFileLength() {
+		return fileLength;
+	}
 
-    public void setFileLength(Long fileLength) {
-        this.fileLength = fileLength;
-    }
+	public void setFileLength(Long fileLength) {
+		this.fileLength = fileLength;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof DownloadableItem)) {
-            return false;
-        }
-        DownloadableItem di = (DownloadableItem) obj;
-        return url.equals(di.url);
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null || !(obj instanceof DownloadableItem)) {
+			return false;
+		}
+		DownloadableItem di = (DownloadableItem) obj;
+		return url.equals(di.url);
+	}
 
-    @Override
-    public int hashCode() {
-        return url.hashCode();
-    }
+	@Override
+	public int hashCode() {
+		return url.hashCode();
+	}
 }

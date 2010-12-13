@@ -43,7 +43,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "findItemsByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
+		@NamedQuery(name = "findItemByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
 		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed AND i.link = :link"),
 		@NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MAX(j.publishedDate) FROM Item j)"),
 		@NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MIN(j.publishedDate) FROM Item j)"),

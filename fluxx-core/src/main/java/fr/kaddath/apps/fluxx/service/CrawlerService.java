@@ -17,14 +17,11 @@
 package fr.kaddath.apps.fluxx.service;
 
 import javax.ejb.Stateless;
-import javax.interceptor.Interceptors;
 
 import edu.uci.ics.crawler4j.crawler.CrawlController;
 import fr.kaddath.apps.fluxx.crawler.FeedCrawler;
-import fr.kaddath.apps.fluxx.interceptor.ChronoInterceptor;
 
 @Stateless
-@Interceptors({ ChronoInterceptor.class })
 public class CrawlerService {
 
 	private static final int NUMBER_OF_CRAWLERS = 1;
