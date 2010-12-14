@@ -25,7 +25,6 @@ import javax.naming.Context;
 import javax.naming.NamingException;
 
 import fr.fluxx.core.service.AsynchronousFeedDownloaderService;
-import fr.fluxx.core.service.CrawlerService;
 import fr.fluxx.core.service.FeedFetcherService;
 import fr.fluxx.core.service.FeedService;
 import fr.fluxx.core.service.ScheduledUpdateService;
@@ -36,7 +35,6 @@ public abstract class AbstractIntegrationTest {
 	protected static Context namingContext;
 	protected static FeedFetcherService feedFetcherService;
 	protected static FeedService feedService;
-	protected static CrawlerService crawlerService;
 	protected static AsynchronousFeedDownloaderService asynchronousFeedDownloaderService;
 	protected static ScheduledUpdateService scheduledUpdateService;
 
@@ -64,7 +62,6 @@ public abstract class AbstractIntegrationTest {
 
 			feedFetcherService = (FeedFetcherService) lookup("FeedFetcherService");
 			feedService = (FeedService) lookup("FeedService");
-			crawlerService = (CrawlerService) lookup("CrawlerService");
 			asynchronousFeedDownloaderService = (AsynchronousFeedDownloaderService) lookup("AsynchronousFeedDownloaderService");
 			scheduledUpdateService = (ScheduledUpdateService) lookup("ScheduledUpdateService");
 		} catch (Exception e) {

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package fr.fluxx.core.service;
+package fr.fluxx.admin.service;
 
 import javax.ejb.Stateless;
 
 import edu.uci.ics.crawler4j.crawler.CrawlController;
-import fr.fluxx.core.crawler.FeedCrawler;
+import fr.fluxx.admin.crawler.FeedCrawler;
 
 @Stateless
 public class CrawlerService {

@@ -20,8 +20,8 @@ import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import fr.fluxx.admin.service.CrawlerService;
 import fr.fluxx.core.exception.DownloadFeedException;
-import fr.fluxx.core.service.CrawlerService;
 import fr.fluxx.core.service.FeedFetcherService;
 import fr.fluxx.core.service.ScheduledUpdateService;
 

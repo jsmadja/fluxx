@@ -33,35 +33,18 @@
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<servlet>
-		<servlet-name>AggregatedFeedOpml</servlet-name>
-		<servlet-class>fr.kaddath.apps.fluxx.servlet.AggregatedFeedOpmlServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>feedsOpmlServlet</servlet-name>
-		<servlet-class>fr.kaddath.apps.fluxx.servlet.feedsOpmlServlet</servlet-class>
-	</servlet>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AggregatedFeedOpml</servlet-name>
-		<url-pattern>/aggregatedFeedOpml</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>feedsOpmlServlet</servlet-name>
-		<url-pattern>/feedsOpml</url-pattern>
-	</servlet-mapping>
-
-<servlet>
+	<servlet>
         <servlet-name>ServletAdaptor</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
         <servlet-mapping>
         <servlet-name>ServletAdaptor</servlet-name>
-        <url-pattern>/resources/*</url-pattern>
+        <url-pattern>/rss/*</url-pattern>
     </servlet-mapping>
 
 	<session-config>

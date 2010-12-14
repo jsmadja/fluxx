@@ -20,7 +20,7 @@
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
                   version="2.0">
-    <namespace>http://fluxx.fr.cn/custom-taglib</namespace>
+    <namespace>http://fluxx.fr.cr/custom-taglib</namespace>
     <tag>
         <tag-name>tagline</tag-name>
         <component>
@@ -29,7 +29,7 @@
         <attribute>
             <name>feed</name>
             <required>true</required>
-            <type>fr.kaddath.apps.fluxx.domain.Feed</type>
+            <type>fr.fluxx.core.domain.Feed</type>
         </attribute>
     </tag>
     <tag>
@@ -40,7 +40,7 @@
         <attribute>
             <name>feed</name>
             <required>true</required>
-            <type>fr.kaddath.apps.fluxx.domain.Feed</type>
+            <type>fr.fluxx.core.domain.Feed</type>
         </attribute>
     </tag>
 </facelet-taglib>

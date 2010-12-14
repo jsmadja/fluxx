@@ -19,3 +19,8 @@ rm derby.log
 rm -rf fluxx-core/gfembed*
 rm -rf sonar
 rm -rf sun-appserv-samples
+rm -rf fluxx-admin/src/main/webapp/WEB-INF/classes
+rm -rf fluxx-admin/src/main/webapp/WEB-INF/lib
+rm -rf fluxx-web/src/main/webapp/WEB-INF/classes
+rm -rf fluxx-web/src/main/webapp/WEB-INF/lib
+

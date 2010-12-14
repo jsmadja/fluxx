@@ -25,7 +25,7 @@ import javax.ws.rs.core.Context;
 
 import fr.fluxx.core.Services;
 
-@Path("rss/{username}/{category}")
+@Path("{username}/{category}")
 public class FeedResource {
 	@Context
 	private HttpServletRequest request;

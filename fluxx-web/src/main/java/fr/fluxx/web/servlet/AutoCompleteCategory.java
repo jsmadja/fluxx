@@ -33,7 +33,7 @@ import fr.fluxx.core.service.CategoryService;
 @WebServlet(name = "AutoCompleteCategory", urlPatterns = { "/AutoCompleteCategory" })
 public class AutoCompleteCategory extends HttpServlet {
 
-	private static final long serialVersionUID = -5595823845823527972L;
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	CategoryService categoryService;

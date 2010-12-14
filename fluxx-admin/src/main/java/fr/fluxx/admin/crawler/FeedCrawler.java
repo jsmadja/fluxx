@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package fr.fluxx.core.crawler;
+package fr.fluxx.admin.crawler;
 
 import java.net.URL;
 import java.util.logging.Logger;
@@ -30,9 +30,9 @@ import org.htmlparser.util.SimpleNodeIterator;
 import edu.uci.ics.crawler4j.crawler.Page;
 import edu.uci.ics.crawler4j.crawler.WebCrawler;
 import edu.uci.ics.crawler4j.url.WebURL;
-import fr.fluxx.core.Services;
+import fr.fluxx.admin.service.CrawlerService;
+import fr.fluxx.admin.Services;
 import fr.fluxx.core.exception.DownloadFeedException;
-import fr.fluxx.core.service.CrawlerService;
 import fr.fluxx.core.service.FeedFetcherService;
 
 public class FeedCrawler extends WebCrawler {
