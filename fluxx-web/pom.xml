@@ -52,6 +52,7 @@
 			<groupId>fr.fluxx</groupId>
 			<artifactId>fluxx-core</artifactId>
 			<version>1.0</version>
+			<type>ejb-client</type>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish</groupId>
