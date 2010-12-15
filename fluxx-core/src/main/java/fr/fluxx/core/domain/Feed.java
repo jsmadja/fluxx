@@ -166,7 +166,6 @@ public class Feed implements Serializable {
 		date = date.plusHours(timeOutInHours);
 		setNextUpdate(date.toDate());
 		setLastUpdate(new Date());
-		LOG.info("last update: "+getLastUpdate()+", next update: "+getNextUpdate());
 	}
 
 	public String getAuthor() {

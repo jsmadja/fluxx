@@ -40,7 +40,6 @@ import fr.fluxx.core.domain.Item;
 import fr.fluxx.core.domain.metamodel.CustomFeed_;
 
 @Stateless
-@SuppressWarnings("unchecked")
 public class CustomFeedService {
 
 	@PersistenceContext
