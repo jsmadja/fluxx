@@ -20,6 +20,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -93,7 +94,7 @@ public class FeedFetcherService {
 	public Feed updateExistingFeed(Feed feed) {
 		try {
 			feed.setInError(false);
-			fetch(feed);
+			feed = fetch(feed);
 		} catch (Exception e) {
 			LOG.warning(e.getMessage());
 			feed.setInError(true);
@@ -130,10 +131,18 @@ public class FeedFetcherService {
 		if (StringUtils.isBlank(feed.getAuthor())) {
 			feed.setAuthor(syndFeed.getCopyright());
 		}
+		if (syndFeed.getPublishedDate() == null) {
+			feed.setPublishedDate(new Date());
+		} else {
+			feed.setPublishedDate(syndFeed.getPublishedDate());
+		}
+		if (feed.getTitle() == null) {
+			feed.setTitle(feed.getUrl());
+		} else {
+			feed.setTitle(syndFeed.getTitle());
+		}
 		feed.setDescription(syndFeed.getDescription());
 		feed.setFeedType(syndFeed.getFeedType());
-		feed.setPublishedDate(syndFeed.getPublishedDate());
-		feed.setTitle(syndFeed.getTitle());
 	}
 
 	private void updateFeedItems(Feed feed, SyndFeed syndFeed) {

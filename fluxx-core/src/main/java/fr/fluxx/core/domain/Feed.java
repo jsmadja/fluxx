@@ -23,6 +23,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -47,6 +48,8 @@ import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
 
+import fr.fluxx.core.service.ScheduledUpdateService;
+
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "findLastUpdatedFeed", query = "SELECT f FROM Feed f WHERE f.lastUpdate = (SELECT MAX(g.lastUpdate) FROM Feed g)"),
@@ -57,6 +60,8 @@ import org.joda.time.DateTime;
 @Table(name = "FEED", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class Feed implements Serializable {
 
+	private static final Logger LOG = Logger.getLogger(Feed.class.getName());
+	
 	private static final Double MAXIMUM_TIME_OUT_UPDATE = 12D; // max 12 hours before update
 	private static final Double MINIMUM_TIME_OUT_UPDATE = 1D; // min 1 hour before update
 
@@ -154,6 +159,7 @@ public class Feed implements Serializable {
 		date = date.plusHours(timeOutInHours);
 		setNextUpdate(date.toDate());
 		setLastUpdate(new Date());
+		LOG.info("last update: "+getLastUpdate()+", next update: "+getNextUpdate());
 	}
 
 	public String getAuthor() {

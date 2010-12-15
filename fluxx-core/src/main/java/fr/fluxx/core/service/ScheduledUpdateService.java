@@ -62,11 +62,14 @@ public class ScheduledUpdateService {
 		LOG.info("Top priority update is stopping ...");
 	}
 
-	@Schedule(minute = "*/15", hour = "*")
+	@Schedule(minute = "*/15", hour = "*", persistent= false)
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
-		List<Feed> feeds = feedService.findFeedsToUpdate();
-		update(feeds);
+		List<Feed> feeds;
+		do {
+			feeds = feedService.findFeedsToUpdate();
+			update(feeds);
+		} while (!feeds.isEmpty());
 		LOG.info("Full update is stopping ...");
 	}
 

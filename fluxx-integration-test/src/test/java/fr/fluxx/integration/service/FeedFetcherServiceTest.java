@@ -24,12 +24,12 @@ import fr.fluxx.integration.AbstractIntegrationTest;
 
 public class FeedFetcherServiceTest extends AbstractIntegrationTest {
 
-	private void fetch(String url) throws DownloadFeedException {
+	private Feed fetch(String url) throws DownloadFeedException {
 		Feed feed = feedService.findFeedByUrl(url);
 		if (feed != null) {
 			feedService.delete(feed);
 		}
-		feedFetcherService.addNewFeed(url);
+		return feedFetcherService.addNewFeed(url);
 	}
 
 	@Test

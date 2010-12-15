@@ -43,7 +43,7 @@ import fr.fluxx.core.domain.metamodel.Feed_;
 public class FeedService {
 
 	private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
-	private static final int MAX_FEEDS_TO_RETRIEVE = 10;
+	private static final int MAX_FEEDS_TO_RETRIEVE = 100;
 
 	@PersistenceContext
 	private EntityManager em;
@@ -92,7 +92,9 @@ public class FeedService {
 		Predicate whereClauses = cb.and(inErrorClause, nextUpdateClause);
 		cq.where(whereClauses);
 		cq.orderBy(cb.asc(feed.get(Feed_.title)));
-		return em.createQuery(cq).getResultList();
+		Query query = em.createQuery(cq);
+		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
+		return query.getResultList();
 	}
 
 	public List<Feed> findAllTopPriorityFeeds() {
