@@ -112,7 +112,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
-					<warName>fluxx</warName>
+					<warName>fluxx-web</warName>
 					<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
 				</configuration>
 			</plugin>

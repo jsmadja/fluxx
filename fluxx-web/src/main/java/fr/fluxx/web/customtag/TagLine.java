@@ -27,16 +27,17 @@ import javax.faces.context.ResponseWriter;
 
 import fr.fluxx.core.Services;
 import fr.fluxx.core.domain.Feed;
+import fr.fluxx.core.service.CategoryService;
 import fr.fluxx.core.service.FeedService;
 
 @FacesComponent(value = "tagline")
 public class TagLine extends UIComponentBase {
 
-	private final FeedService feedService;
+	private final CategoryService categoryService;
 
 	public TagLine() {
 		super();
-		feedService = Services.getFeedService();
+		categoryService = Services.getCategoryService();
 	}
 
 	@Override
@@ -48,7 +49,7 @@ public class TagLine extends UIComponentBase {
 	public void encodeEnd(FacesContext context) throws IOException {
 		ResponseWriter responseWriter = context.getResponseWriter();
 		Feed feed = (Feed) getAttributes().get("feed");
-		List<String> categories = feedService.findCategoriesByFeed(feed);
+		List<String> categories = categoryService.findCategoriesByFeed(feed);
 		Collections.sort(categories);
 		for (String category : categories) {
 			responseWriter.startElement("img", this);

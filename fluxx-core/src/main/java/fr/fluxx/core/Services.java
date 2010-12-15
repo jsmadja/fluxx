@@ -19,6 +19,7 @@ package fr.fluxx.core;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import fr.fluxx.core.service.CategoryService;
 import fr.fluxx.core.service.FeedFetcherService;
 import fr.fluxx.core.service.FeedService;
 import fr.fluxx.core.service.ItemService;
@@ -33,6 +34,7 @@ public class Services {
     private static ItemService itemService;
     private static RssService rssService;
     private static FeedFetcherService feedFetcherService;
+    private static CategoryService categoryService;
 
     public static FeedService getFeedService() {
         if (feedService == null) {
@@ -62,6 +64,13 @@ public class Services {
         return rssService;
     }
 
+	public static CategoryService getCategoryService() {
+		if (categoryService == null) {
+			categoryService = (CategoryService) lookup(CategoryService.class.getSimpleName());
+        }
+        return categoryService;
+	}
+
     private static Object lookup(String service) {
         try {
             return new InitialContext().lookup("java:global/fluxx/" + service);
@@ -74,4 +83,5 @@ public class Services {
             }
         }
     }
+
 }
