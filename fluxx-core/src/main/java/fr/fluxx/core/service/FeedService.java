@@ -42,7 +42,6 @@ import fr.fluxx.core.domain.metamodel.Feed_;
 @SuppressWarnings({ "unchecked" })
 public class FeedService {
 
-	private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
 	private static final int MAX_FEEDS_TO_RETRIEVE = 100;
 
 	@PersistenceContext
@@ -98,8 +97,8 @@ public class FeedService {
 	}
 
 	public List<Feed> findAllTopPriorityFeeds() {
-		String strQuery = "SELECT f.* FROM FEED f WHERE f.id IN (SELECT DISTINCT feed_id FROM CUSTOMFEED_FEED)";
-		return em.createNativeQuery(strQuery).getResultList();
+		Query query = em.createNamedQuery("findAllTopPriorityFeeds");
+		return query.getResultList();
 	}
 
 	public List<Feed> findAllFeedsInError() {
@@ -144,18 +143,16 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByItemTitle(String filter) {
-		String strQuery = "select distinct f.ID from ITEM i, FEED f where f.id = i.FEED_ID and lower(i.TITLE) like '%"
-				+ filter.toLowerCase() + "%'";
-		Query query = em.createNativeQuery(strQuery);
+		Query query = em.createNamedQuery("findFeedsByItemTitle");
+		query.setParameter(1, '%'+filter.toLowerCase()+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
 		return fromFeedIdListToFeedList(feedIds);
 	}
 
 	public List<Feed> findFeedsByCategory(String filter) {
-		String strQuery = "select distinct f.ID from ITEM i, FEED f where f.id = i.FEED_ID and i.id in (select distinct item_id from ITEM_CATEGORY, CATEGORY where lower(CATEGORY.NAME) like '%"
-				+ filter.toLowerCase() + "%' and CATEGORY.ID = ITEM_CATEGORY.CATEGORIES_ID)";
-		Query query = em.createNativeQuery(strQuery);
+		Query query = em.createNamedQuery("findFeedsByCategory");
+		query.setParameter(1, '%'+filter.toLowerCase()+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
 		return fromFeedIdListToFeedList(feedIds);
@@ -163,10 +160,9 @@ public class FeedService {
 
 	public List<Feed> findFeedsByDescriptionUrlAuthorTitle(String filter) {
 		filter = filter.toLowerCase();
-		String strQuery = "select ID from FEED where lower(description) like '%" + filter
-				+ "%' or lower(title) like '%" + filter + "%' or lower(url) like '%" + filter
-				+ "%' or lower(author) like '%" + filter + "%'";
-		Query query = em.createNativeQuery(strQuery);
+		Query query = em.createNamedQuery("findFeedsByDescriptionUrlAuthorTitle");
+		for (int i=1; i<5; i++)
+			query.setParameter(i, '%'+filter+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
 		return fromFeedIdListToFeedList(feedIds);
@@ -175,18 +171,6 @@ public class FeedService {
 	public Long getNumFeeds() {
 		Query query = em.createNamedQuery("getNumFeeds");
 		return (Long) query.getSingleResult();
-	}
-
-	public List<String> findCategoriesByFeed(Feed feed) {
-		String strQuery = "select category.NAME"
-				+ " from FEED feed, ITEM item, ITEM_CATEGORY item_category, CATEGORY category" //
-				+ " where feed.ID = " + feed.getId() //
-				+ " and item.FEED_ID = feed.ID and item_category.ITEM_ID = item.ID" //
-				+ " and category.ID = item_category.CATEGORIES_ID" //
-				+ " order by category.NAME asc";
-		Query query = em.createNativeQuery(strQuery);
-		query.setMaxResults(MAX_CATEGORIES_TO_RETRIEVE);
-		return query.getResultList();
 	}
 
 	public Feed findFeedById(Long id) {
@@ -212,8 +196,7 @@ public class FeedService {
 
 	public Map<String, Long> getNumFeedType() {
 		Map<String, Long> maps = new HashMap<String, Long>();
-		Query query = em
-				.createNativeQuery("select FEEDTYPE, count(*) from FEED group by FEEDTYPE order by FEEDTYPE ASC");
+		Query query = em.createNamedQuery("getNumFeedType");
 		List list = query.getResultList();
 		for (Object aList : list) {
 			Object[] value = (Object[]) aList;

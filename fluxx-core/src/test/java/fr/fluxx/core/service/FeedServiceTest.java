@@ -141,13 +141,6 @@ public class FeedServiceTest extends AbstractTest {
 	}
 
 	@Test
-	public void should_find_all_categories_of_a_feed() throws Exception {
-		Feed feed = createFeedWithCategories();
-		List<String> categories = feedService.findCategoriesByFeed(feed);
-		assertFalse(categories.isEmpty());
-	}
-
-	@Test
 	public void should_return_the_same_feed_when_searching_by_id() throws Exception {
 		Feed feed1 = createFeedWithDownloadableItems();
 		Feed feed2 = feedService.findFeedById(feed1.getId());

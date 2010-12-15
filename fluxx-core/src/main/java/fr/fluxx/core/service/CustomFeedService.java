@@ -95,7 +95,6 @@ public class CustomFeedService {
 		customFeed.setCategory(category);
 		customFeed.setUsername(username);
 		customFeed.setNumLastDay(numLastDay);
-		System.err.println(customFeed + " em:" + em);
 		customFeed = store(customFeed);
 		return customFeed;
 	}
@@ -123,7 +122,7 @@ public class CustomFeedService {
 	}
 
 	public Long getNumCustomFeeds() {
-		Query query = em.createQuery("select count(customFeed) from CustomFeed customFeed");
+		Query query = em.createNamedQuery("getNumCustomFeeds");
 		return (Long) query.getSingleResult();
 	}
 
@@ -160,10 +159,8 @@ public class CustomFeedService {
 	}
 
 	public void deleteAllCustomFeeds() {
-		Query query = em.createQuery("select cf from CustomFeed cf");
-		List<CustomFeed> customFeeds = query.getResultList();
-		for (CustomFeed customFeed : customFeeds) {
-			delete(customFeed);
-		}
+		Query query = em.createNamedQuery("deleteAllCustomFeeds");
+		query.executeUpdate();
+		em.flush();
 	}
 }

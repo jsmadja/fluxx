@@ -28,12 +28,15 @@ import org.apache.commons.lang.StringUtils;
 
 import fr.fluxx.core.collection.PairList;
 import fr.fluxx.core.domain.Category;
+import fr.fluxx.core.domain.Feed;
 
 @Stateless
 public class CategoryService {
 
 	private static final String INVALID_CHARACTERS = "\"#/|!'";
 
+	private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
+	
 	@PersistenceContext
 	private EntityManager em;
 
@@ -83,6 +86,13 @@ public class CategoryService {
 			em.flush();
 		}
 		return category;
+	}
+	
+	public List<String> findCategoriesByFeed(Feed feed) {
+		TypedQuery<String> query = em.createNamedQuery("findCategoriesByFeed", String.class);
+		query.setParameter(1, feed.getId());
+		query.setMaxResults(MAX_CATEGORIES_TO_RETRIEVE);
+		return query.getResultList();
 	}
 
 	public void deleteAllCategories() {

@@ -33,6 +33,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -48,9 +50,14 @@ import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
 
-import fr.fluxx.core.service.ScheduledUpdateService;
-
 @Entity
+@NamedNativeQueries({
+	@NamedNativeQuery(name = "findAllTopPriorityFeeds", query = "SELECT f.* FROM FEED f WHERE f.id IN (SELECT DISTINCT feed_id FROM CUSTOMFEED_FEED)"),
+	@NamedNativeQuery(name = "findFeedsByItemTitle", query = "SELECT DISTINCT f.id FROM ITEM i, FEED f WHERE f.id = i.feed_id AND LOWER(i.title) like ?1"),
+	@NamedNativeQuery(name = "findFeedsByCategory", query ="SELECT DISTINCT f.id FROM ITEM i, FEED f WHERE f.id = i.feed_id AND i.id IN (SELECT DISTINCT item_id FROM ITEM_CATEGORY, CATEGORY WHERE LOWER(CATEGORY.name) LIKE ?1 AND CATEGORY.id = ITEM_CATEGORY.categories_id)"),
+	@NamedNativeQuery(name = "findFeedsByDescriptionUrlAuthorTitle", query="SELECT id FROM FEED WHERE LOWER(description) LIKE ?1 OR LOWER(title) LIKE ?2 OR LOWER(url) LIKE ?3 OR LOWER(author) LIKE ?4"),
+	@NamedNativeQuery(name = "getNumFeedType", query = "SELECT feedtype, COUNT(*) FROM FEED GROUP BY feedtype ORDER BY feedtype ASC")
+})
 @NamedQueries({
 		@NamedQuery(name = "findLastUpdatedFeed", query = "SELECT f FROM Feed f WHERE f.lastUpdate = (SELECT MAX(g.lastUpdate) FROM Feed g)"),
 		@NamedQuery(name = "findFeedsByInError", query = "SELECT f FROM Feed f WHERE f.inError = :inError ORDER BY f.title asc"),
@@ -60,12 +67,12 @@ import fr.fluxx.core.service.ScheduledUpdateService;
 @Table(name = "FEED", uniqueConstraints = @UniqueConstraint(columnNames = { "URL" }))
 public class Feed implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	private static final Logger LOG = Logger.getLogger(Feed.class.getName());
 	
 	private static final Double MAXIMUM_TIME_OUT_UPDATE = 12D; // max 12 hours before update
 	private static final Double MINIMUM_TIME_OUT_UPDATE = 1D; // min 1 hour before update
-
-	private static final long serialVersionUID = 1L;
 
 	private static final Double MAXIMUM_PUBLICATION_RATIO = 100D; // max 100 items per days
 

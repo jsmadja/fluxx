@@ -48,6 +48,7 @@
         <module>fluxx-web</module>
 	<module>fluxx-admin</module>
 	<module>fluxx-integration-test</module>
+	<module>fluxx-ear</module>
     </modules>
 
     <properties>

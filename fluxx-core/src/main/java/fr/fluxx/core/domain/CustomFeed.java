@@ -27,11 +27,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name="getNumCustomFeeds", query="SELECT COUNT(customFeed) FROM CustomFeed customFeed"),
+	@NamedQuery(name="deleteAllCustomFeeds", query= "DELETE FROM CustomFeed cf")
+})
 public class CustomFeed implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -32,11 +32,12 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "CATEGORY", uniqueConstraints = @UniqueConstraint(columnNames = { "NAME" }))
-@NamedNativeQueries({ @NamedNativeQuery(name = "findNumItemByCategory", query = "SELECT c.NAME, COUNT(ic.ITEM_ID) FROM CATEGORY c, item_category ic WHERE c.ID = ic.CATEGORIES_ID GROUP BY c.name") })
+@NamedNativeQueries({ 
+	@NamedNativeQuery(name = "findNumItemByCategory", query = "SELECT c.NAME, COUNT(ic.ITEM_ID) FROM CATEGORY c, item_category ic WHERE c.ID = ic.CATEGORIES_ID GROUP BY c.name"),
+	@NamedNativeQuery(name = "findCategoriesByFeed", query = "select category.NAME from FEED feed, ITEM item, ITEM_CATEGORY item_category, CATEGORY category where feed.ID = ?1 and item.FEED_ID = feed.ID and item_category.ITEM_ID = item.ID and category.ID = item_category.CATEGORIES_ID order by category.NAME asc")
+})
 @NamedQueries({
 		@NamedQuery(name = "findCategoryByName", query = "SELECT category FROM Category category WHERE category.name = :name"),
-		// @NamedQuery(name = "findCategoriesByName", query =
-		// "SELECT category FROM Category category WHERE LOWER(category.name) LIKE :name ORDER BY LOWER(category.name)"),
 		@NamedQuery(name = "findCategoriesByName", query = "SELECT category FROM Category category WHERE LOWER(category.name) LIKE :name ORDER BY category.name"),
 		@NamedQuery(name = "findAllCategories", query = "SELECT category FROM Category category") })
 public class Category implements Serializable {
