@@ -23,7 +23,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -69,8 +68,6 @@ public class Feed implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final Logger LOG = Logger.getLogger(Feed.class.getName());
-	
 	private static final Double MAXIMUM_TIME_OUT_UPDATE = 12D; // max 12 hours before update
 	private static final Double MINIMUM_TIME_OUT_UPDATE = 1D; // min 1 hour before update
 

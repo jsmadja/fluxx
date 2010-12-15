@@ -29,6 +29,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
@@ -196,10 +197,9 @@ public class FeedService {
 
 	public Map<String, Long> getNumFeedType() {
 		Map<String, Long> maps = new HashMap<String, Long>();
-		Query query = em.createNamedQuery("getNumFeedType");
-		List list = query.getResultList();
-		for (Object aList : list) {
-			Object[] value = (Object[]) aList;
+		TypedQuery<Object[]> query = em.createNamedQuery("getNumFeedType", Object[].class);
+		List<Object[]> list = query.getResultList();
+		for (Object[] value : list) {
 			String feedType = (String) value[0];
 			Long count;
 			if (value[1] instanceof Long) {

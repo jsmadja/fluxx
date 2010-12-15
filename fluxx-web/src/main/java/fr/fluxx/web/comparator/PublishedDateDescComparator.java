@@ -23,6 +23,8 @@ import fr.fluxx.core.domain.Item;
 
 public class PublishedDateDescComparator implements Comparator<Item>, Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public int compare(Item o1, Item o2) {
 

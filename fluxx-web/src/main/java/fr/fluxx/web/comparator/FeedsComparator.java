@@ -23,6 +23,8 @@ import fr.fluxx.core.domain.Feed;
 
 public class FeedsComparator implements Comparator<Feed>, Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public int compare(Feed o1, Feed o2) {
 

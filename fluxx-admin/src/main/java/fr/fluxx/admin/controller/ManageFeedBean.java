@@ -25,6 +25,8 @@ import javax.inject.Named;
 @SessionScoped
 public class ManageFeedBean implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	// private static final FeedsComparator FEEDS_COMPARATOR = new FeedsComparator();
 	//
 	// private static final String MANAGE_FEEDS = "manage-feeds";

@@ -28,7 +28,6 @@ import javax.faces.context.ResponseWriter;
 import fr.fluxx.core.Services;
 import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.service.CategoryService;
-import fr.fluxx.core.service.FeedService;
 
 @FacesComponent(value = "tagline")
 public class TagLine extends UIComponentBase {
