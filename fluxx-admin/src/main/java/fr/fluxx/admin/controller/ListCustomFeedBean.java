@@ -19,8 +19,8 @@ package fr.fluxx.admin.controller;
 import java.io.Serializable;
 
 import javax.annotation.ManagedBean;
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import fr.fluxx.core.service.CustomFeedService;
@@ -39,7 +39,7 @@ public class ListCustomFeedBean implements Serializable {
 
 	private int numLastDay = 3;
 
-	@Inject
+	@EJB
 	private CustomFeedService customFeedService;
 
 	public String add() {

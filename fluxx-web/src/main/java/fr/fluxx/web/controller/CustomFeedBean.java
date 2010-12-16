@@ -21,11 +21,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
@@ -47,13 +47,13 @@ public class CustomFeedBean implements Serializable {
 
 	private static final FeedsComparator FEEDS_COMPARATOR = new FeedsComparator();
 
-	@Inject
+	@EJB
 	private FeedService feedService;
 
-	@Inject
+	@EJB
 	private FeedFetcherService feedFetcherService;
 
-	@Inject
+	@EJB
 	private CustomFeedService customFeedService;
 
 	private String filter = "";

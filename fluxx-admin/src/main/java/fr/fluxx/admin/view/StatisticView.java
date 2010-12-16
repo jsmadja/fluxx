@@ -29,8 +29,8 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.commons.lang.time.DateUtils;
@@ -44,13 +44,13 @@ import fr.fluxx.core.service.ItemService;
 @ApplicationScoped
 public class StatisticView {
 
-	@Inject
+	@EJB
 	FeedService feedService;
 
-	@Inject
+	@EJB
 	ItemService itemService;
 
-	@Inject
+	@EJB
 	CustomFeedService customFeedService;
 
 	public long getNumFeeds() {

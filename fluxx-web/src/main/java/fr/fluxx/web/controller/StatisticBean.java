@@ -19,8 +19,8 @@ package fr.fluxx.web.controller;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import fr.fluxx.core.domain.Feed;
@@ -32,13 +32,13 @@ import fr.fluxx.core.service.ItemService;
 @ApplicationScoped
 public class StatisticBean {
 
-	@Inject
+	@EJB
 	FeedService feedService;
 
-	@Inject
+	@EJB
 	ItemService itemService;
 
-	@Inject
+	@EJB
 	CustomFeedService customFeedService;
 
 	public long getNumFeeds() {

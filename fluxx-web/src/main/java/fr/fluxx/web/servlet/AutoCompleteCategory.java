@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-import javax.inject.Inject;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +35,9 @@ public class AutoCompleteCategory extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	@Inject
+	@EJB
 	CategoryService categoryService;
 
-	// @Resource(lookup = "fluxx/autocomplete/category")
 	private final Integer numCategories = 10;
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException,

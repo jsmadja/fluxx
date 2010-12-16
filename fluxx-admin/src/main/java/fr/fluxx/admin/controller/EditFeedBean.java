@@ -19,11 +19,11 @@ package fr.fluxx.admin.controller;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import fr.fluxx.admin.model.CollectionDataModel;
@@ -40,13 +40,13 @@ public class EditFeedBean implements Serializable {
 
 	private static final long serialVersionUID = -5993382815103965143L;
 
-	@Inject
+	@EJB
 	private FeedService feedService;
 
-	@Inject
+	@EJB
 	private FeedFetcherService feedFetcherService;
 
-	@Inject
+	@EJB
 	private ItemService itemService;
 
 	private Feed currentFeed;

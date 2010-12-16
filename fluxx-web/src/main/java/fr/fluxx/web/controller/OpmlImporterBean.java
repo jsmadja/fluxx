@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.ejb.EJB;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import fr.fluxx.core.domain.Feed;
@@ -35,11 +35,11 @@ import fr.fluxx.core.service.OpmlService;
 public class OpmlImporterBean {
 
 	private String content;
-	@Inject
+	@EJB
 	private OpmlService opmlService;
-	@Inject
+	@EJB
 	private FeedService feedService;
-	@Inject
+	@EJB
 	private FeedFetcherService feedFetcherService;
 
 	private static final Logger LOG = Logger.getLogger(OpmlImporterBean.class.getName());
