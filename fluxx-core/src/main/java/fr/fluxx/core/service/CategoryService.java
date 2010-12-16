@@ -19,6 +19,8 @@ package fr.fluxx.core.service;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -31,6 +33,7 @@ import fr.fluxx.core.domain.Category;
 import fr.fluxx.core.domain.Feed;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class CategoryService {
 
 	private static final String INVALID_CHARACTERS = "\"#/|!'";
@@ -72,6 +75,7 @@ public class CategoryService {
 		return q.getResultList();
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public Category create(String categoryName) {
 		if (categoryName != null) {
 			categoryName = categoryName.trim();
@@ -95,6 +99,7 @@ public class CategoryService {
 		return query.getResultList();
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteAllCategories() {
 		TypedQuery<Category> query = em.createNamedQuery("findAllCategories", Category.class);
 		List<Category> categories = query.getResultList();

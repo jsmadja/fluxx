@@ -22,6 +22,8 @@ import java.net.URL;
 import java.util.Scanner;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.FeedException;
@@ -32,6 +34,7 @@ import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.exception.DownloadFeedException;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class AsynchronousFeedDownloaderService {
 
 	private static final SyndFeedInput SYND_FEED_INPUT = new SyndFeedInput();

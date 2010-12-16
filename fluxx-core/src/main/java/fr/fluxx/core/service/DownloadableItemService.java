@@ -19,6 +19,8 @@ package fr.fluxx.core.service;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -26,6 +28,7 @@ import javax.persistence.Query;
 import fr.fluxx.core.domain.DownloadableItem;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class DownloadableItemService {
 
 	@PersistenceContext
@@ -47,6 +50,7 @@ public class DownloadableItemService {
 		}
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public DownloadableItem store(DownloadableItem downloadableItem) {
 		if (downloadableItem.getId() == null) {
 			em.persist(downloadableItem);

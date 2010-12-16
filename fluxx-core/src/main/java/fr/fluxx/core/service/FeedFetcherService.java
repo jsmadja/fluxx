@@ -43,6 +43,7 @@ import fr.fluxx.core.exception.DownloadFeedException;
 import fr.fluxx.core.exception.InvalidItemException;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class FeedFetcherService {
 
 	private static final Logger LOG = Logger.getLogger(FeedFetcherService.class.getName());
@@ -56,6 +57,7 @@ public class FeedFetcherService {
 	@EJB
 	private ItemBuilderService itemBuilderService;
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public Feed addNewFeed(String feedUrl) throws DownloadFeedException {
 		feedUrl = clean(feedUrl);
 
@@ -64,30 +66,6 @@ public class FeedFetcherService {
 			feed = fetch(new Feed(feedUrl));
 		}
 		return feed;
-	}
-
-	private String clean(String url) {
-		try {
-			url = StringUtils.trimToEmpty(url);
-			url = org.apache.commons.lang.StringEscapeUtils.unescapeHtml(url);
-			url = URLDecoder.decode(url, "UTF-8");
-			url = url.trim();
-		} catch (UnsupportedEncodingException e) {
-			LOG.log(Level.SEVERE, e.getMessage(), e);
-		}
-		return url;
-	}
-
-	private Feed fetch(Feed feed) throws DownloadFeedException {
-		try {
-			URL feedUrl = new URL(feed.getUrl());
-			SyndFeedInput syndFeedInput = new SyndFeedInput();
-			SyndFeed syndFeed = syndFeedInput.build(new XmlReader(feedUrl));
-			return updateWithFeedContent(feed, syndFeed);
-		} catch (Exception e) {
-			LOG.log(Level.SEVERE, e.getMessage(), e);
-			throw new DownloadFeedException(e.getMessage());
-		}
 	}
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
@@ -103,13 +81,13 @@ public class FeedFetcherService {
 		return feed;
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	public Feed createFromSyndFeed(Feed feed, SyndFeed syndFeed) {
 		updateFeedInformations(feed, syndFeed);
 		updateFeedItems(feed, syndFeed);
 		return feedService.store(feed);
 	}
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
 	private Feed updateWithFeedContent(Feed feed, SyndFeed syndFeed) {
 		try {
 			feed.setInError(false);
@@ -164,6 +142,30 @@ public class FeedFetcherService {
 					}
 				}
 			}
+		}
+	}
+	
+	private String clean(String url) {
+		try {
+			url = StringUtils.trimToEmpty(url);
+			url = org.apache.commons.lang.StringEscapeUtils.unescapeHtml(url);
+			url = URLDecoder.decode(url, "UTF-8");
+			url = url.trim();
+		} catch (UnsupportedEncodingException e) {
+			LOG.log(Level.SEVERE, e.getMessage(), e);
+		}
+		return url;
+	}
+
+	private Feed fetch(Feed feed) throws DownloadFeedException {
+		try {
+			URL feedUrl = new URL(feed.getUrl());
+			SyndFeedInput syndFeedInput = new SyndFeedInput();
+			SyndFeed syndFeed = syndFeedInput.build(new XmlReader(feedUrl));
+			return updateWithFeedContent(feed, syndFeed);
+		} catch (Exception e) {
+			LOG.log(Level.SEVERE, e.getMessage(), e);
+			throw new DownloadFeedException(e.getMessage());
 		}
 	}
 

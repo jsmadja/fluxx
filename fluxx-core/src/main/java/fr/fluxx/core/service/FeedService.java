@@ -26,6 +26,8 @@ import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -40,7 +42,7 @@ import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.domain.metamodel.Feed_;
 
 @Stateless
-@SuppressWarnings({ "unchecked" })
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class FeedService {
 
 	private static final int MAX_FEEDS_TO_RETRIEVE = 100;
@@ -61,7 +63,7 @@ public class FeedService {
 		return feeds;
 	}
 
-	private Feed getSingleResult(Query query) {
+	private Feed getSingleResult(TypedQuery<Feed> query) {
 		List<Feed> feeds = query.getResultList();
 		if (feeds.isEmpty()) {
 			return null;
@@ -76,7 +78,7 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByInError(boolean inError, int firstResult) {
-		Query q = em.createNamedQuery("findFeedsByInError");
+		TypedQuery<Feed> q = em.createNamedQuery("findFeedsByInError", Feed.class);
 		q.setParameter("inError", inError);
 		q.setFirstResult(firstResult);
 		q.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
@@ -92,13 +94,13 @@ public class FeedService {
 		Predicate whereClauses = cb.and(inErrorClause, nextUpdateClause);
 		cq.where(whereClauses);
 		cq.orderBy(cb.asc(feed.get(Feed_.title)));
-		Query query = em.createQuery(cq);
+		TypedQuery<Feed> query = em.createQuery(cq);
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		return query.getResultList();
 	}
 
 	public List<Feed> findAllTopPriorityFeeds() {
-		Query query = em.createNamedQuery("findAllTopPriorityFeeds");
+		TypedQuery<Feed> query = em.createNamedQuery("findAllTopPriorityFeeds", Feed.class);
 		return query.getResultList();
 	}
 
@@ -144,7 +146,7 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByItemTitle(String filter) {
-		Query query = em.createNamedQuery("findFeedsByItemTitle");
+		TypedQuery<Long> query = em.createNamedQuery("findFeedsByItemTitle", Long.class);
 		query.setParameter(1, '%'+filter.toLowerCase()+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
@@ -152,7 +154,7 @@ public class FeedService {
 	}
 
 	public List<Feed> findFeedsByCategory(String filter) {
-		Query query = em.createNamedQuery("findFeedsByCategory");
+		TypedQuery<Long> query = em.createNamedQuery("findFeedsByCategory", Long.class);
 		query.setParameter(1, '%'+filter.toLowerCase()+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
 		List<Long> feedIds = query.getResultList();
@@ -161,7 +163,7 @@ public class FeedService {
 
 	public List<Feed> findFeedsByDescriptionUrlAuthorTitle(String filter) {
 		filter = filter.toLowerCase();
-		Query query = em.createNamedQuery("findFeedsByDescriptionUrlAuthorTitle");
+		TypedQuery<Long> query = em.createNamedQuery("findFeedsByDescriptionUrlAuthorTitle", Long.class);
 		for (int i=1; i<5; i++)
 			query.setParameter(i, '%'+filter+'%');
 		query.setMaxResults(MAX_FEEDS_TO_RETRIEVE);
@@ -178,6 +180,7 @@ public class FeedService {
 		return em.find(Feed.class, id);
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void delete(Feed feed) {
 		Feed feedToRemove = em.find(Feed.class, feed.getId());
 		em.remove(feedToRemove);
@@ -185,13 +188,13 @@ public class FeedService {
 	}
 
 	public Feed findFeedByUrl(String url) {
-		Query query = em.createNamedQuery("findFeedByUrl");
+		TypedQuery<Feed> query = em.createNamedQuery("findFeedByUrl", Feed.class);
 		query.setParameter("url", url);
 		return getSingleResult(query);
 	}
 
 	public Feed findLastUpdatedFeed() {
-		Query query = em.createNamedQuery("findLastUpdatedFeed");
+		TypedQuery<Feed> query = em.createNamedQuery("findLastUpdatedFeed", Feed.class);
 		return getSingleResult(query);
 	}
 
@@ -212,6 +215,7 @@ public class FeedService {
 		return maps;
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public Feed store(Feed feed) {
 		if (feed.getId() == null) {
 			em.persist(feed);
@@ -223,8 +227,9 @@ public class FeedService {
 		return feed;
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteAllFeeds() {
-		Query query = em.createNamedQuery("findAllFeeds");
+		TypedQuery<Feed> query = em.createNamedQuery("findAllFeeds", Feed.class);
 		List<Feed> feeds = query.getResultList();
 		for (Feed feed : feeds) {
 			delete(feed);

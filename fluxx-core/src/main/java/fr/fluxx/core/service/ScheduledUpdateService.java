@@ -37,6 +37,7 @@ import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.exception.DownloadFeedException;
 
 @Singleton
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class ScheduledUpdateService {
 
 	private static final Logger LOG = Logger.getLogger(ScheduledUpdateService.class.getName());
@@ -58,25 +59,31 @@ public class ScheduledUpdateService {
 	public void updateTopPriorityFeeds() {
 		LOG.info("Top priority update is starting ...");
 		List<Feed> feeds = feedService.findAllTopPriorityFeeds();
-		update(feeds);
+		FeedUpdateData fud = new FeedUpdateData();
+		update(feeds, fud);
 		LOG.info("Top priority update is stopping ...");
+		LOG.log(Level.INFO, "{0} MB downloaded", fud.getDownloadSizeInMBytes());
 	}
 
-	@Schedule(minute = "*/15", hour = "*", persistent= false)
+	@Schedule(minute = "*/15", hour = "*", persistent = false)
 	public void updateAll() {
 		LOG.info("Full update is starting ...");
-		List<Feed> feeds;
-		do {
-			feeds = feedService.findFeedsToUpdate();
-			update(feeds);
-		} while (!feeds.isEmpty());
-		LOG.info("Full update is stopping ...");
-	}
-
-	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-	private void update(List<Feed> feeds) {
 		FeedUpdateData fud = new FeedUpdateData();
 		feedCache.clear();
+		
+		List<Feed> feeds;
+		int pass = 1;
+		do {
+			LOG.log(Level.INFO, "Pass #{0} ... ", pass);
+			feeds = feedService.findFeedsToUpdate();
+			update(feeds, fud);
+			pass++;
+		} while (!feeds.isEmpty());
+		LOG.info("Full update is stopping ...");
+		LOG.log(Level.INFO, "{0} MB downloaded in {1} passes", new Object[]{ fud.getDownloadSizeInMBytes(), pass});
+	}
+
+	private void update(List<Feed> feeds, FeedUpdateData fud) {
 		for (int i = 0; i < feeds.size(); i++) {
 			Feed feed = feeds.get(i);
 			int progress = getInPercent(i + 1, feeds.size());
@@ -91,10 +98,9 @@ public class ScheduledUpdateService {
 				LOG.warning("Download failed for " + feed.getUrl() + " cause : " + e.getMessage());
 			}
 		}
-		LOG.log(Level.INFO, "{0} MB downloaded", fud.getDownloadSizeInMBytes());
 	}
 
-	public void updateFeed(Pair<Feed, SyndFeed> couple, FeedUpdateData fud) {
+	private void updateFeed(Pair<Feed, SyndFeed> couple, FeedUpdateData fud) {
 		Feed feed = couple.left();
 		SyndFeed syndFeed = couple.right();
 		fud.add(feed);

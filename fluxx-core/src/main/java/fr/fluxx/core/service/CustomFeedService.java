@@ -24,6 +24,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -40,6 +42,7 @@ import fr.fluxx.core.domain.Item;
 import fr.fluxx.core.domain.metamodel.CustomFeed_;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class CustomFeedService {
 
 	@PersistenceContext
@@ -89,6 +92,7 @@ public class CustomFeedService {
 		return items;
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public CustomFeed addCustomFeed(String username, String category, int numLastDay) {
 		CustomFeed customFeed = new CustomFeed();
 		customFeed.setCategory(category);
@@ -114,6 +118,7 @@ public class CustomFeedService {
 		return customFeed;
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void delete(CustomFeed customFeed) {
 		feedCache.remove(customFeed.getId());
 		em.remove(findById(customFeed.getId()));
@@ -132,6 +137,7 @@ public class CustomFeedService {
 		return "http://" + server + ":" + port + contextRoot + "/rss?id=" + feed.getId();
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public CustomFeed addFeed(CustomFeed customFeed, Feed feed) {
 		if (customFeed.getFeeds() == null) {
 			customFeed.setFeeds(new ArrayList<Feed>());
@@ -157,6 +163,7 @@ public class CustomFeedService {
 		}
 	}
 
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void deleteAllCustomFeeds() {
 		Query query = em.createNamedQuery("deleteAllCustomFeeds");
 		query.executeUpdate();

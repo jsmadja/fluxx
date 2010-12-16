@@ -27,6 +27,8 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.servlet.http.HttpServletRequest;
 
 import com.sun.syndication.feed.synd.SyndCategory;
@@ -51,6 +53,7 @@ import fr.fluxx.core.domain.Item;
 import fr.fluxx.core.resource.FluxxMessage;
 
 @Stateful
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class RssService {
 
 	private static final String FEED_TYPE = "rss_2.0";

@@ -38,6 +38,7 @@ import fr.fluxx.core.exception.InvalidItemException;
 
 @Stateless
 @SuppressWarnings("unchecked")
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class ItemBuilderService {
 
 	@EJB

@@ -23,11 +23,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 
 import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.domain.Opml;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class OpmlService {
 
 	public List<Feed> loadOpml(String opmlFile) throws FileNotFoundException {

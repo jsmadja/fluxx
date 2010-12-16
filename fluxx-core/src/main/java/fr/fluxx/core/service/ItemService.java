@@ -30,6 +30,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -46,6 +48,7 @@ import fr.fluxx.core.domain.Item;
 import fr.fluxx.core.domain.metamodel.Item_;
 
 @Stateless
+@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 public class ItemService {
 
 	public static final int MAX_ITEM_TO_RETRIEVE = Integer.MAX_VALUE;
