@@ -1,0 +1,62 @@
+<!--
+
+    Copyright (C) 2010 Julien SMADJA <julien.smadja@gmail.com>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:component xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite">
+    <composite:interface>
+        <composite:attribute name="data" required="true"/>
+        <composite:attribute name="maxItems" required="true"/>
+    </composite:interface>
+
+    <composite:implementation>
+        <div id="fig" style="background-color: white; width: 527px" >
+                <script type="text/javascript+protovis">
+
+                    var numDays = 33;
+                    var barWidth = 15;
+                    var maxItems = #{cc.attrs.maxItems};
+                    var ratio = 1.2;
+                    var leftMargin = 30;
+                    var height = 300;
+
+                    // configuration image
+                    var vis = new pv.Panel()
+                    .width( (numDays * barWidth) + numDays)
+                    .height(height);
+
+                    // repere horizontal
+                    vis.add(pv.Rule)
+                    .data(pv.range(0, maxItems*ratio, 100))
+                    .bottom(function(d) d*(height/ratio) /maxItems)
+                    .add(pv.Label);
+
+                    // barre
+                    vis.add(pv.Bar)
+                    .data(#{cc.attrs.data})
+                    .width(barWidth)
+                    .height(function(d) d*(height/ratio) / maxItems)
+                    .bottom(0)
+                    .left(function() leftMargin + (this.index * (barWidth+1)) );
+
+                    vis.render();
+                </script>
+            </div>
+    </composite:implementation>
+</ui:component>
