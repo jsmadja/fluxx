@@ -27,6 +27,42 @@
         <netbeans.hint.deploy.server>gfv3ee6wc</netbeans.hint.deploy.server>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>production</id>
+            <properties>
+                <eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
+                <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
+                <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>
+                <javax.persistence.jdbc.user>APP</javax.persistence.jdbc.user>
+                <javax.persistence.jdbc.password>APP</javax.persistence.jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
+                <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
+                <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>
+                <javax.persistence.jdbc.user>APP</javax.persistence.jdbc.user>
+                <javax.persistence.jdbc.password>APP</javax.persistence.jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>continuous-integration</id>
+            <properties>
+                <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
+                <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
+                <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>
+                <javax.persistence.jdbc.user>sonar</javax.persistence.jdbc.user>
+                <javax.persistence.jdbc.password>sonar</javax.persistence.jdbc.password>
+            </properties>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -117,8 +153,13 @@
             <version>1.6.2</version>
         </dependency>
     </dependencies>
-
     <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.mycila.maven-license-plugin</groupId>
@@ -141,6 +182,7 @@
                         <exclude>sun-appserv-samples/**</exclude>
                         <exclude>derby.log</exclude>
                         <exclude>src/main/webapp/WEB-INF/lib/**</exclude>
+                        <exclude>src/main/resources/META-INF/persistence.xml</exclude>
                     </excludes>
                 </configuration>
             </plugin>
@@ -190,6 +232,7 @@
             </plugin>
         </plugins>
         <finalName>fluxx</finalName>
+
     </build>
 
     <repositories>
