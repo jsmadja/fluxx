@@ -44,6 +44,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+                <eclipselink.target-database>DERBY</eclipselink.target-database>
                 <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
                 <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
                 <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>
@@ -54,6 +55,7 @@
         <profile>
             <id>continuous-integration</id>
             <properties>
+                <eclipselink.target-database>DERBY</eclipselink.target-database>
                 <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
                 <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
                 <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>

@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbc/__default</jta-data-source>
     <properties>
+      <property name="eclipselink.target-database" value="${eclipselink.target-database}"/>
       <property name="eclipselink.ddl-generation" value="${eclipselink.ddl-generation}"/>
       <property name="javax.persistence.jdbc.driver" value="${javax.persistence.jdbc.driver}"/>
       <property name="javax.persistence.jdbc.url" value="${javax.persistence.jdbc.url}"/>
