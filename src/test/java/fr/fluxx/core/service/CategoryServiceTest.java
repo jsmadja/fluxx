@@ -31,7 +31,7 @@ import fr.fluxx.core.collection.PairList;
 import fr.fluxx.core.domain.Category;
 import fr.fluxx.core.domain.Feed;
 
-public class CategoryServiceITTest extends AbstractTest {
+public class CategoryServiceTest extends AbstractTest {
 
 	@Test
 	public void should_add_a_valid_category() {
