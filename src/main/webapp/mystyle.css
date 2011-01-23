@@ -16,16 +16,16 @@
 
 .custom_feed_field {
 	border-style:groove;
-	vertical-align: middle; 
-	height: 25px; 
+	vertical-align: bottom;
+	height: 25px;
 	width:150px;
-	font-size: 20px; 
+	font-size: 20px;
 	color: orange;
 	text-align:left;
 }
 
 .custom_feed_label {
-	font-size: 25px; 
+	font-size: 25px;
 	color: orange;
 	margin:1px;
 }

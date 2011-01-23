@@ -31,11 +31,25 @@
         <profile>
             <id>production</id>
             <properties>
+                <jta-data-source>jdbc/__default</jta-data-source>
+                <eclipselink.target-database>MYSQL</eclipselink.target-database>
                 <eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
-                <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
-                <javax.persistence.jdbc.url>jdbc:derby://localhost:1527/fluxx;create=true</javax.persistence.jdbc.url>
-                <javax.persistence.jdbc.user>APP</javax.persistence.jdbc.user>
-                <javax.persistence.jdbc.password>APP</javax.persistence.jdbc.password>
+                <javax.persistence.jdbc.driver>com.mysql.jdbc.Driver</javax.persistence.jdbc.driver>
+                <javax.persistence.jdbc.url>jdbc:mysql://localhost:3306/fluxx</javax.persistence.jdbc.url>
+                <javax.persistence.jdbc.user>fluxx_db_user</javax.persistence.jdbc.user>
+                <javax.persistence.jdbc.password>fluxx</javax.persistence.jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>integration</id>
+            <properties>
+                <jta-data-source>jdbc/__integration</jta-data-source>
+                <eclipselink.target-database>MYSQL</eclipselink.target-database>
+                <eclipselink.ddl-generation>create-tables</eclipselink.ddl-generation>
+                <javax.persistence.jdbc.driver>com.mysql.jdbc.Driver</javax.persistence.jdbc.driver>
+                <javax.persistence.jdbc.url>jdbc:mysql://localhost:8889/fluxx</javax.persistence.jdbc.url>
+                <javax.persistence.jdbc.user>fluxx</javax.persistence.jdbc.user>
+                <javax.persistence.jdbc.password>fluxx</javax.persistence.jdbc.password>
             </properties>
         </profile>
         <profile>
@@ -44,6 +58,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+                <jta-data-source>jdbc/__default</jta-data-source>
                 <eclipselink.target-database>DERBY</eclipselink.target-database>
                 <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
                 <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>
@@ -55,6 +70,7 @@
         <profile>
             <id>continuous-integration</id>
             <properties>
+                <jta-data-source>jdbc/__default</jta-data-source>
                 <eclipselink.target-database>DERBY</eclipselink.target-database>
                 <eclipselink.ddl-generation>drop-and-create-tables</eclipselink.ddl-generation>
                 <javax.persistence.jdbc.driver>org.apache.derby.jdbc.ClientDriver</javax.persistence.jdbc.driver>

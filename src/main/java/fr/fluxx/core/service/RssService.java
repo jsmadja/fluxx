@@ -59,7 +59,9 @@ import fr.fluxx.core.resource.FluxxMessage;
 public class RssService {
 
     private static final String FEED_TYPE = "rss_2.0";
+
     private static final String DESCRIPTION_TYPE = "text/plain";
+
     private SyndFeed syndFeed;
 
     @EJB

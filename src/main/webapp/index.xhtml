@@ -26,32 +26,31 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core">
     <ui:define name="content_right">
-                    <div>
-                        <h1 style="text-align: center;" >Create your own RSS feeds with <span style="color:orange;font-weight:bold;">#{statisticView.numItems} items</span> in <span style="color:orange;font-weight:bold;">#{statisticView.numFeeds} rss feeds</span></h1>
-                    </div>
+        <div>
+            <h1 style="text-align: center;" >Créez vos flux RSS parmi <span style="color:orange;font-weight:bold;">#{statisticView.numItems} éléments</span> répartis en <span style="color:orange;font-weight:bold;">#{statisticView.numFeeds} flux</span></h1>
+        </div>
+
+        <br/><br/><br/>
 
         <f:view>
             <center>
-		<h:form>
-                    <span style="font-size: 25px;">http://fluxx.fr.cr:8080/fluxx/rss/</span>
+                <h:form>
+                    <span style="font-size: 25px;">http://fluxx.fr.cr:8080/fluxx/rss/ </span>
                     <h:inputText styleClass="custom_feed_field" id="username" value="#{customFeedBean.username}" onfocus="clearText(this)" size="10" />
+                    <span style="font-size: 25px;">/ </span>
                     <h:inputText styleClass="custom_feed_field" id="category" value="#{customFeedBean.category}" onfocus="clearText(this)" size="10" />
-
                     <h:message for="username" styleClass="error" />
                     <h:message for="category" styleClass="error" />
-
-                    <br/><br/>
-
                     <h:commandButton id="submit" value="${msgs.form_button_add}" action="#{customFeedBean.add}" />
                 </h:form>
 
                 <br/><br/><br/>
 
-                <b>Some examples :</b>
+                <b>Quelques exemples de noms d'utilisateurs et de cat√©gories :</b><br/><br/>
                 <table style="font-size:15px">
-                    <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">mike</span>/<span style="color:orange">movies</span></a></td></tr>
-                    <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">angie</span>/<span style="color:orange">iphone</span></a></td></tr>
-                    <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">bradley</span>/<span style="color:orange">videogames</span></a></td></tr>
+                    <tr><td>http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">yves</span>/<span style="color:orange">cinemas</span></td></tr>
+                    <tr><td>http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">benjamin</span>/<span style="color:orange">iphone</span></td></tr>
+                    <tr><td>http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">darkalex64</span>/<span style="color:orange">jeuxvideos</span></td></tr>
                 </table>
 
             </center>

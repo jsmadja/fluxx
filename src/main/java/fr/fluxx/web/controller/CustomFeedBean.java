@@ -15,8 +15,6 @@
  */
 package fr.fluxx.web.controller;
 
-import java.io.Serializable;
-
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
@@ -26,7 +24,6 @@ import fr.fluxx.core.domain.CustomFeed;
 import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.service.CustomFeedService;
 import fr.fluxx.core.service.FeedFetcherService;
-import fr.fluxx.web.comparator.FeedsComparator;
 import fr.fluxx.web.model.CollectionDataModel;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
@@ -35,8 +32,6 @@ import javax.faces.model.DataModel;
 @SessionScoped
 public class CustomFeedBean {
 
-    private static final FeedsComparator FEEDS_COMPARATOR = new FeedsComparator();
-
     @EJB
     private FeedFetcherService feedFetcherService;
 
@@ -44,18 +39,14 @@ public class CustomFeedBean {
     private CustomFeedService customFeedService;
 
     private String newFeedUrl;
-    private String username;
-    private String category;
+    private String username = "utilisateur";
+    private String category = "categorie";
 
     private CustomFeed customFeed;
 
     private transient CollectionDataModel feedsDataModel;
 
     private static final int DEFAULT_MAX_NUM_DAYS = 7;
-
-    public CustomFeedBean() {
-        System.err.println("CUSTOM FEED BEAN");
-    }
 
     public String add() {
         customFeed = customFeedService.findByUsernameAndName(username, category);
@@ -74,16 +65,6 @@ public class CustomFeedBean {
         } catch (Exception ex) {
             return "custom-feed/error";
         }
-    }
-
-    private void reload() {
-        buildInformations();
-        buildFeedsDataModel();
-    }
-
-    private void buildInformations() {
-        this.username = customFeed.getUsername();
-        this.category = customFeed.getCategory();
     }
 
     public DataModel<Feed> getFeeds() {

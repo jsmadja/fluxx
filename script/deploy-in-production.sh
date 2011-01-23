@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-mvn clean install
-scp target/fluxx.war fluxx@fluxx.fr.cr:/opt/glassfishv3/glassfish/domains/domain1/autodeploy
+#!/bin/bash
+script/clean.sh
+mvn test && mvn package -Pproduction -DskipTests=true && scp target/fluxx.war fluxx@fluxx.fr.cr:/opt/glassfishv3/glassfish/domains/domain1/autodeploy

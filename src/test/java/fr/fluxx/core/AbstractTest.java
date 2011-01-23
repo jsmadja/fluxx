@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package fr.fluxx.core;
 
 import static org.mockito.Mockito.mock;
@@ -54,186 +53,208 @@ import fr.fluxx.core.service.ItemBuilderService;
 import fr.fluxx.core.service.ItemService;
 import fr.fluxx.core.service.OpmlService;
 import fr.fluxx.core.service.RssService;
+import org.apache.commons.lang.RandomStringUtils;
 
 public abstract class AbstractTest {
 
-	protected static EJBContainer container;
-	protected static Context namingContext;
-	protected static FeedService feedService;
-	protected static RssService rssService;
-	protected static ItemService itemService;
-	protected static OpmlService opmlService;
-	protected static FeedFetcherService feedFetcherService;
-	protected static CustomFeedCache cache;
-	protected static RssItemCache rssItemCache;
-	protected static CustomFeedService customFeedService;
-	protected static CategoryService categoryService;
-	protected static ItemBuilderService itemBuilderService;
-	protected static DownloadableItemService downloadableItemService;
+    protected static EJBContainer container;
 
-	protected static String uuid = UUID.randomUUID().toString();
-	protected static HttpServletRequest request;
-	protected static int serverPort = 8080;
-	protected static String serverName = "fluxx.fr.cr";
-	protected static String contextPath = "/fluxx";
+    protected static Context namingContext;
 
-	private static final SyndFeedInput syndFeedInput = new SyndFeedInput();
+    protected static FeedService feedService;
 
-	public static final String VALID_URL = "http://feeds2.feedburner.com/Frandroid";
-	protected static final String VALID_LINK = "http://www.google.fr";
-	protected static final String VALID_TITLE = "My title";
-	protected static final String TYPE = "audio/mp3";
-	protected static final long FILE_LENGTH = 5;
-	protected static final String CATEGORY_NAME = "category";
+    protected static RssService rssService;
 
-	private static final File FILE_CASTCODEURS = new File("src/test/resources/lescastcodeurs.xml");
-	private static final File FILE_FRANDROID = new File("src/test/resources/frandroid.xml");
-	private static final File FILE_LE_MONDE = new File("src/test/resources/lemonde.xml");
+    protected static ItemService itemService;
 
-	private static Object lookup(String key) throws NamingException {
-		return namingContext.lookup("java:global/classes/" + key);
-	}
+    protected static OpmlService opmlService;
 
-	static {
-		try {
-			long initialTime = System.currentTimeMillis();
-			Map<String, Object> properties = new HashMap<String, Object>();
-			properties.put(EJBContainer.MODULES, new File("target/classes"));
-			container = EJBContainer.createEJBContainer(properties);
+    protected static FeedFetcherService feedFetcherService;
 
-			namingContext = container.getContext();
+    protected static CustomFeedCache cache;
 
-			cache = (CustomFeedCache) lookup("CustomFeedCache");
+    protected static RssItemCache rssItemCache;
 
-			feedService = (FeedService) lookup("FeedService");
-			rssService = (RssService) lookup("RssService");
-			itemService = (ItemService) lookup("ItemService");
-			opmlService = (OpmlService) lookup("OpmlService");
-			feedFetcherService = (FeedFetcherService) lookup("FeedFetcherService");
-			itemBuilderService = (ItemBuilderService) lookup("ItemBuilderService");
-			customFeedService = (CustomFeedService) lookup("CustomFeedService");
-			categoryService = (CategoryService) lookup("CategoryService");
-			downloadableItemService = (DownloadableItemService) lookup("DownloadableItemService");
+    protected static CustomFeedService customFeedService;
 
-			long time = System.currentTimeMillis();
-			System.err.println("Initialization time: "+(time-initialTime)+" ms");
-			
-			request = mock(HttpServletRequest.class);
-			when(request.getServerPort()).thenReturn(serverPort);
-			when(request.getServerName()).thenReturn(serverName);
-			when(request.getContextPath()).thenReturn(contextPath);
+    protected static CategoryService categoryService;
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    protected static ItemBuilderService itemBuilderService;
 
-	protected Feed createFeedFromUrl(String url) {
-		try {
-			Feed feed = feedService.findFeedByUrl(url);
-			if (feed != null) {
-				return feed;
-			}
-			feed = feedFetcherService.addNewFeed(url);
-			return feed;
-		} catch (DownloadFeedException ex) {
-			throw new RuntimeException(ex);
-		}
-	}
+    protected static DownloadableItemService downloadableItemService;
 
-	private static final Map<File, SyndFeed> syndFeedcache = new HashMap<File, SyndFeed>();
+    protected static String uuid = UUID.randomUUID().toString();
 
-	@SuppressWarnings("deprecation")
-	private Feed createFeed(File file) {
-		try {
-			Feed feed = new Feed();
-			feed.setUrl(file.toURL().toString());
+    protected static HttpServletRequest request;
 
-			SyndFeed syndFeed;
-			if (syndFeedcache.containsKey(file)) {
-				syndFeed = syndFeedcache.get(file);
-			} else {
-				syndFeed = syndFeedInput.build(file);
-				syndFeedcache.put(file, syndFeed);
-			}
-			feed = feedFetcherService.createFromSyndFeed(feed, syndFeed);
-			feed = feedService.store(feed);
-			return feed;
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+    protected static final int SERVER_PORT = 8080;
 
-	protected Feed createFeedWithDownloadableItems() {
-		return createFeed(FILE_CASTCODEURS);
-	}
+    protected static String serverName = "fluxx.fr.cr";
 
-	protected Feed createFeedWithCategories() {
-		return createFeed(FILE_FRANDROID);
-	}
+    protected static String contextPath = "/fluxx";
 
-	protected Feed createFeedLeMonde() {
-		return createFeed(FILE_LE_MONDE);
-	}
+    private static final SyndFeedInput syndFeedInput = new SyndFeedInput();
 
-	protected String createRandomString() {
-		return UUID.randomUUID().toString().substring(0, 8);
-	}
+    public static final String VALID_URL = "http://feeds2.feedburner.com/Frandroid";
 
-	protected CustomFeed createCustomFeed() {
-		return customFeedService.addCustomFeed(createRandomString(), createRandomString(), 7);
-	}
+    protected static final String VALID_LINK = "http://www.google.fr";
 
-	protected Category createCategory() {
-		return categoryService.store(new Category(createRandomString()));
-	}
+    protected static final String VALID_TITLE = "My title";
 
-	protected CustomFeed createCustomFeedWithOneFeed(Feed feed) {
-		String customFeedName = feed.getTitle();
-		int numDays = 120;
-		CustomFeed customFeed = customFeedService.addCustomFeed("fluxxer", customFeedName, numDays);
-		customFeed = customFeedService.addFeed(customFeed, feed);
-		return customFeed;
-	}
+    protected static final String TYPE = "audio/mp3";
 
-	protected Feed createCompleteFeed() {
-		Feed feed = new Feed();
-		feed.setUrl(VALID_URL);
-		feed.setTitle(VALID_TITLE);
-		feed.setPublishedDate(new Date());
+    protected static final long FILE_LENGTH = 5;
 
-		Item item = new Item(VALID_LINK, VALID_TITLE, feed, new Date());
-		
-		Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
-		DownloadableItem downloadableItem = new DownloadableItem(VALID_LINK);
-		downloadableItem.setFileLength(FILE_LENGTH);
-		downloadableItem.setType(TYPE);
-		downloadableItem = downloadableItemService.store(downloadableItem);
-		downloadableItems.add(downloadableItem);
-		item.setDownloadableItems(downloadableItems);
+    protected static final String CATEGORY_NAME = "category";
 
-		Set<Category> categories = new HashSet<Category>();
-		Category category = new Category(CATEGORY_NAME);
-		category = categoryService.store(category);
-		categories.add(category);
+    private static final File FILE_CASTCODEURS = new File("src/test/resources/lescastcodeurs.xml");
 
-		item.setCategories(categories);
+    private static final File FILE_FRANDROID = new File("src/test/resources/frandroid.xml");
 
-		feed.getItems().add(item);
-		return feed;
-	}
+    private static final File FILE_LE_MONDE = new File("src/test/resources/lemonde.xml");
 
-	@After
-	public void tearDown() {
-		deleteAll();
-	}
+    private static Object lookup(String key) throws NamingException {
+        return namingContext.lookup("java:global/classes/" + key);
+    }
 
-	protected void deleteAll() {
-		customFeedService.deleteAllCustomFeeds();
-		itemService.deleteAllItems();
-		categoryService.deleteAllCategories();
-		downloadableItemService.deleteAllDownloadableItems();
-		feedService.deleteAllFeeds();
-	}
+    static {
+        try {
+            long initialTime = System.currentTimeMillis();
+            Map<String, Object> properties = new HashMap<String, Object>();
+            properties.put(EJBContainer.MODULES, new File("target/classes"));
+            container = EJBContainer.createEJBContainer(properties);
 
+            namingContext = container.getContext();
+
+            cache = (CustomFeedCache) lookup("CustomFeedCache");
+
+            feedService = (FeedService) lookup("FeedService");
+            rssService = (RssService) lookup("RssService");
+            itemService = (ItemService) lookup("ItemService");
+            opmlService = (OpmlService) lookup("OpmlService");
+            feedFetcherService = (FeedFetcherService) lookup("FeedFetcherService");
+            itemBuilderService = (ItemBuilderService) lookup("ItemBuilderService");
+            customFeedService = (CustomFeedService) lookup("CustomFeedService");
+            categoryService = (CategoryService) lookup("CategoryService");
+            downloadableItemService = (DownloadableItemService) lookup("DownloadableItemService");
+
+            long time = System.currentTimeMillis();
+            System.err.println("Initialization time: " + (time - initialTime) + " ms");
+
+            request = mock(HttpServletRequest.class);
+            when(request.getServerPort()).thenReturn(SERVER_PORT);
+            when(request.getServerName()).thenReturn(serverName);
+            when(request.getContextPath()).thenReturn(contextPath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected Feed createFeedFromUrl(String url) {
+        try {
+            Feed feed = feedService.findFeedByUrl(url);
+            if (feed != null) {
+                return feed;
+            }
+            feed = feedFetcherService.addNewFeed(url);
+            return feed;
+        } catch (DownloadFeedException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+    private static final Map<File, SyndFeed> syndFeedcache = new HashMap<File, SyndFeed>();
+
+    @SuppressWarnings("deprecation")
+    private Feed createFeed(File file) {
+        try {
+            Feed feed = new Feed();
+            feed.setUrl(file.toURL().toString());
+
+            SyndFeed syndFeed;
+            if (syndFeedcache.containsKey(file)) {
+                syndFeed = syndFeedcache.get(file);
+            } else {
+                syndFeed = syndFeedInput.build(file);
+                syndFeedcache.put(file, syndFeed);
+            }
+            feed = feedFetcherService.createFromSyndFeed(feed, syndFeed);
+            feed = feedService.store(feed);
+            return feed;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected Feed createFeedWithDownloadableItems() {
+        return createFeed(FILE_CASTCODEURS);
+    }
+
+    protected Feed createFeedWithCategories() {
+        return createFeed(FILE_FRANDROID);
+    }
+
+    protected Feed createFeedLeMonde() {
+        return createFeed(FILE_LE_MONDE);
+    }
+
+    protected String createRandomString() {
+        return RandomStringUtils.random(8);
+    }
+
+    protected CustomFeed createCustomFeed() {
+        return customFeedService.addCustomFeed(createRandomString(), createRandomString(), 7);
+    }
+
+    protected Category createCategory() {
+        return categoryService.store(new Category(createRandomString()));
+    }
+
+    protected CustomFeed createCustomFeedWithOneFeed(Feed feed) {
+        String customFeedName = feed.getTitle();
+        int numDays = 120;
+        CustomFeed customFeed = customFeedService.addCustomFeed("fluxxer", customFeedName, numDays);
+        customFeed = customFeedService.addFeed(customFeed, feed);
+        return customFeed;
+    }
+
+    protected Feed createCompleteFeed() {
+        Feed feed = new Feed();
+        feed.setUrl(VALID_URL);
+        feed.setTitle(VALID_TITLE);
+        feed.setPublishedDate(new Date());
+
+        Item item = new Item(VALID_LINK, VALID_TITLE, feed, new Date());
+
+        Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
+        DownloadableItem downloadableItem = new DownloadableItem(VALID_LINK);
+        downloadableItem.setFileLength(FILE_LENGTH);
+        downloadableItem.setType(TYPE);
+        downloadableItem = downloadableItemService.store(downloadableItem);
+        downloadableItems.add(downloadableItem);
+        item.setDownloadableItems(downloadableItems);
+
+        Set<Category> categories = new HashSet<Category>();
+        Category category = new Category(CATEGORY_NAME);
+        category = categoryService.store(category);
+        categories.add(category);
+
+        item.setCategories(categories);
+
+        feed.getItems().add(item);
+        return feed;
+    }
+
+    @After
+    public void tearDown() {
+        deleteAll();
+    }
+
+    protected void deleteAll() {
+        customFeedService.deleteAllCustomFeeds();
+        itemService.deleteAllItems();
+        categoryService.deleteAllCategories();
+        downloadableItemService.deleteAllDownloadableItems();
+        feedService.deleteAllFeeds();
+    }
 }

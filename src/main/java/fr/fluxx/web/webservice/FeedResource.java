@@ -16,15 +16,13 @@
 package fr.fluxx.web.webservice;
 
 import fr.fluxx.core.Services;
+import fr.fluxx.core.service.RssService;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
-
-import fr.fluxx.core.service.RssService;
-import javax.inject.Inject;
 
 @Path("{username}/{category}")
 public class FeedResource {
@@ -34,9 +32,23 @@ public class FeedResource {
 
     private final String feedEncoding = "UTF-8";
 
+    private RssService rssService;
+
     @GET
     @Produces("application/xml")
     public String getXml(@PathParam(value = "username") String username, @PathParam(value = "category") String category) {
-        return Services.getRssService().getRssFeedByUsernameAndCategory(username, category, request, feedEncoding);
+        if (rssService == null) {
+            rssService = Services.getRssService();
+        }
+        return rssService.getRssFeedByUsernameAndCategory(username, category, request, feedEncoding);
     }
+
+    public void setRssService(RssService rssService) {
+        this.rssService = rssService;
+    }
+
+    public void setRequest(HttpServletRequest request) {
+        this.request = request;
+    }
+
 }
