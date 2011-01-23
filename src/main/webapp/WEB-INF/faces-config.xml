@@ -18,8 +18,8 @@
 -->
 
 <faces-config version="2.0"
-    xmlns="http://java.sun.com/xml/ns/javaee" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
     <application>
@@ -32,8 +32,20 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>edit/custom-feed</from-outcome>
+            <from-outcome>custom-feed/edit</from-outcome>
             <to-view-id>/custom-feed/edit.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/custom-feed/edit.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>custom-feed/edit</from-outcome>
+            <to-view-id>/custom-feed/edit.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>custom-feed/error</from-outcome>
+            <to-view-id>/custom-feed/error.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

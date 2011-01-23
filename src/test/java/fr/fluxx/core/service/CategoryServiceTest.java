@@ -31,7 +31,7 @@ import fr.fluxx.core.collection.PairList;
 import fr.fluxx.core.domain.Category;
 import fr.fluxx.core.domain.Feed;
 
-public class CategoryServiceTest extends AbstractTest {
+public class CategoryServiceITTest extends AbstractTest {
 
 	@Test
 	public void should_add_a_valid_category() {
@@ -68,7 +68,7 @@ public class CategoryServiceTest extends AbstractTest {
 		assertNotNull(categories);
 		assertTrue(categories.size() > 0);
 	}
-	
+
 	@Test
 	public void should_find_all_categories_of_a_feed() throws Exception {
 		Feed feed = createFeedWithCategories();

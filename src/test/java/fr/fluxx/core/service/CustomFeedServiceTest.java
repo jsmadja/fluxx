@@ -39,7 +39,7 @@ public class CustomFeedServiceTest extends AbstractTest {
     @Test
     public void should_create_a_valid_url() throws Exception {
         CustomFeed feed = createCustomFeed();
-        String expResult = "http://" + serverName + ":" + serverPort + contextPath + "/rss?id=" + feed.getId();
+        String expResult = "http://" + serverName + ":" + serverPort + contextPath + "/rss/" + feed.getUsername()+"/"+feed.getCategory();
         String result = customFeedService.createUrl(request, feed);
         assertEquals(expResult, result);
     }

@@ -29,31 +29,31 @@
                     <div>
                         <h1 style="text-align: center;" >Create your own RSS feeds with <span style="color:orange;font-weight:bold;">#{statisticView.numItems} items</span> in <span style="color:orange;font-weight:bold;">#{statisticView.numFeeds} rss feeds</span></h1>
                     </div>
-            
+
         <f:view>
             <center>
 		<h:form>
                     <span style="font-size: 25px;">http://fluxx.fr.cr:8080/fluxx/rss/</span>
-                    <h:inputText styleClass="custom_feed_field" id="username" value="#{customFeed.username}" onfocus="clearText(this)" size="10" />
-                    <h:inputText styleClass="custom_feed_field" id="category" value="#{customFeed.category}" onfocus="clearText(this)" size="10" />
+                    <h:inputText styleClass="custom_feed_field" id="username" value="#{customFeedBean.username}" onfocus="clearText(this)" size="10" />
+                    <h:inputText styleClass="custom_feed_field" id="category" value="#{customFeedBean.category}" onfocus="clearText(this)" size="10" />
 
                     <h:message for="username" styleClass="error" />
                     <h:message for="category" styleClass="error" />
 
                     <br/><br/>
 
-                    <h:commandButton id="submit" value="${msgs.form_button_add}" action="#{customFeed.add}" />
+                    <h:commandButton id="submit" value="${msgs.form_button_add}" action="#{customFeedBean.add}" />
                 </h:form>
-                
+
                 <br/><br/><br/>
-                
-                <b>Some examples :</b> 
+
+                <b>Some examples :</b>
                 <table style="font-size:15px">
                     <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">mike</span>/<span style="color:orange">movies</span></a></td></tr>
                     <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">angie</span>/<span style="color:orange">iphone</span></a></td></tr>
                     <tr><td><a href="/">http://fluxx.fr.cr:8080/fluxx/rss/<span style="color:orange">bradley</span>/<span style="color:orange">videogames</span></a></td></tr>
                 </table>
-                
+
             </center>
         </f:view>
     </ui:define>

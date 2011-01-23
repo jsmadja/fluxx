@@ -31,18 +31,30 @@
             <h:form>
                 <div style="font-size:25px">
                     <span style="vertical-align:middle">http://fluxx.fr.cr:8080/fluxx/rss/</span>
-                    <h:outputText styleClass="custom_feed_label" id="username" value="#{customFeed.username}" />/<h:outputText styleClass="custom_feed_label" id="category" value="#{customFeed.category}" />
-                    <emcomp:rssIcon href="rss/#{customFeed.username}/#{customFeed.category}"/>
+                    <h:outputText styleClass="custom_feed_label" id="username" value="#{customFeedBean.username}" />/<h:outputText styleClass="custom_feed_label" id="category" value="#{customFeedBean.category}" />
+                    <emcomp:rssIcon href="#{customFeedBean.url}"/>
                 </div>
             </h:form>
+
+            <h4>${page_subtitle_custom_feeds}</h4>
+            <h:dataTable  id="feedsTable" value="${customFeedBean.feeds}" var="feed" width="100%" styleClass="table_header" rowClasses="table_row_style_1,table_row_style_2" >
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_name}</f:facet>
+                <h:outputText value="${feed.title}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">${msgs.form_field_feed_url}</f:facet>
+                <h:outputText value="${feed.url}" />
+            </h:column>
+        </h:dataTable>
 
             <h4>${msgs.page_subtitle_add_feed}</h4>
             <h:form>
                 <h:panelGrid columns="3" >
                     <h:outputText value="${msgs.form_field_feed_url} * :"/>
-                    <h:inputText id="url" value="#{customFeed.newFeedUrl}" size="50" />
+                    <h:inputText id="url" value="#{customFeedBean.newFeedUrl}" size="50" />
                     <h:message for="url" styleClass="error"/>
-                    <h:commandButton  id="submit" value="${msgs.form_button_add}" action="#{customFeed.addNewFeed}"/>
+                    <h:commandButton  id="submit" value="${msgs.form_button_add}" action="#{customFeedBean.addNewFeed}"/>
                 </h:panelGrid>
             </h:form>
 

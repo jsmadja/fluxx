@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package fr.fluxx.core.service;
 
 import java.util.ArrayList;
@@ -48,129 +47,129 @@ import fr.fluxx.core.interceptor.ChronoInterceptor;
 @Interceptors({ChronoInterceptor.class})
 public class CustomFeedService {
 
-	@PersistenceContext
-	private EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
-	@EJB
-	private ItemService itemService;
+    @EJB
+    private ItemService itemService;
 
-	private CriteriaBuilder cb;
+    private CriteriaBuilder cb;
 
-	@EJB
-	private CustomFeedCache feedCache;
+    @EJB
+    private CustomFeedCache feedCache;
 
-	@PostConstruct
-	public void init() {
-		cb = em.getCriteriaBuilder();
-	}
+    @PostConstruct
+    public void init() {
+        cb = em.getCriteriaBuilder();
+    }
 
-	public CustomFeed findById(Long id) {
-		return em.find(CustomFeed.class, id);
-	}
+    public CustomFeed findById(Long id) {
+        return em.find(CustomFeed.class, id);
+    }
 
-	public List<Item> findItemsByCustomFeed(CustomFeed customFeed) {
-		List<Item> items = new ArrayList<Item>();
-		for (Feed f : customFeed.getFeeds()) {
-			items.addAll(itemService.findItemsByFeed(f));
-		}
-		return items;
-	}
+    public List<Item> findItemsByCustomFeed(CustomFeed customFeed) {
+        List<Item> items = new ArrayList<Item>();
+        for (Feed f : customFeed.getFeeds()) {
+            items.addAll(itemService.findItemsByFeed(f));
+        }
+        return items;
+    }
 
-	public List<Item> findItemsOfLastDaysByCustomFeed(CustomFeed customFeed) {
-		Calendar calendar = Calendar.getInstance();
+    public List<Item> findItemsOfLastDaysByCustomFeed(CustomFeed customFeed) {
+        Calendar calendar = Calendar.getInstance();
 
-		if (customFeed.getNumLastDay() != null) {
-			calendar.add(Calendar.DAY_OF_YEAR, -customFeed.getNumLastDay());
-		} else {
-			calendar.add(Calendar.DAY_OF_YEAR, -1);
-		}
+        if (customFeed.getNumLastDay() != null) {
+            calendar.add(Calendar.DAY_OF_YEAR, -customFeed.getNumLastDay());
+        } else {
+            calendar.add(Calendar.DAY_OF_YEAR, -1);
+        }
 
-		Date date = calendar.getTime();
+        Date date = calendar.getTime();
 
-		List<Item> items = new ArrayList<Item>();
-		for (Feed f : customFeed.getFeeds()) {
-			items.addAll(itemService.findItemsOfFeedAndAfterDate(f, date));
-		}
+        List<Item> items = new ArrayList<Item>();
+        for (Feed f : customFeed.getFeeds()) {
+            items.addAll(itemService.findItemsOfFeedAndAfterDate(f, date));
+        }
 
-		return items;
-	}
+        return items;
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public CustomFeed addCustomFeed(String username, String category, int numLastDay) {
-		CustomFeed customFeed = new CustomFeed();
-		customFeed.setCategory(category);
-		customFeed.setUsername(username);
-		customFeed.setNumLastDay(numLastDay);
-		customFeed = store(customFeed);
-		return customFeed;
-	}
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public CustomFeed addCustomFeed(String username, String category, int numLastDay) {
+        CustomFeed customFeed = new CustomFeed();
+        customFeed.setCategory(category);
+        customFeed.setUsername(username);
+        customFeed.setNumLastDay(numLastDay);
+        customFeed = store(customFeed);
+        return customFeed;
+    }
 
-	private CustomFeed store(final CustomFeed customFeed) {
-		CustomFeed storedCustomFeed;
-		if (customFeed.getId() == null || findById(customFeed.getId()) == null) {
-			em.persist(customFeed);
-			storedCustomFeed = customFeed;
-		} else {
-			storedCustomFeed = em.merge(customFeed);
-		}
-		em.flush();
-		return storedCustomFeed;
-	}
+    private CustomFeed store(final CustomFeed customFeed) {
+        CustomFeed storedCustomFeed;
+        if (customFeed.getId() == null || findById(customFeed.getId()) == null) {
+            em.persist(customFeed);
+            storedCustomFeed = customFeed;
+        } else {
+            storedCustomFeed = em.merge(customFeed);
+        }
+        em.flush();
+        return storedCustomFeed;
+    }
 
-	public CustomFeed update(final CustomFeed customFeed) {
-		CustomFeed storedCustomFeed = store(customFeed);
-		feedCache.remove(storedCustomFeed.getId());
-		return storedCustomFeed;
-	}
+    public CustomFeed update(final CustomFeed customFeed) {
+        CustomFeed storedCustomFeed = store(customFeed);
+        feedCache.remove(storedCustomFeed.getId());
+        return storedCustomFeed;
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void delete(CustomFeed customFeed) {
-		feedCache.remove(customFeed.getId());
-		em.remove(findById(customFeed.getId()));
-		em.flush();
-	}
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void delete(CustomFeed customFeed) {
+        feedCache.remove(customFeed.getId());
+        em.remove(findById(customFeed.getId()));
+        em.flush();
+    }
 
-	public Long getNumCustomFeeds() {
-		Query query = em.createNamedQuery("getNumCustomFeeds");
-		return (Long) query.getSingleResult();
-	}
+    public Long getNumCustomFeeds() {
+        Query query = em.createNamedQuery("getNumCustomFeeds");
+        return (Long) query.getSingleResult();
+    }
 
-	public String createUrl(HttpServletRequest request, CustomFeed feed) {
-		int port = request.getServerPort();
-		String server = request.getServerName();
-		String contextRoot = request.getContextPath();
-		return "http://" + server + ":" + port + contextRoot + "/rss?id=" + feed.getId();
-	}
+    public String createUrl(HttpServletRequest request, CustomFeed feed) {
+        int port = request.getServerPort();
+        String server = request.getServerName();
+        String contextRoot = request.getContextPath();
+        return "http://" + server + ":" + port + contextRoot + "/rss/" + feed.getUsername() + "/" + feed.getCategory();
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public CustomFeed addFeed(final CustomFeed customFeed, Feed feed) {
-		if (customFeed.getFeeds() == null) {
-			customFeed.setFeeds(new ArrayList<Feed>());
-		}
-		customFeed.getFeeds().add(feed);
-		return update(customFeed);
-	}
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public CustomFeed addFeed(final CustomFeed customFeed, Feed feed) {
+        if (customFeed.getFeeds() == null) {
+            customFeed.setFeeds(new ArrayList<Feed>());
+        }
+        customFeed.getFeeds().add(feed);
+        return update(customFeed);
+    }
 
-	public CustomFeed findByUsernameAndName(String username, String category) {
-		CriteriaQuery<CustomFeed> cq = cb.createQuery(CustomFeed.class);
-		Root<CustomFeed> feed = cq.from(CustomFeed.class);
+    public CustomFeed findByUsernameAndName(String username, String category) {
+        CriteriaQuery<CustomFeed> cq = cb.createQuery(CustomFeed.class);
+        Root<CustomFeed> feed = cq.from(CustomFeed.class);
 
-		Predicate usernameClause = cb.equal(feed.get(CustomFeed_.username), username);
-		Predicate categoryClause = cb.equal(feed.get(CustomFeed_.category), category);
-		cq.where(cb.and(usernameClause, categoryClause));
-		cq.select(feed);
-		List<CustomFeed> list = em.createQuery(cq).getResultList();
-		if (list.isEmpty()) {
-			return null;
-		} else {
-			return list.get(0);
-		}
-	}
+        Predicate usernameClause = cb.equal(feed.get(CustomFeed_.username), username);
+        Predicate categoryClause = cb.equal(feed.get(CustomFeed_.category), category);
+        cq.where(cb.and(usernameClause, categoryClause));
+        cq.select(feed);
+        List<CustomFeed> list = em.createQuery(cq).getResultList();
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void deleteAllCustomFeeds() {
-		Query query = em.createNamedQuery("deleteAllCustomFeeds");
-		query.executeUpdate();
-		em.flush();
-	}
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void deleteAllCustomFeeds() {
+        Query query = em.createNamedQuery("deleteAllCustomFeeds");
+        query.executeUpdate();
+        em.flush();
+    }
 }

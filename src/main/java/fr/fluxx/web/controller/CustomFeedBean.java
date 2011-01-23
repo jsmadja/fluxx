@@ -13,206 +13,122 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package fr.fluxx.web.controller;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.List;
-import java.util.logging.Logger;
 
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.faces.model.DataModel;
-import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
 import fr.fluxx.core.domain.CustomFeed;
 import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.service.CustomFeedService;
 import fr.fluxx.core.service.FeedFetcherService;
-import fr.fluxx.core.service.FeedService;
 import fr.fluxx.web.comparator.FeedsComparator;
 import fr.fluxx.web.model.CollectionDataModel;
+import javax.faces.bean.SessionScoped;
+import javax.faces.model.DataModel;
 
-@SuppressWarnings("unchecked")
-@Named(value = "customFeed")
 @ManagedBean
 @SessionScoped
-public class CustomFeedBean implements Serializable {
+public class CustomFeedBean {
 
-	private static final long serialVersionUID = -5930629180984532531L;
+    private static final FeedsComparator FEEDS_COMPARATOR = new FeedsComparator();
 
-	private static final FeedsComparator FEEDS_COMPARATOR = new FeedsComparator();
+    @EJB
+    private FeedFetcherService feedFetcherService;
 
-	@EJB
-	private FeedService feedService;
+    @EJB
+    private CustomFeedService customFeedService;
 
-	@EJB
-	private FeedFetcherService feedFetcherService;
+    private String newFeedUrl;
+    private String username;
+    private String category;
 
-	@EJB
-	private CustomFeedService customFeedService;
+    private CustomFeed customFeed;
 
-	private String filter = "";
-	private Long id;
-	private String newFeedUrl;
-	private String username;
-	private String category;
-	private int numLastDay = 3;
-	private transient CollectionDataModel feedsDataModel;
-	private transient CollectionDataModel availableFeedsDataModel;
-	private List<Feed> availableListFeeds;
-	private CustomFeed currentCustomFeed;
+    private transient CollectionDataModel feedsDataModel;
 
-	private static final Logger LOG = Logger.getLogger(CustomFeedBean.class.getName());
+    private static final int DEFAULT_MAX_NUM_DAYS = 7;
 
-	public String add() {
-		currentCustomFeed = customFeedService.addCustomFeed(username, category, numLastDay);
-		return "custom-feed/edit";
-	}
+    public CustomFeedBean() {
+        System.err.println("CUSTOM FEED BEAN");
+    }
 
-	public String edit() {
-		currentCustomFeed = customFeedService.findByUsernameAndName(username, category);
-		filter = currentCustomFeed.getCategory();
-		reload();
-		return "custom-feed/edit";
-	}
+    public String add() {
+        customFeed = customFeedService.findByUsernameAndName(username, category);
+        if (customFeed == null) {
+            customFeed = customFeedService.addCustomFeed(username, category, DEFAULT_MAX_NUM_DAYS);
+        }
+        return "custom-feed/edit";
+    }
 
-	public String addFeed() {
-		Feed feed = getAvailableFeeds().getRowData();
-		return addFeed(feed);
-	}
+    public String addNewFeed() {
+        try {
+            Feed feed = feedFetcherService.addNewFeed(newFeedUrl);
+            customFeed = customFeedService.addFeed(customFeed, feed);
+            newFeedUrl = "";
+            return "custom-feed/edit";
+        } catch (Exception ex) {
+            return "custom-feed/error";
+        }
+    }
 
-	private String addFeed(Feed feed) {
-		currentCustomFeed = customFeedService.addFeed(currentCustomFeed, feed);
-		return "custom-feed/edit";
-	}
+    private void reload() {
+        buildInformations();
+        buildFeedsDataModel();
+    }
 
-	public String removeFeed() {
-		currentCustomFeed.getFeeds().remove(currentCustomFeed);
-		currentCustomFeed = customFeedService.update(currentCustomFeed);
-		reload();
-		return "custom-feed/edit";
-	}
+    private void buildInformations() {
+        this.username = customFeed.getUsername();
+        this.category = customFeed.getCategory();
+    }
 
-	public String addNewFeed() {
-		try {
-			Feed newFeed = feedFetcherService.addNewFeed(newFeedUrl);
-			return addFeed(newFeed);
-		} catch (Exception ex) {
-			return "add-feed-failure";
-		}
-	}
+    public DataModel<Feed> getFeeds() {
+        buildFeedsDataModel();
+        return feedsDataModel.getDataModel();
+    }
 
-	public String update() {
-		currentCustomFeed.setUsername(username);
-		currentCustomFeed.setCategory(category);
-		currentCustomFeed.setNumLastDay(numLastDay);
-		currentCustomFeed = customFeedService.update(currentCustomFeed);
-		return "custom-feed/edit";
-	}
+    private void buildFeedsDataModel() {
+        this.feedsDataModel = new CollectionDataModel(customFeed.getFeeds());
+    }
 
-	public String filter() {
-		LOG.info("filter feeds with : " + filter);
-		buildAvailableFeedsDataModel(filter);
-		return "custom-feed/edit";
-	}
+    public String getUrl() {
+        return customFeedService.createUrl((HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest(), customFeed);
+    }
 
-	private void reload() {
-		buildInformations();
-		buildAvailableFeedsDataModel();
-		buildFeedsDataModel();
-	}
+    public String getNewFeedUrl() {
+        return newFeedUrl;
+    }
 
-	private void buildInformations() {
-		this.id = currentCustomFeed.getId();
-		this.numLastDay = currentCustomFeed.getNumLastDay();
-		this.username = currentCustomFeed.getUsername();
-		this.category = currentCustomFeed.getCategory();
-	}
+    public void setNewFeedUrl(String newFeedUrl) {
+        this.newFeedUrl = newFeedUrl;
+    }
 
-	public DataModel<Feed> getFeeds() {
-		if (feedsDataModel == null) {
-			buildFeedsDataModel();
-		}
-		return feedsDataModel.getDataModel();
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	private void buildFeedsDataModel() {
-		this.feedsDataModel = new CollectionDataModel(currentCustomFeed.getFeeds());
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public DataModel<Feed> getAvailableFeeds() {
-		if (availableFeedsDataModel == null) {
-			buildAvailableFeedsDataModel();
-		}
-		return availableFeedsDataModel.getDataModel();
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	private void buildAvailableFeedsDataModel() {
-		buildAvailableFeedsDataModel(filter);
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	private void buildAvailableFeedsDataModel(String filter) {
-		List<Feed> feeds = feedService.findAvailableFeedsByCustomFeedWithFilter(currentCustomFeed, filter);
-		Collections.sort(feeds, FEEDS_COMPARATOR);
-		this.availableFeedsDataModel = new CollectionDataModel(feeds);
-	}
+    public void setCustomFeed(CustomFeed customFeed) {
+        this.customFeed = customFeed;
+    }
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getUrl() {
-		return customFeedService.createUrl((HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
-				.getRequest(), currentCustomFeed);
-	}
-
-	public List<Feed> getAvailableListFeeds() {
-		return availableListFeeds;
-	}
-
-	public String getNewFeedUrl() {
-		return newFeedUrl;
-	}
-
-	public void setNewFeedUrl(String newFeedUrl) {
-		this.newFeedUrl = newFeedUrl;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public int getNumLastDay() {
-		return numLastDay;
-	}
-
-	public void setNumLastDay(int numLastDay) {
-		this.numLastDay = numLastDay;
-	}
-
-	public String getFilter() {
-		return filter;
-	}
-
-	public void setFilter(String filter) {
-		this.filter = filter;
-	}
+    public CustomFeed getCustomFeed() {
+        return customFeed;
+    }
 
 }
