@@ -41,6 +41,8 @@ import fr.fluxx.core.domain.Feed;
 import fr.fluxx.core.domain.Item;
 import fr.fluxx.core.domain.metamodel.CustomFeed_;
 import fr.fluxx.core.interceptor.ChronoInterceptor;
+import fr.fluxx.web.comparator.PublishedDateDescComparator;
+import java.util.Collections;
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.SUPPORTS)
@@ -58,6 +60,8 @@ public class CustomFeedService {
     @EJB
     private CustomFeedCache feedCache;
 
+    private static final PublishedDateDescComparator PUBLISHED_DATE_DESC_COMPARATOR = new PublishedDateDescComparator();
+
     @PostConstruct
     public void init() {
         cb = em.getCriteriaBuilder();
@@ -72,6 +76,7 @@ public class CustomFeedService {
         for (Feed f : customFeed.getFeeds()) {
             items.addAll(itemService.findItemsByFeed(f));
         }
+        Collections.sort(items, PUBLISHED_DATE_DESC_COMPARATOR);
         return items;
     }
 

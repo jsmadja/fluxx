@@ -26,6 +26,8 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 
 public class CustomFeedServiceTest extends AbstractTest {
 
@@ -68,4 +70,21 @@ public class CustomFeedServiceTest extends AbstractTest {
         customFeedService.delete(af2);
         assertEquals(initialCount - 2, customFeedService.getNumCustomFeeds().longValue());
     }
+
+    @Test
+    public void should_return_feeds_ordered_by_date_desc() {
+        CustomFeed customFeed = createCustomFeed();
+        customFeedService.addFeed(customFeed, createFeedWithDownloadableItems());
+        customFeedService.addFeed(customFeed, createFeedLeMonde());
+        customFeedService.addFeed(customFeed, createFeedWithCategories());
+
+        List<Item> items = customFeedService.findItemsByCustomFeed(customFeed);
+        for (int i=0; i< (items.size()-1); i++) {
+            Item current = items.get(i);
+            Item previous = items.get(i+1);
+            assertTrue(current.getPublishedDate().after(previous.getPublishedDate()));
+        }
+
+    }
+
 }
