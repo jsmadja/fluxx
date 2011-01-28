@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package fr.fluxx.core.domain;
 
 import static javax.persistence.CascadeType.DETACH;
@@ -43,169 +42,170 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "findItemByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
-		@NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed AND i.link = :link"),
-		@NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MAX(j.publishedDate) FROM Item j)"),
-		@NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MIN(j.publishedDate) FROM Item j)"),
-		@NamedQuery(name = "findFirstItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate asc"),
-		@NamedQuery(name = "findLastItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate desc"),
-		@NamedQuery(name = "getNumItemsOfFeed", query = "SELECT COUNT(i) FROM Item i WHERE i.feed = :feed"),
-		@NamedQuery(name = "getNumItems", query = "SELECT COUNT(i) FROM Item i"),
-		@NamedQuery(name = "deleteAllItems", query = "DELETE FROM Item i")})
-@Table(name = "ITEM", uniqueConstraints = @UniqueConstraint(columnNames = { "LINK" }))
+    @NamedQuery(name = "findItemByLink", query = "SELECT i FROM Item i WHERE i.link = :link"),
+    @NamedQuery(name = "findItemsByLinkWithFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed AND i.link = :link"),
+    @NamedQuery(name = "findLastItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MAX(j.publishedDate) FROM Item j)"),
+    @NamedQuery(name = "findFirstItem", query = "SELECT i FROM Item i WHERE i.publishedDate = (SELECT MIN(j.publishedDate) FROM Item j)"),
+    @NamedQuery(name = "findFirstItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate asc"),
+    @NamedQuery(name = "findLastItemOfFeed", query = "SELECT i FROM Item i WHERE i.feed = :feed ORDER BY i.publishedDate desc"),
+    @NamedQuery(name = "getNumItemsOfFeed", query = "SELECT COUNT(i) FROM Item i WHERE i.feed = :feed"),
+    @NamedQuery(name = "getNumItems", query = "SELECT COUNT(i) FROM Item i"),
+    @NamedQuery(name = "deleteAllItems", query = "DELETE FROM Item i")})
+@Table(name = "ITEM", uniqueConstraints =
+@UniqueConstraint(columnNames = {"LINK"}))
 public class Item implements Comparable<Item>, Serializable {
 
-	private static final long serialVersionUID = 2707672054863355365L;
+    private static final long serialVersionUID = 2707672054863355365L;
 
-	public static final int MAX_ITEM_LINK_SIZE = 512;
-	public static final int MAX_ITEM_TITLE_SIZE = 512;
+    public static final int MAX_ITEM_LINK_SIZE = 512;
 
-	@Id
-	@GeneratedValue
-	private Long id;
+    public static final int MAX_ITEM_TITLE_SIZE = 512;
 
-	@Column(length = MAX_ITEM_LINK_SIZE, nullable=false)
-	private String link;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-	private String author;
+    @Column(length = MAX_ITEM_LINK_SIZE, nullable = false)
+    private String link;
 
-	@Lob
-	@Basic(fetch=FetchType.LAZY)
-	private String description;
+    private String author;
 
-	private String descriptionType;
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private String description;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(nullable=false)
-	private Date publishedDate;
+    private String descriptionType;
 
-	@Column(length = MAX_ITEM_TITLE_SIZE, nullable = false)
-	private String title;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false)
+    private Date publishedDate;
 
-	@ManyToMany(cascade = { DETACH, MERGE, REFRESH })
-	private Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
+    @Column(length = MAX_ITEM_TITLE_SIZE, nullable = false)
+    private String title;
 
-	@ManyToMany(cascade = { DETACH, MERGE, REFRESH })
-	private Set<Category> categories = new HashSet<Category>();
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH})
+    private Set<DownloadableItem> downloadableItems = new HashSet<DownloadableItem>();
 
-	@ManyToOne
-	private Feed feed;
+    @ManyToMany(cascade = {DETACH, MERGE, REFRESH})
+    private Set<Category> categories = new HashSet<Category>();
 
-	public Item(String link, String title, Feed feed, Date publishedDate) {
-		this.link = link;
-		this.title = title;
-		this.feed = feed;
-		this.publishedDate = publishedDate;
-	}
+    @ManyToOne
+    private Feed feed;
 
-	public Item() {
+    public Item(String link, String title, Feed feed, Date publishedDate) {
+        this.link = link;
+        this.title = title;
+        this.feed = feed;
+        this.publishedDate = publishedDate;
+    }
 
-	}
+    public Item() {
+    }
 
-	@Override
-	public boolean equals(Object o) {
-		if (o instanceof Item) {
-			Item i = (Item) o;
-			if (link == null || i.link == null) {
-				return false;
-			}
-			return link.equals(i.link);
-		}
-		return false;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Item) {
+            Item i = (Item) o;
+            if (link == null || i.link == null) {
+                return false;
+            }
+            return link.equals(i.link);
+        }
+        return false;
+    }
 
-	@Override
-	public int hashCode() {
-		return link.hashCode();
-	}
+    @Override
+    public int hashCode() {
+        return link.hashCode();
+    }
 
-	@Override
-	public String toString() {
-		return getTitle();
-	}
+    @Override
+    public String toString() {
+        return getTitle();
+    }
 
-	public String getAuthor() {
-		return author;
-	}
+    public String getAuthor() {
+        return author;
+    }
 
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public String getDescriptionType() {
-		return descriptionType;
-	}
+    public String getDescriptionType() {
+        return descriptionType;
+    }
 
-	public void setDescriptionType(String descriptionType) {
-		this.descriptionType = descriptionType;
-	}
+    public void setDescriptionType(String descriptionType) {
+        this.descriptionType = descriptionType;
+    }
 
-	public Set<DownloadableItem> getDownloadableItems() {
-		return downloadableItems;
-	}
+    public Set<DownloadableItem> getDownloadableItems() {
+        return downloadableItems;
+    }
 
-	public void setDownloadableItems(Set<DownloadableItem> downloadableItems) {
-		this.downloadableItems = downloadableItems;
-	}
+    public void setDownloadableItems(Set<DownloadableItem> downloadableItems) {
+        this.downloadableItems = downloadableItems;
+    }
 
-	public Feed getFeed() {
-		return feed;
-	}
+    public Feed getFeed() {
+        return feed;
+    }
 
-	public void setFeed(Feed feed) {
-		this.feed = feed;
-	}
+    public void setFeed(Feed feed) {
+        this.feed = feed;
+    }
 
-	public Set<Category> getCategories() {
-		return categories;
-	}
+    public Set<Category> getCategories() {
+        return categories;
+    }
 
-	public void setCategories(Set<Category> categories) {
-		this.categories = categories;
-	}
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
 
-	public String getLink() {
-		return link;
-	}
+    public String getLink() {
+        return link;
+    }
 
-	public void setLink(String link) {
-		this.link = link;
-	}
+    public void setLink(String link) {
+        this.link = link;
+    }
 
-	public Date getPublishedDate() {
-		return publishedDate;
-	}
+    public Date getPublishedDate() {
+        return publishedDate;
+    }
 
-	public void setPublishedDate(Date publishedDate) {
-		this.publishedDate = publishedDate;
-	}
+    public void setPublishedDate(Date publishedDate) {
+        this.publishedDate = publishedDate;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	@Override
-	public int compareTo(Item i) {
-		return i.getPublishedDate().compareTo(publishedDate);
-	}
+    @Override
+    public int compareTo(Item i) {
+        return i.getPublishedDate().compareTo(publishedDate);
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

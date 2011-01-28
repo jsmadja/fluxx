@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package fr.fluxx.core.service;
 
 import java.util.List;
@@ -37,67 +36,72 @@ import fr.fluxx.core.interceptor.ChronoInterceptor;
 @Interceptors({ChronoInterceptor.class})
 public class CategoryService {
 
-	private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
-	
-	@PersistenceContext
-	private EntityManager em;
+    private static final int MAX_CATEGORIES_TO_RETRIEVE = 5;
 
-	public PairList<String, Integer> findNumItemByCategory() {
-		PairList<String, Integer> numItemsByCategory = new PairList<String, Integer>();
-		Query q = em.createNamedQuery("findNumItemByCategory");
-		for (Object o : q.getResultList()) {
-			Object[] couple = (Object[]) o;
-			numItemsByCategory.add(couple[0].toString(), (Integer) couple[1]);
-		}
-		return numItemsByCategory;
-	}
+    @PersistenceContext
+    private EntityManager em;
 
-	public Category findCategoryByName(String name) {
-		if (name == null || name.length() == 0) {
-			throw new IllegalArgumentException("The name argument is required");
-		}
-		TypedQuery<Category> q = em.createNamedQuery("findCategoryByName", Category.class);
-		q.setParameter("name", name);
-		q.setMaxResults(1);
-		List<Category> list = q.getResultList();
-		if (list.isEmpty()) {
-			return null;
-		} else {
-			return list.get(0);
-		}
-	}
+    public PairList<String, Integer> findNumItemByCategory() {
+        PairList<String, Integer> numItemsByCategory = new PairList<String, Integer>();
+        Query q = em.createNamedQuery("findNumItemByCategory");
+        for (Object o : q.getResultList()) {
+            Object[] couple = (Object[]) o;
+            numItemsByCategory.add(couple[0].toString(), (Integer) couple[1]);
+        }
+        return numItemsByCategory;
+    }
 
-	public List<Category> findCategoriesByName(String name, Integer numCategories) {
-		TypedQuery<Category> q = em.createNamedQuery("findCategoriesByName", Category.class);
-		q.setParameter("name", '%' + name.toLowerCase() + '%');
-		q.setMaxResults(numCategories);
-		return q.getResultList();
-	}
+    public Category findCategoryByName(String name) {
+        if (name == null || name.length() == 0) {
+            throw new IllegalArgumentException("The name argument is required");
+        }
+        TypedQuery<Category> q = em.createNamedQuery("findCategoryByName", Category.class);
+        q.setParameter("name", name);
+        q.setMaxResults(1);
+        List<Category> list = q.getResultList();
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public Category store(final Category category) {
-		Category storedCategory;
-		if (category.getId() == null) {
-			em.persist(category);
-			storedCategory = category;
-		} else {
-			storedCategory = em.merge(category);
-		}
-		em.flush();
-		return storedCategory;
-	}
-	
-	public List<String> findCategoriesByFeed(Feed feed) {
-		TypedQuery<String> query = em.createNamedQuery("findCategoriesByFeed", String.class);
-		query.setParameter(1, feed.getId());
-		query.setMaxResults(MAX_CATEGORIES_TO_RETRIEVE);
-		return query.getResultList();
-	}
+    public List<Category> findCategoriesByName(String name, Integer numCategories) {
+        TypedQuery<Category> q = em.createNamedQuery("findCategoriesByName", Category.class);
+        q.setParameter("name", '%' + name.toLowerCase() + '%');
+        q.setMaxResults(numCategories);
+        return q.getResultList();
+    }
 
-	@TransactionAttribute(TransactionAttributeType.REQUIRED)
-	public void deleteAllCategories() {
-		Query query = em.createNamedQuery("deleteAllCategories");
-		query.executeUpdate();
-		em.flush();
-	}
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public Category store(final Category category) {
+        Category storedCategory;
+        if (category.getId() == null) {
+            em.persist(category);
+            storedCategory = category;
+        } else {
+            storedCategory = em.merge(category);
+        }
+        em.flush();
+        return storedCategory;
+    }
+
+    public List<String> findCategoriesByFeed(Feed feed) {
+        TypedQuery<String> query = em.createNamedQuery("findCategoriesByFeed", String.class);
+        query.setParameter(1, feed.getId());
+        query.setMaxResults(MAX_CATEGORIES_TO_RETRIEVE);
+        return query.getResultList();
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void deleteAllCategories() {
+        Query query = em.createNamedQuery("deleteAllCategories");
+        query.executeUpdate();
+        em.flush();
+    }
+
+    public Long getNumCategories() {
+        Query query = em.createNamedQuery("getNumCategories");
+        return (Long) query.getSingleResult();
+    }
 }
